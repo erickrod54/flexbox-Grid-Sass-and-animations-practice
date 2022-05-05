@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { FlexBoxWrapper } from "./flexbox.styled.components";
-
-/**Flexbox-grid-sass-and-animations app version 1 -
+import ComplexTitle from "../../components/complex-title";
+/**Flexbox-grid-sass-and-animations app version 2 -
  * flexbox-app - Features:
  * 
- *      -->Building 'FlexBoxApp' Compoment.
- * 
- *      -->Building Toogle functionality to
- *          switch between a 'flex' and 'Note
- *          Flex' state.
+ *      -->Importing and Placing 'ComplexTitle' to
+ *         Customize 'FlexBoxApp' title.
  * 
  * Note:This is the first Component for Flexbox-grid-
  * sass-and-animations practice.
+ * 
+ * pending how to customize the title even more, for 
+ * example a section of the string
  */
 const FlexBoxApp = () => {
     /**this is the Flex state */
@@ -25,7 +25,7 @@ const FlexBoxApp = () => {
 
     return(
         <>
-            <h2>This is the <span>Flexbox app</span></h2>
+            <ComplexTitle  title={'This Is The Flexbox App'}/>
             {/**This Wrapper contains all styles for the
              * app, also a css function helper that gets
              * the Flex prop to toogle the css 'flex'
