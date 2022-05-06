@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { FlexBoxWrapper } from "./flexbox.styled.components";
 import ComplexTitle from "../../components/complex-title";
-/**Flexbox-grid-sass-and-animations app version 2 -
+/**Flexbox-grid-sass-and-animations app version 3 -
  * flexbox-app - Features:
  * 
- *      -->Importing and Placing 'ComplexTitle' to
- *         Customize 'FlexBoxApp' title.
+ *      -->Adding a custom style by using 'span' tag
+ *         on the 'title' prop.
+ * 
+ *      -->Creating a second element of 'children' to
+ *         visualize the difference between display 'flex'
+ *         and 'inline flex'
  * 
  * Note:This is the first Component for Flexbox-grid-
  * sass-and-animations practice.
@@ -23,9 +27,10 @@ const FlexBoxApp = () => {
         console.log(Flex)
     }
 
-    return(
+    return( 
         <>
-            <ComplexTitle  title={'This Is The Flexbox App'}/>
+            <ComplexTitle  
+                title={<h2>This Is The <span className="flexbox-span">Flexbox App</span></h2>}/>
             {/**This Wrapper contains all styles for the
              * app, also a css function helper that gets
              * the Flex prop to toogle the css 'flex'
@@ -34,7 +39,9 @@ const FlexBoxApp = () => {
             {/**This is the Parent element*/}
             
             <button onClick={toggleFlex}>{Flex ? 'Not flex' : 'Flex'}</button>
-            
+            <p>the 'flex' or 'not flex' always starts by
+                the first child. Note: they always 
+                start from the left</p>
             <ul>
                 {/**These are the children element*/}
                 <li>1st child</li>
@@ -42,6 +49,23 @@ const FlexBoxApp = () => {
                 <li>3rd child</li>
                 <li>4th child</li>
                 <li>5th child</li>
+            </ul>
+            <p>Here i applied a inline-flex prop:</p>
+            {/**The 'inline-flex' is applied to a 
+             * parent level*/}
+            <ul className='ul-inline-flex'>
+                {/**These are the children element*/}
+                <p>first parent element</p>
+                <li>1st child</li>
+                <li>2nd child</li>
+                <li>3rd child</li>
+            </ul>
+            <ul className='ul-inline-flex'>
+                <p>second parent element</p>
+                {/**These are the children element*/}
+                <li>1st child</li>
+                <li>2nd child</li>
+                <li>3rd child</li>
             </ul>
             </FlexBoxWrapper>
         </>
