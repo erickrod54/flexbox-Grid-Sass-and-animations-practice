@@ -1,22 +1,18 @@
 import React, { useState } from "react";
 import { FlexBoxWrapper } from "./flexbox.styled.components";
 import ComplexTitle from "../../components/complex-title";
-/**Flexbox-grid-sass-and-animations app version 3 -
+import SectionList from "../../components/section.list.component";
+
+/**Flexbox-grid-sass-and-animations app version 4 -
  * flexbox-app - Features:
  * 
- *      -->Adding a custom style by using 'span' tag
- *         on the 'title' prop.
+ *      -->Importing and Placing 'SectionList' Component.
  * 
- *      -->Creating a second element of 'children' to
- *         visualize the difference between display 'flex'
- *         and 'inline flex'
- * 
- * Note:This is the first Component for Flexbox-grid-
- * sass-and-animations practice.
- * 
- * pending how to customize the title even more, for 
- * example a section of the string
+ * Note: In this version i'll start to do flex manipulation
+ * of children elements, this case is made base on a section
+ * list of elements.
  */
+
 const FlexBoxApp = () => {
     /**this is the Flex state */
     const [ Flex, setFlex ] = useState(false);
@@ -67,6 +63,15 @@ const FlexBoxApp = () => {
                 <li>2nd child</li>
                 <li>3rd child</li>
             </ul>
+            <ComplexTitle title={<h2><span className="flexbox-span-manipulation">Flex-box</span> manipulation:</h2>}/>
+            <p>flex-box meant for flexible box, websites are 
+               based in the 'box model' compose by margin, padding 
+               and content, as follows:
+            </p>
+                {/**here i place the 'SectionList'
+                 * Component */}
+                <SectionList />
+               
             </FlexBoxWrapper>
         </>
     )
