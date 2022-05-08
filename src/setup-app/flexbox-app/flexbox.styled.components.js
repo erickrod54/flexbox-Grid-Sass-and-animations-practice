@@ -1,28 +1,21 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 3 -
+/**Flexbox-grid-sass-and-animations app version 4 -
  * flexbox.styled.components - Features:
  * 
- *      -->Implementing 'justify-content' and 'flex' 
- *         together.
+ *      -->Adding a '.flexbox-span-manipulation' 
+ *         style class to set styles on Complex
+ *         title.
  * 
- *      -->Implementing 'inline-flex' and creating a
- *         class for '.ul-inline-flex' the second 
- *         children.
+ *      --> Building 'SectionWrapper' to set styles
+ *          to the 'Section' Component.
  * 
- * Note: display 'flex' is different to 'inline-block' 
- * because 'flex' give me more control over the items (as
- * is the case of applying 'justify-content' thanks to
- * flex i can control the 'children' with this prop)
+ *      --> Building 'content' style class to set styles
+ *          to the content of each single Section.
  * 
- * The difference of the 'inline-flex' and 'display-flex'
- * is that 'inline-flex', diplay flex is for 'block level'
- * containers
- * 
- * 'justify-content' and 'inline-flex' are properties
- * that are activated when display 'flex' is set, 
- * otherwise using 'inline-block' these last don't have
- * effect 
+ * Note: In this version i'll start to do flex manipulation
+ * of children elements, this case is made base on a section
+ * list of elements.
  */
 
 export const FlexBoxWrapper = styled.div`
@@ -68,5 +61,26 @@ export const Wrapper = styled.div`
     }
     .flexbox-span{
         color: blueviolet;
+    }
+
+    .flexbox-span-manipulation{
+        color: orangered;
+    }
+`
+
+export const SectionWrapper = styled.div`
+    width: 20rem;
+    background-color: lightslategray;
+    padding: 1.7rem;
+    margin: 1rem;
+    color: white;
+
+    h2{
+        font-size: 1.2rem;
+    }
+
+    .content{
+        background-color: #20b2aa;
+        padding: 1.7rem;
     }
 `
