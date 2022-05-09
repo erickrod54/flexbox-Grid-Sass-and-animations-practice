@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { FlexBoxWrapper } from "./flexbox.styled.components";
 import ComplexTitle from "../../components/complex-title";
 import SectionList from "../../components/section.list.component";
+import { SectionListWrapper } from "./flexbox.styled.components";
 
-/**Flexbox-grid-sass-and-animations app version 4 -
+/**Flexbox-grid-sass-and-animations app version 5 -
  * flexbox-app - Features:
  * 
- *      -->Importing and Placing 'SectionList' Component.
+ *      -->Importing and Placing 'SectionListWrapper' 
+ *         Component.
  * 
  * Note: In this version i'll start to do flex manipulation
  * of children elements, this case is made base on a section
@@ -16,7 +18,8 @@ import SectionList from "../../components/section.list.component";
 const FlexBoxApp = () => {
     /**this is the Flex state */
     const [ Flex, setFlex ] = useState(false);
-    
+    /**this is the flex state for 'SectionList' */
+
     /**Here is the toggle function */
     const toggleFlex = () => {
         setFlex(!Flex)
@@ -26,7 +29,7 @@ const FlexBoxApp = () => {
     return( 
         <>
             <ComplexTitle  
-                title={<h2>This Is The <span className="flexbox-span">Flexbox App</span></h2>}/>
+                title={<p>This Is The <span className="flexbox-span">Flexbox App</span></p>}/>
             {/**This Wrapper contains all styles for the
              * app, also a css function helper that gets
              * the Flex prop to toogle the css 'flex'
@@ -63,15 +66,16 @@ const FlexBoxApp = () => {
                 <li>2nd child</li>
                 <li>3rd child</li>
             </ul>
-            <ComplexTitle title={<h2><span className="flexbox-span-manipulation">Flex-box</span> manipulation:</h2>}/>
+            <ComplexTitle title={<p><span className="flexbox-span-manipulation">Flex-box</span> manipulation:</p>}/>
             <p>flex-box meant for flexible box, websites are 
                based in the 'box model' compose by margin, padding 
                and content, as follows:
             </p>
                 {/**here i place the 'SectionList'
-                 * Component */}
+                 * Component */}  
+             <SectionListWrapper>
                 <SectionList />
-               
+             </SectionListWrapper>       
             </FlexBoxWrapper>
         </>
     )
