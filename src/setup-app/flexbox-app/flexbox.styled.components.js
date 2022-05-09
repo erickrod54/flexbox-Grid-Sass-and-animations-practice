@@ -1,17 +1,9 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 4 -
+/**Flexbox-grid-sass-and-animations app version 5 -
  * flexbox.styled.components - Features:
  * 
- *      -->Adding a '.flexbox-span-manipulation' 
- *         style class to set styles on Complex
- *         title.
- * 
- *      --> Building 'SectionWrapper' to set styles
- *          to the 'Section' Component.
- * 
- *      --> Building 'content' style class to set styles
- *          to the content of each single Section.
+ *      -->Building 'SectionListWrapper'.
  * 
  * Note: In this version i'll start to do flex manipulation
  * of children elements, this case is made base on a section
@@ -83,4 +75,8 @@ export const SectionWrapper = styled.div`
         background-color: #20b2aa;
         padding: 1.7rem;
     }
+`
+
+export const SectionListWrapper = styled.div`
+ display: flex;
 `
