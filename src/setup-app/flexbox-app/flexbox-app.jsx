@@ -2,13 +2,21 @@ import React, { useState } from "react";
 import { FlexBoxWrapper } from "./flexbox.styled.components";
 import ComplexTitle from "../../components/complex-title";
 import SectionList from "../../components/section.list.component";
-import { SectionListWrapper } from "./flexbox.styled.components";
+import { SectionListWrapper, InlineFlexWrapper } from "./flexbox.styled.components";
+import FlexProp from "../../components/flex-prop.component";
+import InlineFlexProp from "../../components/inline-flex-prop.component";
 
-/**Flexbox-grid-sass-and-animations app version 5 -
+/**Flexbox-grid-sass-and-animations app version 6 -
  * flexbox-app - Features:
  * 
- *      -->Importing and Placing 'SectionListWrapper' 
- *         Component.
+ *      -->Refactoring the whole app.
+ *      
+ *      -->Importing and Placing 'InlineFlexWrapper' Style Component.
+ * 
+ *      --> Importing and Palcing 'FlexProp' and 'InlineFlexPro'
+ *          Component.
+ * 
+ *      --> Building 'flex' toggle for 'flex and box' model
  * 
  * Note: In this version i'll start to do flex manipulation
  * of children elements, this case is made base on a section
@@ -19,64 +27,56 @@ const FlexBoxApp = () => {
     /**this is the Flex state */
     const [ Flex, setFlex ] = useState(false);
     /**this is the flex state for 'SectionList' */
+    const [ Flex1, setFlex1 ] = useState(false);
 
-    /**Here is the toggle function */
+
+    /**Here is the toggle function for 'FlexProp'*/
     const toggleFlex = () => {
         setFlex(!Flex)
         console.log(Flex)
     }
 
+    /**Here is the toggle function for 'Section' */
+    const toggleFlex1 = () => {
+        setFlex1(!Flex1)
+        console.log(Flex1)
+    }
+
     return( 
         <>
             <ComplexTitle  
-                title={<p>This Is The <span className="flexbox-span">Flexbox App</span></p>}/>
-            {/**This Wrapper contains all styles for the
-             * app, also a css function helper that gets
-             * the Flex prop to toogle the css 'flex'
-             */}
+                title={<p>This Is 
+                    The <span className="flexbox-span">Flexbox 
+                    App</span></p>}/>
+                    
+            <button 
+                onClick={toggleFlex}>{Flex ? 
+                'Not flex' : 'Flex'}</button>
+
             <FlexBoxWrapper toggleFlex={Flex}>
-            {/**This is the Parent element*/}
+                <FlexProp />
+            </FlexBoxWrapper>
+
+             {/**Here i place the 'InlineFlexProp'*/}
+            <InlineFlexWrapper>
+                <InlineFlexProp />
+            </InlineFlexWrapper>
             
-            <button onClick={toggleFlex}>{Flex ? 'Not flex' : 'Flex'}</button>
-            <p>the 'flex' or 'not flex' always starts by
-                the first child. Note: they always 
-                start from the left</p>
-            <ul>
-                {/**These are the children element*/}
-                <li>1st child</li>
-                <li>2nd child</li>
-                <li>3rd child</li>
-                <li>4th child</li>
-                <li>5th child</li>
-            </ul>
-            <p>Here i applied a inline-flex prop:</p>
-            {/**The 'inline-flex' is applied to a 
-             * parent level*/}
-            <ul className='ul-inline-flex'>
-                {/**These are the children element*/}
-                <p>first parent element</p>
-                <li>1st child</li>
-                <li>2nd child</li>
-                <li>3rd child</li>
-            </ul>
-            <ul className='ul-inline-flex'>
-                <p>second parent element</p>
-                {/**These are the children element*/}
-                <li>1st child</li>
-                <li>2nd child</li>
-                <li>3rd child</li>
-            </ul>
+            {/**here i place the 'SectionList'
+            * Component */}  
             <ComplexTitle title={<p><span className="flexbox-span-manipulation">Flex-box</span> manipulation:</p>}/>
             <p>flex-box meant for flexible box, websites are 
-               based in the 'box model' compose by margin, padding 
-               and content, as follows:
+            based in the 'box model' compose by margin, padding 
+            and content, as follows:
             </p>
-                {/**here i place the 'SectionList'
-                 * Component */}  
-             <SectionListWrapper>
+            
+             <button 
+                onClick={toggleFlex1}>{Flex1 
+                ? 'Not flex' : 'Flex'}</button>
+
+             <SectionListWrapper toggleFlex1={Flex1}>
                 <SectionList />
              </SectionListWrapper>       
-            </FlexBoxWrapper>
         </>
     )
 }
