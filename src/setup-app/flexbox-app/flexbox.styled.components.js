@@ -29,6 +29,7 @@ export const FlexBoxWrapper = styled.div`
         display: inline-flex;
         justify-content: center;
     }
+
     /**Flex Items => children */
     li{
         list-style: none;
@@ -42,6 +43,17 @@ export const FlexBoxWrapper = styled.div`
     }
     transition: all 0.5s ease-in-out; &:hover{
         box-shadow: 0 1px 1px #222;
+    }
+`
+
+export const InlineFlexWrapper = styled(FlexBoxWrapper)`
+
+    .ul-inline-flex {
+        background-color: lightslategray;
+        padding: 20px;
+        /**Flex container properties */
+        display: inline-flex;
+        justify-content: center;
     }
 `
 
@@ -78,5 +90,6 @@ export const SectionWrapper = styled.div`
 `
 
 export const SectionListWrapper = styled.div`
- display: flex;
+ display: ${({ toggleFlex1 }) => 
+        toggleFlex1 || 'flex' };
 `
