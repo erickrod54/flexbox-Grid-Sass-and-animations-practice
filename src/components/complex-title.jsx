@@ -1,10 +1,12 @@
 import React from "react";
-import { Wrapper } from "../setup-app/flexbox-app/flexbox.styled.components";
+import { Wrapper as TitleWrapper } from "../setup-app/flexbox.styled.components";
 /**
- * Flexbox-grid-sass-and-animations app version 2 -
+ * Flexbox-grid-sass-and-animations app version 7 -
  * complex-title - Features:
  * 
- *      -->Building ComplexTitle
+ *      -->Changing imports for 'Wrapper'
+ * 
+ *      -->Setting 'Wrapper' as 'TitleWrapper'
  * 
  * Note:This is the first Component for Flexbox-grid-
  * sass-and-animations practice.
@@ -13,9 +15,9 @@ const ComplexTitle = ({ title }) => {
 
     return(
         <>
-            <Wrapper>
+            <TitleWrapper>
                 <h1>{title}</h1>
-            </Wrapper>
+            </TitleWrapper>
         </>
     )
 }
