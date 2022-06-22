@@ -1,13 +1,10 @@
 import React from "react";
-import { SectionWrapper } from "../setup-app/flexbox-app/flexbox.styled.components";
+import { SectionWrapper } from "../setup-app/flexbox.styled.components";
 
-/**Flexbox-grid-sass-and-animations app version 4 -
+/**Flexbox-grid-sass-and-animations app version 7 -
  * 'Section' Component - Features:
  * 
- *      -->Building 'Section' Component.
- * 
- *      -->Destructuring 'title' and 'text' props
- *         to set the content of each 'Section'
+ *      -->Changing imports for 'SectionWrapper'.
  * 
  * Note: In this version i'll start to do flex manipulation
  * of children elements, this case is made base on a section
