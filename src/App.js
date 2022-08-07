@@ -3,37 +3,23 @@ import FlexBoxApp from './setup-app/flexbox-app/flexbox-app';
 import FlexBoxManipulationApp from './setup-app/flexbox-app/flexbox.manipulation-app';
 import FlexPropApp from './setup-app/flexbox-app/flex.direction.property-app';
 import { useState } from 'react';
+import { useAppContext } from './context'
 
-/**Flexbox-grid-sass-and-animations app version 7 -
+/**Flexbox-grid-sass-and-animations app version 8 -
  * App js file - Features:
  * 
- *      -->Setting up Flexbox Apps Components.
+ *      --> Destructuring 'data' from 
+ *         'useAppContext()' to test 
+ *          the context. 
  * 
- *      -->Building state to set dinamicly a direction.
- * 
- *       -->Building state to set dinamicly a wrap
- *          prop. 
- * 
- *      -->Building 'handleChange' to set the 'object key'
- *        with the 'selection' prop.
- * 
- *      -->Building 'handleWrap' to set the 'object key'
- *        with the 'selection' prop.
- * 
- *      -->Drilling the state and functionality props throught 
- *         throught the flex direction app.
- * 
- * Note:later i'll separate them maybe using an outlet or
- * a home, placing a single component in this file, or
- * using this file for routing - pending -.
- * 
- * I place and build this features in order to provide the
- * props top-down the virtual dom and get the values in all
- * the files, but the best approach is to switch the 
- * arquitecture to a context API -pending-
+ * Note: by this version is starting the
+ * context arquitecture implementation.
  */
 function App() {
 
+  const data = useAppContext()
+
+  console.log('provided from AppProvider ==> ', data)
   /**here i build the wrap state */
   const [ wrap, setWrap ] = useState({
     nowrap: 'nowrap',
