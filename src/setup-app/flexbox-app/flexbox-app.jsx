@@ -6,29 +6,23 @@ import { InlineFlexWrapper } from "../flexbox.styled.components";
 import ComplexTitle from "../../components/complex-title";
 import FlexProp from "../../components/flex-prop.component";
 import InlineFlexProp from "../../components/inline-flex-prop.component";
-import ToggleFeature from "../../custom-hooks/toggle-hook";
+import { useAppContext } from '../../context'
 
-/**Flexbox-grid-sass-and-animations app version 7 -
+/**Flexbox-grid-sass-and-animations app version 9 -
  * flexbox-app - Features:
  * 
- *      -->Refactoring the whole app.
- *      
- *      -->Importing custom hook 'ToggleFeature'.
+ *      --> Destructuring 'toggleFlex' functionality
+ *          and 'flex' value from 'useAppContext()'
  * 
- *      -->Destructuring 'Flex' state and 'ToogleFlex' 
- *         functionality to implement it for this app.
- * 
- * Note: In this version i build a custom hook 'ToggleFeature'
- * as a general component that i'll use for 'FlexBoxApp' and
- * 'FlexBoxManipulationApp', built as a custom hook is can
- * be destructured and use whereever i need it.
+ * Note: this is hte context implementation for
+ * this value and feature
  */
 
 /**1st App -- Flexbox App */
 const FlexBoxApp = () => {
 
-    const { Flex, toggleFlex } = ToggleFeature();
-    console.log('this is FlexBoxApp => ', Flex)
+    const { toggleFlex, flex } = useAppContext();
+    console.log('Context implementation FlexBoxApp => ', flex)
 
     return( 
         <>
@@ -36,16 +30,12 @@ const FlexBoxApp = () => {
             <ComplexTitle  
                 title={<p>This Is 
                     The <span className="flexbox-span">Flexbox 
-                    App</span></p>}/>
-            
-            <p>the 'flex' or 'not flex' always starts by
-            the first child. Note: they always 
-            start from the left</p>        
+                    App</span></p>}/>     
             <button 
-                onClick={toggleFlex}>{Flex ? 
+                onClick={toggleFlex}>{flex ? 
                 'Not flex' : 'Flex'}</button>
 
-            <FlexBoxWrapper toggleFlex={Flex}>
+            <FlexBoxWrapper toggleFlex={flex}>
                 <FlexProp />
             </FlexBoxWrapper>
 
