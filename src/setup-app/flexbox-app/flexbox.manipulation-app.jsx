@@ -4,34 +4,25 @@ import { SectionListWrapper } from "../flexbox.styled.components";
 
 import ComplexTitle from "../../components/complex-title";
 import SectionList from "../../components/section.list.component";
-import ToggleFeature from "../../custom-hooks/toggle-hook";
+//import ToggleFeature from "../../custom-hooks/toggle-hook";
+import { useAppContext } from '../../context'
 
-/**Flexbox-grid-sass-and-animations app version 7 -
+/**Flexbox-grid-sass-and-animations app version 9 -
  * flexbox.manipulation-app.jsx - Features:
  * 
- *      -->Building 'FlexBoxManipulationApp' as a 
- *         separate Component.
- *      
- *      -->Importing custom hook 'ToggleFeature'.
+ *      -->Destructuring 'toggleFlexManApp' feature
+ *         and 'flexmanapp' from 'useAppContext()'.
  * 
- *      -->Destructuring 'Flex' state and 'ToogleFlex' 
- *         functionality to implement it for this app.
  * 
- * Note: In this version i build a custom hook 'ToggleFeature'
- * as a general component that i'll use for 'FlexBoxApp' and
- * 'FlexBoxManipulationApp', built as a custom hook is can
- * be destructured and use whereever i need it.
- * 
- * In this case i implemented in 'FlexBoxManipulationApp' as
- * a separate app from 'FlexBoxApp' and they use the same
- * 'ToggleFeature' in separate way 
+ * Note: This is the context implememntation for the
+ * FlexBoxManipulationApp
  */
 
 /**2nd App -- Flexbox Manipulation */
 const FlexBoxManipulationApp = () => {
 
-    const { Flex, toggleFlex } = ToggleFeature();
-    
+    const { toggleFlexManApp, flexmanapp } = useAppContext();
+    console.log('toggle flex value for manipulation app==>', flexmanapp)
 
     return(
         <>
@@ -43,10 +34,10 @@ const FlexBoxManipulationApp = () => {
             </p>
             
              <button 
-                onClick={toggleFlex}>{Flex 
+                onClick={toggleFlexManApp}>{flexmanapp 
                 ? 'Not flex' : 'Flex'}</button>
 
-             <SectionListWrapper toggleFlex1={Flex}>
+             <SectionListWrapper toggleFlex1={flexmanapp}>
                 <SectionList />
              </SectionListWrapper>
         </>
