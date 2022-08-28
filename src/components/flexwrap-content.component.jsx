@@ -15,7 +15,7 @@ const FlexWrapContent = ({ wrap }) => {
 
     const { selection } = wrap;
 
-    console.log('this destructured on wrap content ==>', selection)
+    //console.log('this destructured on wrap content ==>', selection)
     
              
              switch(selection){

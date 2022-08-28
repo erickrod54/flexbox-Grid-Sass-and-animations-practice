@@ -22,7 +22,7 @@ import { useAppContext } from '../../context'
 const FlexBoxApp = () => {
 
     const { toggleFlex, flex } = useAppContext();
-    console.log('Context implementation FlexBoxApp => ', flex)
+    //console.log('Context implementation FlexBoxApp => ', flex)
 
     return( 
         <>

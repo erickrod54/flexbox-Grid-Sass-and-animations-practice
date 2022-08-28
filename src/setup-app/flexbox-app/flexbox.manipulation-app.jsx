@@ -22,7 +22,7 @@ import { useAppContext } from '../../context'
 const FlexBoxManipulationApp = () => {
 
     const { toggleFlexManApp, flexmanapp } = useAppContext();
-    console.log('toggle flex value for manipulation app==>', flexmanapp)
+    //console.log('toggle flex value for manipulation app==>', flexmanapp)
 
     return(
         <>
