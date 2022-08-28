@@ -1,24 +1,19 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext, useReducer, useState } from "react";
 import { TOGGLE_FLEX, TOGGLE_FLEX_MANIPULATION_APP } from './actions'
 import reducer from "./reducer";
 
-/**Flexbox-grid-sass-and-animations app version 9 -
+/**Flexbox-grid-sass-and-animations app version 10 -
  * context js file - Features:
  * 
- *      --> Building props in the initialState for 
- *         'flexbox-app' and 'flex-box manipulation'.
+ *      --> Migrating 'handleChange', 'handleWrap'
+ *          features, and 'direction', and 'wrap' 
+ *          values from App js     
  * 
- *      --> Dispatching 'TOGGLE_FLEX' action.
+ * Note: Now these features and states live in
+ * the context and are going to be provided from
+ * here to the components that need it
  * 
- *      --> Dispatching 'TOGGLE_FLEX_MANIPULATION_APP'
- *          action.
- *  
- *      --> Providing 'toggleFlex' and 
- *         'toggleFlexManApp' througt the 
- *          provider.       
- * 
- * Note: now is pending to migrate all the data and
- * features and provide it througt the provider.
+ * pending to build actions for them
  */
 
 /**here i build the initialState */
@@ -37,6 +32,44 @@ const AppProvider = ({ children }) => {
     /**here i build the state to dispatch the actions */
     const [ state, dispatch ] = useReducer( reducer, initialState)
 
+    const [ direction, setDirection ] = useState({
+        row: 'row',
+        column:'column',
+        rowreverse: 'row-reverse',
+        columnreverse:'column-reverse'
+    })
+
+    /**here i build the wrap state */
+   const [ wrap, setWrap ] = useState({
+    nowrap: 'nowrap',
+    wrap:'wrap',
+    wrapreverse:'wrap-reverse'
+  })
+
+    const handleChange = (e) => {
+     const name = e.target.name;
+     const value = e.target.value;
+ 
+     /**here i test the selection using the event object*/
+     console.log('direction( made on context)=> name selected ==>', name, ', value in it ==>', value)
+ 
+     setDirection({...direction, [name]:value})
+ }
+
+  /**here i build the direction state */
+
+
+/**here i build the 'handleWrap' feature*/
+  const handleWrap = (e) => {
+  const name = e.target.name;
+  const value = e.target.value;
+
+  /**here i test the selection using the event object*/
+  console.log('wrap => name selected ==>', name, ', value in it ==>', value)
+
+  setWrap({...wrap, [name]:value })
+}
+
    const toggleFlex = () => {
     dispatch({ type: TOGGLE_FLEX, payload: state.flex})
    }
@@ -45,13 +78,18 @@ const AppProvider = ({ children }) => {
     dispatch({ type: TOGGLE_FLEX_MANIPULATION_APP, payload: state.flexmanapp})
    }
 
+
     /**i spread/copy the 'state' to test the context */
     return(
         <AppContext.Provider 
             value={{
                 ...state,
                 toggleFlex,
-                toggleFlexManApp
+                toggleFlexManApp,
+                handleChange,
+                direction,
+                handleWrap,
+                wrap
             }}
             >{children}
         </AppContext.Provider>
