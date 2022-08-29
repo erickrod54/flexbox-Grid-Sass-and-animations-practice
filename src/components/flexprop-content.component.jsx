@@ -1,69 +1,43 @@
 import React from "react";
-//import { FlexPropData } from "../data";
+import { useAppContext } from '../context'
 
-/**Flexbox-grid-sass-and-animations app version 7 -
- * 'flexprop-content.component' - Features:
+/**Flexbox-grid-sass-and-animations app version 11 -
+ * 'FlexPropContent' Component - Features:
  * 
- *      --> Building 'FlexPropContent' in order to
- *          display info about the prop directions.
+ *      --> Destructuring 'direction' value and 'flexPropData' 
+ *          data from 'useAppContext()'.
  * 
- * Note: this component for next versions will be
- * become dynamic, the content can be mapped depending
- * on conditions on the state. 
+ *      --> Filtering and Mapping to render conditionally the 
+ *          content data. 
+ * 
+ * Note: So far by this version i build the data for this three last
+ * apps.
  */
 
-const FlexPropContent = ({ direction }) => {
+const FlexPropContent = () => {
 
-    const { selection } = direction;
-
-    console.log('this destructured ==>', selection)
+    const { direction, flexPropData } = useAppContext()
     
-             
-             switch(selection){
+    return(
+        <div>
+            {/**i have to 'filter' first to get the id that matches with
+             * the 'flow.selection' and then i map to render the resulting 
+             * array*/}
 
-                case undefined:
-                    return <h3>select an option</h3>
-                case 'row':
-                    return( 
-                        <>
-                        <h3>is a 'row':</h3>
-        <p>when the flex-direction is 
-        'row' the main axis is going to be 'row', 
-        this prop is the default -set as flex is set as row-</p>
-                        </>
+            {flexPropData
+            .filter((item) => item.id === direction.selection).map((itemdirection) => {
+                const { id, text } = itemdirection; 
+
+                    return(
+                            <section key={id}>
+                                <h4>You selected: '{id}'</h4>
+                                <p>{text}</p>
+                            </section>
                     )
-                case 'column':
-                    return (
-                        <>
-                        <h3>is a 'column':</h3>
-        <p>the items are going to be arranged vertical -the 
-        main axis is vertical from top to bottom, from 1st element
-        to the last-</p>
-                        
-                        </>
-                    )
-                case 'row-reverse':
-                    return (
-                        <>
-                        <h3>is a 'row-reverse':</h3>
-        <p>this is the reverse of the default value -the 
-        default value is row- so the children will go to the
-        oposite way -main axis will go reverse-</p>
-                        
-                        </>
-                    )
-                case 'column-reverse':
-                        return (
-                            <>
-                            <h3>is a 'column-reverse':</h3>
-        <p>the main axis is reverse so the values inside the
-        container starts from the last to the first</p>
-                            
-                            </>
-                        )
-                 default:
-                  throw new Error(`no matching "${direction.selection}" `) 
-             }
+            })}
+        </div>
+    )
+    
 }
 
 export default FlexPropContent;
