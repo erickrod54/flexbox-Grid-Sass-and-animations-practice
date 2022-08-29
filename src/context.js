@@ -2,12 +2,20 @@ import React, { useContext, useReducer, useState } from "react";
 import { TOGGLE_FLEX, TOGGLE_FLEX_MANIPULATION_APP } from './actions'
 import reducer from "./reducer";
 
-/**Flexbox-grid-sass-and-animations app version 10 -
+import { flowData, flexPropData, flexWrapData } from "./data";
+
+/**Flexbox-grid-sass-and-animations app version 11 -
  * context js file - Features:
  * 
- *      --> Migrating 'handleChange', 'handleWrap'
- *          features, and 'direction', and 'wrap' 
- *          values from App js     
+ *      --> Building 'flexflow' state and 
+ *          'handleFlow' feature to handle
+ *          changes by the user 'selection'.
+ * 
+ *      --> Importing 'flowData', 'flexPropData', 
+ *          'flexWrapData' from the data file 
+ * 
+ *      --> Providing them throught the 
+ *          provider    
  * 
  * Note: Now these features and states live in
  * the context and are going to be provided from
@@ -46,6 +54,18 @@ const AppProvider = ({ children }) => {
     wrapreverse:'wrap-reverse'
   })
 
+  /**here i build the flow state */
+  const [ flow, setFlow ] = useState({
+    rowwrap: "row wrap",
+    columnwrap:"column wrap",
+    rowreversewrap:"row-reverse wrap",
+    columnreversewrap:"column-reverse wrap",
+    rownowrap:"row nowrap",
+    columnnowrap:"column nowrap",
+    rowreversenowrap:"row-reverse nowrap",
+    columnreversenowrap:"column-reverse nowrap",
+  })
+
     const handleChange = (e) => {
      const name = e.target.name;
      const value = e.target.value;
@@ -70,6 +90,15 @@ const AppProvider = ({ children }) => {
   setWrap({...wrap, [name]:value })
 }
 
+const handleFlow = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    console.log('flow => name selected ==>', name, ', value in it ==>', value)
+
+    setFlow({...flow, [name]:value })
+}
+
    const toggleFlex = () => {
     dispatch({ type: TOGGLE_FLEX, payload: state.flex})
    }
@@ -89,7 +118,12 @@ const AppProvider = ({ children }) => {
                 handleChange,
                 direction,
                 handleWrap,
-                wrap
+                wrap,
+                flow, 
+                handleFlow,
+                flowData,
+                flexPropData,
+                flexWrapData
             }}
             >{children}
         </AppContext.Provider>
