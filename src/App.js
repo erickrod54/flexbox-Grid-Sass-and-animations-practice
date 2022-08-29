@@ -2,23 +2,21 @@ import React from 'react'
 import FlexBoxApp from './setup-app/flexbox-app/flexbox-app';
 import FlexBoxManipulationApp from './setup-app/flexbox-app/flexbox.manipulation-app';
 import FlexPropApp from './setup-app/flexbox-app/flex.direction.property-app';
-import { useAppContext } from './context'
+import FlexFlow from './setup-app/flexbox-app/flexbox.flow-app';
 
-/**Flexbox-grid-sass-and-animations app version 10 -
+/**Flexbox-grid-sass-and-animations app version 11 -
  * App js file - Features:
  * 
- *      --> Destructuring 'handleChange', 'direction', 
- *          'handleWrap' and 'wrap' from 
- *           'useAppContext()'   
+ *      --> Taking off the prop drills at 
+ *          'FlexPropApp'
  * 
- * Note: Migrating handleChange, handleWrap and their
- * states to the context  
- * 
- * pending to build actions for them.
+ * Note: With this change will be easier to implement
+ * routing to seperate the apps into sections ( this
+ * changes is going to be in next versions)
  */
-function App() {
 
-  const { handleChange, direction, handleWrap, wrap } = useAppContext()
+
+function App() {
 
   return (
     <>
@@ -26,14 +24,8 @@ function App() {
       <div style={{ padding: '2rem'}}>
         <FlexBoxApp />
         <FlexBoxManipulationApp />
-        {/**here i drilled states and features*/}
-        <FlexPropApp 
-              wrap={ wrap } 
-              direction={direction} 
-              handleChange={handleChange} 
-              handleWrap={handleWrap}/>
-
-        {console.log('the value app js ==>', direction.selection)}
+        <FlexPropApp />
+        <FlexFlow />
       </div>
     </>
   );
