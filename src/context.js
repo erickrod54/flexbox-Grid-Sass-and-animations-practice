@@ -2,26 +2,23 @@ import React, { useContext, useReducer, useState } from "react";
 import { TOGGLE_FLEX, TOGGLE_FLEX_MANIPULATION_APP } from './actions'
 import reducer from "./reducer";
 
-import { flowData, flexPropData, flexWrapData } from "./data";
+import { flowData, flexPropData, flexWrapData, appsLinksData } from "./data";
 
-/**Flexbox-grid-sass-and-animations app version 11 -
+/**Flexbox-grid-sass-and-animations app version 12 -
  * context js file - Features:
  * 
- *      --> Building 'flexflow' state and 
- *          'handleFlow' feature to handle
- *          changes by the user 'selection'.
- * 
- *      --> Importing 'flowData', 'flexPropData', 
- *          'flexWrapData' from the data file 
- * 
- *      --> Providing them throught the 
- *          provider    
+ *      --> Importing 'appsLinksData' and 
+ *          providing it throught the 
+ *          provider.    
  * 
  * Note: Now these features and states live in
  * the context and are going to be provided from
  * here to the components that need it
  * 
  * pending to build actions for them
+ * 
+ * 'appsLinksData' is going to be use to 
+ * build 'AppElement' Component.
  */
 
 /**here i build the initialState */
@@ -123,7 +120,8 @@ const handleFlow = (e) => {
                 handleFlow,
                 flowData,
                 flexPropData,
-                flexWrapData
+                flexWrapData,
+                appsLinksData
             }}
             >{children}
         </AppContext.Provider>
