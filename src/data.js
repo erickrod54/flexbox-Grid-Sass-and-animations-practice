@@ -1,17 +1,19 @@
-/**Flexbox-grid-sass-and-animations app version 11 -
+/**Flexbox-grid-sass-and-animations app version 12 -
  * data js - Features:
  * 
- *      --> Building 'flowData' to manage the FlexFlow app data
- *          and displaying it in the 'content' component.
+ *      --> Building 'appsLinksData' data 
+ *          to feed the 'AppList' 
+ *          Component.
  * 
- *      --> Building 'flexPropData' to manage the FlexProp app data
- *          and displaying it in the 'content' component.
- * 
- *      --> Building 'flexWrapData' to manage the FlexWrap app data
- *          and displaying it in the 'content' component.
+ *      --> Modifying 'appsLinksData' > 'url'
+ *          to add '/apps' 
  * 
  * Note: So far by this version i build the data for this three last
  * apps.
+ * 
+ * so this way the apps will able to work with the common layout
+ * doing by the data i have cover some more places in the whole
+ * application
  */
 
 export const sectiondata = [
@@ -98,6 +100,42 @@ export const flexWrapData = [
     {
         id:'wrap-reverse',
         text:'when flex-wrap is \'wrap\' -this is the third  flex-wrap property- i can notice how responsiveness is applied the reverse way to a wrap and the flex container height  will get increase as the children elements are wrapped  (height increase + children wrap) so this creates a responsive behavior and the difference can be notice when the children get reversed ( last element the first and first element the last )'
+    },
+]
+
+export const appsLinksData = [
+    {
+       id:1,
+      name:'home',
+      url:'/'  
+    },
+    {
+       id:2,
+       name:'flexbox app',
+       desc:'This app explain concepts about flex or not flex',
+       category:'container properties',
+       url:'apps/flexbox-app'
+    },
+    {
+       id:3,
+       name:'flexbox manipulation',
+       desc:'this app explain concepts about \'flex\', \'margin\' and \'border\' and their effects on the css',
+       category:'container properties',
+       url:'apps/flexbox-manipulation-app'
+    },
+    {
+       id:4,
+       name:'flex prop',
+       desc:'flex direction and flex wrap properties and how they make responsiveness when they are applied',
+       category:'container properties',
+       url:'apps/flexbox-prop-app'
+    },
+    {
+       id:5,
+       name:'flex flow',
+       desc:'Combining direction and wrap in a single line i can applied both making responsiness with less lines of code',
+       category:'container properties',
+       url:'apps/flexbox-flow-app'
     },
 ]
 
