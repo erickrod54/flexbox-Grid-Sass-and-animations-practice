@@ -2,23 +2,34 @@ import React, { useContext, useReducer, useState } from "react";
 import { TOGGLE_FLEX, TOGGLE_FLEX_MANIPULATION_APP } from './actions'
 import reducer from "./reducer";
 
-import { flowData, flexPropData, flexWrapData, appsLinksData } from "./data";
+import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData } from "./data";
 
-/**Flexbox-grid-sass-and-animations app version 12 -
+/**Flexbox-grid-sass-and-animations app version 13 -
  * context js file - Features:
  * 
- *      --> Importing 'appsLinksData' and 
- *          providing it throught the 
- *          provider.    
+ *      --> Building and providing 'justify' state 
+ *          value and 'handleJustify' feature.
  * 
- * Note: Now these features and states live in
- * the context and are going to be provided from
- * here to the components that need it
+ *      --> Importing and Providing 'JustifyData'.
  * 
- * pending to build actions for them
+ *      --> Building and providing 'align' state value 
+ *          and 'handleJustify' feature.
  * 
- * 'appsLinksData' is going to be use to 
- * build 'AppElement' Component.
+ *      --> Importing and Providing 'alignItemsData'.
+ * 
+ * Note: i build the state for 'padding' and 'setPadding' 
+ * this is for the user to select and visualize what 
+ * 'baseline' prop does
+ * 
+ * 'baseline' affetcs the align for one selected child 
+ * element ( by this version using pseudo elements )
+ * i select and apply baseline on it. 
+ * 
+ * reference: 
+ *  
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/align-content
+ * 
+ * keywords: 'baseline', 'first baseline', 'last baselin'
  */
 
 /**here i build the initialState */
@@ -63,6 +74,31 @@ const AppProvider = ({ children }) => {
     columnreversenowrap:"column-reverse nowrap",
   })
 
+  /**here i build the justify-content*/
+  const [ justify, setJustify ] = useState({
+    flexstart:'flex-start',
+    flexend:'flex-end',
+    center:'center',
+    spacebetween:'space-between',
+    spacearound:'space-around',
+    spaceevenly:'space-evenly'
+  })
+
+  /**here i build the satte for align */
+  const [ align, setAlign ] = useState({
+    stretch:'stretch',
+    flexstart:'flex-start',
+    flexend:'flex-end',
+    center:'center',
+    baseline:'baseline'
+  })
+
+  /**here i build the state for 'padding' and 'setPadding' 
+   * this is for the user to select and visualize what 
+   * baseline prop does*/
+  const [ padding, setPadding ] = useState('20px')
+  const [ childpadding, setChildpadding ] = useState('20px')
+
     const handleChange = (e) => {
      const name = e.target.name;
      const value = e.target.value;
@@ -96,6 +132,46 @@ const handleFlow = (e) => {
     setFlow({...flow, [name]:value })
 }
 
+/**here i build the handler for justify */
+const handleJustify = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    console.log('justify => name selected ==>', name, 'value selected ==>', value)
+
+    setJustify({ ...justify, [name]:value })
+}
+
+/**here i build the handler for align */
+const handleAlign = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    console.log('align => name selected ==>', name, 'value selected ==>', value)
+
+    setAlign({ ...align, [name]:value })
+}
+
+/**here i build the handler for 'padding' */
+const handlePadding = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    console.log('container padding => name selected ==>', name, 'value selected ==>', value)
+
+    setPadding({ ...padding, [name]:value})
+}
+
+/**here i buil the handler for 'childpadding' */
+const handleChildpadding = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    console.log('child padding padding => name selected ==>', name, 'value selected ==>', value)
+
+    setChildpadding({ ...childpadding, [name]:value})
+}
+
    const toggleFlex = () => {
     dispatch({ type: TOGGLE_FLEX, payload: state.flex})
    }
@@ -105,7 +181,10 @@ const handleFlow = (e) => {
    }
 
 
-    /**i spread/copy the 'state' to test the context */
+    /**i spread/copy the 'state' to test the context
+     * by this version i reorder the props state values
+     * and the handlers
+     */
     return(
         <AppContext.Provider 
             value={{
@@ -113,15 +192,25 @@ const handleFlow = (e) => {
                 toggleFlex,
                 toggleFlexManApp,
                 handleChange,
-                direction,
+                handleJustify,
+                handleAlign,
+                handlePadding,
+                handleChildpadding,
                 handleWrap,
+                handleFlow,
+                direction,
                 wrap,
                 flow, 
-                handleFlow,
+                justify,
+                align,
+                padding,
+                childpadding,
                 flowData,
                 flexPropData,
                 flexWrapData,
-                appsLinksData
+                appsLinksData,
+                JustifyFlexData,
+                alignItemsData
             }}
             >{children}
         </AppContext.Provider>
