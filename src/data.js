@@ -1,15 +1,15 @@
-/**Flexbox-grid-sass-and-animations app version 12 -
+/**Flexbox-grid-sass-and-animations app version 13 -
  * data js - Features:
  * 
- *      --> Building 'appsLinksData' data 
- *          to feed the 'AppList' 
- *          Component.
+ *      --> Building 'JustifyContentApp' and adding 
+ *          'JustifyContentApp' to 'appsLinksData'.
+ *  
+ *      --> Building 'alignTtemsApp ' adding 
+ *          'alignItemsData' to 'appsLinksData'.
  * 
- *      --> Modifying 'appsLinksData' > 'url'
- *          to add '/apps' 
  * 
- * Note: So far by this version i build the data for this three last
- * apps.
+ * Note: So far by this version i build the data for this three 
+ * last apps.
  * 
  * so this way the apps will able to work with the common layout
  * doing by the data i have cover some more places in the whole
@@ -103,6 +103,57 @@ export const flexWrapData = [
     },
 ]
 
+export const JustifyFlexData = [
+    {
+        id:'flex-start',
+        text:'justify the content move collectivelly ( this prop will depend on the main axis - flex-direction prop, and the responsiveness on wrap or flow props ), the flex-start does the container items to move to the start of the main axis to the top left of the screen'
+    },
+    {
+        id:'flex-end',
+        text:'justify the content move collectivelly ( this prop will depend on the main axis - flex-direction prop, and the responsiveness on wrap or flow props ), the flex-end does the container items to move to the end of the main axis to the top right of the screen'
+    },
+    {
+        id:'center',
+        text:'justify the content move collectivelly ( this prop will depend on the main axis - flex-direction prop, and the responsiveness on wrap or flow props ), the \'center\' does the container items to move to the center of the main axis to the center of the screen'
+    },
+    {
+        id:'space-between',
+        text:'justify the content move collectivelly ( this prop will depend on the main axis - flex-direction prop, and the responsiveness on wrap or flow props ), the \'space-between\' does create a space among the container elements on the main axis, this spaces are going to be the same ( when the responsiveness plays, this props maintain this space created to make responsive always the items )'
+    },
+    {
+        id:'space-around',
+        text:'justify the content move collectivelly ( this prop will depend on the main axis - flex-direction prop, and the responsiveness on wrap or flow props ), the \'space-around\' does create a space among the container elements on the main axis, this spaces are going to be the same for the items in between, but for the items in edge like \'first child\' and \'last child\' will be different to the items in between( when the responsiveness plays, this props maintain this space created to make responsive always the items )'
+    },
+    {
+        id:'space-evenly',
+        text:'justify the content move collectivelly ( this prop will depend on the main axis - flex-direction prop, and the responsiveness on wrap or flow props ), the \'space-evenly\' does create a the same space among the container elements on the main axis, the space from the edge replicates on the elements in between, but is more space than \'space-between\' prop'
+    },
+]
+
+export const alignItemsData = [
+    {
+        id:'stretch',
+        text:'align-items prop move collectivelly ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'stretch\' does the container elements heigth stretch to the maximun height of the container for this example the container has \'30rem\' height, is better to use relative units cause is a heigth and margin predefined, so if is fixed in \'px\' units can occur style issues'
+    },
+    {
+        id:'flex-start',
+        text:'align-items prop move collectivelly ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'flex-start\' does move the items to the top of the container'
+    },
+    {
+        id:'flex-end',
+        text:'align-items prop move collectivelly ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'flex-end\' does move the items to the bottom of the container'
+    },
+    {
+        id:'center',
+        text:'align-items prop move collectivelly ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'center\' does move the items to the center of the container'
+    },
+    {
+        id:'baseline',
+        text:'align-items prop move collectivelly ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'baseline\' to visualize how this prop work i have to applied to one of the children and apply a \'padding\' (can be top or bottom or both depending if the case -to applied the padding on the child you can use pseudo class selector \'check the wrapper code\'-) and what it does is adjust the child container to the text or element contained'
+    },
+]
+
+
 export const appsLinksData = [
     {
        id:1,
@@ -137,6 +188,27 @@ export const appsLinksData = [
        category:'container properties',
        url:'apps/flexbox-flow-app'
     },
+    {
+        id:6,
+        name:'flex justify content',
+        desc:'justify the content move collectivelly ( this prop will depend on the main axis )',
+        category:'container properties',
+        url:'apps/flex-justify-content-app'
+     },
+     {
+        id:7,
+        name:'flex align items',
+        desc:'align-items prop move collectivelly, almost as justify does in the main axis, but this prop will depend exclusively on the cross axis ',
+        category:'container properties',
+        url:'apps/flex-align-items-app'
+     },
+     {
+        id:8,
+        name:'flex align content',
+        desc:'work in progress',
+        category:'container properties',
+        url:'apps/flex-align-content-app'
+     },
 ]
 
 
