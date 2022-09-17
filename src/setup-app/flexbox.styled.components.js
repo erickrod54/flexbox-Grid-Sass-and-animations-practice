@@ -1,36 +1,27 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 7 -
+/**Flexbox-grid-sass-and-animations app version 13 -
  * flexbox.styled.components - Features:
  * 
- *      -->Adding 'flex-wrap:wrap' to make 'FlexBoxWrapper'
- *         responsive.
+ *      --> Extending 'FlexBoxWrapper' to 
+ *         'JustifyFlexWrapper' and writing 
+ *          the 'justify-content' prop
  * 
- *      -->Adding 'flex-wrap:wrap' to make 'SectionListWrapper'
- *         responsive.
+ *      --> Adding '.justify-app' to the Wrapper
+ *          this is part of 'ComplexTitle'
  * 
- *      -->Applying general styles for apps 'titles'
- *         'Wrapper' (TitleWrapper).
+ *      --> Extending 'FlexBoxWrapper' to 
+ *         'AlignItemsAppWrapper' and writing 
+ *          the 'align-items' prop
  * 
- *      -->Applying specific styles for apps 'titles'
- *         'Wrapper' (TitleWrapper).
+ *      --> Adding 'align-items-app' to the Wrapper
+ *          this is part of 'ComplexTitle'
  * 
- *      -->Extending 'FlexBoxWrapper' Style Component to 
- *         create a 'FlexPropAppWrapper' Style Component.
+ * Note:  As the previous apps i use the helper function:
  * 
- *     -->Applying 'flex-direction' (container prop - this 
- *        case 'ul' element) on 'FlexPropAppWrapper'.
+ *  flex-flow: ${({flow}) => flow.selection };
  * 
- *     -->Extending 'FlexBoxWrapper' Style Component to 
- *         create a 'FlexPropWrapStyle' Style Component.
- * 
- * 
- * Note: what 'wrap' does is when it doesn't have enought space 
- * start to wrap children element so makes them adapt to different
- * screens 
- * 
- * i applied js helper function and drilled states throught
- * the Style Components to set dynamicly styles. 
+ * to write dinamiclly the prop by 'flow.selection'
  */
 
 export const FlexBoxWrapper = styled.div`
@@ -105,6 +96,11 @@ export const FlexPropWrapStyle = styled(FlexBoxWrapper)`
 
 
 `
+export const FlexboxFlowWrapper = styled(FlexBoxWrapper)`
+    ul{
+        flex-flow: ${({flow}) => flow.selection };
+    }
+`
 
 export const InlineFlexWrapper = styled(FlexBoxWrapper)`
 
@@ -133,15 +129,32 @@ export const Wrapper = styled.div`
         color: magenta;
     }
 
+    .justify-app{
+        color: mediumspringgreen;
+    }
+
+    .align-items-app{
+        color: blueviolet;
+
+        p{
+            color: black;
+            text-transform: none;
+            font-size: .75rem;
+        }
+    }
+
     /**here i apply general styles for apps 'titles' */
     .flexbox-span,
     .flexbox-span-manipulation,
-    .flexbox-properties{
+    .flexbox-properties,
+    .justify-app,
+    .align-items-app{
         text-transform: capitalize;
         text-align: start;
         font-size: 2rem;
         text-decoration: underline;
     }
+    
 `
 
 export const SectionWrapper = styled.div`
@@ -167,4 +180,31 @@ export const SectionListWrapper = styled.div`
  /**flex-wrap: wrap add responsiveness to the children element
  ** so they will look good in small screens */
  flex-wrap: wrap;
+`
+
+export const JustifyContentAppWrapper = styled(FlexBoxWrapper)`
+    ul{
+        justify-content: ${({ justify }) => justify.selection };
+    }
+`
+
+export const AlignItemsAppWrapper = styled(FlexBoxWrapper)`
+   
+    ul{
+        display: flex;
+        justify-content: flex-start;
+        height: 32rem;
+        align-items: ${({ align }) => align.selection};
+
+    }
+
+    li{
+        margin: 20px;
+        padding-top: ${({ padding }) => padding.selection};
+        padding-bottom: ${({ padding }) => padding.selection};
+    }
+
+    li:first-child{
+        padding: ${({childpadding}) => childpadding.selection};
+    }
 `
