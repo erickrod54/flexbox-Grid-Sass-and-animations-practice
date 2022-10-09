@@ -1,11 +1,8 @@
-/**Flexbox-grid-sass-and-animations app version 13 -
+/**Flexbox-grid-sass-and-animations app version 14 -
  * data js - Features:
  * 
- *      --> Building 'JustifyContentApp' and adding 
- *          'JustifyContentApp' to 'appsLinksData'.
- *  
- *      --> Building 'alignTtemsApp ' adding 
- *          'alignItemsData' to 'appsLinksData'.
+ *      --> Building 'alignContentData ' and adding 
+ *          'FlexAlignContentApp' to 'appsLinksData'.
  * 
  * 
  * Note: So far by this version i build the data for this three 
@@ -150,6 +147,38 @@ export const alignItemsData = [
     {
         id:'baseline',
         text:'align-items prop move collectivelly ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'baseline\' to visualize how this prop work i have to applied to one of the children and apply a \'padding\' (can be top or bottom or both depending if the case -to applied the padding on the child you can use pseudo class selector \'check the wrapper code\'-) and what it does is adjust the child container to the text or element contained'
+    },
+]
+
+export const alignContentData = [
+    /**comments for the component */
+    {
+        id:'stretch (default property)',
+        text:'align-items prop move collectivelly, the difference with align items is that the behavior of items inside of a container is as a group ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'stretch\' does the container elements heigth stretch to the maximun height of the container for this example the container has \'600px\' height, is better to use relative units cause is a heigth and margin predefined, so if is fixed in \'px\' units can occur style issues'
+    },
+    {
+        id:'flex-start',
+        text:'align-items prop move collectivelly, the difference with align items is that the behavior of items inside of a container is as a group ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'flex-start\' does move the items to the top of the container'
+    },
+    {
+        id:'flex-end',
+        text:'align-items prop move collectivelly, the difference with align items is that the behavior of items inside of a container is as a group ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'flex-end\' does move the items to the bottom of the container'
+    },
+    {
+        id:'center',
+        text:'align-items prop move collectivelly, the difference with align items is that the behavior of items inside of a container is as a group ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'center\' does move the items to the center of the container'
+    },
+    {
+        id:'space-between ( same behavior as justify content prop )',
+        text:'align-items prop move collectivelly, the difference with align items is that the behavior of items inside of a container is as a group ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'center\' does move the items to the center of the container'
+    },
+    {
+        id:'space-around ( same behavior as justify content prop )',
+        text:'align-items prop move collectivelly, the difference with align items is that the behavior of items inside of a container is as a group ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'baseline\' to visualize how this prop work i have to applied to one of the children and apply a \'padding\' (can be top or bottom or both depending if the case -to applied the padding on the child you can use pseudo class selector \'check the wrapper code\'-) and what it does is adjust the child container to the text or element contained'
+    },
+    {
+        id:'space-evenly ( same behavior as justify content prop )',
+        text:'align-items prop move collectivelly, the difference with align items is that the behavior of items inside of a container is as a group ( almost as justify does in the main axis, but this prop will depend exclusively on the cross axis -vertical- flex-direction prop, heigth and container elements margin\'s and the responsiveness on wrap or flow props ), align items \'baseline\' to visualize how this prop work i have to applied to one of the children and apply a \'padding\' (can be top or bottom or both depending if the case -to applied the padding on the child you can use pseudo class selector \'check the wrapper code\'-) and what it does is adjust the child container to the text or element contained'
     },
 ]
 
