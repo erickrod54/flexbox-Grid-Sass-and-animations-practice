@@ -1,21 +1,15 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 13 -
+/**Flexbox-grid-sass-and-animations app version 14 -
  * flexbox.styled.components - Features:
  * 
  *      --> Extending 'FlexBoxWrapper' to 
- *         'JustifyFlexWrapper' and writing 
- *          the 'justify-content' prop
+ *         'AlignContentAppWrapper' and writing 
+ *          the 'aligncontent' prop
  * 
- *      --> Adding '.justify-app' to the Wrapper
- *          this is part of 'ComplexTitle'
+ *      --> Adding '.flex-align-content-app' to 
+ *          the Wrapper this is part of 'ComplexTitle'
  * 
- *      --> Extending 'FlexBoxWrapper' to 
- *         'AlignItemsAppWrapper' and writing 
- *          the 'align-items' prop
- * 
- *      --> Adding 'align-items-app' to the Wrapper
- *          this is part of 'ComplexTitle'
  * 
  * Note:  As the previous apps i use the helper function:
  * 
@@ -143,12 +137,17 @@ export const Wrapper = styled.div`
         }
     }
 
+    .flex-align-content-app{
+        color: darkgoldenrod;
+    }
+
     /**here i apply general styles for apps 'titles' */
     .flexbox-span,
     .flexbox-span-manipulation,
     .flexbox-properties,
     .justify-app,
-    .align-items-app{
+    .align-items-app,
+    .flex-align-content-app{
         text-transform: capitalize;
         text-align: start;
         font-size: 2rem;
@@ -206,5 +205,13 @@ export const AlignItemsAppWrapper = styled(FlexBoxWrapper)`
 
     li:first-child{
         padding: ${({childpadding}) => childpadding.selection};
+    }
+`
+
+export const AlignContentAppWrapper = styled(FlexBoxWrapper)`
+    ul{
+        display: flex;
+        height: 600px;
+        align-content: ${({ aligncontent }) => aligncontent.selection };
     }
 `
