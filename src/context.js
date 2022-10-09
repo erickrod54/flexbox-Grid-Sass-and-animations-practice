@@ -2,34 +2,17 @@ import React, { useContext, useReducer, useState } from "react";
 import { TOGGLE_FLEX, TOGGLE_FLEX_MANIPULATION_APP } from './actions'
 import reducer from "./reducer";
 
-import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData } from "./data";
+import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData } from "./data";
 
-/**Flexbox-grid-sass-and-animations app version 13 -
+/**Flexbox-grid-sass-and-animations app version 14 -
  * context js file - Features:
  * 
- *      --> Building and providing 'justify' state 
- *          value and 'handleJustify' feature.
+ *      --> Building and providing 'aligncontent' state 
+ *          value and 'handleAlignContent' feature.
  * 
- *      --> Importing and Providing 'JustifyData'.
+ *      --> Importing and Providing 'alignContentData'.
  * 
- *      --> Building and providing 'align' state value 
- *          and 'handleJustify' feature.
- * 
- *      --> Importing and Providing 'alignItemsData'.
- * 
- * Note: i build the state for 'padding' and 'setPadding' 
- * this is for the user to select and visualize what 
- * 'baseline' prop does
- * 
- * 'baseline' affetcs the align for one selected child 
- * element ( by this version using pseudo elements )
- * i select and apply baseline on it. 
- * 
- * reference: 
- *  
- * https://developer.mozilla.org/en-US/docs/Web/CSS/align-content
- * 
- * keywords: 'baseline', 'first baseline', 'last baselin'
+ * Note: This features added due to the last app
  */
 
 /**here i build the initialState */
@@ -91,6 +74,17 @@ const AppProvider = ({ children }) => {
     flexend:'flex-end',
     center:'center',
     baseline:'baseline'
+  })
+
+  /**here i build the 'aligncontent' state*/
+  const [ aligncontent, setAligncontent ] = useState({
+    stretch:'stretch',
+    flexstart:'flex-start',
+    flexend:'flex-end',
+    center:'center',
+    spacebetween:'space-between',
+    spacearound:'space-around',
+    spaceevenly: 'space-evenly'
   })
 
   /**here i build the state for 'padding' and 'setPadding' 
@@ -172,6 +166,15 @@ const handleChildpadding = (e) => {
     setChildpadding({ ...childpadding, [name]:value})
 }
 
+const handleAlignContent = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    console.log('align content => name selected ==>', name, 'value selected ==>', value)
+
+    setAligncontent({...aligncontent, [name]:value })
+}
+
    const toggleFlex = () => {
     dispatch({ type: TOGGLE_FLEX, payload: state.flex})
    }
@@ -198,6 +201,7 @@ const handleChildpadding = (e) => {
                 handleChildpadding,
                 handleWrap,
                 handleFlow,
+                handleAlignContent,
                 direction,
                 wrap,
                 flow, 
@@ -205,12 +209,14 @@ const handleChildpadding = (e) => {
                 align,
                 padding,
                 childpadding,
+                aligncontent,
                 flowData,
                 flexPropData,
                 flexWrapData,
                 appsLinksData,
                 JustifyFlexData,
-                alignItemsData
+                alignItemsData,
+                alignContentData
             }}
             >{children}
         </AppContext.Provider>
