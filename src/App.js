@@ -9,21 +9,17 @@ import {
          AppPage,
          JustifyContentApp,
          FlexAlignItemsApp ,
-         FlexAlignContentApp
+         FlexAlignContentApp,
+         OrderPropertyApp
         } from './setup-app/flexbox-apps-list/index-apps.list'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-/**Flexbox-grid-sass-and-animations app version 13 -
+
+/**Flexbox-grid-sass-and-animations app version 15 -
  * App js file - Features:
  *
- *      --> Importing 'JustifyContentApp' Component 
- *          and building the route for it.
- * 
- *      --> Importing 'AlignItemsApp' Component 
- *          and building the route for it.
- * 
- *      --> Importing 'AlignContentApp' Component 
+ *      --> Importing 'OrderPropertyApp' Component 
  *          and building the route for it.
  * 
  * Note: This routing will help to get into every
@@ -50,6 +46,7 @@ function App() {
         <Route path='/apps/flex-justify-content-app' element={<JustifyContentApp />}/>
         <Route path='/apps/flex-align-items-app' element={<FlexAlignItemsApp />}/>
         <Route path='/apps/flex-align-content-app' element={<FlexAlignContentApp />}/>  
+        <Route path='/apps/order-property-app' element={<OrderPropertyApp />}/>
         </Route>
       </Routes>
     </Router>
