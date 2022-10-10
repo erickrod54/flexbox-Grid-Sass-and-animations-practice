@@ -1,15 +1,14 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 14 -
+/**Flexbox-grid-sass-and-animations app version 15 -
  * flexbox.styled.components - Features:
  * 
+ *      --> Writting on'AlignContentAppWrapper'  
+ *          the 'direction' prop dinamiclly.
+ * 
  *      --> Extending 'FlexBoxWrapper' to 
- *         'AlignContentAppWrapper' and writing 
- *          the 'aligncontent' prop
- * 
- *      --> Adding '.flex-align-content-app' to 
- *          the Wrapper this is part of 'ComplexTitle'
- * 
+ *         'PerfectCenterWrapper' and writing 
+ *          the perfect center style.
  * 
  * Note:  As the previous apps i use the helper function:
  * 
@@ -209,9 +208,41 @@ export const AlignItemsAppWrapper = styled(FlexBoxWrapper)`
 `
 
 export const AlignContentAppWrapper = styled(FlexBoxWrapper)`
+
+    .first-prop{
+       color: darkorange;
+    }
+
+    .second-prop{
+        color: indigo;
+    }
+
+    
     ul{
         display: flex;
         height: 600px;
         align-content: ${({ aligncontent }) => aligncontent.selection };
+        flex-direction: ${({ direction }) => direction.selection};
     }
-`
+    `
+   
+   export const PerfectCenterWrapper = styled(FlexBoxWrapper)`
+   
+   /**these are the props to make a perfect center */
+   /**'justify-content: center;' and 'align-items: center;' */
+
+   ul{
+       display: flex;
+       /**to apreciate how 'perfect center' looks like, a good 'height'
+       * is adviceable*/
+
+       height: 600px;
+       justify-content: center;
+       align-items: center;
+    }
+
+   `
+   
+   
+   
+   
