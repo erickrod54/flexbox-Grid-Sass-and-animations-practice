@@ -2,19 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
-/**Flexbox-grid-sass-and-animations app version 13 -
+/**Flexbox-grid-sass-and-animations app version 15 -
  * 'AppElement' Component - Features:
  * 
- *      --> Destructuring the props that were
- *          spreaded from HomePage Component
- *          to this component 'id', 'name', 'desc',
- *          'category', and 'url'.
- * 
- *      --> Importing and setting it as a link
- *          to access to every app separetely.
- * 
- *      --> Building 'AppSectioWrapper' to style
- *          the content of every link.        
+ *      --> Modifying '.app-box' to perfect center
+ *          the content.        
  * 
  * Note: By spreading 'appsLinksData' i can handle 
  * better the props to develop 'AppElement' 
@@ -32,7 +24,7 @@ const AppElement = ({id, name, desc, category, url}) => {
             <p><span className="span"> description: </span> {desc}</p>
             <p className="info">
                 <span className="category">category </span>
-                <span className="container-properties">{category}</span>
+                <span className={category === 'container properties' ? "container-properties" : 'item-properties'}>{category}</span>
             </p>
             </div>
         </div>
@@ -51,7 +43,9 @@ const AppSectioWrapper = styled.section`
     
     .app-box{
         width: 20rem;
-        height: 15rem;
+        height: 20rem;
+        justify-content: center;
+        align-items: center;
         background-color: lightslategray;
         padding: 2.5rem;
         margin: 0.25rem;
@@ -80,6 +74,12 @@ const AppSectioWrapper = styled.section`
 
             .container-properties{
                 background-color: lightsalmon;
+                padding: 0.25rem;
+                border-radius: 0.50rem;
+            }
+
+            .item-properties{
+                background-color: darkmagenta;
                 padding: 0.25rem;
                 border-radius: 0.50rem;
             }
