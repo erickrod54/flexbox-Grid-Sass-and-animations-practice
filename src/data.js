@@ -1,12 +1,7 @@
 /**Flexbox-grid-sass-and-animations app version 15 -
  * data js - Features:
  * 
- *      --> Updating to finish 'FlexAlignContentApp' to 
- *         'appsLinksData'.
- * 
- *      --> Adding 'Order Property' (this is the first
- *          items property)
- * 
+ *      --> Building 'orderPropertyData'
  * 
  * Note: 'Order Property' (this is the first items property)
  * is properties applied directly to items inside of 
@@ -183,6 +178,33 @@ export const alignContentData = [
     },
 ]
 
+export const orderPropertyData = [
+    {
+        id:1,
+        text:'You changed child',
+        text2:'to the position'
+    },
+    {
+        id:2,
+        text:'You changed child',
+        text2:'to the position'
+    },
+    {
+        id:3,
+        text:'You changed child',
+        text2:'to the position'
+    },
+    {
+        id:4,
+        text:'You changed child',
+        text2:'to the position'
+    },
+    {
+        id:5,
+        text:'You changed child',
+        text2:'to the position'
+    },
+]
 
 export const appsLinksData = [
     {
