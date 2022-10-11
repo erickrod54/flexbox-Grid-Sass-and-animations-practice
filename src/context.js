@@ -2,15 +2,15 @@ import React, { useContext, useReducer, useState } from "react";
 import { TOGGLE_FLEX, TOGGLE_FLEX_MANIPULATION_APP } from './actions'
 import reducer from "./reducer";
 
-import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData } from "./data";
+import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData, orderPropertyData } from "./data";
 
-/**Flexbox-grid-sass-and-animations app version 14 -
+/**Flexbox-grid-sass-and-animations app version 16 -
  * context js file - Features:
  * 
- *      --> Building and providing 'aligncontent' state 
- *          value and 'handleAlignContent' feature.
+ *      --> Building and providing 'order' state 
+ *          value and 'handleItemOrder' feature.
  * 
- *      --> Importing and Providing 'alignContentData'.
+ *      --> Importing and Providing 'orderPropertyData'.
  * 
  * Note: This features added due to the last app
  */
@@ -85,6 +85,12 @@ const AppProvider = ({ children }) => {
     spacebetween:'space-between',
     spacearound:'space-around',
     spaceevenly: 'space-evenly'
+  })
+
+  /**here i build the state for orderProperty */
+  const [ order, setOrder ] = useState({
+    itemNumber:0,
+    orderNumber:0
   })
 
   /**here i build the state for 'padding' and 'setPadding' 
@@ -175,6 +181,16 @@ const handleAlignContent = (e) => {
     setAligncontent({...aligncontent, [name]:value })
 }
 
+const handleItemOrder = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+  
+    /**here i test the selection using the event object*/
+    console.log('order => name selected ==>', name, ', value in it ==>', value)
+  
+    setOrder({...order, [name]:value })
+  }
+
    const toggleFlex = () => {
     dispatch({ type: TOGGLE_FLEX, payload: state.flex})
    }
@@ -202,6 +218,7 @@ const handleAlignContent = (e) => {
                 handleWrap,
                 handleFlow,
                 handleAlignContent,
+                handleItemOrder,
                 direction,
                 wrap,
                 flow, 
@@ -210,13 +227,15 @@ const handleAlignContent = (e) => {
                 padding,
                 childpadding,
                 aligncontent,
+                order,
                 flowData,
                 flexPropData,
                 flexWrapData,
                 appsLinksData,
                 JustifyFlexData,
                 alignItemsData,
-                alignContentData
+                alignContentData,
+                orderPropertyData
             }}
             >{children}
         </AppContext.Provider>
