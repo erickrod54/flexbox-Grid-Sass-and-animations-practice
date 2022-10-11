@@ -1,14 +1,16 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 15 -
+/**Flexbox-grid-sass-and-animations app version 16 -
  * flexbox.styled.components - Features:
  * 
- *      --> Writting on'AlignContentAppWrapper'  
- *          the 'direction' prop dinamiclly.
+ *       --> Extending 'FlexBoxWrapper' to 
+ *         'OrderPropertyWrapper' and writing 
+ *          new styles for the container.
  * 
- *      --> Extending 'FlexBoxWrapper' to 
- *         'PerfectCenterWrapper' and writing 
- *          the perfect center style.
+ *       --> Adding 'order-property-app' to the Wrapper
+ *          this is part of 'ComplexTitle'.
+ * 
+ *       --> Testing 'order' property hardcoded.
  * 
  * Note:  As the previous apps i use the helper function:
  * 
@@ -140,13 +142,18 @@ export const Wrapper = styled.div`
         color: darkgoldenrod;
     }
 
+    .order-property-app{
+        color: tomato;
+    }
+
     /**here i apply general styles for apps 'titles' */
     .flexbox-span,
     .flexbox-span-manipulation,
     .flexbox-properties,
     .justify-app,
     .align-items-app,
-    .flex-align-content-app{
+    .flex-align-content-app,
+    .order-property-app{
         text-transform: capitalize;
         text-align: start;
         font-size: 2rem;
@@ -243,6 +250,26 @@ export const AlignContentAppWrapper = styled(FlexBoxWrapper)`
 
    `
    
-   
+   export const OrderPropertyWrapper = styled(FlexBoxWrapper)`
+       ul{
+        background-color: lightslategray;
+        padding: 20px;
+        height: 300px;
+        display: flex;
+        align-items: flex-start;
+       }   
+
+       li{
+        list-style: none;
+        color: white;
+        background-color: #20b2aa;
+        margin:10px;
+        padding:10px
+       }
+       
+       li:nth-child(3){
+        order:-1
+       }
+   `
    
    
