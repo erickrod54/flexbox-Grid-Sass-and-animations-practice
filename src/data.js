@@ -1,7 +1,11 @@
-/**Flexbox-grid-sass-and-animations app version 17 -
+/**Flexbox-grid-sass-and-animations app version 18 -
  * data js - Features:
  * 
- *      --> Modifiying 'orderPropertyData'
+ *      --> Building 'flexGrowPropertyData'
+ * 
+ *      --> Adding 'FlexGrowPropertyApp' to 
+ *         'appsLinksData'.
+ * 
  * 
  * Note: 'Order Property' (this is the first items property)
  * is properties applied directly to items inside of 
@@ -196,6 +200,25 @@ export const orderPropertyData = [
     }
 ]
 
+export const flexGrowPropertyData = [
+    {
+        id:1,
+        text:'You changed child',
+    },
+    {
+        id:2,
+        text:'You changed child',
+    },
+    {
+        id:3,
+        text:'You changed child',
+    },
+    {
+        id:4,
+        text:'You changed child',
+    },
+]
+
 export const appsLinksData = [
     {
        id:1,
@@ -254,9 +277,16 @@ export const appsLinksData = [
      {
         id:9,
         name:'order property',
-        desc:'work in progress',
+        desc:'order property use css pseudo-elements to target a container item and give styles to it',
         category:'items properties',
         url:'apps/order-property-app'
+     },
+     {
+        id:10,
+        name:'flex grow property',
+        desc:'work in progress',
+        category:'items properties',
+        url:'apps/flex-grow-property-app'
      },
 ]
 
