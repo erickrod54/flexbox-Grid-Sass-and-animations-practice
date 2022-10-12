@@ -4,13 +4,15 @@ import reducer from "./reducer";
 
 import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData, orderPropertyData } from "./data";
 
-/**Flexbox-grid-sass-and-animations app version 16 -
+/**Flexbox-grid-sass-and-animations app version 17 -
  * context js file - Features:
  * 
- *      --> Building and providing 'order' state 
- *          value and 'handleItemOrder' feature.
+ *      --> Building and providing 'item' state 
+ *          value and 'handleItemOrder' as his handler
+ *          providing it.
  * 
- *      --> Importing and Providing 'orderPropertyData'.
+ *      --> Building 'handleOrder' to work with 'order'
+ *          state and providing it.
  * 
  * Note: This features added due to the last app
  */
@@ -88,10 +90,8 @@ const AppProvider = ({ children }) => {
   })
 
   /**here i build the state for orderProperty */
-  const [ order, setOrder ] = useState({
-    itemNumber:0,
-    orderNumber:0
-  })
+  const [ order, setOrder ] = useState(0)
+  const [ item, setItem ] = useState(0)
 
   /**here i build the state for 'padding' and 'setPadding' 
    * this is for the user to select and visualize what 
@@ -181,6 +181,18 @@ const handleAlignContent = (e) => {
     setAligncontent({...aligncontent, [name]:value })
 }
 
+/**functionality for 'handlerder' */
+const handleOrder = (e) => {
+  const name = e.target.name;
+  const value = e.target.value;
+
+  /**here i test the selection using the event object*/
+  console.log('order => name selected ==>', name, ', value in it ==>', value)
+
+  setOrder({...order, [name]:value })
+}
+
+/**functionality for handleItemOrder */
 const handleItemOrder = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -188,7 +200,7 @@ const handleItemOrder = (e) => {
     /**here i test the selection using the event object*/
     console.log('order => name selected ==>', name, ', value in it ==>', value)
   
-    setOrder({...order, [name]:value })
+    setItem({...item, [name]:value })
   }
 
    const toggleFlex = () => {
@@ -219,6 +231,7 @@ const handleItemOrder = (e) => {
                 handleFlow,
                 handleAlignContent,
                 handleItemOrder,
+                handleOrder,
                 direction,
                 wrap,
                 flow, 
@@ -228,6 +241,7 @@ const handleItemOrder = (e) => {
                 childpadding,
                 aligncontent,
                 order,
+                item,
                 flowData,
                 flexPropData,
                 flexWrapData,
