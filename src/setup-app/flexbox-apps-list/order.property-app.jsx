@@ -1,24 +1,28 @@
 import React from "react";
 import ComplexTitle from "../../components/complex-title";
 import FlexProp from "../../components/flex-prop.component";
+import OrderPropertyContent from "../../components/order.property.content";
 import { useAppContext } from "../../context";
 import { OrderPropertyWrapper } from "../flexbox.styled.components";
 
-/**Flexbox-grid-sass-and-animations app version 16 -
+
+/**Flexbox-grid-sass-and-animations app version 17 -
  * OrderPropertyApp - Features:
  *
  *      --> Building 'OrderPropertyApp'.
  * 
- *      --> Testing values from context.
+ *      --> Destructuring prop values from context.
  * 
- * Note: Next versions will be implemented value dynamiclly
+ * Note: By this version basic functionality is set.
  */
 
 const OrderPropertyApp = () => {
 
-   const { order, handleItemOrder } = useAppContext()
+   const { order, item, handleItemOrder, handleOrder } = useAppContext()
 
-   console.log('testing values from context ==>', order)
+   //console.log('testing values from context ==>', order)
+   //console.log('the order seleceted ==>',order.selection)
+   //console.log('the #item selected ==>', item.selection)
 
     return(
         <>
@@ -34,23 +38,21 @@ const OrderPropertyApp = () => {
         <select 
                 name="selection" 
                 id="selection" 
-                value={order.orderNumber} 
-                onChange={handleItemOrder}>
+                value={order} 
+                onChange={handleOrder}>
                     {/**the first option with empty value is to 
                      * avoid 'row' as default option - is a select 
                      * tag behavior*/}
-                    <option value="">Select a order</option>1
+                <option value="">Select a order</option>
+                    <option value={-1}>order '- 1'</option>
+                    <option value={0}>order '0'</option>
                     <option value={1}>order '1'</option>
-                    <option value={2}>order '2'</option>
-                    <option value={3}>order '3'</option>
-                    <option value={4}>order '4'</option>
-                    <option value={5}>order '5'</option>
                 </select>
 
                 <select 
                 name="selection" 
                 id="selection" 
-                value={order.itemNumber} 
+                value={item} 
                 onChange={handleItemOrder}>
                     {/**the first option with empty value is to 
                      * avoid 'row' as default option - is a select 
@@ -62,8 +64,10 @@ const OrderPropertyApp = () => {
                     <option value={4}>item # '4'</option>
                     <option value={5}>item # '5'</option>
                 </select>
+        
+        <OrderPropertyContent order={order} item={item} />
 
-        <OrderPropertyWrapper orderNumber={order.orderNumber} orderItemNumber={order.itemNumber}>
+        <OrderPropertyWrapper order={order} item={item}>
             <FlexProp />
         </OrderPropertyWrapper>
         </>
