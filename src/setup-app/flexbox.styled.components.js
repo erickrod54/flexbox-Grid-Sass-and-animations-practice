@@ -1,16 +1,9 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 16 -
+/**Flexbox-grid-sass-and-animations app version 17 -
  * flexbox.styled.components - Features:
  * 
- *       --> Extending 'FlexBoxWrapper' to 
- *         'OrderPropertyWrapper' and writing 
- *          new styles for the container.
- * 
- *       --> Adding 'order-property-app' to the Wrapper
- *          this is part of 'ComplexTitle'.
- * 
- *       --> Testing 'order' property hardcoded.
+ *       --> Building 'order' property dinamiclly.
  * 
  * Note:  As the previous apps i use the helper function:
  * 
@@ -267,8 +260,8 @@ export const AlignContentAppWrapper = styled(FlexBoxWrapper)`
         padding:10px
        }
        
-       li:nth-child(3){
-        order:-1
+       li:nth-child(${({ item }) => item.selection}){
+        order:${({ order }) => order.selection}
        }
    `
    
