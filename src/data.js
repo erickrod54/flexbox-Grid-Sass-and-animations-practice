@@ -1,9 +1,7 @@
-/**Flexbox-grid-sass-and-animations app version 18 -
+/**Flexbox-grid-sass-and-animations app version 19 -
  * data js - Features:
  * 
- *      --> Building 'flexGrowPropertyData'
- * 
- *      --> Adding 'FlexGrowPropertyApp' to 
+ *      --> Adding 'FlexShrinkPropertyApp' to 
  *         'appsLinksData'.
  * 
  * 
@@ -284,9 +282,16 @@ export const appsLinksData = [
      {
         id:10,
         name:'flex grow property',
-        desc:'work in progress',
+        desc:'flex grow property can manipulate the width size of an element selected and make it responsive at the same time',
         category:'items properties',
         url:'apps/flex-grow-property-app'
+     },
+     {
+        id:11,
+        name:'flex shrink property',
+        desc:'work in progress',
+        category:'items properties',
+        url:'apps/flex-shrink-property-app'
      },
 ]
 
