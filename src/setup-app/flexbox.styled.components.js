@@ -1,9 +1,15 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 17 -
+/**Flexbox-grid-sass-and-animations app version 19 -
  * flexbox.styled.components - Features:
  * 
- *       --> Building 'order' property dinamiclly.
+ *       --> Extending 'FlexBoxWrapper' to build 
+ *           'FlexGrowPropertyWrapper'
+ * 
+ *       --> Building 'grow' property dinamiclly.
+ * 
+ *       --> Targetting 'itemGrow' to select dinamiclly
+ *          an element and make it grow
  * 
  * Note:  As the previous apps i use the helper function:
  * 
@@ -139,6 +145,10 @@ export const Wrapper = styled.div`
         color: tomato;
     }
 
+    .grow-property-app{
+        color: firebrick;
+    }
+
     /**here i apply general styles for apps 'titles' */
     .flexbox-span,
     .flexbox-span-manipulation,
@@ -146,7 +156,8 @@ export const Wrapper = styled.div`
     .justify-app,
     .align-items-app,
     .flex-align-content-app,
-    .order-property-app{
+    .order-property-app,
+    .grow-property-app{
         text-transform: capitalize;
         text-align: start;
         font-size: 2rem;
@@ -264,5 +275,36 @@ export const AlignContentAppWrapper = styled(FlexBoxWrapper)`
         order:${({ order }) => order.selection}
        }
    `
+
+export const FlexGrowPropertyWrapper = styled(FlexBoxWrapper)`
+      ul{
+        background-color: lightslategray;
+        padding: 20px;
+        height: 300px;
+        display: flex;
+        align-items: flex-start;
+       }   
+
+       li{
+        list-style: none;
+        color: white;
+        background-color: #20b2aa;
+        margin:10px;
+        padding:10px
+       }
+       
+       /**the child that is applied to grow, will take all
+       *the extra space on the container */
+       li:first-child{
+        flex-grow: 1;
+       }
+       
+       /**if i apply grow in another child will share the
+       *extra space with the one that is already grow */
+       li:nth-child(${({ itemGrow }) => itemGrow.selection}){
+        flex-grow: ${({ grow }) => grow.selection};
+       }
+`
+   
    
    
