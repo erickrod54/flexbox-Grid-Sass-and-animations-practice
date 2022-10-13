@@ -2,17 +2,17 @@ import React, { useContext, useReducer, useState } from "react";
 import { TOGGLE_FLEX, TOGGLE_FLEX_MANIPULATION_APP } from './actions'
 import reducer from "./reducer";
 
-import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData, orderPropertyData } from "./data";
+import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData, orderPropertyData, flexGrowPropertyData } from "./data";
 
-/**Flexbox-grid-sass-and-animations app version 17 -
+
+/**Flexbox-grid-sass-and-animations app version 19 -
  * context js file - Features:
  * 
- *      --> Building and providing 'item' state 
- *          value and 'handleItemOrder' as his handler
- *          providing it.
+ *      --> Building 'grow', 'itemGrow' 
+ *          states.
  * 
- *      --> Building 'handleOrder' to work with 'order'
- *          state and providing it.
+ *      --> Building 'handleGrow', 'handleItemGrow' 
+ *          features.
  * 
  * Note: This features added due to the last app
  */
@@ -92,6 +92,11 @@ const AppProvider = ({ children }) => {
   /**here i build the state for orderProperty */
   const [ order, setOrder ] = useState(0)
   const [ item, setItem ] = useState(0)
+
+
+  /**here i build the grow property state */
+  const [ grow, setGrow ] = useState(0)
+  const [ itemGrow, setItemGrow ] = useState(0)
 
   /**here i build the state for 'padding' and 'setPadding' 
    * this is for the user to select and visualize what 
@@ -203,6 +208,28 @@ const handleItemOrder = (e) => {
     setItem({...item, [name]:value })
   }
 
+  const handleGrow = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    /**here i test the selection */
+    console.log('grow => name selected ==>', name, ', value in it ==>', value)
+  
+      setGrow({ ...grow,[name]:value })
+
+  }
+
+  const handleItemGrow = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    /**here i test the selection */
+    console.log('grow => name selected ==>', name, ', value in it ==>', value)
+  
+      setItemGrow({ ...itemGrow,[name]:value })
+
+  }
+
    const toggleFlex = () => {
     dispatch({ type: TOGGLE_FLEX, payload: state.flex})
    }
@@ -232,6 +259,8 @@ const handleItemOrder = (e) => {
                 handleAlignContent,
                 handleItemOrder,
                 handleOrder,
+                handleGrow,
+                handleItemGrow,
                 direction,
                 wrap,
                 flow, 
@@ -242,6 +271,8 @@ const handleItemOrder = (e) => {
                 aligncontent,
                 order,
                 item,
+                grow,
+                itemGrow,
                 flowData,
                 flexPropData,
                 flexWrapData,
@@ -249,7 +280,8 @@ const handleItemOrder = (e) => {
                 JustifyFlexData,
                 alignItemsData,
                 alignContentData,
-                orderPropertyData
+                orderPropertyData,
+                flexGrowPropertyData
             }}
             >{children}
         </AppContext.Provider>
