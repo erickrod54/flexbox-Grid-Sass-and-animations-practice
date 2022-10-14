@@ -1,21 +1,13 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 19 -
+/**Flexbox-grid-sass-and-animations app version 20 -
  * flexbox.styled.components - Features:
  * 
  *       --> Extending 'FlexBoxWrapper' to build 
- *           'FlexGrowPropertyWrapper'
+ *           'FlexShrinkPropertyWrapper'
  * 
- *       --> Building 'grow' property dinamiclly.
- * 
- *       --> Targetting 'itemGrow' to select dinamiclly
- *          an element and make it grow
- * 
- * Note:  As the previous apps i use the helper function:
- * 
- *  flex-flow: ${({flow}) => flow.selection };
- * 
- * to write dinamiclly the prop by 'flow.selection'
+ * Note:  By this version 'flex-shrink' is harcoded,
+ * set it to '0'
  */
 
 export const FlexBoxWrapper = styled.div`
@@ -145,8 +137,13 @@ export const Wrapper = styled.div`
         color: tomato;
     }
 
+    
     .grow-property-app{
         color: firebrick;
+    }
+    
+    .flex-shrink-app{
+        color: mediumpurple;
     }
 
     /**here i apply general styles for apps 'titles' */
@@ -157,7 +154,8 @@ export const Wrapper = styled.div`
     .align-items-app,
     .flex-align-content-app,
     .order-property-app,
-    .grow-property-app{
+    .grow-property-app,
+    .flex-shrink-app{
         text-transform: capitalize;
         text-align: start;
         font-size: 2rem;
@@ -303,6 +301,29 @@ export const FlexGrowPropertyWrapper = styled(FlexBoxWrapper)`
        *extra space with the one that is already grow */
        li:nth-child(${({ itemGrow }) => itemGrow.selection}){
         flex-grow: ${({ grow }) => grow.selection};
+       }
+`
+
+export const FlexShrinkPropertyWrapper = styled(FlexBoxWrapper)`
+
+ul{
+        background-color: lightslategray;
+        padding: 20px;
+        height: 300px;
+        display: flex;
+        align-items: flex-start;
+       }   
+
+       li{
+        list-style: none;
+        color: white;
+        background-color: #20b2aa;
+        margin:10px;
+        padding:10px
+       }
+       
+       li:first-child{
+        flex-shrink: 0;
        }
 `
    
