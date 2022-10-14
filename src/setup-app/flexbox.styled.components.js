@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 20 -
+/**Flexbox-grid-sass-and-animations app version 21 -
  * flexbox.styled.components - Features:
  * 
- *       --> Extending 'FlexBoxWrapper' to build 
- *           'FlexShrinkPropertyWrapper'
+ *       --> Building 'flex-shrink' dinamycly using
+ *          'shrink', and 'shrinkItem' props.
  * 
- * Note:  By this version 'flex-shrink' is harcoded,
- * set it to '0'
+ * Note:  By this version 'flex-shrink' is dynamic,
+ * i can select the element and switch betwwen '1'
+ * for activated flex-shrink and '0' for deactivate
+ * 'flex-shrink'
  */
 
 export const FlexBoxWrapper = styled.div`
@@ -322,8 +324,8 @@ ul{
         padding:10px
        }
        
-       li:first-child{
-        flex-shrink: 0;
+       li:nth-child(${({ itemShrink }) => itemShrink.selection}){
+        flex-shrink: ${({ shrink }) => shrink.selection};
        }
 `
    
