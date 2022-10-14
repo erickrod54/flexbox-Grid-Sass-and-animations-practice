@@ -4,15 +4,14 @@ import FlexProp from "../../components/flex-prop.component";
 import { useAppContext } from "../../context";
 import { FlexShrinkPropertyWrapper } from "../flexbox.styled.components";
 
-/**Flexbox-grid-sass-and-animations app version 20 -
+/**Flexbox-grid-sass-and-animations app version 21 -
  * FlexShrinkPropertyApp - Features:
  * 
- *       --> Building 'FlexShrinkPropertyApp'.
+ *       --> Building 'FlexShrinkPropertyApp'
+ *           dynamic functionality.
  * 
- *       --> Destructuring props from context. 
- * 
- *       --> Testing shrink and itemShrink state props 
- *           and also the handlers.     
+ *      --> Drilling props throught 
+ *          'FlexShrinkPropertyWrapper'      
  * 
  * Note:  By this version 'flex-shrink' is harcoded,
  * set it to '1'.
@@ -54,8 +53,8 @@ const FlexShrinkPropertyApp = () => {
                      * avoid 'row' as default option - is a select 
                      * tag behavior*/}
                     <option value={""}>Select shrink ( Default 1 )</option>1
-                    <option value={0}> flex-shrink '0' ( Default 0 )</option>
-                    <option value={1}> flex-shrink '1'</option>
+                    <option value={1}> flex-shrink '1' ( Default 1 )</option>
+                    <option value={0}> flex-shrink '0' </option>
             </select>
 
             <select 
@@ -74,7 +73,7 @@ const FlexShrinkPropertyApp = () => {
                     <option value={5}> shrink the item # 5</option>
             </select>
             
-        <FlexShrinkPropertyWrapper>
+        <FlexShrinkPropertyWrapper shrink={shrink} itemShrink={itemShrink}>
             <FlexProp />
         </FlexShrinkPropertyWrapper>            
             
