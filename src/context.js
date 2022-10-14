@@ -5,13 +5,13 @@ import reducer from "./reducer";
 import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData, orderPropertyData, flexGrowPropertyData } from "./data";
 
 
-/**Flexbox-grid-sass-and-animations app version 19 -
+/**Flexbox-grid-sass-and-animations app version 20 -
  * context js file - Features:
  * 
- *      --> Building 'grow', 'itemGrow' 
+ *      --> Building 'shrink', 'itemShrink' 
  *          states.
  * 
- *      --> Building 'handleGrow', 'handleItemGrow' 
+ *      --> Building 'handleShrink', 'handleItemShrink' 
  *          features.
  * 
  * Note: This features added due to the last app
@@ -97,6 +97,16 @@ const AppProvider = ({ children }) => {
   /**here i build the grow property state */
   const [ grow, setGrow ] = useState(0)
   const [ itemGrow, setItemGrow ] = useState(0)
+
+  /**here i build 'shrink' prop and 'itemShrink'*/
+  const [ shrink, setShrink ]  = useState(1)
+  const [ itemShrink, setItemShrink ] = useState({
+    itemone:1,
+    itemtwo:2,
+    itemthree:3,
+    itemfour:4,
+    itemfive:5
+  })
 
   /**here i build the state for 'padding' and 'setPadding' 
    * this is for the user to select and visualize what 
@@ -230,6 +240,26 @@ const handleItemOrder = (e) => {
 
   }
 
+  /**here i build 'handleShrink' */
+  const handleShrink = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    console.log('shrink => name selected ==>', name, ', value in it ==>', value)
+
+    setShrink({ ...shrink, [name]:value})
+  }
+
+  /**here i build 'handleItemShrink' */
+  const handleItemShrink = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    console.log(' # itemShrink => name selected ==>', name, ', value in it ==>', value)
+
+    setItemShrink({ ...itemShrink, [name]: value})
+  }
+
    const toggleFlex = () => {
     dispatch({ type: TOGGLE_FLEX, payload: state.flex})
    }
@@ -261,6 +291,8 @@ const handleItemOrder = (e) => {
                 handleOrder,
                 handleGrow,
                 handleItemGrow,
+                handleShrink,
+                handleItemShrink,
                 direction,
                 wrap,
                 flow, 
@@ -272,6 +304,8 @@ const handleItemOrder = (e) => {
                 order,
                 item,
                 grow,
+                shrink,
+                itemShrink,
                 itemGrow,
                 flowData,
                 flexPropData,
