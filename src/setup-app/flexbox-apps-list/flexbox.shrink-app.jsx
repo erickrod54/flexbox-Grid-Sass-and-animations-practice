@@ -33,7 +33,7 @@ const FlexShrinkPropertyApp = () => {
                 <span className='flex-shrink-app'>flex shrink app:
                 </span></h2>}/>
 
-        <h2>'flex-shrink' property by defaul is on ( the default
+        <h2>'flex-shrink' property by default is on ( the default
             value is 1 ), and this property is responsible for 
             make responsive the width of the 'items' making them
             shrink to adapt content to the width as the screen size
