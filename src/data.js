@@ -1,7 +1,7 @@
-/**Flexbox-grid-sass-and-animations app version 19 -
+/**Flexbox-grid-sass-and-animations app version 22 -
  * data js - Features:
  * 
- *      --> Adding 'FlexShrinkPropertyApp' to 
+ *      --> Adding 'FlexBasisApp' to 
  *         'appsLinksData'.
  * 
  * 
@@ -289,9 +289,16 @@ export const appsLinksData = [
      {
         id:11,
         name:'flex shrink property',
-        desc:'work in progress',
+        desc:'the use case for this property is when you have a content inside the \'item\' that you want to maintain no matter screen reduce or aument',
         category:'items properties',
         url:'apps/flex-shrink-property-app'
+     },
+     {
+        id:12,
+        name:'flex basis property',
+        desc:'once applied the \'item\' will adquire as much space as we have dedicated to it - is the size specify for the item -',
+        category:'items properties',
+        url:'apps/flex-basis-property-app'
      },
 ]
 
