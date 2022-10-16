@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 21 -
+/**Flexbox-grid-sass-and-animations app version 22 -
  * flexbox.styled.components - Features:
  * 
- *       --> Building 'flex-shrink' dinamycly using
- *          'shrink', and 'shrinkItem' props.
+ *       --> Extending 'FlexBoxWrapper' to build
+ *          'FlexBasisWrapper'.
+ * 
+ *       --> Building 'flex-basis' dynamiclly using
+ *          'basis' prop and 'basisItem' prop  
  * 
  * Note:  By this version 'flex-shrink' is dynamic,
  * i can select the element and switch betwwen '1'
@@ -148,6 +151,10 @@ export const Wrapper = styled.div`
         color: mediumpurple;
     }
 
+    .flex-basis-app{
+        color: mediumblue;
+    }
+
     /**here i apply general styles for apps 'titles' */
     .flexbox-span,
     .flexbox-span-manipulation,
@@ -157,7 +164,8 @@ export const Wrapper = styled.div`
     .flex-align-content-app,
     .order-property-app,
     .grow-property-app,
-    .flex-shrink-app{
+    .flex-shrink-app,
+    .flex-basis-app{
         text-transform: capitalize;
         text-align: start;
         font-size: 2rem;
@@ -270,7 +278,8 @@ export const AlignContentAppWrapper = styled(FlexBoxWrapper)`
         margin:10px;
         padding:10px
        }
-       
+
+       /**here i apply item properties*/
        li:nth-child(${({ item }) => item.selection}){
         order:${({ order }) => order.selection}
        }
@@ -323,9 +332,36 @@ ul{
         margin:10px;
         padding:10px
        }
-       
+
+       /**here i apply item properties*/
        li:nth-child(${({ itemShrink }) => itemShrink.selection}){
         flex-shrink: ${({ shrink }) => shrink.selection};
+       }
+`
+
+export const FlexBasisWrapper = styled(FlexBoxWrapper)`
+    ul{
+        background-color: lightslategray;
+        padding: 20px;
+        height: 300px;
+        display: flex;
+        align-items: flex-start;
+       }   
+
+       li{
+        list-style: none;
+        color: white;
+        background-color: #20b2aa;
+        margin:10px;
+        padding:10px
+       }
+
+       li:first-child{
+        flex-grow: 2;
+       }
+
+       li:nth-child(${({ itemBasis }) => itemBasis.selection }){
+        flex-basis: ${({ basis }) => basis.selection };
        }
 `
    
