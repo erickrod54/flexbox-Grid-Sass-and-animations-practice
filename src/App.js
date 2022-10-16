@@ -13,16 +13,17 @@ import {
          OrderPropertyApp,
          FlexGrowPropertyApp,
          FlexShrinkPropertyApp,
-         FlexBasisPropertyApp
+         FlexBasisPropertyApp,
+         FlexAlignSelfPropertyApp
         } from './setup-app/flexbox-apps-list/index-apps.list'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
-/**Flexbox-grid-sass-and-animations app version 22 -
+/**Flexbox-grid-sass-and-animations app version 23 -
  * App js file - Features:
  *
- *      --> Importing 'FlexBasisPropertyApp' Component 
+ *      --> Importing 'FlexAlignSelfPropertyApp' Component 
  *          and building the route for it.
  * 
  * Note: This routing will help to get into every
@@ -53,6 +54,7 @@ function App() {
         <Route path='/apps/flex-grow-property-app' element={<FlexGrowPropertyApp />}/>
         <Route path='/apps/flex-shrink-property-app' element={<FlexShrinkPropertyApp />}/>
         <Route path='/apps/flex-basis-property-app' element={<FlexBasisPropertyApp />}/>
+        <Route path='/apps/flex-align-self-property-app' element={<FlexAlignSelfPropertyApp />}/>
         </Route>
       </Routes>
     </Router>
