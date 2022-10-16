@@ -1,7 +1,7 @@
-/**Flexbox-grid-sass-and-animations app version 22 -
+/**Flexbox-grid-sass-and-animations app version 23 -
  * data js - Features:
  * 
- *      --> Adding 'FlexBasisApp' to 
+ *      --> Adding 'FlexAlignSelfApp' to 
  *         'appsLinksData'.
  * 
  * 
@@ -299,6 +299,13 @@ export const appsLinksData = [
         desc:'once applied the \'item\' will adquire as much space as we have dedicated to it - is the size specify for the item -',
         category:'items properties',
         url:'apps/flex-basis-property-app'
+     },
+     {
+        id:13,
+        name:'flex align self property',
+        desc:'work in progress',
+        category:'items properties',
+        url:'apps/flex-align-self-property-app'
      },
 ]
 
