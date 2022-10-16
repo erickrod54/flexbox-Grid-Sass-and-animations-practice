@@ -11,12 +11,13 @@ import FlexAlignContentApp from './flex.align.content-app'
 import OrderPropertyApp from "./order.property-app";
 import FlexGrowPropertyApp from "./flex.grow.property-app";
 import FlexShrinkPropertyApp from "./flexbox.shrink-app";
+import FlexBasisPropertyApp from "./flex.basis-app";
 
 
-/**Flexbox-grid-sass-and-animations app version 20 -
+/**Flexbox-grid-sass-and-animations app version 22 -
  * index js file - Features:
  * 
- *      --> Adding 'FlexShrinkPropertyApp'  
+ *      --> Adding 'FlexBasisPropertyApp'  
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -35,5 +36,6 @@ export {
     FlexAlignContentApp,
     OrderPropertyApp,
     FlexGrowPropertyApp,
-    FlexShrinkPropertyApp 
+    FlexShrinkPropertyApp,
+    FlexBasisPropertyApp 
         }
