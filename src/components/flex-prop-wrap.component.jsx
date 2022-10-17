@@ -1,16 +1,18 @@
 import React from "react";
 
-/**Flexbox-grid-sass-and-animations app version 7 -
+/**Flexbox-grid-sass-and-animations app version 23 -
  * 'flex-prop-wrap.component' - Features:
  * 
- *      -->Building 'FlexPropWrap' Component .
+ *      -->Exporting explicitly 'FlexPropWrap' 
+ *         Component so i can rename it on 
+ *        'FlexAlignSelfApp'.
  * 
  * Note: This is the longest version of FlexPropApp
  * in order to demonstrate how 'wrap' props are 
  * applied and how they act as container props.
  */
 
-const FlexPropWrap = () => {
+export const FlexPropWrap = () => {
 
     return(
         <>
