@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 22 -
+/**Flexbox-grid-sass-and-animations app version 23 -
  * flexbox.styled.components - Features:
  * 
  *       --> Extending 'FlexBoxWrapper' to build
- *          'FlexBasisWrapper'.
+ *          'FlexAlignSelfPropertyWrapper'.
  * 
- *       --> Building 'flex-basis' dynamiclly using
- *          'basis' prop and 'basisItem' prop  
+ *       --> Building 'align-self' dynamiclly using
+ *          'align' prop and 'itemAlignself' prop  
  * 
  * Note:  By this version 'flex-shrink' is dynamic,
  * i can select the element and switch betwwen '1'
@@ -155,6 +155,10 @@ export const Wrapper = styled.div`
         color: mediumblue;
     }
 
+    .flex-align-self-app{
+        color: mediumslateblue;
+    }
+
     /**here i apply general styles for apps 'titles' */
     .flexbox-span,
     .flexbox-span-manipulation,
@@ -165,7 +169,8 @@ export const Wrapper = styled.div`
     .order-property-app,
     .grow-property-app,
     .flex-shrink-app,
-    .flex-basis-app{
+    .flex-basis-app,
+    .flex-align-self-app{
         text-transform: capitalize;
         text-align: start;
         font-size: 2rem;
@@ -362,6 +367,33 @@ export const FlexBasisWrapper = styled(FlexBoxWrapper)`
 
        li:nth-child(${({ itemBasis }) => itemBasis.selection }){
         flex-basis: ${({ basis }) => basis.selection };
+       }
+`
+
+export const FlexAlignSelfPropertyWrapper = styled(FlexBoxWrapper)`
+    
+    ul{
+        background-color: lightslategray;
+        padding: 20px;
+        height: 300px;
+        display: flex;
+        align-items: ${({align}) => align ? 'flex-start' : align.selection };
+       }   
+
+       li{
+        list-style: none;
+        color: white;
+        background-color: #20b2aa;
+        margin:10px;
+        padding:10px
+       }
+
+       li:first-child{
+           align-self: flex-end;
+       }
+
+       li:nth-child(${({itemAlignself}) => itemAlignself.selection }){
+           align-self: ${({ alignself }) => alignself.selection};
        }
 `
    
