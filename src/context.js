@@ -5,13 +5,13 @@ import reducer from "./reducer";
 import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData, orderPropertyData, flexGrowPropertyData } from "./data";
 
 
-/**Flexbox-grid-sass-and-animations app version 22 -
+/**Flexbox-grid-sass-and-animations app version 23 -
  * context js file - Features:
  * 
- *      --> Building 'basis', 'itemBasis' 
+ *      --> Building 'alignself', 'itemAlignSelf' 
  *          states.
  * 
- *      --> Building 'handleBasis', 'handleItemBasis' 
+ *      --> Building 'handleAlignself', 'handleItemAlignself' 
  *          features.
  * 
  * Note: This features added due to the last app
@@ -117,6 +117,26 @@ const AppProvider = ({ children }) => {
     itemfour:4,
     itemfive:5
   })
+
+  /**here build 'alignself' and 'itemAlignself' props */
+  const [ alignself, setAlignself ] = useState({
+    auto:'auto',
+    flexend:'flex-end',
+    center:'center',
+    stretch:'stretch',
+    baseline:'baseline'
+  })
+
+  const [ itemAlignself, setItemAlignself ] = useState({
+    itemone:1,
+    itemtwo:2,
+    itemthree:3,
+    itemfour:4,
+    itemfive:5,
+    six:6,
+    seven:7,
+    eight:8
+  }) 
 
   /**here i build the state for 'padding' and 'setPadding' 
    * this is for the user to select and visualize what 
@@ -291,6 +311,26 @@ const handleItemOrder = (e) => {
     setItemBasis({ ...itemBasis, [name]:value })
   }
 
+  /**here i build 'handleAlignself', and 'handleItemAlignself' */
+
+   const handleAlignself = (e) => {
+      const name = e.target.name;
+      const value = e.target.value;
+
+      console.log(' alignself prop => name selected ==>', name, ', value in it ==>', value)
+     
+      setAlignself({...alignself, [name]:value })
+   }
+
+   const handleItemAlignself = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    console.log(' # ItemAlignself => name selected ==>', name, ', value in it ==>', value)
+
+    setItemAlignself({...itemAlignself, [name]: value })
+  }
+
    const toggleFlex = () => {
     dispatch({ type: TOGGLE_FLEX, payload: state.flex})
    }
@@ -326,6 +366,8 @@ const handleItemOrder = (e) => {
                 handleItemShrink,
                 handleBasis,
                 handleItemBasis,
+                handleAlignself,
+                handleItemAlignself,
                 direction,
                 wrap,
                 flow, 
@@ -342,6 +384,8 @@ const handleItemOrder = (e) => {
                 itemGrow,
                 basis,
                 itemBasis,
+                alignself,
+                itemAlignself,
                 flowData,
                 flexPropData,
                 flexWrapData,
