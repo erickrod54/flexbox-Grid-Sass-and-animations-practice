@@ -4,14 +4,11 @@ import FlexAlignSelf from "../../components/flex.align.self.component";
 import { useAppContext } from "../../context";
 import { FlexAlignSelfPropertyWrapper } from "../flexbox.styled.components";
 
-/**Flexbox-grid-sass-and-animations app version 23 -
+/**Flexbox-grid-sass-and-animations app version 24 -
  * 'FlexAlignSelfPropertyApp' - Features:
  * 
- *      -->Building 'FlexAlignSelfPropertyApp'.
- * 
- *      --> Destructuring props from the context.
- * 
- *      --> Building the return.
+ *      --> Editing 'FlexAlignSelfPropertyApp' 
+ *          description 
  * 
  * Note: This is the longest version of FlexPropApp
  * in order to demonstrate how 'wrap' props are 
@@ -34,6 +31,8 @@ const FlexAlignSelfPropertyApp = () => {
             have 'align-items: flex-start;' because otherwise
             items will be stretch, once this last done, the 
             prop 'align-self' will move the item across the main axis
+            ( this prop will manipulate the element targeted with
+             'auto', 'flex-end', 'center', 'stretch', 'baseline' props )
         </h2>
 
         <h3>select an align-self value:</h3>
