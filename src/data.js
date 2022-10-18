@@ -1,7 +1,7 @@
-/**Flexbox-grid-sass-and-animations app version 23 -
+/**Flexbox-grid-sass-and-animations app version 24 -
  * data js - Features:
  * 
- *      --> Adding 'FlexAlignSelfApp' to 
+ *      --> Adding 'UIWhiteSpaceDesingFundamentalsApp' to 
  *         'appsLinksData'.
  * 
  * 
@@ -303,10 +303,19 @@ export const appsLinksData = [
      {
         id:13,
         name:'flex align self property',
-        desc:'work in progress',
+        desc:'this prop will manipulate the element targeted with \'auto\', \'flex-end\', \'center\', \'stretch\', \'baseline\' props',
         category:'items properties',
         url:'apps/flex-align-self-property-app'
      },
+     {
+        id:14,
+        name:'ui white space design fundamentals',
+        desc:'work in progress',
+        category:'items properties',
+        url:'apps/ui-white-space-design-fundamentals-app'
+     },
+
+    
 ]
 
 
