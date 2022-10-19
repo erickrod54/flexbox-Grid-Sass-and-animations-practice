@@ -1,8 +1,7 @@
-/**Flexbox-grid-sass-and-animations app version 24 -
+/**Flexbox-grid-sass-and-animations app version 25 -
  * data js - Features:
  * 
- *      --> Adding 'UIWhiteSpaceDesingFundamentalsApp' to 
- *         'appsLinksData'.
+ *      --> Building 'appWebFundamentalsData'.
  * 
  * 
  * Note: 'Order Property' (this is the first items property)
@@ -309,16 +308,45 @@ export const appsLinksData = [
      },
      {
         id:14,
-        name:'ui white space design fundamentals',
+        name:' web design fundamentals',
         desc:'work in progress',
-        category:'items properties',
-        url:'apps/ui-white-space-design-fundamentals-app'
+        category:'web design fundamentals',
+        url:'/apps/web-design-fundamentals-app'
      },
 
     
 ]
 
-
+/**here i build 'AppWebFundamentalsData' */
+export const appWebFundamentalsData = [
+    {
+      id:1,
+      name:'web design fundamentals',
+      url:'/apps/web-design-fundamentals-app'  
+    },
+    {
+       id:2,
+       name:'ui white space fundamentals',
+       desc:'work in progress',
+       category:'web design properties',
+       url:'/apps/web-design-fundamentals-app/ui-white-space'
+    },
+    {
+       id:3,
+       name:'ui alignment fundamentals',
+       desc:'work in progress',
+       category:'web design properties',
+       url:'/apps/web-design-fundamentals-app/ui-alignment'
+    },
+    {
+       id:4,
+       name:'ui contrast scale typography fundamentals',
+       desc:'work in progress',
+       category:'web design properties',
+       url:'/apps/web-design-fundamentals-app/ui-contrast-scale-typography'
+    },
+   
+]    
 
 
 
