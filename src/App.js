@@ -15,16 +15,16 @@ import {
          FlexShrinkPropertyApp,
          FlexBasisPropertyApp,
          FlexAlignSelfPropertyApp,
-         UIWhiteSpaceDesingFundamentalsApp
+         WebDesingFundamentalsApp
         } from './setup-app/flexbox-apps-list/index-apps.list'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
-/**Flexbox-grid-sass-and-animations app version 24 -
+/**Flexbox-grid-sass-and-animations app version 25 -
  * App js file - Features:
  *
- *      --> Importing 'FlexAlignSelfPropertyApp' Component 
+ *      --> Importing 'WebDesingFundamentalsApp' Component 
  *          and building the route for it.
  * 
  * Note: This routing will help to get into every
@@ -56,7 +56,7 @@ function App() {
         <Route path='/apps/flex-shrink-property-app' element={<FlexShrinkPropertyApp />}/>
         <Route path='/apps/flex-basis-property-app' element={<FlexBasisPropertyApp />}/>
         <Route path='/apps/flex-align-self-property-app' element={<FlexAlignSelfPropertyApp />}/>
-        <Route path='/apps/ui-white-space-design-fundamentals-app' element={<UIWhiteSpaceDesingFundamentalsApp />}/>
+        <Route path='/apps/web-design-fundamentals-app' element={<WebDesingFundamentalsApp />} />
         </Route>
       </Routes>
     </Router>
