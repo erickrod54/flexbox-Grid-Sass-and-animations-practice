@@ -13,12 +13,12 @@ import FlexGrowPropertyApp from "./flex.grow.property-app";
 import FlexShrinkPropertyApp from "./flexbox.shrink-app";
 import FlexBasisPropertyApp from "./flex.basis-app";
 import FlexAlignSelfPropertyApp from "./flex.align.self.property-app";
+import UIWhiteSpaceDesingFundamentalsApp from "./ui.white.space.design.fundamentals-app";
 
-
-/**Flexbox-grid-sass-and-animations app version 23 -
+/**Flexbox-grid-sass-and-animations app version 24 -
  * index js file - Features:
  * 
- *      --> Adding 'FlexAlignSelfPropertyApp'  
+ *      --> Adding 'UIWhiteSpaceDesingFundamentalsApp'  
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -39,5 +39,6 @@ export {
     FlexGrowPropertyApp,
     FlexShrinkPropertyApp,
     FlexBasisPropertyApp,
-    FlexAlignSelfPropertyApp 
-        }
+    FlexAlignSelfPropertyApp,
+    UIWhiteSpaceDesingFundamentalsApp     
+    }
