@@ -2,17 +2,14 @@ import React, { useContext, useReducer, useState } from "react";
 import { TOGGLE_FLEX, TOGGLE_FLEX_MANIPULATION_APP } from './actions'
 import reducer from "./reducer";
 
-import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData, orderPropertyData, flexGrowPropertyData } from "./data";
+import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData, orderPropertyData, flexGrowPropertyData, appWebFundamentalsData } from "./data";
 
 
-/**Flexbox-grid-sass-and-animations app version 23 -
+/**Flexbox-grid-sass-and-animations app version 25 -
  * context js file - Features:
  * 
- *      --> Building 'alignself', 'itemAlignSelf' 
- *          states.
- * 
- *      --> Building 'handleAlignself', 'handleItemAlignself' 
- *          features.
+ *      -->Importing and providing 
+ *        'appWebFundamentalsData'
  * 
  * Note: This features added due to the last app
  */
@@ -394,7 +391,8 @@ const handleItemOrder = (e) => {
                 alignItemsData,
                 alignContentData,
                 orderPropertyData,
-                flexGrowPropertyData
+                flexGrowPropertyData,
+                appWebFundamentalsData
             }}
             >{children}
         </AppContext.Provider>
