@@ -6,21 +6,14 @@ import AppElement from "../components/app.element.component";
 
 import { useAppContext } from '../context';
 
-/**Flexbox-grid-sass-and-animations app version 13 -
+/**Flexbox-grid-sass-and-animations app version 25 -
  * 'HomePage' Component - Features:
  * 
- *      --> Importing and placing 'ComplexTitle'
- *          to render a custom title for the 
- *          main title of the app.
+ *      --> Exporting 'NavbarWrapper' and 'HomeWrapper' 
+ *          to use it 'WebDesingFundamentalsApp' 
  * 
- *      --> Destructuring 'appsLinksData' from
- *          'useAppContext'.
- * 
- *      --> Spreading all 'apps' props in 'AppElement'.
- * 
- *      --> Building 'HomeWrapper' style Component
- *          to apply to contain and style 'AppElement'
- *          Components        
+ *      --> Adding '.second-title' for 
+ *          'WebFundamnentalsApp'            
  * 
  * Note: By spreading 'appsLinksData' i can handle 
  * better the props to develop 'AppElement' 
@@ -59,7 +52,7 @@ const HomePage = () => {
 }
 
 
-const NavbarWrapper = styled.div`
+export const NavbarWrapper = styled.div`
 background-color: midnightblue;
 padding: 20px;
 display: flex;
@@ -77,10 +70,14 @@ justify-content: center;
     text-decoration: underline 3px solid greenyellow;
 }
 
+.second-title{
+    color: darkmagenta;
+    text-decoration: underline 3px solid gainsboro;
+}
 
 `
 
-const HomeWrapper = styled.div`
+export const HomeWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
