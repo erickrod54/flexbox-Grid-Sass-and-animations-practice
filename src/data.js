@@ -1,7 +1,8 @@
-/**Flexbox-grid-sass-and-animations app version 25 -
+/**Flexbox-grid-sass-and-animations app version 26 -
  * data js - Features:
  * 
- *      --> Building 'appWebFundamentalsData'.
+ *      --> Testing location params for
+ *          with different url 'appWebFundamentalsData'.
  * 
  * 
  * Note: 'Order Property' (this is the first items property)
