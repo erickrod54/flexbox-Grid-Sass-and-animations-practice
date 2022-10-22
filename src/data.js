@@ -1,8 +1,7 @@
-/**Flexbox-grid-sass-and-animations app version 26 -
+/**Flexbox-grid-sass-and-animations app version 27 -
  * data js - Features:
  * 
- *      --> Testing location params for
- *          with different url 'appWebFundamentalsData'.
+ *      --> Building 'uiWhiteSpaceData'.
  * 
  * 
  * Note: 'Order Property' (this is the first items property)
@@ -349,7 +348,23 @@ export const appWebFundamentalsData = [
    
 ]    
 
-
+export const uiWhiteSpaceData = [
+    {
+        id:1,
+        title:'Footbal',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+        id:2,
+        title:'Basketball',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+        id:3,
+        title:'Golf',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    }
+]
 
 
 
