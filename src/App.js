@@ -15,18 +15,21 @@ import {
          FlexShrinkPropertyApp,
          FlexBasisPropertyApp,
          FlexAlignSelfPropertyApp,
-         WebDesingFundamentalsApp
+
         } from './setup-app/flexbox-apps-list/index-apps.list'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
 import UIWhiteSpaceApp from './setup-app/web-fundamentals-apps-list/ui.white.space-app';
+import WebDesingFundamentalsApp from './setup-app/web-fundamentals-apps-list/web.design.fundamentals-app';
 
-/**Flexbox-grid-sass-and-animations app version 26 -
+/**Flexbox-grid-sass-and-animations app version 27 -
  * App js file - Features:
  *
  *      --> Adding 'UIWhiteSpaceApp' and building a 
  *          route for it.
+ * 
+ *      --> Adding 'WebDesingFundamentalsApp' and 
+ *          re building the route.
  * 
  * Note: This routing will help to get into every
  * app separately.
