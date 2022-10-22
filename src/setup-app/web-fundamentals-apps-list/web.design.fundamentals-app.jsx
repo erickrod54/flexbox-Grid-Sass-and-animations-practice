@@ -5,7 +5,7 @@ import ComplexTitle from "../../components/complex-title";
 import { useAppContext } from "../../context";
 import { HomeWrapper, NavbarWrapper } from "../../pages/home-page";
 
-/**Flexbox-grid-sass-and-animations app version 26 -
+/**Flexbox-grid-sass-and-animations app version 27 -
  * WebDesingFundamentalsApp - Features:
  * 
  *      --> Building 'WebDesingFundamentalsApp'
@@ -22,8 +22,8 @@ const WebDesingFundamentalsApp = () => {
 
     const { appWebFundamentalsData } = useAppContext();
 
-    console.log('appWebFundamentalsData ==>', appWebFundamentalsData)
-    console.log('the use location ==>',useLocation())    
+    //console.log('appWebFundamentalsData ==>', appWebFundamentalsData)
+    //console.log('the use location ==>',useLocation())    
     return(
         <>
         <NavbarWrapper>
