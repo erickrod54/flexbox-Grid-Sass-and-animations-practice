@@ -1,7 +1,7 @@
-/**Flexbox-grid-sass-and-animations app version 28 -
+/**Flexbox-grid-sass-and-animations app version 30 -
  * data js - Features:
  * 
- *      --> Modifying data > title in 'uiWhiteSpaceData'.
+ *      --> Building 'uiAlignmentData'.
  * 
  * 
  * Note: 'Order Property' (this is the first items property)
@@ -366,5 +366,13 @@ export const uiWhiteSpaceData = [
     }
 ]
 
+export const uiAlignmentData = [
+    {
+        logo: 'some logo',
+        heading:'some heading',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        buttontext:'sign up'
+    }
+]
 
 
