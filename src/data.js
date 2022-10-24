@@ -1,7 +1,7 @@
-/**Flexbox-grid-sass-and-animations app version 27 -
+/**Flexbox-grid-sass-and-animations app version 28 -
  * data js - Features:
  * 
- *      --> Building 'uiWhiteSpaceData'.
+ *      --> Modifying data > title in 'uiWhiteSpaceData'.
  * 
  * 
  * Note: 'Order Property' (this is the first items property)
@@ -351,17 +351,17 @@ export const appWebFundamentalsData = [
 export const uiWhiteSpaceData = [
     {
         id:1,
-        title:'Footbal',
+        title:'footbal',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     },
     {
         id:2,
-        title:'Basketball',
+        title:'basketball',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     },
     {
         id:3,
-        title:'Golf',
+        title:'golf',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     }
 ]
