@@ -1,17 +1,14 @@
 import React from "react";
 import ComplexTitle from "../../components/complex-title";
 import FlexProp from "../../components/flex-prop.component";
-import OrderPropertyContent from "../../components/order.property.content";
 import { useAppContext } from "../../context";
 import { OrderPropertyWrapper } from "../flexbox.styled.components";
 
 
-/**Flexbox-grid-sass-and-animations app version 17 -
+/**Flexbox-grid-sass-and-animations app version 28 -
  * OrderPropertyApp - Features:
  *
- *      --> Building 'OrderPropertyApp'.
- * 
- *      --> Destructuring prop values from context.
+ *      --> Removing 'OrderContentProperty'
  * 
  * Note: By this version basic functionality is set.
  */
@@ -64,8 +61,6 @@ const OrderPropertyApp = () => {
                     <option value={4}>item # '4'</option>
                     <option value={5}>item # '5'</option>
                 </select>
-        
-        <OrderPropertyContent order={order} item={item} />
 
         <OrderPropertyWrapper order={order} item={item}>
             <FlexProp />
