@@ -1,8 +1,10 @@
-/**Flexbox-grid-sass-and-animations app version 30 -
+/**Flexbox-grid-sass-and-animations app version 31 -
  * data js - Features:
  * 
- *      --> Building 'uiAlignmentData'.
+ *      --> Building 'UIWhitespaceAndAlignmentData'.
  * 
+ *      --> Adding 'UIWhitespaceAndAlignmentApp' to
+ *          the 'appWebFundamentalsData'
  * 
  * Note: 'Order Property' (this is the first items property)
  * is properties applied directly to items inside of 
@@ -339,7 +341,14 @@ export const appWebFundamentalsData = [
        url:'/apps/web-design-fundamentals-app/ui-alignment'
     },
     {
-       id:4,
+        id:4,
+        name:'UI Whitespace and Alignment combined',
+        desc:'work in progress',
+        category:'web design properties',
+        url:'/apps/web-design-fundamentals-app/ui-Whitespace-and-alignment-combined'
+     },
+    {
+       id:5,
        name:'ui contrast scale typography fundamentals',
        desc:'work in progress',
        category:'web design properties',
@@ -375,4 +384,24 @@ export const uiAlignmentData = [
     }
 ]
 
+export const UIWhitespaceAndAlignmentData = [
+    {
+        id:1,
+        date: 'some date 1',
+        headline:'some headline',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    },
+    {
+        id:2,
+        date: 'some date 2',
+        headline:'some headline',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    },
+    {
+        id:3,
+        date: 'some date 3',
+        headline:'some headline',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    }
+]
 
