@@ -2,14 +2,13 @@ import React, { useContext, useReducer, useState } from "react";
 import { TOGGLE_FLEX, TOGGLE_FLEX_MANIPULATION_APP } from './actions'
 import reducer from "./reducer";
 
-import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData, orderPropertyData, flexGrowPropertyData, appWebFundamentalsData, uiWhiteSpaceData, uiAlignmentData } from "./data";
+import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData, orderPropertyData, flexGrowPropertyData, appWebFundamentalsData, uiWhiteSpaceData, uiAlignmentData, UIWhitespaceAndAlignmentData } from "./data";
 
-
-/**Flexbox-grid-sass-and-animations app version 30 -
+/**Flexbox-grid-sass-and-animations app version 31 -
  * context js file - Features:
  * 
  *      -->Importing and providing 
- *        'uiAlignmentData'
+ *        'UIWhitespaceAndAlignmentData'
  * 
  * Note: This features added due to the last app
  */
@@ -365,6 +364,7 @@ const handleItemOrder = (e) => {
                 handleItemBasis,
                 handleAlignself,
                 handleItemAlignself,
+                UIWhitespaceAndAlignmentData,
                 direction,
                 wrap,
                 flow, 
