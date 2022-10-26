@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 31 -
+/**Flexbox-grid-sass-and-animations app version 32 -
  * flexbox.styled.components - Features:
  * 
  *       --> Adding style for 'web design 
- *           fundamentals' > title > 'ui-alignment-app'  
+ *           fundamentals' > title
+ *           > 'ui-white-space-and-alignment-app'  
  * 
  * Note:  By this version 'flex-shrink' is dynamic,
  * i can select the element and switch betwwen '1'
@@ -165,6 +166,10 @@ export const Wrapper = styled.div`
         color: mediumorchid;
     }
 
+    .ui-white-space-and-alignment-app{
+        color: darkviolet;
+    }
+
     /**here i apply general styles for apps 'titles' */
     .flexbox-span,
     .flexbox-span-manipulation,
@@ -178,7 +183,8 @@ export const Wrapper = styled.div`
     .flex-basis-app,
     .flex-align-self-app,
     .ui-white-space-app,
-    .ui-alignment-app{
+    .ui-alignment-app,
+    .ui-white-space-and-alignment-app{
         text-transform: capitalize;
         text-align: start;
         font-size: 2rem;
