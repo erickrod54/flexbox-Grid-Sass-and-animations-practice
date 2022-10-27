@@ -1,10 +1,15 @@
 import React from "react";
+import styled from "styled-components";
+import ComplexTitle from "../../components/complex-title";
+import { useAppContext } from "../../context";
 
-/**Flexbox-grid-sass-and-animations app version 31 -
+
+
+/**Flexbox-grid-sass-and-animations app version 32 -
  * 'UIWhitespaceAndAlignmentApp' - Features:
  * 
- *      --> Building basic 'UIWhitespaceAndAlignmentApp'  
- *          Component.
+ *      --> Testing that i am receving data 
+ *          from context.
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -12,9 +17,25 @@ import React from "react";
 
 const UIWhitespaceAndAlignmentApp = () => {
 
+    const { UIWhitespaceAndAlignmentData } = useAppContext()
+
+    console.log('the UIWhitespaceAndAlignmentData ==>', UIWhitespaceAndAlignmentData)
+
     return(
-        <h2>UI white space and alignment app</h2>
+        <SectionWrapper>
+            <ComplexTitle title={<h2>Challenge 1 - <span className='ui-white-space-and-alignment-app'>
+            Applying White Space and Alignment Fundamentals:
+            </span></h2>}/>
+
+
+        </SectionWrapper>
     )
 }
 
+const SectionWrapper = styled.div`
+    .section{
+
+    }
+
+`
 export default UIWhitespaceAndAlignmentApp;
