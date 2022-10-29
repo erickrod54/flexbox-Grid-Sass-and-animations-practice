@@ -4,16 +4,10 @@ import ComplexTitle from "../../components/complex-title";
 import { useAppContext } from "../../context";
 
 
-/**Flexbox-grid-sass-and-animations app version 29 -
+/**Flexbox-grid-sass-and-animations app version 33 -
  * UIWhiteSpaceApp - Features:
  * 
- *      --> Building 'basketball' state
- * 
- *      --> Building 'handleBasketball' to toggle between
- *          'basketball' and ''
- * 
- *      --> Applying dynamic styling using basketball
- *          style .
+ *      --> Taking functionality to the context.
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -21,16 +15,10 @@ import { useAppContext } from "../../context";
 
 const UIWhiteSpaceApp = () => {
 
-    const { uiWhiteSpaceData } = useAppContext()
+    const { uiWhiteSpaceData, basketball,handleBasketball } = useAppContext()
     
-    /**here i build basketball state */
-    const [ basketball, setBasketball ] = useState('')
+    
     console.log(' data received from context ==>', uiWhiteSpaceData)
-
-    const handleBasketball = () => {
-        setBasketball(!basketball)
-    }
-
 
     return( 
         <>
