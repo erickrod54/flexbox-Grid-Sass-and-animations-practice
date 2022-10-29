@@ -23,8 +23,8 @@ const FlexShrinkPropertyApp = () => {
 
     const { shrink, itemShrink, handleShrink, handleItemShrink } = useAppContext()
 
-    console.log(shrink)
-    console.log(itemShrink)
+    //console.log(shrink)
+    //console.log(itemShrink)
 
     return(
         <>
