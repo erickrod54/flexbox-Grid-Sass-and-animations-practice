@@ -5,15 +5,13 @@ import { useAppContext } from "../../context";
 
 
 
-/**Flexbox-grid-sass-and-animations app version 33 -
+/**Flexbox-grid-sass-and-animations app version 34 -
  * 'UIWhitespaceAndAlignmentApp' - Features:
  * 
- *      --> Building 'UIWhitespaceAndAlignmentApp'.
- * 
- *      --> Destructuring 'UIWhitespaceAndAlignmentData'
- *          from the context.
- * 
- *      --> Building a return.
+ *      --> Adding responsiveness by implementing
+ *          'wrap' prop on the container and                    
+ *          getting rid of the height to make   
+ *          responsive also the container.
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -54,8 +52,8 @@ const UIWhitespaceAndAlignmentApp = () => {
 const SectionWrapper = styled.div`
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(255,252,222);
-    height: 100vh;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
