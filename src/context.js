@@ -4,11 +4,11 @@ import reducer from "./reducer";
 
 import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData, orderPropertyData, flexGrowPropertyData, appWebFundamentalsData, uiWhiteSpaceData, uiAlignmentData, UIWhitespaceAndAlignmentData } from "./data";
 
-/**Flexbox-grid-sass-and-animations app version 31 -
+/**Flexbox-grid-sass-and-animations app version 33 -
  * context js file - Features:
  * 
- *      -->Importing and providing 
- *        'UIWhitespaceAndAlignmentData'
+ *      --> Migrating 'state' and 'handler' for  
+ *        'UIWhitespaceApp'
  * 
  * Note: This features added due to the last app
  */
@@ -133,6 +133,9 @@ const AppProvider = ({ children }) => {
     seven:7,
     eight:8
   }) 
+
+  /**here i build basketball state */
+  const [ basketball, setBasketball ] = useState('')
 
   /**here i build the state for 'padding' and 'setPadding' 
    * this is for the user to select and visualize what 
@@ -327,6 +330,10 @@ const handleItemOrder = (e) => {
     setItemAlignself({...itemAlignself, [name]: value })
   }
 
+  const handleBasketball = () => {
+    setBasketball(!basketball)
+}
+
    const toggleFlex = () => {
     dispatch({ type: TOGGLE_FLEX, payload: state.flex})
    }
@@ -364,6 +371,7 @@ const handleItemOrder = (e) => {
                 handleItemBasis,
                 handleAlignself,
                 handleItemAlignself,
+                handleBasketball,
                 UIWhitespaceAndAlignmentData,
                 direction,
                 wrap,
@@ -383,6 +391,7 @@ const handleItemOrder = (e) => {
                 itemBasis,
                 alignself,
                 itemAlignself,
+                basketball,
                 flowData,
                 flexPropData,
                 flexWrapData,
