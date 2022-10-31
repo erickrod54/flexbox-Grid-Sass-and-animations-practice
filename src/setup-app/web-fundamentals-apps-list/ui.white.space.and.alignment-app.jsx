@@ -1,17 +1,14 @@
+import moment from "moment";
 import React from "react";
 import styled from "styled-components";
 import ComplexTitle from "../../components/complex-title";
 import { useAppContext } from "../../context";
 
 
-
-/**Flexbox-grid-sass-and-animations app version 34 -
+/**Flexbox-grid-sass-and-animations app version 35 -
  * 'UIWhitespaceAndAlignmentApp' - Features:
  * 
- *      --> Adding responsiveness by implementing
- *          'wrap' prop on the container and                    
- *          getting rid of the height to make   
- *          responsive also the container.
+ *      --> Formatting the 'date' prop using moment.js
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -37,7 +34,7 @@ const UIWhitespaceAndAlignmentApp = () => {
                     <section key={id} className="section">
                         <img src={image} alt='images'/>
                         <div className="content">
-                            <p>{date}</p>
+                            <p>{moment(date).format('MMMM Do, YYYY')}</p>
                             <h3>{headline}</h3>
                             <p>{text}</p>
                         </div>
