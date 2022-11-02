@@ -1,10 +1,10 @@
 import { dog, moose, owl } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 33 -
+/**Flexbox-grid-sass-and-animations app version 36 -
  * data js - Features:
  * 
- *      --> Setting up dates using 'new Date(MMMM Do, YYYY)'
- *          in 'UIWhitespaceAndAlignmentData'.
+ *      --> Changing headlines in 
+ *         'UIWhitespaceAndAlignmentData'
  * 
  * Note: 'Order Property' (this is the first items property)
  * is properties applied directly to items inside of 
@@ -389,21 +389,21 @@ export const UIWhitespaceAndAlignmentData = [
         id:1,
         image:dog,
         date: new Date(2016, 9, 4),
-        headline:'some headline',
+        headline:'dog',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     },
     {
         id:2,
         image:moose,
         date: new Date(2018, 10, 3),
-        headline:'some headline',
+        headline:'moose',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     },
     {
         id:3,
         image:owl,
         date: new Date(2022, 10, 4),
-        headline:'some headline',
+        headline:'owl',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     }
 ]
