@@ -1,10 +1,9 @@
-import { dog, moose, owl } from './assets/assets.index'
+import { dog, moose, owl, sheep, bird, tiger } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 36 -
+/**Flexbox-grid-sass-and-animations app version 37 -
  * data js - Features:
  * 
- *      --> Changing headlines in 
- *         'UIWhitespaceAndAlignmentData'
+ *      --> Building 'uiContrastAndScaleData'
  * 
  * Note: 'Order Property' (this is the first items property)
  * is properties applied directly to items inside of 
@@ -408,3 +407,26 @@ export const UIWhitespaceAndAlignmentData = [
     }
 ]
 
+export const uiContrastAndScaleData = [
+    {
+        id:1,
+        image:sheep,
+        date: new Date(2021,11, 4),
+        headline:'dog',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    },
+    {
+        id:2,
+        image:bird,
+        date: new Date(2021, 11, 3),
+        headline:'moose',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    },
+    {
+        id:3,
+        image:tiger,
+        date: new Date(2021, 11, 4),
+        headline:'owl',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    }
+]
