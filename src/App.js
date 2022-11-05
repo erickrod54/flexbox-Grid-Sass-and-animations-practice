@@ -23,17 +23,14 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { UIWhiteSpaceApp,
          WebDesingFundamentalsApp,
          UIAlignmentApp,
-         UIWhitespaceAndAlignmentApp } from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps'
+         UIWhitespaceAndAlignmentApp, 
+         UIContrastAndScaleApp} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps'
 
-
-/**Flexbox-grid-sass-and-animations app version 31 -
+/**Flexbox-grid-sass-and-animations app version 37 -
  * App js file - Features:
  *
- *      --> Adding 'UIWhitespaceAndAlignmentApp' and building 
+ *      --> Adding 'UIContrastAndScaleApp' and building 
  *          a route for it.
- * 
- *      --> Seeting up the 'index.web.fundamentals-apps' for
- *          the imports
  * 
  * Note: This routing will help to get into every
  * app separately.
@@ -68,6 +65,7 @@ function App() {
         <Route path='/apps/web-design-fundamentals-app/ui-white-space' element={<UIWhiteSpaceApp />}/>
         <Route path='/apps/web-design-fundamentals-app/ui-alignment' element={<UIAlignmentApp />}/>
         <Route path='/apps/web-design-fundamentals-app/ui-Whitespace-and-alignment-combined' element={<UIWhitespaceAndAlignmentApp />}/>
+        <Route path='/apps/web-design-fundamentals-app/ui-contrast-scale-typography' element={<UIContrastAndScaleApp />}/>
         </Route>
       </Routes>
     </Router>
