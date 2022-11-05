@@ -1,14 +1,15 @@
 import UIAlignmentApp from "./ui.alignment-app";
+import UIContrastAndScaleApp from "./ui.contrast.and.scale-app";
 import UIWhiteSpaceApp from "./ui.white.space-app";
 import UIWhitespaceAndAlignmentApp from "./ui.white.space.and.alignment-app";
 import WebDesingFundamentalsApp from "./web.design.fundamentals-app";
 
 
-/**Flexbox-grid-sass-and-animations app version 31 -
+/**Flexbox-grid-sass-and-animations app version 37 -
  * index js file  > web.fundamentals-apps - 
  * Features:
  * 
- *      --> Adding 'UIWhitespaceAndAlignmentApp'  to 
+ *      --> Adding 'UIContrastAndScaleApp'  to 
  *          the index 
  * 
  * Note: By this version the apps imports are simplyfied
@@ -16,4 +17,4 @@ import WebDesingFundamentalsApp from "./web.design.fundamentals-app";
  */
 
 
-export { UIWhiteSpaceApp, WebDesingFundamentalsApp, UIAlignmentApp, UIWhitespaceAndAlignmentApp} 
+export { UIWhiteSpaceApp, WebDesingFundamentalsApp, UIAlignmentApp, UIWhitespaceAndAlignmentApp, UIContrastAndScaleApp} 
