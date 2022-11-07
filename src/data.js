@@ -1,9 +1,9 @@
 import { dog, moose, owl, sheep, bird, tiger } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 37 -
+/**Flexbox-grid-sass-and-animations app version 38 -
  * data js - Features:
  * 
- *      --> Building 'uiContrastAndScaleData'
+ *      --> Fixing headlines props in 'uiContrastAndScaleData'
  * 
  * Note: 'Order Property' (this is the first items property)
  * is properties applied directly to items inside of 
@@ -412,21 +412,21 @@ export const uiContrastAndScaleData = [
         id:1,
         image:sheep,
         date: new Date(2021,11, 4),
-        headline:'dog',
+        headline:'sheep',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     },
     {
         id:2,
         image:bird,
         date: new Date(2021, 11, 3),
-        headline:'moose',
+        headline:'bird',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     },
     {
         id:3,
         image:tiger,
         date: new Date(2021, 11, 4),
-        headline:'owl',
+        headline:'tiger',
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     }
 ]
