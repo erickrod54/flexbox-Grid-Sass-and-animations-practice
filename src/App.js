@@ -24,13 +24,16 @@ import { UIWhiteSpaceApp,
          WebDesingFundamentalsApp,
          UIAlignmentApp,
          UIWhitespaceAndAlignmentApp, 
-         UIContrastAndScaleApp} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps'
+         UIContrastAndScaleApp,
+         UITypographyApp} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps'
 
-/**Flexbox-grid-sass-and-animations app version 37 -
+/**Flexbox-grid-sass-and-animations app version 39 -
  * App js file - Features:
  *
- *      --> Adding 'UIContrastAndScaleApp' and building 
+ *      --> Adding 'UITypographyApp' and building 
  *          a route for it.
+ * 
+ *      --> Fixing route for 'ui contrast and scale'
  * 
  * Note: This routing will help to get into every
  * app separately.
@@ -65,7 +68,8 @@ function App() {
         <Route path='/apps/web-design-fundamentals-app/ui-white-space' element={<UIWhiteSpaceApp />}/>
         <Route path='/apps/web-design-fundamentals-app/ui-alignment' element={<UIAlignmentApp />}/>
         <Route path='/apps/web-design-fundamentals-app/ui-Whitespace-and-alignment-combined' element={<UIWhitespaceAndAlignmentApp />}/>
-        <Route path='/apps/web-design-fundamentals-app/ui-contrast-scale-typography' element={<UIContrastAndScaleApp />}/>
+        <Route path='/apps/web-design-fundamentals-app/ui-contrast-and-scale' element={<UIContrastAndScaleApp />}/>
+        <Route path='/apps/web-design-fundamentals-app/ui-typography' element={<UITypographyApp />}/>
         </Route>
       </Routes>
     </Router>
