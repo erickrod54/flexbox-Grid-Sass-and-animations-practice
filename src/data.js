@@ -1,9 +1,24 @@
-import { dog, moose, owl, sheep, bird, tiger } from './assets/assets.index'
+import { 
+    dog,
+    moose,
+    owl,
+    sheep,
+    bird,
+    tiger,
+    mrcat,
+    mrgiraffe,
+    mrsmallwolf 
+} from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 38 -
+/**Flexbox-grid-sass-and-animations app version 39 -
  * data js - Features:
  * 
- *      --> Fixing headlines props in 'uiContrastAndScaleData'
+ *      --> Adding 'ui typography fundamentals'.
+ * 
+ *      --> Fixing urls for 'uicontrast and scale'
+ *          and 'ui typography fundamentals'
+ * 
+ *      --> Building 'uiTypographyData'
  * 
  * Note: 'Order Property' (this is the first items property)
  * is properties applied directly to items inside of 
@@ -348,12 +363,18 @@ export const appWebFundamentalsData = [
      },
     {
        id:5,
-       name:'ui contrast scale typography fundamentals',
+       name:'ui contrast and scale fundamentals',
        desc:'work in progress',
        category:'web design properties',
-       url:'/apps/web-design-fundamentals-app/ui-contrast-scale-typography'
+       url:'/apps/web-design-fundamentals-app/ui-contrast-and-scale'
     },
-   
+    {
+       id:6,
+       name:'ui typography fundamentals',
+       desc:'work in progress',
+       category:'web design properties',
+       url:'/apps/web-design-fundamentals-app/ui-typography'
+    }
 ]    
 
 export const uiWhiteSpaceData = [
@@ -430,3 +451,25 @@ export const uiContrastAndScaleData = [
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     }
 ]
+
+export const uiTypographyData = [
+    {
+        id:1,
+        image:mrcat,
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        headline:'Mr cat'
+    },
+    {
+        id:2,
+        image:mrgiraffe,
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        headline:'Mr giraffe'
+    },
+    {
+        id:3,
+        image:mrsmallwolf,
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        headline:'Mr small wolf'
+    }
+]
+
