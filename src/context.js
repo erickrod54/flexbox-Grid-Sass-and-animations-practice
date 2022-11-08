@@ -2,12 +2,27 @@ import React, { useContext, useReducer, useState } from "react";
 import { TOGGLE_FLEX, TOGGLE_FLEX_MANIPULATION_APP } from './actions'
 import reducer from "./reducer";
 
-import { flowData, flexPropData, flexWrapData, appsLinksData, JustifyFlexData, alignItemsData, alignContentData, orderPropertyData, flexGrowPropertyData, appWebFundamentalsData, uiWhiteSpaceData, uiAlignmentData, UIWhitespaceAndAlignmentData, uiContrastAndScaleData } from "./data";
+import { 
+  flowData,
+  flexPropData,
+  flexWrapData,
+  appsLinksData,
+  JustifyFlexData,
+  alignItemsData,
+  alignContentData,
+  orderPropertyData,
+  flexGrowPropertyData,
+  appWebFundamentalsData,
+  uiWhiteSpaceData,
+  uiAlignmentData,
+  UIWhitespaceAndAlignmentData,
+  uiContrastAndScaleData,
+  uiTypographyData } from "./data";
 
-/**Flexbox-grid-sass-and-animations app version 37 -
+/**Flexbox-grid-sass-and-animations app version 39 -
  * context js file - Features:
  * 
- *      --> Importing and providing 'uiContrastAndScaleData'
+ *      --> Importing and providing 'uiTypographyData'
  * 
  * Note: This features added due to the last app
  */
@@ -403,7 +418,8 @@ const handleItemOrder = (e) => {
                 appWebFundamentalsData,
                 uiWhiteSpaceData,
                 uiAlignmentData,
-                uiContrastAndScaleData
+                uiContrastAndScaleData,
+                uiTypographyData
             }}
             >{children}
         </AppContext.Provider>
