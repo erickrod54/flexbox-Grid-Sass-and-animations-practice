@@ -10,12 +10,12 @@ import {
     mrsmallwolf 
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 41 -
+/**Flexbox-grid-sass-and-animations app version 42 -
  * data js - Features:
  * 
- *      --> Adding 'UIColorApp' to web fundamentals data.
+ *      --> Adding 'UIFormApp' to web fundamentals data.
  * 
- *      --> Building 'uiColorData'
+ *      --> Building 'uiFormData'
  * 
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -377,8 +377,26 @@ export const appWebFundamentalsData = [
        desc:'work in progress',
        category:'web design properties',
        url:'/apps/web-design-fundamentals-app/ui-color'
+    },
+    {
+       id:8,
+       name:'ui web design fundamentals challenge 2',
+       desc:'work in progress',
+       category:'web design properties',
+       url:'/apps/web-design-fundamentals-app/ui-web-fundamental-challenge-2'
     }
 ] 
+
+export const uiFormData = [
+    {
+        id:1,
+        title:'contact us',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        msginput1:'your name',
+        msginput2:'write your messsage',
+        textlink:'send message'
+    }
+]
 
 export const uiColorData = [
     {
