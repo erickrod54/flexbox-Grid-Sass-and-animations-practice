@@ -10,15 +10,10 @@ import {
     mrsmallwolf 
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 39 -
+/**Flexbox-grid-sass-and-animations app version 40 -
  * data js - Features:
  * 
- *      --> Adding 'ui typography fundamentals'.
- * 
- *      --> Fixing urls for 'uicontrast and scale'
- *          and 'ui typography fundamentals'
- * 
- *      --> Building 'uiTypographyData'
+ *      --> Adding 'main-heading' data.
  * 
  * Note: 'Order Property' (this is the first items property)
  * is properties applied directly to items inside of 
@@ -455,18 +450,23 @@ export const uiContrastAndScaleData = [
 export const uiTypographyData = [
     {
         id:1,
+        heading:'some heading',
+        text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    },
+    {
+        id:2,
         image:mrcat,
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         headline:'Mr cat'
     },
     {
-        id:2,
+        id:3,
         image:mrgiraffe,
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         headline:'Mr giraffe'
     },
     {
-        id:3,
+        id:4,
         image:mrsmallwolf,
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         headline:'Mr small wolf'
