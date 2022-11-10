@@ -10,14 +10,15 @@ import {
     mrsmallwolf 
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 40 -
+/**Flexbox-grid-sass-and-animations app version 41 -
  * data js - Features:
  * 
- *      --> Adding 'main-heading' data.
+ *      --> Adding 'UIColorApp' to web fundamentals data.
  * 
- * Note: 'Order Property' (this is the first items property)
- * is properties applied directly to items inside of 
- * the containers.
+ *      --> Building 'uiColorData'
+ * 
+ * Note: this data is going to be passed to build 
+ * uiColorApp.
  */
 
 export const sectiondata = [
@@ -369,8 +370,24 @@ export const appWebFundamentalsData = [
        desc:'work in progress',
        category:'web design properties',
        url:'/apps/web-design-fundamentals-app/ui-typography'
+    },
+    {
+       id:7,
+       name:'ui color web design fundamentals',
+       desc:'work in progress',
+       category:'web design properties',
+       url:'/apps/web-design-fundamentals-app/ui-color'
     }
-]    
+] 
+
+export const uiColorData = [
+    {
+        id:1,
+        title:'some very important title',
+        text:'some text that relates to the above very important topic is supposed to appear here',
+        textlink:'some link'
+    }
+]
 
 export const uiWhiteSpaceData = [
     {
