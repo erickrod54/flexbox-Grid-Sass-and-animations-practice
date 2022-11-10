@@ -25,22 +25,17 @@ import { UIWhiteSpaceApp,
          UIAlignmentApp,
          UIWhitespaceAndAlignmentApp, 
          UIContrastAndScaleApp,
-         UITypographyApp} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps'
+         UITypographyApp,
+         UIColorApp} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps' 
 
-/**Flexbox-grid-sass-and-animations app version 39 -
+/**Flexbox-grid-sass-and-animations app version 41 -
  * App js file - Features:
  *
- *      --> Adding 'UITypographyApp' and building 
+ *      --> Adding 'UIColorApp' and building 
  *          a route for it.
  * 
- *      --> Fixing route for 'ui contrast and scale'
- * 
- * Note: This routing will help to get into every
- * app separately.
- * 
- * in order to set the shared layout i have to 
- * change the previous routes from '/' to '/apps'
- * so it won't create a conflict 
+ * Note: starting to build the ui color 
+ * fundamental app
  */
 
 
@@ -70,6 +65,7 @@ function App() {
         <Route path='/apps/web-design-fundamentals-app/ui-Whitespace-and-alignment-combined' element={<UIWhitespaceAndAlignmentApp />}/>
         <Route path='/apps/web-design-fundamentals-app/ui-contrast-and-scale' element={<UIContrastAndScaleApp />}/>
         <Route path='/apps/web-design-fundamentals-app/ui-typography' element={<UITypographyApp />}/>
+        <Route path='/apps/web-design-fundamentals-app/ui-color' element={<UIColorApp />}/>
         </Route>
       </Routes>
     </Router>
