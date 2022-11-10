@@ -17,12 +17,13 @@ import {
   uiAlignmentData,
   UIWhitespaceAndAlignmentData,
   uiContrastAndScaleData,
-  uiTypographyData } from "./data";
+  uiTypographyData, 
+  uiColorData} from "./data";
 
-/**Flexbox-grid-sass-and-animations app version 39 -
+/**Flexbox-grid-sass-and-animations app version 41 -
  * context js file - Features:
  * 
- *      --> Importing and providing 'uiTypographyData'
+ *      --> Importing and providing 'uiColorData'
  * 
  * Note: This features added due to the last app
  */
@@ -419,7 +420,8 @@ const handleItemOrder = (e) => {
                 uiWhiteSpaceData,
                 uiAlignmentData,
                 uiContrastAndScaleData,
-                uiTypographyData
+                uiTypographyData,
+                uiColorData
             }}
             >{children}
         </AppContext.Provider>
