@@ -26,18 +26,22 @@ import { UIWhiteSpaceApp,
          UIWhitespaceAndAlignmentApp, 
          UIContrastAndScaleApp,
          UITypographyApp,
-         UIColorApp} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps' 
+         UIColorApp,
+         UIFormApp, 
+         UIVisualHierarchyApp} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps' 
 
-/**Flexbox-grid-sass-and-animations app version 41 -
+/**Flexbox-grid-sass-and-animations app version 43 -
  * App js file - Features:
  *
- *      --> Adding 'UIColorApp' and building 
+ *      --> Adding 'UIFormApp' and building 
  *          a route for it.
+ * 
+ *       --> Adding 'UIVisualHierarchyApp' and building 
+ *          a route for it. 
  * 
  * Note: starting to build the ui color 
  * fundamental app
  */
-
 
 function App() {
 
@@ -66,6 +70,8 @@ function App() {
         <Route path='/apps/web-design-fundamentals-app/ui-contrast-and-scale' element={<UIContrastAndScaleApp />}/>
         <Route path='/apps/web-design-fundamentals-app/ui-typography' element={<UITypographyApp />}/>
         <Route path='/apps/web-design-fundamentals-app/ui-color' element={<UIColorApp />}/>
+        <Route path='/apps/web-design-fundamentals-app/ui-web-fundamental-challenge-2' element={<UIFormApp />}/>
+        <Route path='/apps/web-design-fundamentals-app/ui-visual-hierarchy-design' element={<UIVisualHierarchyApp />}/>
         </Route>
       </Routes>
     </Router>
