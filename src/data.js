@@ -10,12 +10,15 @@ import {
     mrsmallwolf 
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 42 -
+/**Flexbox-grid-sass-and-animations app version 43 -
  * data js - Features:
  * 
  *      --> Adding 'UIFormApp' to web fundamentals data.
  * 
  *      --> Building 'uiFormData'
+ * 
+ *      --> Adding 'ui Visual Hierarchy Design Fundamental'
+ *          AppsLinks
  * 
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -384,6 +387,13 @@ export const appWebFundamentalsData = [
        desc:'work in progress',
        category:'web design properties',
        url:'/apps/web-design-fundamentals-app/ui-web-fundamental-challenge-2'
+    },
+    {
+       id:9,
+       name:'ui Visual Hierarchy Design Fundamental',
+       desc:'work in progress',
+       category:'web design properties',
+       url:'/apps/web-design-fundamentals-app/ui-visual-hierarchy-design'
     }
 ] 
 
@@ -394,7 +404,8 @@ export const uiFormData = [
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         msginput1:'your name',
         msginput2:'write your messsage',
-        textlink:'send message'
+        textlink:'send message',
+        rows:'15'
     }
 ]
 
