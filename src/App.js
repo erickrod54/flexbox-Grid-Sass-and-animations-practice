@@ -28,15 +28,13 @@ import { UIWhiteSpaceApp,
          UITypographyApp,
          UIColorApp,
          UIFormApp, 
-         UIVisualHierarchyApp} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps' 
+         UIVisualHierarchyApp,
+         UIDesignChallenge} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps' 
 
-/**Flexbox-grid-sass-and-animations app version 43 -
+/**Flexbox-grid-sass-and-animations app version 44 -
  * App js file - Features:
- *
- *      --> Adding 'UIFormApp' and building 
- *          a route for it.
  * 
- *       --> Adding 'UIVisualHierarchyApp' and building 
+ *       --> Adding 'UIDesignChallenge' and building 
  *          a route for it. 
  * 
  * Note: starting to build the ui color 
@@ -72,6 +70,7 @@ function App() {
         <Route path='/apps/web-design-fundamentals-app/ui-color' element={<UIColorApp />}/>
         <Route path='/apps/web-design-fundamentals-app/ui-web-fundamental-challenge-2' element={<UIFormApp />}/>
         <Route path='/apps/web-design-fundamentals-app/ui-visual-hierarchy-design' element={<UIVisualHierarchyApp />}/>
+        <Route path='/apps/web-design-fundamentals-app/ui-design-challenge' element={<UIDesignChallenge />}/>
         </Route>
       </Routes>
     </Router>
