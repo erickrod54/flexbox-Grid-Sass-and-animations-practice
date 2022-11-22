@@ -10,11 +10,14 @@ import {
     mrsmallwolf 
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 44 -
+/**Flexbox-grid-sass-and-animations app version 45 -
  * data js - Features:
  * 
- *      --> Adding 'design challenge' to
- *          AppsLinks
+ *      --> Editing descriptions and titles for
+ *          'appWebFundamentalsData'.
+ * 
+ *      --> Building 'appWebResponsiveData'.
+ * 
  * 
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -320,13 +323,19 @@ export const appsLinksData = [
      {
         id:14,
         name:' web design fundamentals',
-        desc:'work in progress',
+        desc:'the 8 fundamentals for web design',
         category:'web design fundamentals',
         url:'/apps/web-design-fundamentals-app'
      },
-
-    
+     {
+        id:15,
+        name:'responsive web design fundamentals',
+        desc:'work in progress',
+        category:'responsive web design fundamentals',
+        url:'/apps/web-responsive-design-fundamentals-app'
+     },
 ]
+
 
 /**here i build 'AppWebFundamentalsData' */
 export const appWebFundamentalsData = [
@@ -338,67 +347,92 @@ export const appWebFundamentalsData = [
     {
        id:2,
        name:'ui white space fundamentals',
-       desc:'work in progress',
+       desc:'padding and margin key role in ui white space fundamentals',
        category:'web design properties',
        url:'/apps/web-design-fundamentals-app/ui-white-space'
     },
     {
        id:3,
        name:'ui alignment fundamentals',
-       desc:'work in progress',
+       desc:'aligment using white space to create order in design',
        category:'web design properties',
        url:'/apps/web-design-fundamentals-app/ui-alignment'
     },
     {
         id:4,
         name:'UI Whitespace and Alignment combined',
-        desc:'work in progress',
+        desc:'two fundamentals combined to create armony design',
         category:'web design properties',
         url:'/apps/web-design-fundamentals-app/ui-Whitespace-and-alignment-combined'
      },
     {
        id:5,
        name:'ui contrast and scale fundamentals',
-       desc:'work in progress',
+       desc:'ui color contrast, and scaling web elements and font sizes',
        category:'web design properties',
        url:'/apps/web-design-fundamentals-app/ui-contrast-and-scale'
     },
     {
        id:6,
        name:'ui typography fundamentals',
-       desc:'work in progress',
+       desc:'the importance of good typography in design',
        category:'web design properties',
        url:'/apps/web-design-fundamentals-app/ui-typography'
     },
     {
        id:7,
        name:'ui color web design fundamentals',
-       desc:'work in progress',
+       desc:'color selection for ui color',
        category:'web design properties',
        url:'/apps/web-design-fundamentals-app/ui-color'
     },
     {
        id:8,
-       name:'ui web design fundamentals challenge 2',
-       desc:'work in progress',
+       name:'ui web design fundamentals challenge (first challenge)',
+       desc:'applying web fundamentals to a design',
        category:'web design properties',
        url:'/apps/web-design-fundamentals-app/ui-web-fundamental-challenge-2'
     },
     {
        id:9,
        name:'ui Visual Hierarchy Design Fundamental',
-       desc:'work in progress',
+       desc:'how to apply fundamentals in a design',
        category:'web design properties',
        url:'/apps/web-design-fundamentals-app/ui-visual-hierarchy-design'
     },
     {
        id:10,
-       name:'ui design challenge',
-       desc:'work in progress',
+       name:'ui design challenge (final challenge)',
+       desc:'applying web fundamentals to a design',
        category:'web design properties',
        url:'/apps/web-design-fundamentals-app/ui-design-challenge'
     }
 ] 
+
+export const appWebResponsiveData = [
+    {
+        id:1,
+        name:'web responsive design fundamentals',
+        url:'/apps/web-responsive-design-fundamentals-app'  
+      },
+      /**uncomment to add test apps */
+      /**
+       * {
+         id:2,
+         name:'first app',
+         desc:'work in progress',
+         category:'web responsive design',
+         url:'/apps/web-responsive-design-fundamentals-app/first-app'
+      },
+      {
+         id:3,
+         name:'second app',
+         desc:'work in progress',
+         category:'web responsive design',
+         url:'/apps/web-responsive-design-fundamentals-app/second-app'
+      },
+       */
+]
 
 export const uiFormData = [
     {
