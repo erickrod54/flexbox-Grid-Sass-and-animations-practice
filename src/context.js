@@ -19,13 +19,14 @@ import {
   uiContrastAndScaleData,
   uiTypographyData, 
   uiColorData,
-  uiFormData} from "./data";
+  uiFormData,
+  appWebResponsiveData } from "./data";
 
   
-  /**Flexbox-grid-sass-and-animations app version 42 -
+  /**Flexbox-grid-sass-and-animations app version 45 -
    * context js file - Features:
    * 
-   *      --> Importing and providing 'uiFormData'
+   *      --> Importing and providing 'appWebResponsiveData'
    * 
    * Note: This features added due to the last app
    */
@@ -424,7 +425,8 @@ return(
     uiContrastAndScaleData,
     uiTypographyData,
     uiColorData,
-    uiFormData
+    uiFormData,
+    appWebResponsiveData
   }}
   >{children}
         </AppContext.Provider>
