@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import ComplexTitle from "../../components/complex-title";
 import { useAppContext } from "../../context";
 
 
-/**Flexbox-grid-sass-and-animations app version 33 -
+/**Flexbox-grid-sass-and-animations app version 45 -
  * UIWhiteSpaceApp - Features:
  * 
- *      --> Taking functionality to the context.
+ *      --> Taking off unused Components.
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
