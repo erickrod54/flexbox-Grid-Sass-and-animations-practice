@@ -31,18 +31,21 @@ import { UIWhiteSpaceApp,
          UIVisualHierarchyApp,
          UIDesignChallenge} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps' 
 
-/**Flexbox-grid-sass-and-animations app version 44 -
+import { ResponsiveWebDesignApp } from './setup-app/web-responsive-design-apps-list/index.responsive.web.fundamentals';
+
+/**Flexbox-grid-sass-and-animations app version 45 -
  * App js file - Features:
  * 
- *       --> Adding 'UIDesignChallenge' and building 
- *          a route for it. 
+ *       --> Adding 'ResponsiveWebDesignApp' and 
+ *           building a route for it. 
  * 
  * Note: starting to build the ui color 
  * fundamental app
  */
 
-function App() {
 
+function App() {
+  
   return (
     <Router>
       <Routes>
@@ -71,6 +74,7 @@ function App() {
         <Route path='/apps/web-design-fundamentals-app/ui-web-fundamental-challenge-2' element={<UIFormApp />}/>
         <Route path='/apps/web-design-fundamentals-app/ui-visual-hierarchy-design' element={<UIVisualHierarchyApp />}/>
         <Route path='/apps/web-design-fundamentals-app/ui-design-challenge' element={<UIDesignChallenge />}/>
+        <Route path='/apps/web-responsive-design-fundamentals-app' element={<ResponsiveWebDesignApp />}/>
         </Route>
       </Routes>
     </Router>
