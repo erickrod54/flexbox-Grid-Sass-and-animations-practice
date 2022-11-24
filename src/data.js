@@ -10,13 +10,12 @@ import {
     mrsmallwolf 
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 45 -
+/**Flexbox-grid-sass-and-animations app version 46 -
  * data js - Features:
- * 
- *      --> Editing descriptions and titles for
- *          'appWebFundamentalsData'.
- * 
- *      --> Building 'appWebResponsiveData'.
+ *
+ *  
+ *      --> Adding 'units and props for responsiveness'
+ *          to 'appWebResponsiveData'.
  * 
  * 
  * Note: this data is going to be passed to build 
@@ -415,15 +414,16 @@ export const appWebResponsiveData = [
         name:'web responsive design fundamentals',
         url:'/apps/web-responsive-design-fundamentals-app'  
       },
-      /**uncomment to add test apps */
-      /**
-       * {
+       {
          id:2,
-         name:'first app',
+         name:'units and props for responsiveness',
          desc:'work in progress',
          category:'web responsive design',
-         url:'/apps/web-responsive-design-fundamentals-app/first-app'
+         url:'/apps/web-responsive-design-fundamentals-app/units-and-props'
       },
+      /**uncomment to add test apps */
+      /**
+       *
       {
          id:3,
          name:'second app',
