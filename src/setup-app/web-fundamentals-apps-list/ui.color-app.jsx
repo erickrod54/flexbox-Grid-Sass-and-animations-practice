@@ -4,34 +4,21 @@ import { useAppContext } from "../../context";
 import { Link } from 'react-router-dom';
 
 
-/**Flexbox-grid-sass-and-animations app version 41 -
+/**Flexbox-grid-sass-and-animations app version 47 -
  * UIColorApp - Features:
  * 
- *      --> Building 'UIColorApp'.
- * 
- *      --> Destructuring 'uiColorData' from the 
- *          context.
- * 
- *      --> Building state and handler to improve
- *          the 'color' from the initial design
- *          to the final design.
- * 
- *      --> Building return. 
+ *      --> Migrating state color and handleColor
+ *          feature to the context. 
  * 
  * Note: This features added due to the last app
  */
 
 const UIColorApp = () => {
 
-    const { uiColorData } = useAppContext()
+    const { uiColorData, handleColor, color } = useAppContext()
     //console.log('ui Color Data ==>', uiColorData)
 
-    const [ color, setColor ] = useState(false)
 
-    const handleColor = () => {
-        setColor(!color)
-        //console.log(color)    
-    }
 
     const { title, text, textlink } = uiColorData[0];
 
