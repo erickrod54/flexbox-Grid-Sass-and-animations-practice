@@ -23,12 +23,13 @@ import {
   appWebResponsiveData } from "./data";
 
   
-  /**Flexbox-grid-sass-and-animations app version 45 -
+  /**Flexbox-grid-sass-and-animations app version 48 -
    * context js file - Features:
    * 
-   *      --> Importing and providing 'appWebResponsiveData'
+   *      --> Migrating 'uiColor' state and features
    * 
-   * Note: This features added due to the last app
+   * Note: This file is going to be refactor en later
+   * versions
    */
   
   /**here i build the initialState */
@@ -360,6 +361,13 @@ const toggleFlexManApp = () => {
   dispatch({ type: TOGGLE_FLEX_MANIPULATION_APP, payload: state.flexmanapp})
 }
 
+/**web fundamentals */
+const [ color, setColor ] = useState(false)
+
+const handleColor = () => {
+    setColor(!color)
+    //console.log(color)    
+}
 
 /**i spread/copy the 'state' to test the context
  * by this version i reorder the props state values
@@ -390,6 +398,7 @@ return(
     handleAlignself,
     handleItemAlignself,
     handleBasketball,
+    handleColor,
     UIWhitespaceAndAlignmentData,
     direction,
     wrap,
@@ -410,6 +419,7 @@ return(
     alignself,
     itemAlignself,
     basketball,
+    color,
     flowData,
     flexPropData,
     flexWrapData,
