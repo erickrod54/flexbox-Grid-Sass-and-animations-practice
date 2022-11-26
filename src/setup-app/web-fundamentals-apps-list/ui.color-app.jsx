@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useAppContext } from "../../context";
 import { Link } from 'react-router-dom';
 
 
-/**Flexbox-grid-sass-and-animations app version 47 -
+/**Flexbox-grid-sass-and-animations app version 48 -
  * UIColorApp - Features:
  * 
- *      --> Migrating state color and handleColor
- *          feature to the context. 
+ *      --> clearing warnings. 
  * 
  * Note: This features added due to the last app
  */
