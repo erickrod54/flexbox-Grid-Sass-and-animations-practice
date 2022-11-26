@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-/**Flexbox-grid-sass-and-animations app version 46 -
+/**Flexbox-grid-sass-and-animations app version 48 -
  * UnitsAndProps - Features:
  *
  *  
- *      --> Building UnitsAndProps.
+ *      --> Building 'states' and 'handlers'    
+ *          to set 'width' and 'height' 
+ *          dinamicly.
  * 
+ *      --> Work in progress to explain 
+ *          'max-width' and 'min-width'.
+ * 
+ *      --> Work in progress to explain 
+ *          'max-height' and 'min-height'.
  * 
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -14,8 +21,30 @@ import styled from "styled-components";
 
 const UnitsAndProps = () => {
 
+    const [ height, setHeight ] = useState('')
+    const [ width, setWidth ] = useState('')
+
+    const handleWidth = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+  
+  console.log('width => name selected ==>', name, 'value selected ==>', value)
+  
+        setWidth({ ...width, [name]:value})
+    }
+
+    const handleHeight = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+  
+    console.log('height => name selected ==>', name, 'value selected ==>', value)
+  
+        setHeight({ ...height, [name]:value})
+    }
+
     return(
-        <Wrapper>
+        <Wrapper width={width} height={height}>
+
             <h2>units and props for responsiveness:</h2>
 
             <p>
@@ -73,7 +102,7 @@ const UnitsAndProps = () => {
             <p>
                 responsiveness is the concept of how 
                 apps can adapt and look well in all
-                kind of devices, and the props:
+                kind of devices, and the props are:
             </p>
 
             <ul>
@@ -85,7 +114,53 @@ const UnitsAndProps = () => {
                 </li>
             </ul>
 
+            <p>
+                settting pixels in 'width' and 'height' 
+                prop:
+            </p>
 
+            <select 
+                name="selection" 
+                id="selection" 
+                value={height} 
+                onChange={handleWidth}>
+                    
+                    <option value="">Select a height:</option>1
+                    <option value='600px'>600px </option>
+                </select>
+
+                <select 
+                name="selection" 
+                id="selection" 
+                value={width} 
+                onChange={handleHeight}>
+                    
+                    <option value="">Select a width:</option>1
+                    <option value='300px'>300px </option>
+                </select>
+
+            <div className="image-gradient" />
+            { width && height ?
+            <>
+            <p>
+                By setting a 'width' and 'height' in 
+                'px' units if i set a large width for example
+                '600px' i can see how the window display a
+                scroll because the image exceed the screen 
+                size
+            </p>
+            </>
+            :
+            null
+            }
+
+            <p>
+                to checkout how the 'max-width' and max-height,
+                behave i have to ..
+            </p>
+
+            
+    
         </Wrapper>
     )
 }
@@ -100,6 +175,12 @@ const Wrapper = styled.div`
     li{
         list-style-type: decimal;
         margin: 1rem 0 1rem 0
+    }
+
+    .image-gradient{
+        background-image: linear-gradient( 135deg, #FFDB01 10%, #0E197D 100%);
+        height: ${({height}) => height.selection};
+        width: ${({width}) => width.selection};
     }
 `
 
