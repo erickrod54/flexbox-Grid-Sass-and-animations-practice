@@ -10,12 +10,12 @@ import {
     mrsmallwolf 
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 46 -
+/**Flexbox-grid-sass-and-animations app version 49 -
  * data js - Features:
  *
  *  
- *      --> Adding 'units and props for responsiveness'
- *          to 'appWebResponsiveData'.
+ *      --> Adding 'view port units' to 
+ *          'resposivenessData'.
  * 
  * 
  * Note: this data is going to be passed to build 
@@ -421,17 +421,15 @@ export const appWebResponsiveData = [
          category:'web responsive design',
          url:'/apps/web-responsive-design-fundamentals-app/units-and-props'
       },
-      /**uncomment to add test apps */
-      /**
-       *
+     
       {
          id:3,
-         name:'second app',
+         name:'view port units',
          desc:'work in progress',
          category:'web responsive design',
-         url:'/apps/web-responsive-design-fundamentals-app/second-app'
+         url:'/apps/web-responsive-design-fundamentals-app/view-port-units'
       },
-       */
+      
 ]
 
 export const uiFormData = [
