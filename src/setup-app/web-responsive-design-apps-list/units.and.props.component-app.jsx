@@ -1,49 +1,69 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { maxwidthimage } from "../../assets/assets.index";
 
-/**Flexbox-grid-sass-and-animations app version 48 -
+
+/**Flexbox-grid-sass-and-animations app version 49 -
  * UnitsAndProps - Features:
  *
  *  
- *      --> Building 'states' and 'handlers'    
- *          to set 'width' and 'height' 
- *          dinamicly.
- * 
- *      --> Work in progress to explain 
+ *      --> Finish to explain 
  *          'max-width' and 'min-width'.
  * 
- *      --> Work in progress to explain 
- *          'max-height' and 'min-height'.
+ *      --> importing and placing 'maxwidthimage'.
  * 
  * Note: this data is going to be passed to build 
  * uiColorApp.
  */
 
 const UnitsAndProps = () => {
-
+    
     const [ height, setHeight ] = useState('')
     const [ width, setWidth ] = useState('')
-
+    const [ maxheight, setMaxheight ] = useState('')
+    const [ maxwidth, setMaxwidth ] = useState('') 
+    
+    
     const handleWidth = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-  
-  console.log('width => name selected ==>', name, 'value selected ==>', value)
-  
+        
+        console.log('width => name selected ==>', name, 'value selected ==>', value)
+        
         setWidth({ ...width, [name]:value})
     }
-
+    
     const handleHeight = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-  
-    console.log('height => name selected ==>', name, 'value selected ==>', value)
-  
+        
+        console.log('height => name selected ==>', name, 'value selected ==>', value)
+        
         setHeight({ ...height, [name]:value})
     }
-
+    
+    const handleMaxwidth = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        
+        console.log('max width => name selected ==>', name, 'value selected ==>', value)
+        
+        setMaxwidth({ ...maxwidth, [name]:value})
+    }
+    
+    const handleMaxheight = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        
+        console.log('max height => name selected ==>', name, 'value selected ==>', value)
+        
+        setMaxheight({ ...maxheight, [name]:value})
+    }
+    
+    
+    
     return(
-        <Wrapper width={width} height={height}>
+        <Wrapper width={width} height={height} maxwidth={maxwidth} maxheight={maxheight}>
 
             <h2>units and props for responsiveness:</h2>
 
@@ -152,18 +172,76 @@ const UnitsAndProps = () => {
             </>
             :
             null
+        }
+
+            <p>
+                to checkout how the 'max-width' and 'max-height'
+                make an impact in resposiveness, let's try fixing
+                the max-width to '300px':
+            </p>
+
+            <select 
+                name="election" 
+                id="election" 
+                value={maxheight} 
+                onChange={handleMaxwidth}>
+                    
+                    <option value="">Select a height:</option>1
+                    <option value='600px'>600px </option>
+                </select>
+
+                <select 
+                name="election" 
+                id="election" 
+                value={maxwidth} 
+                onChange={handleMaxheight}>
+                    
+                    <option value="">Select a width:</option>
+                    <option value='300px'>300px </option>
+              </select>
+
+              <div className="image-gradient-maxwidth"/>
+
+              {maxwidth ?
+              <>
+              <p>
+                by fixing the 'max-width' to '300px' i can 
+                notice how 'max-width' set a limit of 300px
+                so the responsiveness can go bellow '300px'
+                but no more than that so i can get a fixed
+                300px but responsive bellow that value 
+              </p>
+              
+              <img src={maxwidthimage} alt='maxwidthimage'/>
+
+              <p>
+                the image above has no 'max-width' prop 
+                and the image bellow has 'max-width' prop
+              </p>
+
+              <p>
+                so 'max-width' is use for small screens 
+                because set a limit 'width'
+              </p>
+
+              </>
+                
+               
+              :
+              null
             }
 
             <p>
-                to checkout how the 'max-width' and max-height,
-                behave i have to ..
+                so what about larger screens as '4k', '6k', '8k'
+                for this case, i can implement 'min-width' that 
+                does the oposite of 'max-width'
             </p>
 
-            
-    
+              
         </Wrapper>
     )
 }
+
 
 
 const Wrapper = styled.div`
@@ -171,17 +249,25 @@ const Wrapper = styled.div`
         text-transform: capitalize;
         text-decoration: underline;
     }
-
+    
     li{
         list-style-type: decimal;
         margin: 1rem 0 1rem 0
     }
-
+    
     .image-gradient{
         background-image: linear-gradient( 135deg, #FFDB01 10%, #0E197D 100%);
         height: ${({height}) => height.selection};
         width: ${({width}) => width.selection};
     }
+    
+    .image-gradient-maxwidth{
+        background-image: linear-gradient( 135deg, #FFDB01 10%, #0E197D 100%);
+        height: ${({ maxheight }) => maxheight.election };
+        max-width: ${({ maxwidth }) => maxwidth.election };    
+    }
+
+    
 `
 
 export default UnitsAndProps;
