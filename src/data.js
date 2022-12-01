@@ -11,13 +11,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 50 -
+/**Flexbox-grid-sass-and-animations app version 51 -
  * data js - Features:
  *
  *  
- *      --> Building 'viewPortData'.
- *  
- *      --> Adding 'duck' and 'mrcat' to viewPortData.
+ *      --> Adding 'media queries' to responsive data
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -422,7 +420,6 @@ export const appWebResponsiveData = [
          category:'web responsive design',
          url:'/apps/web-responsive-design-fundamentals-app/units-and-props'
       },
-     
       {
          id:3,
          name:'view port units',
@@ -430,7 +427,13 @@ export const appWebResponsiveData = [
          category:'web responsive design',
          url:'/apps/web-responsive-design-fundamentals-app/view-port-units'
       },
-      
+      {
+        id:4,
+        name:'media queries',
+        desc:'work in progress',
+        category:'web responsive design',
+        url:'/apps/web-responsive-design-fundamentals-app/media-queries'
+     },
 ]
 
 export const uiFormData = [
