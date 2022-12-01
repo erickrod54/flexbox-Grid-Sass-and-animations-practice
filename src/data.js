@@ -7,17 +7,18 @@ import {
     tiger,
     mrcat,
     mrgiraffe,
-    mrsmallwolf 
+    mrsmallwolf, 
+    duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 49 -
+/**Flexbox-grid-sass-and-animations app version 50 -
  * data js - Features:
  *
  *  
- *      --> Adding 'view port units' to 
- *          'resposivenessData'.
- * 
- * 
+ *      --> Building 'viewPortData'.
+ *  
+ *      --> Adding 'duck' and 'mrcat' to viewPortData.
+ *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
  */
@@ -551,6 +552,17 @@ export const uiTypographyData = [
         image:mrsmallwolf,
         text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         headline:'Mr small wolf'
+    }
+]
+
+export const viewPortData = [
+    {
+        id:1,
+        image:mrcat,
+    },
+    {
+        id:2,
+        image:duck,
     }
 ]
 
