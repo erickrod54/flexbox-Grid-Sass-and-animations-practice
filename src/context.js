@@ -20,13 +20,15 @@ import {
   uiTypographyData, 
   uiColorData,
   uiFormData,
-  appWebResponsiveData } from "./data";
+  appWebResponsiveData, 
+  viewPortData} from "./data";
 
   
-  /**Flexbox-grid-sass-and-animations app version 48 -
+  /**Flexbox-grid-sass-and-animations app version 50 -
    * context js file - Features:
    * 
-   *      --> Migrating 'uiColor' state and features
+   *      --> Importing and providing 
+   *          'viewPortData' state and features
    * 
    * Note: This file is going to be refactor en later
    * versions
@@ -436,6 +438,7 @@ return(
     uiTypographyData,
     uiColorData,
     uiFormData,
+    viewPortData,
     appWebResponsiveData
   }}
   >{children}
