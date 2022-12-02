@@ -11,11 +11,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 51 -
+/**Flexbox-grid-sass-and-animations app version 52 -
  * data js - Features:
  *
  *  
- *      --> Adding 'media queries' to responsive data
+ *      --> Adding 'weather ui app' to responsive data
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -433,6 +433,13 @@ export const appWebResponsiveData = [
         desc:'work in progress',
         category:'web responsive design',
         url:'/apps/web-responsive-design-fundamentals-app/media-queries'
+     },
+    {
+        id:5,
+        name:'weather ui app',
+        desc:'work in progress',
+        category:'web responsive design',
+        url:'/apps/web-responsive-design-fundamentals-app/weather-ui-app'
      },
 ]
 
