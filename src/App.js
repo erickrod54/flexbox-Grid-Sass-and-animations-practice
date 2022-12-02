@@ -31,12 +31,13 @@ import { UIWhiteSpaceApp,
          UIVisualHierarchyApp,
          UIDesignChallenge} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps' 
 
-import { MediaQueriesComponent, ResponsiveWebDesignApp, UnitsAndProps, ViewPortUnits } from './setup-app/web-responsive-design-apps-list/index.responsive.web.fundamentals';
+import { MediaQueriesComponent, ResponsiveWebDesignApp, UnitsAndProps, ViewPortUnits, WheaterUiApp } from './setup-app/web-responsive-design-apps-list/index.responsive.web.fundamentals';
 
-/**Flexbox-grid-sass-and-animations app version 51 -
+
+/**Flexbox-grid-sass-and-animations app version 52 -
  * App js file - Features:
  * 
- *       --> Adding 'MediaQueries' and 
+ *       --> Adding 'WheaterUiApp' and 
  *           building a route for it. 
  * 
  * Note: starting to build the ui color 
@@ -77,7 +78,8 @@ function App() {
         <Route path='/apps/web-responsive-design-fundamentals-app' element={<ResponsiveWebDesignApp />}/>
         <Route path='/apps/web-responsive-design-fundamentals-app/units-and-props' element={<UnitsAndProps />}/>
         <Route path='/apps/web-responsive-design-fundamentals-app/view-port-units' element={<ViewPortUnits />}/>
-        <Route path='/apps/web-responsive-design-fundamentals-app/media-queries' element={<MediaQueriesComponent />}/>  
+        <Route path='/apps/web-responsive-design-fundamentals-app/media-queries' element={<MediaQueriesComponent />}/>
+        <Route path='/apps/web-responsive-design-fundamentals-app/weather-ui-app' element={<WheaterUiApp />}/>  
         </Route>
       </Routes>
     </Router>
