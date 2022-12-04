@@ -6,12 +6,9 @@ import styled from "styled-components";
   /**Flexbox-grid-sass-and-animations app version 53 -
    * WheaterUiApp- Features:
    * 
-   *      --> Building basic ui for 'WheaterUiApp'.
+   *      --> Applying 'queries'
    *   
-   *      --> Building a return.
-   *   
-   * Note: pending to add the queries and make it 
-   * dynamic
+   * Note: pending make it dynamic
    */
 
 const WheaterUiApp = () => {
@@ -112,6 +109,7 @@ const Wrapper = styled.div`
 }
 :root{
     font-size: 62.5%;
+    
 }
 
 background-color: #0f9b8e;
@@ -139,6 +137,24 @@ sup{
 
 .weather{
     margin: 2rem auto 0;
+    
+    @media screen and (max-width:600px){
+                
+        h1{
+            padding: 0 2rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+       i{
+        font-size: 2.5rem;
+       }
+
+       p{
+        font-size: 1.2rem;
+       }
+    }
+    
 }
 
 h1{
@@ -148,26 +164,49 @@ h1{
     font-weight: 300;
 }
 
+
 .weather_info_temp{
     padding: 4rem;
+    
+    @media screen and (max-width:600px){
+        padding: 1rem;
+        
+    }
+    
 }
+
 
 .weather__info{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin: 5rem 0;
-}
+    
+    @media screen and (max-width:600px){
+        flex-direction: flex-end ;
+        
+    }
 
-.weather_temp{
-    display: flex;
-    justify-content: space-evenly;
 }
 
 .weather__temp{
     display: flex;
     justify-content: space-evenly;
+    
+    
+    @media screen and (max-width:800px){
+        display: flex;
+        flex-direction: column;
+
+        div{
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 2rem;
+        }
+    }
+
 }
+
 
 `
 
