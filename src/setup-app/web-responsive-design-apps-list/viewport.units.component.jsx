@@ -2,14 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { useAppContext } from "../../context";
 
-  /**Flexbox-grid-sass-and-animations app version 50 -
+  /**Flexbox-grid-sass-and-animations app version 53 -
    * ViewPortUnits- Features:
    * 
-   *      --> Building 'ViewPortUnit'.
-   *    
-   *      --> Destructuring data from the context.
-   * 
-   *      --> Building a return.
+   *      --> Starting 'font size and viewport units'.
    *   
    * Note: This file is going to be refactor en later
    * versions
@@ -129,6 +125,39 @@ const ViewPortUnits = () => {
 
             <img className='viewport-vmax' src={duck} alt='duck'/>
 
+            <h3>font size and viewport units:</h3>
+
+            <p>
+                font 'ui-scaling' can be dynamic by using 
+                the 'vw' (viewport wide unit) along with
+                the calc function as follows:
+            </p>
+
+            <section className="code-block">
+                    <p>
+                    font-size: calc(14px + 2vw);
+                    </p>
+                    
+            </section> 
+
+            <p>
+                where '14px' and '2vw'
+                 will depend on the use case
+                for this case around '16px'
+                for the calculation.
+            </p>
+            
+                    
+            <p>
+                i have the following text to make it responsive
+                applying viewport units:
+            </p>
+
+            <section className="code-block">
+                    <p>
+                    font size and viewport units
+                    </p>
+            </section>        
         </Wrapper>
     )
 }
@@ -180,6 +209,23 @@ const Wrapper = styled.div`
     .viewport-vmax{
         width: 50vmax;
     }
+
+    .code-block{
+        border: 2px solid black;
+        margin: 2rem 1rem 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p{
+            margin: 1rem;
+            padding: 0.5rem;
+            
+            font-size: calc(14px + 2vw);
+        }
+        
+        }
 `
 
 export default ViewPortUnits;
