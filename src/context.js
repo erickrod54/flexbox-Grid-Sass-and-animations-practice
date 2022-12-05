@@ -21,14 +21,22 @@ import {
   uiColorData,
   uiFormData,
   appWebResponsiveData, 
-  viewPortData} from "./data";
+  viewPortData,
+  cloud,
+  sun,
+  cloudsun,
+  wind,
+  sunrain,
+  showersheavy,
+  cloudmeatball} from "./data";
 
   
-  /**Flexbox-grid-sass-and-animations app version 50 -
+  
+  /**Flexbox-grid-sass-and-animations app version 55 -
    * context js file - Features:
    * 
    *      --> Importing and providing 
-   *          'viewPortData' state and features
+   *          data for weather app. 
    * 
    * Note: This file is going to be refactor en later
    * versions
@@ -421,6 +429,13 @@ return(
     alignself,
     itemAlignself,
     basketball,
+    cloud, 
+    sun, 
+    cloudsun, 
+    wind,
+    sunrain, 
+    showersheavy, 
+    cloudmeatball,
     color,
     flowData,
     flexPropData,
@@ -439,7 +454,8 @@ return(
     uiColorData,
     uiFormData,
     viewPortData,
-    appWebResponsiveData
+    appWebResponsiveData,
+
   }}
   >{children}
         </AppContext.Provider>
