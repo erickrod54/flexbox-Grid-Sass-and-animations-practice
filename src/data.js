@@ -11,11 +11,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 52 -
+/**Flexbox-grid-sass-and-animations app version 54 -
  * data js - Features:
  *
  *  
- *      --> Adding 'weather ui app' to responsive data
+ *      --> Adding 'ViewPortCases' to responsive data
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -441,6 +441,13 @@ export const appWebResponsiveData = [
         category:'web responsive design',
         url:'/apps/web-responsive-design-fundamentals-app/weather-ui-app'
      },
+     {
+         id:6,
+         name:'viewport units use cases',
+         desc:'work in progress',
+         category:'web responsive design',
+         url:'/apps/web-responsive-design-fundamentals-app/viewport-units-cases'
+      },
 ]
 
 export const uiFormData = [
