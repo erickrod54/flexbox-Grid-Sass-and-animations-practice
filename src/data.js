@@ -1,3 +1,6 @@
+import { faCloud, faCloudMeatball, faCloudShowersHeavy, faCloudSun, faCloudSunRain, faSun, faWind } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { 
     dog,
     moose,
@@ -11,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 54 -
+/**Flexbox-grid-sass-and-animations app version 55 -
  * data js - Features:
  *
  *  
- *      --> Adding 'ViewPortCases' to responsive data
+ *      --> Building data for weather app
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -583,3 +586,12 @@ export const viewPortData = [
     }
 ]
 
+export const cloud = <FontAwesomeIcon icon={faCloud}/>
+export const sun = <FontAwesomeIcon icon={faSun}/>
+export const cloudsun = <FontAwesomeIcon icon={faCloudSun}/>
+export const wind = <FontAwesomeIcon icon={faWind}/>
+export const sunrain = <FontAwesomeIcon icon={faCloudSunRain}/>
+export const showersheavy = <FontAwesomeIcon icon={faCloudShowersHeavy}/>
+export const cloudmeatball = <FontAwesomeIcon icon={faCloudMeatball}/>
+
+ 
