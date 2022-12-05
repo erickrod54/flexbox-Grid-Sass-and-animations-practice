@@ -1,25 +1,24 @@
-import { faCloud, faCloudMeatball, faCloudShowersHeavy, faCloudSun, faCloudSunRain, faSun, faWind } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
+import { useAppContext } from "../../context";
 
-  /**Flexbox-grid-sass-and-animations app version 53 -
+  /**Flexbox-grid-sass-and-animations app version 55 -
    * WheaterUiApp- Features:
    * 
-   *      --> Applying 'queries'
+   *      --> Destructuring icons data from the context
    *   
    * Note: pending make it dynamic
    */
 
 const WheaterUiApp = () => {
 
-    const cloud = <FontAwesomeIcon icon={faCloud}/>
-    const sun = <FontAwesomeIcon icon={faSun}/>
-    const cloudsun = <FontAwesomeIcon icon={faCloudSun}/>
-    const wind = <FontAwesomeIcon icon={faWind}/>
-    const sunrain = <FontAwesomeIcon icon={faCloudSunRain}/>
-    const showersheavy = <FontAwesomeIcon icon={faCloudShowersHeavy}/>
-    const cloudmeatball = <FontAwesomeIcon icon={faCloudMeatball}/>
+    const { cloud, 
+        sun, 
+        cloudsun, 
+        wind,
+        sunrain, 
+        showersheavy, 
+        cloudmeatball } = useAppContext()
 
     return(
         <Wrapper>
