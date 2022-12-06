@@ -14,11 +14,12 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 55 -
+/**Flexbox-grid-sass-and-animations app version 56 -
  * data js - Features:
  *
  *  
- *      --> Building data for weather app
+ *      --> Adding 'box sizing discussion' to 
+ *          'AppLinks data'
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -334,6 +335,13 @@ export const appsLinksData = [
         desc:'work in progress',
         category:'responsive web design fundamentals',
         url:'/apps/web-responsive-design-fundamentals-app'
+     },
+     {
+        id:16,
+        name:'box sizing discussion',
+        desc:'work in progress',
+        category:'responsive web design fundamentals',
+        url:'/apps/box-sizing'
      },
 ]
 
