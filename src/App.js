@@ -15,6 +15,7 @@ import {
          FlexShrinkPropertyApp,
          FlexBasisPropertyApp,
          FlexAlignSelfPropertyApp,
+         BoxSizing,
 
         } from './setup-app/flexbox-apps-list/index-apps.list'
 
@@ -34,10 +35,10 @@ import { UIWhiteSpaceApp,
 import { MediaQueriesComponent, ResponsiveWebDesignApp, UnitsAndProps, ViewPortUnits, ViewportUnitsCases, WheaterUiApp } from './setup-app/web-responsive-design-apps-list/index.responsive.web.fundamentals';
 
 
-/**Flexbox-grid-sass-and-animations app version 54 -
+/**Flexbox-grid-sass-and-animations app version 56 -
  * App js file - Features:
  * 
- *       --> Adding 'ViewportUnitsCases' and 
+ *       --> Adding 'BoxSizing' and 
  *           building a route for it. 
  * 
  * Note: starting to build the ui color 
@@ -81,6 +82,7 @@ function App() {
         <Route path='/apps/web-responsive-design-fundamentals-app/media-queries' element={<MediaQueriesComponent />}/>
         <Route path='/apps/web-responsive-design-fundamentals-app/weather-ui-app' element={<WheaterUiApp />}/>
         <Route path='/apps/web-responsive-design-fundamentals-app/viewport-units-cases' element={<ViewportUnitsCases />}/>
+        <Route path='/apps/box-sizing' element={<BoxSizing />}/>
         </Route>
       </Routes>
     </Router>
