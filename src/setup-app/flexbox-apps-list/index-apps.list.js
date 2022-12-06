@@ -13,11 +13,12 @@ import FlexGrowPropertyApp from "./flex.grow.property-app";
 import FlexShrinkPropertyApp from "./flexbox.shrink-app";
 import FlexBasisPropertyApp from "./flex.basis-app";
 import FlexAlignSelfPropertyApp from "./flex.align.self.property-app";
+import BoxSizing from "./box.sizing.discussion";
 
-/**Flexbox-grid-sass-and-animations app version 33 -
+/**Flexbox-grid-sass-and-animations app version 56 -
  * index js file - Features:
  * 
- *      --> Fixing 'JustifyContentApp' import   
+ *      --> adding 'BoxSizing' to the index   
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -39,5 +40,6 @@ export {
     FlexGrowPropertyApp,
     FlexShrinkPropertyApp,
     FlexBasisPropertyApp,
-    FlexAlignSelfPropertyApp   
+    FlexAlignSelfPropertyApp,
+    BoxSizing   
     }
