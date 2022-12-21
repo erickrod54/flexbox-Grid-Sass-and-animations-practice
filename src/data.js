@@ -14,12 +14,12 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 56 -
+/**Flexbox-grid-sass-and-animations app version 57 -
  * data js - Features:
  *
  *  
- *      --> Adding 'box sizing discussion' to 
- *          'AppLinks data'
+ *      --> Building 'cssGridlayoutData' and adding 
+ *          it to the 'AppLinks' list
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -343,6 +343,13 @@ export const appsLinksData = [
         category:'responsive web design fundamentals',
         url:'/apps/box-sizing'
      },
+     {
+        id:17,
+        name:'grid layout',
+        desc:'work in progress',
+        category:'grid properties',
+        url:'/apps/grid-layout'
+     },
 ]
 
 
@@ -592,6 +599,47 @@ export const viewPortData = [
         id:2,
         image:duck,
     }
+]
+
+export const cssGridlayoutData = [
+      {
+        id:1,
+        name:'grid layout',
+        category:'grid properties',
+        url:'/apps/grid-layout'  
+      },
+      {
+        id:2,
+        name:'grid introduction',
+        category:'container properties',
+        url:'/apps/grid-layout/test-grid-app'  
+      },
+      /**
+       * {
+        id:2,
+        name:'repat function and grid units',
+        category:'container properties',
+        url:'/apps/web-responsive-design-fundamentals-app'  
+      },
+      {
+        id:3,
+        name:'deep in grid properties',
+        category:'container properties',
+        url:'/apps/web-responsive-design-fundamentals-app'  
+      },   
+      {
+        id:3,
+        name:'web responsive design fundamentals',
+        category:'item properties',
+        url:'/apps/web-responsive-design-fundamentals-app'  
+      },
+      {
+        id:4,
+        name:'web responsive design fundamentals',
+        category:'item properties',
+        url:'/apps/web-responsive-design-fundamentals-app'  
+      },
+       */
 ]
 
 export const cloud = <FontAwesomeIcon icon={faCloud}/>
