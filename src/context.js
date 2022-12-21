@@ -28,15 +28,15 @@ import {
   wind,
   sunrain,
   showersheavy,
-  cloudmeatball} from "./data";
+  cloudmeatball,
+  cssGridlayoutData} from "./data";
 
   
-  
-  /**Flexbox-grid-sass-and-animations app version 55 -
+  /**Flexbox-grid-sass-and-animations app version 57 -
    * context js file - Features:
    * 
    *      --> Importing and providing 
-   *          data for weather app. 
+   *           cssGridlayoutData. 
    * 
    * Note: This file is going to be refactor en later
    * versions
@@ -455,7 +455,7 @@ return(
     uiFormData,
     viewPortData,
     appWebResponsiveData,
-
+    cssGridlayoutData
   }}
   >{children}
         </AppContext.Provider>
