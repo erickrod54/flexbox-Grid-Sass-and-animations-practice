@@ -29,14 +29,14 @@ import {
   sunrain,
   showersheavy,
   cloudmeatball,
-  cssGridlayoutData} from "./data";
+  cssGridlayoutData,
+  gridIntroData} from "./data";
 
-  
-  /**Flexbox-grid-sass-and-animations app version 57 -
+  /**Flexbox-grid-sass-and-animations app version 58 -
    * context js file - Features:
    * 
    *      --> Importing and providing 
-   *           cssGridlayoutData. 
+   *           'gridIntroData'. 
    * 
    * Note: This file is going to be refactor en later
    * versions
@@ -94,9 +94,9 @@ import {
       spaceevenly:'space-evenly'
     })
     
-  /**here i build the satte for align */
-  const [ align, setAlign ] = useState({
-    stretch:'stretch',
+    /**here i build the satte for align */
+    const [ align, setAlign ] = useState({
+      stretch:'stretch',
     flexstart:'flex-start',
     flexend:'flex-end',
     center:'center',
@@ -233,10 +233,10 @@ import {
     console.log('container padding => name selected ==>', name, 'value selected ==>', value)
     
     setPadding({ ...padding, [name]:value})
-}
-
-/**here i buil the handler for 'childpadding' */
-const handleChildpadding = (e) => {
+  }
+  
+  /**here i buil the handler for 'childpadding' */
+  const handleChildpadding = (e) => {
   const name = e.target.name;
   const value = e.target.value;
   
@@ -322,7 +322,7 @@ const handleItemShrink = (e) => {
 const handleBasis = (e) => {
   const name = e.target.name;
   const value = e.target.value;
-
+  
   console.log(' flex-basis => name selected ==>', name, ', value in it ==>', value)
   
   setBasis({ ...basis, [name]: value })
@@ -375,8 +375,8 @@ const toggleFlexManApp = () => {
 const [ color, setColor ] = useState(false)
 
 const handleColor = () => {
-    setColor(!color)
-    //console.log(color)    
+  setColor(!color)
+  //console.log(color)    
 }
 
 /**i spread/copy the 'state' to test the context
@@ -455,7 +455,8 @@ return(
     uiFormData,
     viewPortData,
     appWebResponsiveData,
-    cssGridlayoutData
+    cssGridlayoutData,
+    gridIntroData
   }}
   >{children}
         </AppContext.Provider>
