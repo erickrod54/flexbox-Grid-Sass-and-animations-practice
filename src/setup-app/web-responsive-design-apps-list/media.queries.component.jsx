@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-/**Flexbox-grid-sass-and-animations app version 51 -
+/**Flexbox-grid-sass-and-animations app version 58 -
  * MediaQueriesComponent - Features:
  * 
  *      --> Building 'MediaQueriesComponent'
@@ -157,6 +157,7 @@ const Wrapper = styled.div`
 
         @media screen and (max-width:400px){
             background-color: olivedrab;
+            
         }
 
     }
