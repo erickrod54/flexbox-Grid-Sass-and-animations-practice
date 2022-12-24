@@ -1,5 +1,5 @@
 import React from "react";
-import { useFlexboxContext } from "../context/flexbox.context";
+import { useFlexboxContext } from "../apps-context/flexbox.context";
 
 /**Flexbox-grid-sass-and-animations app version 59 -
  * 'AlignItemsContent ' Component - Features:
