@@ -1,10 +1,11 @@
 import React from "react";
-import { useAppContext } from "../context";
+import { useFlexboxContext } from "../context/flexbox.context";
 
-/**Flexbox-grid-sass-and-animations app version 13 -
- * 'FlexFlowContent' Component - Features:
+/**Flexbox-grid-sass-and-animations app version 59 -
+ * 'AlignItemsContent ' Component - Features:
  * 
- *      --> Building 'AlignItemsContent' app 
+ *      --> Redirecting states and features by 
+ *          useFlexboxContext().
  * 
  * Note: By this version everything is done in
  * this component.
@@ -12,7 +13,7 @@ import { useAppContext } from "../context";
 
 const AlignItemsContent = () => {
 
-    const { align, alignItemsData } = useAppContext()
+    const { align, alignItemsData } = useFlexboxContext()
 
     console.log('this is my data', alignItemsData)
 
