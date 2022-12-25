@@ -1,11 +1,13 @@
 import React from "react";
+import { useFlexboxContext } from "../apps-context/flexbox.context";
 
-import { useAppContext } from "../context";
-
-/**Flexbox-grid-sass-and-animations app version 13 -
+/**Flexbox-grid-sass-and-animations app version 60.01 -
  * 'FlexFlowContent' Component - Features:
  * 
- *      --> Building 'JustifyContent' app 
+ *      --> Redirecting states and features by 
+ *          'useFlexboxContext()'.
+ * 
+ *      --> Changing versioning to 2 digits 
  * 
  * Note: By this version everything is done in
  * this component.
@@ -13,7 +15,7 @@ import { useAppContext } from "../context";
 
 const JustifyContent = ({ justify }) => {
 
-    const { JustifyFlexData } = useAppContext()
+    const { JustifyFlexData } = useFlexboxContext()
 
     return(
         <section>
