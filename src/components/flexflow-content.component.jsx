@@ -1,14 +1,13 @@
 import React from "react";
-import { useAppContext } from '../context';
+import { useFlexboxContext } from "../apps-context/flexbox.context";
 
-/**Flexbox-grid-sass-and-animations app version 13 -
+/**Flexbox-grid-sass-and-animations app version 60.01 -
  * 'FlexFlowContent' Component - Features:
  * 
- *      --> Destructuring flow value and 'flowData' 
- *          data from 'useAppContext()'.
+ *       --> Redirecting states and features by 
+ *          'useFlexboxContext()'.
  * 
- *      --> Filtering and Mapping to render conditionally the 
- *          content data.
+ *      --> Changing versioning to 2 digits
  * 
  * Note: So far by this version i build the data for this three last
  * apps.
@@ -16,7 +15,7 @@ import { useAppContext } from '../context';
 
 const FlexFlowContent = () => {
 
-    const { flow, flowData } = useAppContext()
+    const { flow, flowData } = useFlexboxContext()
 
     return(
         <section>
