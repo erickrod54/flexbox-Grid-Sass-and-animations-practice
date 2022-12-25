@@ -14,7 +14,7 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 58 -
+/**Flexbox-grid-sass-and-animations app version 60.01 -
  * data js - Features:
  *
  *  
@@ -691,5 +691,64 @@ export const wind = <FontAwesomeIcon icon={faWind}/>
 export const sunrain = <FontAwesomeIcon icon={faCloudSunRain}/>
 export const showersheavy = <FontAwesomeIcon icon={faCloudShowersHeavy}/>
 export const cloudmeatball = <FontAwesomeIcon icon={faCloudMeatball}/>
+
+export const weatherAppIcons = [
+    {
+        id:1,
+        day:'friday',
+        icon:cloud,
+        temperature1:'14',
+        temperature2:'10'
+    },
+    {
+        id:2,
+        day:'tuesday',
+        icon:sun,
+        temperature1:'20',
+        temperature2:'16'
+    },
+    {
+        id:3,
+        day:'monday',
+        icon:cloudsun,
+        temperature1:'20',
+        temperature2:'16'
+    },
+    {
+        id:4,
+        day:'wednesday',
+        icon:wind,
+        temperature1:'20',
+        temperature2:'16'
+    },
+    {
+        id:5,
+        day:'thursday',
+        icon:sunrain,
+        temperature1:'18',
+        temperature2:'16'
+    },
+    {
+        id:6,
+        day:'saturday',
+        icon:showersheavy,
+        temperature1:'14',
+        temperature2:'10'
+    },
+    {
+        id:7,
+        day:'sunday',
+        icon:cloudmeatball,
+        temperature1:'23',
+        temperature2:'18'
+    },
+    {
+        id:8,
+        precipitation:'10%',
+        humidity:'5%',
+        wind:'4 kmpm NW',
+        date: new Date(2022, 3, 30),
+    }
+]
 
  
