@@ -1,14 +1,17 @@
 import React from "react";
 import ComplexTitle from "../../components/complex-title";
 import FlexProp from "../../components/flex-prop.component";
-import { useAppContext } from "../../context";
 import { JustifyContentAppWrapper } from "../flexbox.styled.components";
 import JustifyContent from '../../components/justifyflex-content.component';
+import { useFlexboxContext } from "../../apps-context/flexbox.context";
 
-/**Flexbox-grid-sass-and-animations app version 33 -
+/**Flexbox-grid-sass-and-animations app version 60.02 -
  * 'JustifyContentApp' - Features:
  * 
- *      --> Relocating 'JustifyContentApp'
+ *      --> Redirecting states and features by 
+ *          'useFlexboxContext()'.
+ * 
+ *      --> Changing versioning to 2 digits.
  * 
  * Note: By this version everything is done in
  * this component.
@@ -16,7 +19,7 @@ import JustifyContent from '../../components/justifyflex-content.component';
 
 const JustifyContentApp = () => {
 
-    const { justify, handleJustify } = useAppContext()
+    const { justify, handleJustify } = useFlexboxContext()
 
     return(
         <>
