@@ -1,17 +1,16 @@
 import React from "react";
 import ComplexTitle from "../../components/complex-title";
 import FlexProp from "../../components/flex-prop.component";
-import { useAppContext } from "../../context";
+import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import { FlexShrinkPropertyWrapper } from "../flexbox.styled.components";
 
-/**Flexbox-grid-sass-and-animations app version 21 -
+/**Flexbox-grid-sass-and-animations app version 60.03 -
  * FlexShrinkPropertyApp - Features:
  * 
- *       --> Building 'FlexShrinkPropertyApp'
- *           dynamic functionality.
+ *      --> Redirecting states and features by 
+ *          'useFlexboxContext()'.
  * 
- *      --> Drilling props throught 
- *          'FlexShrinkPropertyWrapper'      
+ *      --> Changing versioning to 2 digits.      
  * 
  * Note:  By this version 'flex-shrink' is harcoded,
  * set it to '1'.
@@ -21,8 +20,8 @@ import { FlexShrinkPropertyWrapper } from "../flexbox.styled.components";
 
 const FlexShrinkPropertyApp = () => {
 
-    const { shrink, itemShrink, handleShrink, handleItemShrink } = useAppContext()
-
+    const { shrink, itemShrink, handleShrink, handleItemShrink } = useFlexboxContext()
+    
     //console.log(shrink)
     //console.log(itemShrink)
 
