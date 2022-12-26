@@ -3,13 +3,15 @@ import { FlexboxFlowWrapper } from "../flexbox.styled.components";
 import ComplexTitle from "../../components/complex-title";
 import FlexBoxWrap from '../../components/flex-prop-wrap.component';
 import FlexFlowContent from "../../components/flexflow-content.component";
-import { useAppContext } from  '../../context';
+import { useFlexboxContext } from "../../apps-context/flexbox.context";
 
-/**Flexbox-grid-sass-and-animations app version 13 -
+/**Flexbox-grid-sass-and-animations app version 60.03 -
  * 'FlexFlow' app - Features:
  * 
- *     --> Moving 'flexbox.flow-app.jsx' to
- *          a the new 'flexbox-apps-list directory' 
+ *     --> Redirecting states and features by 
+ *         'useFlexboxContext()'.
+ * 
+ *     --> Changing versioning to 2 digits 
  * 
  * Note: the only prop that i drill is for the Style Component
  * to give the value that needs to change dynamiclly and apply
@@ -19,7 +21,7 @@ import { useAppContext } from  '../../context';
 const FlexFlow = () => {
 
     /**here i destructure props */
-    const { flow, handleFlow } = useAppContext() 
+    const { flow, handleFlow } = useFlexboxContext() 
 
     return(
         <>
