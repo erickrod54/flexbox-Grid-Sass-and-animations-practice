@@ -1,24 +1,55 @@
 import React from "react";
 import ComplexTitle from "../../components/complex-title";
 import FlexAlignSelf from "../../components/flex.align.self.component";
-import { useAppContext } from "../../context";
+import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import { FlexAlignSelfPropertyWrapper } from "../flexbox.styled.components";
+import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 24 -
+/**Flexbox-grid-sass-and-animations app version 60.02 -
  * 'FlexAlignSelfPropertyApp' - Features:
  * 
- *      --> Editing 'FlexAlignSelfPropertyApp' 
- *          description 
+ *      --> Redirecting states and features by 
+ *          'useFlexboxContext()'.
  * 
- * Note: This is the longest version of FlexPropApp
- * in order to demonstrate how 'wrap' props are 
- * applied and how they act as container props.
+ *      --> Changing versioning to 2 digits  
+ * 
+ *      --> Testing new 'SelectionForm'
+ * 
+ * Note: 'SelectionForm' still in test phase.
  */
 
 const FlexAlignSelfPropertyApp = () => {
 
-    const { alignself, itemAlignself, align, handleAlignself, handleItemAlignself, handleAlign } = useAppContext()
-
+    const { alignself, itemAlignself, align, handleAlignself, handleItemAlignself, handleAlign } = useFlexboxContext()
+    
+    const alignSelfArray = [
+        {
+          id:1,
+          value:''  
+        },
+        {
+          id:2,
+          value:'auto'  
+        },
+        {
+          id:3,
+          value:'flex-end'  
+        },
+        {
+          id:4,
+          value:'center'  
+        },
+        {
+          id:5,
+          value:'stretch'  
+        },
+        {
+          id:6,
+          value:'baseline'  
+        }
+        ,
+    ]
+    
     console.log('the aligself ==>', alignself, 'and the itemAlignself ==> ', itemAlignself)
     return(
         <>
@@ -36,21 +67,7 @@ const FlexAlignSelfPropertyApp = () => {
         </h2>
 
         <h3>select an align-self value:</h3>
-        <select 
-                name="selection" 
-                id="selection" 
-                value={alignself} 
-                onChange={handleAlignself}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value="">select an align-self value</option>1
-                    <option value='auto'>auto</option>
-                    <option value='flex-end'>flex-end</option>
-                    <option value='center'>center</option>
-                    <option value='stretch'>stretch</option>
-                    <option value='baseline'>baseline</option>
-                </select>
+        <SelectionForm propertyvalue={alignself} handler={handleAlignself} propertiesArray={alignSelfArray} propertyname={'align-self'} />
 
          {alignself.selection === 'baseline' ?
            <>
