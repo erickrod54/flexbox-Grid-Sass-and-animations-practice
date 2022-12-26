@@ -1,26 +1,19 @@
 import React from "react";
 import ComplexTitle from "../../components/complex-title";
 import FlexAlignMultiline from "../../components/flex-align.multiline.component";
-
-import { useAppContext } from "../../context";
 import { AlignContentAppWrapper, PerfectCenterWrapper } from "../flexbox.styled.components";
 
 import PerfectCenter from "../../components/perfect.center.component";
+import { useFlexboxContext } from "../../apps-context/flexbox.context";
 
 
-/**Flexbox-grid-sass-and-animations app version 15 -
- * 'flexbox.direction.preperty-app' - Features:
+/**Flexbox-grid-sass-and-animations app version 60.02 -
+ * 'FlexAlignContentApp' - Features:
  * 
- *      --> Destructuring props 'direction' and 
- *          'handleChange' from 'useAppContext()'
- *           to set direction functionality.
+ *      --> Redirecting states and features by 
+ *          'useFlexboxContext()'.
  * 
- *      --> Building the return and drilling props
- *          to control css and get state 'data' 
- *          props
- * 
- *      --> Importing and placing 'PerfectCenter' 
- *          component.
+ *      --> Changing versioning to 2 digits.
  * 
  * Note: By this version is everything done for this 
  * component.
@@ -28,8 +21,8 @@ import PerfectCenter from "../../components/perfect.center.component";
 
 const FlexAlignContentApp = () => {
 
-    const { handleAlignContent, aligncontent, direction, handleChange } = useAppContext()
-
+    const { direction, handleDirection, handleAlignContent, aligncontent } = useFlexboxContext()
+    
     return(
         <>
         <ComplexTitle title={<h2><span className="flex-align-content-app">align content app: </span></h2>}/>
@@ -60,7 +53,7 @@ const FlexAlignContentApp = () => {
                 name="selection" 
                 id="selection" 
                 value={direction} 
-                onChange={handleChange}>
+                onChange={handleDirection}>
                     {/**the first option with empty value is to 
                      * avoid 'row' as default option - is a select 
                      * tag behavior*/}
