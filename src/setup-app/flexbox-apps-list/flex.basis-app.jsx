@@ -1,17 +1,16 @@
 import React from "react";
 import ComplexTitle from "../../components/complex-title";
 import FlexProp from "../../components/flex-prop.component";
-import { useAppContext } from "../../context";
+import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import { FlexBasisWrapper } from "../flexbox.styled.components";
 
-/**Flexbox-grid-sass-and-animations app version 22 -
+/**Flexbox-grid-sass-and-animations app version 60.02 -
  * FlexBasisPropertyApp - Features:
  * 
- *       --> Building 'FlexBasisPropertyApp'.
+ *        --> Redirecting states and features by 
+ *          'useFlexboxContext()'.
  * 
- *       --> Destructuring props from the context.
- * 
- *       --> Building a return. 
+ *      --> Changing versioning to 2 digits 
  * 
  * Note:  By this version 'flex-shrink' is dynamic,
  * i can select the element and switch betwwen '1'
@@ -22,7 +21,7 @@ import { FlexBasisWrapper } from "../flexbox.styled.components";
 
 const FlexBasisPropertyApp = () => {
 
-    const { basis, itemBasis, handleBasis, handleItemBasis } = useAppContext()
+    const { basis, itemBasis, handleBasis, handleItemBasis } = useFlexboxContext()
 
     console.log('props from the context ==> ', 'basis defualt ==>', basis, 'items numbers ==>',itemBasis )
 
