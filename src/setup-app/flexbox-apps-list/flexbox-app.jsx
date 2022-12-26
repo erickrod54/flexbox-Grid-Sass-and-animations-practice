@@ -6,13 +6,16 @@ import { InlineFlexWrapper } from "../flexbox.styled.components";
 import ComplexTitle from "../../components/complex-title";
 import FlexProp from "../../components/flex-prop.component";
 import InlineFlexProp from "../../components/inline-flex-prop.component";
-import { useAppContext } from '../../context'
+import { useFlexboxContext } from "../../apps-context/flexbox.context";
 
-/**Flexbox-grid-sass-and-animations app version 13 -
+
+/**Flexbox-grid-sass-and-animations app version 60.03 -
  * flexbox-app - Features:
  * 
- *      --> Adding the message in 'p' tag only
- *          for this Component
+ *       --> Redirecting states and features by 
+ *          'useFlexboxContext()'.
+ * 
+ *       --> Changing versioning to 2 digits 
  * 
  * Note: this is hte context implementation for
  * this value and feature
@@ -21,8 +24,9 @@ import { useAppContext } from '../../context'
 /**1st App -- Flexbox App */
 const FlexBoxApp = () => {
 
-    const { toggleFlex, flex } = useAppContext();
-    //console.log('Context implementation FlexBoxApp => ', flex)
+    const { flex, toggleFlex } = useFlexboxContext()
+    
+    console.log('Context implementation FlexBoxApp => ', flex)
 
     return( 
         <>
