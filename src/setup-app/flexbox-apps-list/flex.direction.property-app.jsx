@@ -6,13 +6,15 @@ import FlexPropContent from "../../components/flexprop-content.component";
 import FlexPropWrap from "../../components/flex-prop-wrap.component";
 import { FlexPropWrapStyle } from "../flexbox.styled.components";
 import FlexWrapContent from "../../components/flexwrap-content.component";
-import { useAppContext } from '../../context'
+import { useFlexboxContext } from "../../apps-context/flexbox.context";
 
-/**Flexbox-grid-sass-and-animations app version 13 -
+/**Flexbox-grid-sass-and-animations app version 60.03 -
  * 'flexbox.direction.preperty-app' - Features:
  * 
- *      --> Moving 'flex.direction.property.app' to
- *          a the new 'flexbox-apps-list directory'
+ *      --> Redirecting states and features by 
+ *          'useFlexboxContext()'.
+ * 
+ *      --> Changing versioning to 2 digits. 
  * 
  * Note: The relocation are made in order to have all
  * functionality concerns separated from the data.
@@ -22,7 +24,7 @@ import { useAppContext } from '../../context'
  * 'App' js*/
 const FlexPropApp = () => {
 
-    const { direction, handleChange, wrap, handleWrap } = useAppContext()
+    const { direction, handleDirection, wrap, handleWrap } = useFlexboxContext()
 
     /**here i test that i'm getting the 'wrap' state*/
     console.log('these are wrap props drilled ==> ',wrap)
@@ -48,7 +50,7 @@ const FlexPropApp = () => {
                 name="selection" 
                 id="selection" 
                 value={direction} 
-                onChange={handleChange}>
+                onChange={handleDirection}>
                     {/**the first option with empty value is to 
                      * avoid 'row' as default option - is a select 
                      * tag behavior*/}
