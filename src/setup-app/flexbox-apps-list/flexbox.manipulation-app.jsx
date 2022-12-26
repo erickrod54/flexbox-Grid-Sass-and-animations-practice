@@ -5,14 +5,15 @@ import { SectionListWrapper } from "../flexbox.styled.components";
 import ComplexTitle from "../../components/complex-title";
 import SectionList from "../../components/section.list.component";
 //import ToggleFeature from "../../custom-hooks/toggle-hook";
-import { useAppContext } from '../../context'
+import { useFlexboxContext } from "../../apps-context/flexbox.context";
 
-/**Flexbox-grid-sass-and-animations app version 13 -
+/**Flexbox-grid-sass-and-animations app version 60.03 -
  * flexbox.manipulation-app.jsx - Features:
  * 
- *     --> Moving 'flexbox.manipulation-app.jsx' to
- *          a the new 'flexbox-apps-list directory'.
+ *      --> Redirecting states and features by 
+ *          'useFlexboxContext()'.
  * 
+ *      --> Changing versioning to 2 digits 
  * 
  * Note: This is the context implememntation for the
  * FlexBoxManipulationApp
@@ -21,7 +22,7 @@ import { useAppContext } from '../../context'
 /**2nd App -- Flexbox Manipulation */
 const FlexBoxManipulationApp = () => {
 
-    const { toggleFlexManApp, flexmanapp } = useAppContext();
+    const { toggleFlexManApp, flexmanapp } = useFlexboxContext()
     //console.log('toggle flex value for manipulation app==>', flexmanapp)
 
     return(
