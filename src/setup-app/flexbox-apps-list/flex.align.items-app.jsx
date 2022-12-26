@@ -6,20 +6,15 @@ import { AlignItemsAppWrapper } from "../flexbox.styled.components";
 
 import FlexProp from "../../components/flex-prop.component";
 
-import { useAppContext } from "../../context";
+import { useFlexboxContext } from "../../apps-context/flexbox.context";
 
-/**Flexbox-grid-sass-and-animations app version 13 -
- * 'flexbox.direction.preperty-app' - Features:
+/**Flexbox-grid-sass-and-animations app version 60.02 -
+ * 'FlexAlignItemsApp' - Features:
  * 
- *      --> Destructuring props to build 
- *          'FlexAlignItemsApp' functionality.
+ *      -->  Redirecting states and features by 
+ *          'useFlexboxContext()'.
  * 
- *      --> Importing and placing 'ComplexTitle'
- *          to set the main-title.
- * 
- *      --> Building the return and drilling props
- *          to control css and get state 'data' 
- *          props
+ *      --> Changing versioning to 2 digits. 
  * 
  * Note: By this version is everything done for this 
  * component.
@@ -27,7 +22,7 @@ import { useAppContext } from "../../context";
 
 const FlexAlignItemsApp = () => {
 
-    const { padding, childpadding, handlePadding, handleChildpadding, align, handleAlign } = useAppContext()
+    const { padding, childpadding, handlePadding, handleChildpadding, align, handleAlign } = useFlexboxContext()
 
     return(
         <>
