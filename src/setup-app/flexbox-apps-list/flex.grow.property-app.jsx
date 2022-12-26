@@ -1,17 +1,16 @@
 import React from "react";
 import ComplexTitle from "../../components/complex-title";
 import FlexProp from "../../components/flex-prop.component";
-import { useAppContext } from "../../context";
+import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import { FlexGrowPropertyWrapper } from "../flexbox.styled.components";
 
-/**Flexbox-grid-sass-and-animations app version 19 -
+/**Flexbox-grid-sass-and-animations app version 60.03 -
  * FlexGrowPropertyApp - Features:
  * 
- *       --> Building 'FlexGrowPropertyApp' Component
+ *       --> Redirecting states and features by 
+ *          'useFlexboxContext()'.
  * 
- *       --> Destructuring props from the context.
- * 
- *       --> Building the return
+ *       --> Changing versioning to 2 digits 
  * 
  * Note:  As the previous apps i use the helper function:
  * 
@@ -22,7 +21,7 @@ import { FlexGrowPropertyWrapper } from "../flexbox.styled.components";
 
 const FlexGrowPropertyApp = () => {
 
-    const { grow, itemGrow, handleGrow, handleItemGrow } = useAppContext()
+    const { grow, itemGrow, handleGrow, handleItemGrow } = useFlexboxContext()
  
     return(
         <>
