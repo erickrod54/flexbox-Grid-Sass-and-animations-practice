@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 60.01 -
+/**Flexbox-grid-sass-and-animations app version 60.04 -
  * data js - Features:
  *
  *  
- *      --> Building 'gridIntroData'
+ *      --> Building 'oldGridSyntaxArray'
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -751,4 +751,34 @@ export const weatherAppIcons = [
     }
 ]
 
+/**Data for grid intro App */
+
+/**data for grid column gap, grid row gap */
+export const oldGridSyntaxArray = [
+    {
+        id:1,
+        value:'none'
+    },
+    {
+       id:2,
+       value:'10px'
+    },
+    {
+       id:3,
+       value:'1.5rem'
+    },
+    {
+       id:4,
+       value:'7vw'
+    },
+    {
+       id:5,
+       value:'10%'
+    },
+    {
+       id:6,
+       value:'5%'
+    }
+]
  
+/**and grid gap */
