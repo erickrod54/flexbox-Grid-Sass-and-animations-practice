@@ -1,25 +1,24 @@
 import React from "react";
 import ComplexTitle from "../../components/complex-title";
 import FlexProp from "../../components/flex-prop.component";
-import { useAppContext } from "../../context";
+import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import { OrderPropertyWrapper } from "../flexbox.styled.components";
 
 
-/**Flexbox-grid-sass-and-animations app version 28 -
+/**Flexbox-grid-sass-and-animations app version 60.04 -
  * OrderPropertyApp - Features:
  *
- *      --> Removing 'OrderContentProperty'
+ *      --> Redirecting states and features by 
+ *          'useFlexboxContext()'.
+ * 
+ *      --> Changing versioning to 2 digits.
  * 
  * Note: By this version basic functionality is set.
  */
 
 const OrderPropertyApp = () => {
 
-   const { order, item, handleItemOrder, handleOrder } = useAppContext()
-
-   //console.log('testing values from context ==>', order)
-   //console.log('the order seleceted ==>',order.selection)
-   //console.log('the #item selected ==>', item.selection)
+    const { order, item, handleItemOrder, handleOrder } = useFlexboxContext()
 
     return(
         <>
