@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 32 -
+/**Flexbox-grid-sass-and-animations app version 60.04 -
  * flexbox.styled.components - Features:
  * 
- *       --> Adding style for 'web design 
- *           fundamentals' > title
- *           > 'ui-white-space-and-alignment-app'  
+ *       --> Adding style for ui titles  
  * 
  * Note:  By this version 'flex-shrink' is dynamic,
  * i can select the element and switch betwwen '1'
@@ -132,6 +130,30 @@ export const Wrapper = styled.div`
         }
     }
 
+    .ui-contrast-and-scale-app{
+        color: darkkhaki;
+    }
+
+    .ui-typography-app{
+        color:crimson;
+    }
+
+    .ui-color-app{
+        color: darkolivegreen;
+    }
+
+    .ui-form-app{
+        color: darkorange;
+    }
+
+    .ui-visual-hierarchy-app{
+        color: darkslateblue;
+    }
+
+    .ui-design-challenge-app{
+        color: darkorchid;
+    }
+
     .flex-align-content-app{
         color: darkgoldenrod;
     }
@@ -184,7 +206,13 @@ export const Wrapper = styled.div`
     .flex-align-self-app,
     .ui-white-space-app,
     .ui-alignment-app,
-    .ui-white-space-and-alignment-app{
+    .ui-white-space-and-alignment-app,
+    .ui-contrast-and-scale-app,
+    .ui-typography-app,
+    .ui-color-app,
+    .ui-form-app,
+    .ui-visual-hierarchy-app,
+    .ui-design-challenge-app{
         text-transform: capitalize;
         text-align: start;
         font-size: 2rem;
