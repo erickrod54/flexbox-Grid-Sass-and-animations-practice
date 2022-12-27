@@ -1,19 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import { useUIDesignContext } from "../../apps-context/ui.web.design.fundamentals.contex";
 import ComplexTitle from "../../components/complex-title";
 
-
-/**Flexbox-grid-sass-and-animations app version 31 -
+/**Flexbox-grid-sass-and-animations app version 60.04 -
  * UIAlignmentApp - Features:
  * 
- *      -->Building 'UIAlignmentApp'.
+ *      --> Redirecting states and features by 
+ *          'useUIDesignContext()'.
  * 
- *      -->Building states to manage changing props
- * 
- *      -->Building 'handleAlignment' and 'handleLine'  
- *         handlers to toggle prop states.
- * 
- *       --> Building return
+ *       --> Changing versioning to 2 digits
  * 
  * Note: This features added due to the last app
  * 
@@ -22,20 +18,7 @@ import ComplexTitle from "../../components/complex-title";
 
 const UIAlignmentApp = () => {
 
-    const [ line, setLine ] = useState('')
-    const [ marginleft, setMarginleft ] = useState('')
-    const [ transformnone, setTransformnone ] = useState('')
-
-    const handleAlignment = () => {
-        setMarginleft(!marginleft);
-        setTransformnone(!transformnone);
-        console.log('toggle marginleft ==>',marginleft, 'and toggle transformnone ==>', transformnone)
-    }
-
-    const handleLine = () => {
-        setLine(!line)
-        console.log('this is the handle line ',line)
-    }
+    const { line, marginleft, transformnone, handleAlignment, handleLine } = useUIDesignContext()
 
     return(
         <>
