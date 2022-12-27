@@ -1,18 +1,17 @@
 import React from "react";
+import { useGridContext } from "../../apps-context/grid.context";
 import AppElementResponsiveWebDesign from "../../components/app.element.responsive.web.fundamentals";
 //import { useLocation, useParams } from "react-router-dom";
 import ComplexTitle from "../../components/complex-title";
-import { useAppContext } from "../../context";
 import { HomeWrapper, NavbarWrapper } from "../../pages/home-page";
 
-/**Flexbox-grid-sass-and-animations app version 58 -
+/**Flexbox-grid-sass-and-animations app version 60.04 -
  * GridLayout - Features:
  * 
- *      --> Building 'GridLayout'
+ *      --> Redirecting states and features by 
+ *          'useGridContext()'.
  * 
- *      --> Destructuring data from the context.
- * 
- *      --> Building the return
+ *      --> Changing versioning to 2 digits.  
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -20,7 +19,7 @@ import { HomeWrapper, NavbarWrapper } from "../../pages/home-page";
 
 const GridLayout = () => {
 
-    const { cssGridlayoutData } = useAppContext();
+    const { cssGridlayoutData } = useGridContext()
 
     console.log('appWebResponsiveData ==>', cssGridlayoutData)
     //console.log('the use location ==>',useLocation())    
