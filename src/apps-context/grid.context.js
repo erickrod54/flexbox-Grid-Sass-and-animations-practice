@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
-import { cssGridlayoutData, gridIntroData } from "../data";
+import { cssGridlayoutData, gridIntroData, oldGridSyntaxArray } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 59 -
+/**Flexbox-grid-sass-and-animations app version 60.04 -
  * 'GridContext' - Features:
  * 
- *      --> Building a context for all grid states 
- *          and features.
+ *      --> Importing and providing 
+ *          'oldGridSyntaxArray', cssGridlayoutData,
+ *           oldGridSyntaxArray.
  * 
- * Note: By this version everything is done in
- * this component.
+ * Note: 'oldGridSyntaxArray' is going to be use for
+ * building grid column and grid row gap old syntax 
+ * and new syntax app.
  */
 
 const GridContext = React.createContext()
@@ -18,7 +20,8 @@ const GridProvider = ({ children }) => {
     return(
         <GridContext.Provider value={{ 
             gridIntroData,
-            cssGridlayoutData
+            cssGridlayoutData,
+            oldGridSyntaxArray
         }}>
             {children}
         </GridContext.Provider>
