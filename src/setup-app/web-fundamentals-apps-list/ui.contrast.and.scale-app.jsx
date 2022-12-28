@@ -1,17 +1,16 @@
 import moment from "moment";
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useAppContext } from "../../context";
+import { useUIDesignContext } from "../../apps-context/ui.web.design.fundamentals.contex";
+import ComplexTitle from "../../components/complex-title";
 
-/**Flexbox-grid-sass-and-animations app version 39 -
+/**Flexbox-grid-sass-and-animations app version 60.05 -
  * UIContrastAndScaleApp - Features:
  * 
- *      --> Building 'UIContrastAndScaleApp'
+ *        --> Redirecting states and features by 
+ *          'useUIDesignContext()'. 
  * 
- *      --> Building state to toggle initial design
- *          vs final design.
- * 
- *      --> setting up description and return.
+ *       --> Changing versioning to 2 digits   
  * 
  * Note: Pending to make styles dinamicly and 
  * explanation aspects about the contrast and
@@ -20,19 +19,13 @@ import { useAppContext } from "../../context";
 
 const UIContrastAndScaleApp = () => {
 
-    const [ sectionimprove, setSectionimprove ] = useState(false)
-
-    const { uiContrastAndScaleData } = useAppContext()
-    console.log('the data ==> ', uiContrastAndScaleData)
-
-    const handleImprove = () => {
-        setSectionimprove(!sectionimprove)
-        console.log(sectionimprove)
-    }
+    const { sectionimprove, uiContrastAndScaleData, handleImprove } = useUIDesignContext()
     
     return(
         <>
-        
+            <ComplexTitle 
+            title={<h2> 
+                <span className="ui-contrast-and-scale-app">UI contrast and scale app:</span></h2>}/>
         
             <p>UI color contrast is the way to use colors to make 
                 more accessible the content as readable and accessible,
