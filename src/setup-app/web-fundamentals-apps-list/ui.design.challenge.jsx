@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import { useUIDesignContext } from "../../apps-context/ui.web.design.fundamentals.contex";
+import ComplexTitle from "../../components/complex-title";
 
-/**Flexbox-grid-sass-and-animations app version 45 -
+/**Flexbox-grid-sass-and-animations app version 60.05 -
  * UIDesignChallenge - Features:
  * 
- *      --> Building 'UIDesignChallenge'
+ *        --> Redirecting states and features by 
+ *          'useUIDesignContext()'. 
  * 
- *      --> Building state and handler for 
- *          the design improvements.
+ *       --> Changing versioning to 2 digits   
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -15,45 +17,17 @@ import styled from "styled-components";
 
 const UIDesignChallenge = () => {
 
-    const [ improve, setImprove ] = useState(false)
-
-    const handleImprove = () => {
-        setImprove(!improve)
-        console.log(improve)
-    }
+    const { improvemovies, handleImprovemovies } = useUIDesignContext()
 
     return(
         <Wrapper>
-            <h2>UI design challenge:</h2>
+            <ComplexTitle 
+            title={<h2> 
+                <span className="ui-design-challenge-app">UI design challenge:</span></h2>}/>
 
-
-            <button onClick={handleImprove}>improve design</button>
+            <button onClick={handleImprovemovies}>improve design</button>
             
-            <div className={improve ? "design-challenge design-challenge-improvement" : 'design-challenge'}>
-                <aside></aside>
-                <main id="main-content">
-                    <h1>movies</h1>
-                    <section className="content">
-                        <h3>favorite movies</h3>
-                        <ul>
-                            <li>
-                                <span>winter soldier</span> <span>9.5</span>
-                            </li>
-                            <li>
-                                <span>aquaman</span> <span>7.4</span>
-                            </li>
-                            <li>
-                                <span>endgame</span> <span>9.8</span>
-                            </li>
-                            <li>
-                                <span>justice league</span> <span>4.4</span>
-                            </li>                                                                
-                        </ul>
-                    </section>
-                </main>
-            </div>
-
-            {improve ?
+            {improvemovies ?
             <>
             <p>
                 improvements are made in the following:
@@ -80,6 +54,31 @@ const UIDesignChallenge = () => {
             :
             null    
             }
+
+            <div className={improvemovies ? "design-challenge design-challenge-improvement" : 'design-challenge'}>
+                <aside></aside>
+                <main id="main-content">
+                    <h1>movies</h1>
+                    <section className="content">
+                        <h3>favorite movies</h3>
+                        <ul>
+                            <li>
+                                <span>winter soldier</span> <span>9.5</span>
+                            </li>
+                            <li>
+                                <span>aquaman</span> <span>7.4</span>
+                            </li>
+                            <li>
+                                <span>endgame</span> <span>9.8</span>
+                            </li>
+                            <li>
+                                <span>justice league</span> <span>4.4</span>
+                            </li>                                                                
+                        </ul>
+                    </section>
+                </main>
+            </div>
+
         </Wrapper>
     )
 }
