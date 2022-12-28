@@ -1,23 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.04 -
+/**Flexbox-grid-sass-and-animations app version 60.05 -
  * GridIntro - Features:
  * 
- *      --> Starting to migrate data, states and 
- *          features to the context
+ *      --> Migrating states and handlers for 
+ *          new and old syntax column gap and 
+ *          row gap.
+ * 
+ *      --> Starting to build shorthand property
  * 
  *  
- * Note: 'oldGridSyntaxArray' is going to be use for
- * building grid column and grid row gap old syntax 
- * and new syntax app.
+ * Note: try tests of shorthand prop in a separate component
  */
 
 const GridIntro = () => {
 
-    const { gridIntroData, oldGridSyntaxArray } = useGridContext()
+    const { gridIntroData,
+            oldGridSyntaxArray,
+            oldsyntaxvalue,
+            newsyntaxvalue,
+            newGridSyntaxHandler,
+            oldGridSyntaxHandler,
+            newGridSyntaxArray,
+            newGridrowSyntaxHandler,
+            oldGridrowSyntaxHandler,
+            newrowsyntaxvalue,
+            oldrowsyntaxvalue, 
+            oldGridrowSyntaxArray,
+            newGridrowSyntaxArray,
+            newshorthandGridGapHandler,
+            oldshorthandGridGapHandler,
+            oldshorthandvalue,
+            newshorthandvalue
+            } = useGridContext()
     //console.log('grid context data ==>', gridIntroData)
 
     //console.log('the css grid data ==> ',gridIntroData)
@@ -38,166 +56,64 @@ const GridIntro = () => {
         return newDataitems;
     })
 
-
-    
-    const newGridSyntaxArray = [
-        {
-            id:1,
-            value:'none'
-        },
-        {
-           id:2,
-           value:'10px'
-        },
-        {
-           id:3,
-           value:'1.5rem'
-        },
-        {
-           id:4,
-           value:'7vw'
-        },
-        {
-           id:5,
-           value:'10%'
-        },
-        {
-           id:6,
-           value:'5%'
-        }
-    ]
-
-    const [ oldsyntaxvalue, setOldsyntaxvalue ] = useState({
-        pixels:'10px',
-        rems:'1.5rem',
-        vwunits:'7vw',
-        percents:'10%',
-        percentsless:'5%'
-    })
-
-    const [ newsyntaxvalue, setNewsyntaxvalue ] = useState({
-        pixels:'10px',
-        rems:'1.5rem',
-        vwunits:'7vw',
-        percents:'10%',
-        percentsless:'5%'
-    })
-
-    const newGridSyntaxHandler = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;    
-        
-        console.log('grid-column-gap => name selected ==>', name, ', value in it ==>', value)
-
-        setNewsyntaxvalue({...newsyntaxvalue, [name]:value })
-    }
-
-    const oldGridSyntaxHandler = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;    
-        
-        console.log('grid-column-gap => name selected ==>', name, ', value in it ==>', value)
-
-        setOldsyntaxvalue({...oldsyntaxvalue, [name]:value })
-    }
-
-    console.log('these are oldGridSyntaxArray ==>', oldGridSyntaxArray)
-
-    /**states and handlers for grid row gap */
-    
-    const [ oldrowsyntaxvalue, setOldrowsyntaxvalue ] = useState({
-        pixels:'10px',
-        rems:'1.5rem',
-        vwunits:'7vw',
-        percents:'10%',
-        percentsless:'5%'
-    })
-
-    /**handler for 'oldGridrowSyntaxArray'*/
-    const oldGridrowSyntaxHandler = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;    
-        
-        console.log('grid-column-gap => name selected ==>', name, ', value in it ==>', value)
-
-        setOldrowsyntaxvalue({...oldrowsyntaxvalue, [name]:value })
-    }
-
-    /**data for 'oldGridrowSyntaxArray'*/
-    const oldGridrowSyntaxArray = [
-        {
-            id:1,
-            value:'none'
-        },
-        {
-           id:2,
-           value:'10px'
-        },
-        {
-           id:3,
-           value:'1.5rem'
-        },
-        {
-           id:4,
-           value:'7vw'
-        },
-        {
-           id:5,
-           value:'10%'
-        },
-        {
-           id:6,
-           value:'5%'
-        }
-    ]
-
-    const [ newrowsyntaxvalue, setNewrowsyntaxvalue ] = useState({
-        pixels:'10px',
-        rems:'1.5rem',
-        vwunits:'7vw',
-        percents:'10%',
-        percentsless:'5%'
-    })
-
-    /**handler for 'newGridrowSyntaxArray'*/
-    const newGridrowSyntaxHandler = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;    
-        
-        console.log('grid-column-gap => name selected ==>', name, ', value in it ==>', value)
-
-        setNewrowsyntaxvalue({...newrowsyntaxvalue, [name]:value })
-    }
-
-    /**data for 'newGridrowSyntaxArray'*/
-    const newGridrowSyntaxArray = [
-        {
-            id:1,
-            value:'none'
-        },
-        {
-           id:2,
-           value:'10px'
-        },
-        {
-           id:3,
-           value:'1.5rem'
-        },
-        {
-           id:4,
-           value:'7vw'
-        },
-        {
-           id:5,
-           value:'10%'
-        },
-        {
-           id:6,
-           value:'5%'
-        }
-    ]
-
+    //console.log('these are oldGridSyntaxArray ==>', oldGridSyntaxArray)
+    //console.log('these are oldrowsyntaxvalue ==>', oldrowsyntaxvalue)
+    //console.log('these are newshorthandvalue ==>', newshorthandvalue)
     /**states and handlers for shorthand 'grid gap' */
+    
+    const oldshorthandGridGapData = [
+        {
+            id:1,
+            value:'none'
+        },
+        {
+            id:2,
+            value:'10% 15%'
+        },
+        {
+           id:3,
+           value:'10px 25px'
+        },
+        {
+           id:4,
+           value:'15vw 15vh'
+        },
+        {
+           id:5,
+           value:'25px 10rem'
+        },
+        {
+           id:6,
+           value:'50px'
+        }
+    ]
+
+    const newshorthandGridGapData = [
+        {
+            id:1,
+            value:'none'
+        },
+        {
+            id:2,
+            value:'10% 15%'
+        },
+        {
+           id:3,
+           value:'10px 25px'
+        },
+        {
+           id:4,
+           value:'15vw 15vh'
+        },
+        {
+           id:5,
+           value:'25px 10rem'
+        },
+        {
+           id:6,
+           value:'50px'
+        }
+    ]
 
     return(
         <Wrapper propertyvalue={oldsyntaxvalue}>
@@ -248,7 +164,7 @@ const GridIntro = () => {
                 each row space is dedicated to one 'div' which are the children of 'grid-container'
             </p>
             
-            {console.log('the oldSyntaxvalue ==>', oldsyntaxvalue.selection)}
+          
             <section className="grid-container">
                 {gridIntroData.map((division) => {
                     const { id, name } = division;
@@ -311,9 +227,14 @@ const GridIntro = () => {
                 recommended to use the new syntax 
             </p>
 
+            <p>
+                Note: <strong>the difference is than one use the word 'grid' and 
+                the new doesn't, but the have the same result</strong>
+            </p>
+
             <p>select a <strong>'old grid-gap-row syntax'</strong> option:</p>
             <SelectionForm propertyvalue={oldrowsyntaxvalue} handler={oldGridrowSyntaxHandler} propertiesArray={oldGridrowSyntaxArray} propertyname={'grid-row-gap'} />
-
+            {console.log('the new selection oldrowsyntaxvalue ==>',oldrowsyntaxvalue.selection)}
             {oldrowsyntaxvalue ? 
                 <p>
                     You selected <strong>'old syntax'</strong> + grid-row-gap: {oldrowsyntaxvalue.selection}
@@ -372,34 +293,34 @@ const GridIntro = () => {
                 <strong>combine both 'rows 'and 'columns'</strong> in a single line
                 of code also with a <strong>'old syntax'</strong> and a 
                 <strong>'new syntax'</strong> as follows:
-            </p>
+            </p>    
 
                 {/**shorthand section - status work in progress
                  * --------first i have to migrate all features
                  */}
-           {/**
-            * <p>select a <strong>'grid-gap shorthand property'</strong> option:</p>
-            <SelectionForm propertyvalue={newrowsyntaxvalue} handler={newGridrowSyntaxHandler} propertiesArray={newGridrowSyntaxArray} propertyname={'row-gap'} />
+            <p>select a <strong>'grid-gap shorthand property'</strong> option:</p>
+            <SelectionForm propertyvalue={newshorthandvalue} handler={newshorthandGridGapHandler} propertiesArray={newshorthandGridGapData} propertyname={'gap'} />
 
-            {newrowsyntaxvalue ? 
+            {console.log('the new selection shorthand ==>',newshorthandvalue.selection)}     
+            {newshorthandvalue ? 
                 <p>
-                    You selected <strong>'new syntax'</strong> + row-gap: {newrowsyntaxvalue.selection}
+                    You selected <strong>'new syntax'</strong> + grid-gap: {newshorthandvalue.selection}
                 </p>
                 :
                 null
             }
 
-            <SelectionForm propertyvalue={newrowsyntaxvalue} handler={newGridrowSyntaxHandler} propertiesArray={newGridrowSyntaxArray} propertyname={'row-gap'} />
+            <SelectionForm propertyvalue={oldshorthandvalue} handler={oldshorthandGridGapHandler} propertiesArray={oldshorthandGridGapData} propertyname={'grid-gap'} />
 
-            {newrowsyntaxvalue ? 
+            {oldshorthandvalue ? 
                 <p>
-                    You selected <strong>'new syntax'</strong> + row-gap: {newrowsyntaxvalue.selection}
+                    You selected <strong>'old syntax'</strong> + grid-gap: {oldshorthandvalue.selection}
                 </p>
                 :
                 null
             }
 
-            <GridWrapper2 oldsyntaxvalue={oldsyntaxvalue} newsyntaxvalue={newsyntaxvalue} newrowsyntaxvalue={newrowsyntaxvalue} oldrowsyntaxvalue={oldrowsyntaxvalue}>
+            <GridWrapper2 oldsyntaxvalue={oldsyntaxvalue} newsyntaxvalue={newsyntaxvalue} newrowsyntaxvalue={newrowsyntaxvalue} oldrowsyntaxvalue={oldrowsyntaxvalue} oldshorthandvalue={oldshorthandvalue} >
                 {items.map((division) => {
                     const { itemid, name } = division;
                     return(
@@ -410,7 +331,7 @@ const GridIntro = () => {
                     )
                 })}
             </GridWrapper2>
-            */}
+            
 
         </Wrapper>
         )
@@ -477,9 +398,8 @@ const GridWrapper2 = styled.section`
         display: grid;
         grid-column-gap: ${({oldsyntaxvalue}) => oldsyntaxvalue.selection };
         column-gap: ${({newsyntaxvalue}) => newsyntaxvalue.selection };
-        grid-row-gap: ${({oldrowsyntaxvalue}) => oldrowsyntaxvalue.selection };
-        row-gap: ${({newrowsyntaxvalue}) => newrowsyntaxvalue.selection }; 
-
+        grid-row-gap: ${({oldrowsyntaxvalue}) => oldrowsyntaxvalue.selection};
+        row-gap: ${({newrowsyntaxvalue}) => newrowsyntaxvalue.selection };
 
         /**grid rows and columns gap property ( shorthand )*/
 
