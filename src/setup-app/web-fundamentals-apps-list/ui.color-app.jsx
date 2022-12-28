@@ -1,29 +1,31 @@
 import React from "react";
 import styled from "styled-components";
-import { useAppContext } from "../../context";
 import { Link } from 'react-router-dom';
+import ComplexTitle from "../../components/complex-title";
+import { useUIDesignContext } from "../../apps-context/ui.web.design.fundamentals.contex";
 
-
-/**Flexbox-grid-sass-and-animations app version 48 -
+/**Flexbox-grid-sass-and-animations app version 60.05 -
  * UIColorApp - Features:
  * 
- *      --> clearing warnings. 
+ *       --> Redirecting states and features by 
+ *          'useUIDesignContext()'. 
+ * 
+ *       --> Changing versioning to 2 digits   
  * 
  * Note: This features added due to the last app
  */
 
 const UIColorApp = () => {
 
-    const { uiColorData, handleColor, color } = useAppContext()
-    //console.log('ui Color Data ==>', uiColorData)
-
-
+    const { uiColorData, handleColor, color } = useUIDesignContext()
 
     const { title, text, textlink } = uiColorData[0];
 
     return(
         <UIColorWrapper>
-        <h2>UI Color App:</h2>
+         <ComplexTitle 
+            title={<h2> 
+                <span className="ui-color-app">UI color app:</span></h2>}/>   
 
         <p>The color UI design fundamental is critical when
             you're designing, because is the first user 
