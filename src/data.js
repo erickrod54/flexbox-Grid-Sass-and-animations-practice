@@ -14,11 +14,12 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 60.04 -
+/**Flexbox-grid-sass-and-animations app version 60.05 -
  * data js - Features:
  *
  *  
- *      --> Building 'oldGridSyntaxArray'
+ *     --> Building 'newGridrowSyntaxArray', 
+ *        'oldGridrowSyntaxArray' and 'newGridrowSyntaxArray'
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -780,5 +781,99 @@ export const oldGridSyntaxArray = [
        value:'5%'
     }
 ]
+
+export const newGridSyntaxArray = [
+    {
+        id:1,
+        value:'none'
+    },
+    {
+       id:2,
+       value:'10px'
+    },
+    {
+       id:3,
+       value:'1.5rem'
+    },
+    {
+       id:4,
+       value:'7vw'
+    },
+    {
+       id:5,
+       value:'10%'
+    },
+    {
+       id:6,
+       value:'5%'
+    }
+]
+
+/**Data for old 'grid-row-gap' and for new row-gap'  */
+    
+    /**the difference is than one use the word 'grid' and the new 
+     * doesn't but they have the same result*/
+    
+     
+
+    /**data for 'oldGridrowSyntaxArray'*/
+    export const oldGridrowSyntaxArray = [
+        {
+            id:1,
+            value:'none'
+        },
+        {
+           id:2,
+           value:'10px'
+        },
+        {
+           id:3,
+           value:'1.5rem'
+        },
+        {
+           id:4,
+           value:'7vw'
+        },
+        {
+           id:5,
+           value:'10%'
+        },
+        {
+           id:6,
+           value:'5%'
+        }
+    ]
+
+
+
+    /**data for 'newGridrowSyntaxArray'*/
+    export const newGridrowSyntaxArray = [
+        {
+            id:1,
+            value:'none'
+        },
+        {
+           id:2,
+           value:'10px'
+        },
+        {
+           id:3,
+           value:'1.5rem'
+        },
+        {
+           id:4,
+           value:'7vw'
+        },
+        {
+           id:5,
+           value:'10%'
+        },
+        {
+           id:6,
+           value:'5%'
+        }
+    ]
+
+
  
 /**and grid gap */
