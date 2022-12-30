@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useAppContext } from "../../context";
+import { useUIDesignContext } from "../../apps-context/ui.web.design.fundamentals.contex";
+import ComplexTitle from "../../components/complex-title";
 
-
-/**Flexbox-grid-sass-and-animations app version 43 -
+/**Flexbox-grid-sass-and-animations app version 60.06 -
  * 'UIFormApp' js file > web.fundamentals-apps - 
  * Features:
  * 
- *      --> Building 'UIFormApp'.
+ *      --> Redirecting states and features by 
+ *          'useUIDesignContext()'. 
  * 
- *      --> Destrcuturing data from the context.
- * 
- *      --> Building return. 
+ *       --> Changing versioning to 2 digits 
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -20,20 +19,16 @@ import { useAppContext } from "../../context";
 const UIFormApp = () => {
 
     
-    const { uiFormData } = useAppContext()
+    const { uiFormData, improveform, handleImproveform } = useUIDesignContext()
     console.log('this is the data ==>', uiFormData)
-
-    const [ improve, setImprove ] = useState(false)
-
-    const handleImporve = () => {
-        setImprove(!improve)
-    }
 
     const { title, text, msginput1, msginput2, textlink, rows } = uiFormData[0]
 
     return(
         <UIFormWrapper>
-            <h2>UI Form App challenge</h2>
+            <ComplexTitle 
+            title={<h2> 
+                <span className="ui-form-app">UI form app challenge:</span></h2>}/>
 
             <p>UI form design start always with 'ui color' web fundamentalts, 'ui contrast and scale',
                and 'ui alignment', can be converged many more, but depends on the form in question
@@ -45,9 +40,9 @@ const UIFormApp = () => {
                 <li>ui color makes difficult to visualize spaces (needs 'ui color')</li>
             </ul>
 
-            <button onClick={handleImporve}>Improve 'UIForm'</button>
+            <button onClick={handleImproveform}>Improve 'UIForm'</button>
 
-            {improve ? 
+            {improveform ? 
                 <ul>
                     <li>
                         'ui contrast and scale' by setting contrast in typography,
@@ -58,7 +53,7 @@ const UIFormApp = () => {
             :
             null
             }
-            <div className={improve ? 'ui-form-container ui-form-container-improve' : "ui-form-container"}>
+            <div className={improveform ? 'ui-form-container ui-form-container-improve' : "ui-form-container"}>
                 <section>
                     <h1>{title}</h1>
                     <p>{text}</p>
