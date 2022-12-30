@@ -3,17 +3,16 @@ import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.05 -
+/**Flexbox-grid-sass-and-animations app version 60.06 -
  * GridIntro - Features:
  * 
- *      --> Migrating states and handlers for 
- *          new and old syntax column gap and 
- *          row gap.
- * 
- *      --> Starting to build shorthand property
+ *      --> Finishing 'shorthand' property
  * 
  *  
- * Note: try tests of shorthand prop in a separate component
+ * Note: i build this new wrapper4 because this 'oldshorthandvalue'
+ *  and 'newshorthandvalue' property modifies row an columns individually 
+ * so it causes conflict with the gap value in the scope of the style 
+ * component make it the .selection value 'undefined'
  */
 
 const GridIntro = () => {
@@ -56,10 +55,6 @@ const GridIntro = () => {
         return newDataitems;
     })
 
-    //console.log('these are oldGridSyntaxArray ==>', oldGridSyntaxArray)
-    //console.log('these are oldrowsyntaxvalue ==>', oldrowsyntaxvalue)
-    //console.log('these are newshorthandvalue ==>', newshorthandvalue)
-    /**states and handlers for shorthand 'grid gap' */
     
     const oldshorthandGridGapData = [
         {
@@ -299,16 +294,6 @@ const GridIntro = () => {
                  * --------first i have to migrate all features
                  */}
             <p>select a <strong>'grid-gap shorthand property'</strong> option:</p>
-            <SelectionForm propertyvalue={newshorthandvalue} handler={newshorthandGridGapHandler} propertiesArray={newshorthandGridGapData} propertyname={'gap'} />
-
-            {console.log('the new selection shorthand ==>',newshorthandvalue.selection)}     
-            {newshorthandvalue ? 
-                <p>
-                    You selected <strong>'new syntax'</strong> + grid-gap: {newshorthandvalue.selection}
-                </p>
-                :
-                null
-            }
 
             <SelectionForm propertyvalue={oldshorthandvalue} handler={oldshorthandGridGapHandler} propertiesArray={oldshorthandGridGapData} propertyname={'grid-gap'} />
 
@@ -320,7 +305,7 @@ const GridIntro = () => {
                 null
             }
 
-            <GridWrapper2 oldsyntaxvalue={oldsyntaxvalue} newsyntaxvalue={newsyntaxvalue} newrowsyntaxvalue={newrowsyntaxvalue} oldrowsyntaxvalue={oldrowsyntaxvalue} oldshorthandvalue={oldshorthandvalue} >
+            <GridWrapper3  oldshorthandvalue={oldshorthandvalue} >
                 {items.map((division) => {
                     const { itemid, name } = division;
                     return(
@@ -330,8 +315,35 @@ const GridIntro = () => {
                         </div>
                     )
                 })}
-            </GridWrapper2>
+            </GridWrapper3>
+
+            <p>
+                there is also the <strong>new syntax</strong> they behave the same, the 
+                new syntax is most used in new data bases
+            </p>
+
+            <SelectionForm propertyvalue={newshorthandvalue} handler={newshorthandGridGapHandler} propertiesArray={newshorthandGridGapData} propertyname={'gap'} />
             
+            {console.log('the new selection shorthand ==>',newshorthandvalue.selection)}     
+            {newshorthandvalue ? 
+                <p>
+                    You selected <strong>'new syntax'</strong> + gap: {newshorthandvalue.selection}
+                </p>
+                :
+                null
+            }
+
+            <GridWrapper4  newshorthandvalue={newshorthandvalue} >
+                {items.map((division) => {
+                    const { itemid, name } = division;
+                    return(
+                        <div 
+                        key={itemid} 
+                        className={`item2 item-${itemid}`}>{name}
+                        </div>
+                    )
+                })}
+            </GridWrapper4>
 
         </Wrapper>
         )
@@ -343,13 +355,15 @@ justify-content: center;
 align-items: left;
 flex-direction: column;
 
-    .salmon{
-        background-color: #ff7052;
-    }
+
+
+.salmon{
+    background-color: #ff7052;
+}
     .yellow{
         background-color: #fcc006;
     }
-
+    
     .grid-container{
         margin-top: 2rem;
         background-color: #ff7052;
@@ -401,26 +415,6 @@ const GridWrapper2 = styled.section`
         grid-row-gap: ${({oldrowsyntaxvalue}) => oldrowsyntaxvalue.selection};
         row-gap: ${({newrowsyntaxvalue}) => newrowsyntaxvalue.selection };
 
-        /**grid rows and columns gap property ( shorthand )*/
-
-        /**old syntax - row */
-        
-        /**grid-gap: 10% 15%; quite a lot */
-        /**grid-gap: 10px 25px; */
-        /**grid-gap: 15vw 15vh; */
-        /**grid-gap: 25px 10rem; */
-        /**the syntax this way stablish 50px for each row and column */
-        /**grid-gap: 50px; */
-
-        /**standard syntax */
-
-        /**gap: 10% 15%; quite a lot */
-        /**gap: 10px 25px; */
-        /**gap: 15vw 15vh; */
-        /**gap: 25px 10rem; */
-        /**the syntax this way stablish 50px for each row and column */
-        /**gap: 50px; */
-
 
         grid-template-columns: 150px 150px 150px 150px;
         grid-template-rows: 150px 150px 150px;
@@ -432,5 +426,46 @@ const GridWrapper2 = styled.section`
     }
 
 `
+
+/**i build this new wrapper because this property modifies
+ * row an columns individually so it can not go togeter with 
+ * the rest of the properties because will make the value 
+ * undefined*/
+const GridWrapper3 = styled.section`
+        background-color: #ff7052;
+        border: 2px dashed green;
+        /**initiates grid layout */
+        display: grid;
+        grid-gap: ${({oldshorthandvalue}) => oldshorthandvalue.selection};
+
+
+        grid-template-columns: 150px 150px 150px 150px;
+        grid-template-rows: 150px 150px 150px;
+
+
+    .item2 {
+        background-color: #fcc006;
+        border: 1px dashed black;
+    }
+    `
+
+const GridWrapper4 = styled.section`
+        background-color: #ff7052;
+        border: 2px dashed green;
+        /**initiates grid layout */
+        display: grid;
+        gap: ${({newshorthandvalue}) => newshorthandvalue.selection};
+
+
+        grid-template-columns: 150px 150px 150px 150px;
+        grid-template-rows: 150px 150px 150px;
+
+
+    .item2 {
+        background-color: #fcc006;
+        border: 1px dashed black;
+    }
+`
+
 
 export default GridIntro;
