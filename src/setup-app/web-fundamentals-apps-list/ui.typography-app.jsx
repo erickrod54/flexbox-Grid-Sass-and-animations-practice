@@ -1,20 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useAppContext } from "../../context";
+import { useUIDesignContext } from "../../apps-context/ui.web.design.fundamentals.contex";
+import ComplexTitle from "../../components/complex-title";
 import { UITypographyFont } from "./ui.typography.global.fonts";
 
-/**Flexbox-grid-sass-and-animations app version 40 -
+/**Flexbox-grid-sass-and-animations app version 60.06 -
  * UITypographyApp - Features:
  * 
- *      --> Building 'UITypographyApp'.
+ *       --> Redirecting states and features by 
+ *          'useUIDesignContext()'. 
  * 
- *      --> Destructuring 'uiTypographyData' from the 
- *          context.
- * 
- *      -->Building handler and state to set improvement
- *         to the initial design
- * 
- *      --> Buidling the return.
+ *        --> Changing versioning to 2 digits.  
  * 
  * Note: 'Order Property' (this is the first items property)
  * is properties applied directly to items inside of 
@@ -23,20 +19,18 @@ import { UITypographyFont } from "./ui.typography.global.fonts";
 
 const UITypographyApp = () => {
 
-    const { uiTypographyData } = useAppContext()
-    //console.log('this is the data ==>', uiTypographyData )
-
-    const [ improve, setImprove ] = useState(false)
-
-    const handleImprove = () => {
-        setImprove(!improve)
-    }
+    const {  uiTypographyData, improvetypo, handleImproveTypo } = useUIDesignContext()
 
     return(
         <>
         <UITypographyFont/>
         <UITypographyWrapper>
-            <h2>UI Typography App:</h2>
+        <ComplexTitle 
+            title={<h2> 
+                <span className="ui-typography-app">UI typography app:</span></h2>}/>
+
+            <section className="main-section">
+
             <p>Typography is a big subject that involves
                 many important consideration as (this is 
                 for 'visual hierarchy').
@@ -56,8 +50,8 @@ const UITypographyApp = () => {
                     content).
                 </li>
             </ul>
-            <button onClick={handleImprove}>apply typography web fundamentals</button>
-            {improve ?
+            <button onClick={handleImproveTypo}>apply typography web fundamentals</button>
+            {improvetypo ?
             <>
             <h3>After 'improvements':</h3>
             <ul>
@@ -82,7 +76,7 @@ const UITypographyApp = () => {
             null
             }
 
-            <main className={improve ? 'improvements' : null}>
+            <main className={improvetypo ? 'improvements' : null}>
                <h1 className="main-heading">{uiTypographyData[0].heading}</h1>
                 <p>{uiTypographyData[0].text}</p>
                 <div className="all-content">
@@ -101,6 +95,8 @@ const UITypographyApp = () => {
             })}
             </div>
             </main>
+
+            </section>
         </UITypographyWrapper>
         </>
     )
@@ -110,6 +106,10 @@ const UITypographyWrapper = styled.div`
     *{
         margin: 0;
         padding: 0;
+    }
+
+    .main-section{
+        margin-top: 2rem;
     }
 
     main{
