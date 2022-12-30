@@ -33,13 +33,13 @@ import { UIWhiteSpaceApp,
          UIDesignChallenge} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps' 
 
 import { MediaQueriesComponent, ResponsiveWebDesignApp, UnitsAndProps, ViewPortUnits, ViewportUnitsCases, WheaterUiApp } from './setup-app/web-responsive-design-apps-list/index.responsive.web.fundamentals';
-import { GridIntro, GridLayout } from './setup-app/grid-apps-list/index.grid.layout';
+import { GridIntro, GridLayout, RepeatAndFrUnit } from './setup-app/grid-apps-list/index.grid.layout';
 
-/**Flexbox-grid-sass-and-animations app version 57 -
+/**Flexbox-grid-sass-and-animations app version 60.06 -
  * App js file - Features:
  * 
- *       --> Adding 'GridLayout' and 
- *           'GridIntro' building a route for it. 
+ *       --> Adding 'RepeatAndFrUnit ' building a route 
+ *          for it. 
  * 
  * Note: starting to build the ui color 
  * fundamental app
@@ -85,6 +85,9 @@ function App() {
         <Route path='/apps/box-sizing' element={<BoxSizing />}/>
         <Route path='/apps/grid-layout' element={<GridLayout />} />
         <Route path='/apps/grid-layout/test-grid-app' element={<GridIntro />} />
+        <Route path='/apps/grid-layout/repeat-and-grid-units' element={<RepeatAndFrUnit />}/>
+
+        
         </Route>
       </Routes>
     </Router>
