@@ -14,12 +14,12 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 60.05 -
+/**Flexbox-grid-sass-and-animations app version 60.06 -
  * data js - Features:
  *
  *  
- *     --> Building 'newGridrowSyntaxArray', 
- *        'oldGridrowSyntaxArray' and 'newGridrowSyntaxArray'
+ *     --> Adding 'RepeatAndFrUnit' to the 
+ *        'cssGridlayoutData'
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -614,13 +614,13 @@ export const cssGridlayoutData = [
         category:'container properties',
         url:'/apps/grid-layout/test-grid-app'  
       },
-      /**
-       * {
-        id:2,
-        name:'repat function and grid units',
-        category:'container properties',
-        url:'/apps/web-responsive-design-fundamentals-app'  
-      },
+     {
+       id:3,
+       name:'repat function and grid units',
+       category:'container properties',
+       url:'/apps/grid-layout/repeat-and-grid-units'  
+     },
+      /***
       {
         id:3,
         name:'deep in grid properties',
