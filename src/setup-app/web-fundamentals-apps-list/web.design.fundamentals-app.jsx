@@ -1,13 +1,17 @@
 import React from "react";
+import { useUIDesignContext } from "../../apps-context/ui.web.design.fundamentals.contex";
 import AppElementWebDesignFundamentals from "../../components/app.element.web.fundamentals.component";
 import ComplexTitle from "../../components/complex-title";
-import { useAppContext } from "../../context";
+
 import { HomeWrapper, NavbarWrapper } from "../../pages/home-page";
 
-/**Flexbox-grid-sass-and-animations app version 45 -
+/**Flexbox-grid-sass-and-animations app version 60.07 -
  * WebDesingFundamentalsApp - Features:
  * 
- *      --> Taking off unused Components
+ *       --> Redirecting states and features by 
+ *          'useUIDesignContext()'. 
+ * 
+ *       --> Changing versioning to 2 digits.   
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -15,7 +19,7 @@ import { HomeWrapper, NavbarWrapper } from "../../pages/home-page";
 
 const WebDesingFundamentalsApp = () => {
 
-    const { appWebFundamentalsData } = useAppContext();
+     const { appWebFundamentalsData } = useUIDesignContext()
 
     //console.log('appWebFundamentalsData ==>', appWebFundamentalsData)
     //console.log('the use location ==>',useLocation())    
