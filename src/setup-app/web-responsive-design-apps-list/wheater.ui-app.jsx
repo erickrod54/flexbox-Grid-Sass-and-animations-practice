@@ -1,24 +1,33 @@
 import React from "react";
 import styled from "styled-components";
-import { useAppContext } from "../../context";
+import moment from "moment";
+import { useWebResponsiveContext } from "../../apps-context/web.responsive.context";
 
-  /**Flexbox-grid-sass-and-animations app version 55 -
+  /**Flexbox-grid-sass-and-animations app version 60.08 -
    * WheaterUiApp- Features:
    * 
-   *      --> Destructuring icons data from the context
+   *      ---> Redirecting states and features by 
+   *          'useWebResponsiveContext()'. 
+   * 
+   *      --> Changing versioning to 2 digits.  
    *   
    * Note: pending make it dynamic
    */
 
 const WheaterUiApp = () => {
+    
+    const { weatherAppIcons } = useWebResponsiveContext()
+    console.log('weatherAppIcons data ==>', weatherAppIcons)
+    
+    const precipitation = weatherAppIcons[7].precipitation;
+    const humidity = weatherAppIcons[7].humidity;
+    const windspeed = weatherAppIcons[7].wind;
+    const date = weatherAppIcons[7].date;
 
-    const { cloud, 
-        sun, 
-        cloudsun, 
-        wind,
-        sunrain, 
-        showersheavy, 
-        cloudmeatball } = useAppContext()
+    /**single icons */
+    const sun = weatherAppIcons[1].icon
+
+    console.log('weatherAppIcons data ==>', precipitation, humidity, windspeed, date)
 
     return(
         <Wrapper>
@@ -30,9 +39,9 @@ const WheaterUiApp = () => {
                 <div className="weather_info_temp">
 
                     <div className="weather__info">
-
+                    thursday, apr 30
                         <div className="weather__info--date">
-                            <p>thursday, apr 30</p>
+                            <p>{moment(date).format('MMMM Do, YYYY')}</p>
                             <p>sunny</p>
                             <div className="weather__info--date__icon__temp">
                                 <i>{sun}</i>
@@ -41,57 +50,27 @@ const WheaterUiApp = () => {
                         </div>
 
                         <div className="weather__info--data">
-                            <p>precipitation: 10%</p>
-                            <p>humidity: 5%</p>
-                            <p>wind: 4 kmpm NW</p>
+                            <p>precipitation: {precipitation}</p>
+                            <p>humidity: {humidity}</p>
+                            <p>wind: {windspeed}</p>
                         </div>    
                         
                         
                 </div>
                 {/**weather temperatures */}
                 <div className="weather__temp">
-                    <div className="weather__temp--monday">
-                        <p>monday</p>
-                        <i>{cloudsun}</i>
-                        <p>20 <sup>&#8451;</sup></p>
-                        <p>16 <sup>&#8451;</sup></p>
-                    </div>
-                    <div className="weather__temp--tuesday">
-                        <p>tuesday</p>
-                        <i>{sun}</i>
-                        <p>20 <sup>&#8451;</sup></p>
-                        <p>16 <sup>&#8451;</sup></p>
-                    </div>
-                    <div className="weather__temp--wednesday">
-                        <p>wednesday</p>
-                        <i>{wind}</i>
-                        <p>20 <sup>&#8451;</sup></p>
-                        <p>16 <sup>&#8451;</sup></p>
-                    </div>
-                    <div className="weather__temp--thursday">
-                        <p>thursday</p>
-                        <i>{sunrain}</i>
-                        <p>18 <sup>&#8451;</sup></p>
-                        <p>16 <sup>&#8451;</sup></p>
-                    </div>
-                    <div className="weather__temp--friday">
-                        <p>friday</p>
-                        <i>{cloud}</i>
-                        <p>14 <sup>&#8451;</sup></p>
-                        <p>10 <sup>&#8451;</sup></p>
-                    </div>
-                    <div className="weather__temp--saturday">
-                        <p>saturday</p>
-                        <i>{showersheavy}</i>
-                        <p>14 <sup>&#8451;</sup></p>
-                        <p>10 <sup>&#8451;</sup></p>
-                    </div>
-                    <div className="weather__temp--sunday">
-                        <p>sunday</p>
-                        <i>{cloudmeatball}</i>
-                        <p>23 <sup>&#8451;</sup></p>
-                        <p>18 <sup>&#8451;</sup></p>
-                    </div>
+                    {weatherAppIcons.filter((day) => day.id < 8 ).map((everyday) => {
+                        const { id, day, icon, temperature1, temperature2 } = everyday
+
+                        return(
+                            <div key={id} className={`weather__temp--${day}`}>
+                                <p>{day}</p>
+                                <i>{icon}</i>
+                                <p>{temperature1} <sup>&#8451;</sup></p>
+                                <p>{temperature2} <sup>&#8451;</sup></p>
+                            </div>
+                        )
+                    })}
                 </div>
                         
                 </div>
