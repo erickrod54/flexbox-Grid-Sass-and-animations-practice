@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useUIDesignContext } from "../../apps-context/ui.web.design.fundamentals.contex";
+import ComplexTitle from "../../components/complex-title";
 
 
-/**Flexbox-grid-sass-and-animations app version 43 -
+/**Flexbox-grid-sass-and-animations app version 60.07 -
  * 'UIVisualHierarchyApp' js file 
  * > web.fundamentals-apps - Features:
  * 
- *      --> Building 'UIVisualHierarchyApp'.
+ *      --> Redirecting states and features by 
+ *          'useUIDesignContext()'. 
  * 
- *      --> Building states to handle changes.
- * 
- *      --> Building handlers
- * 
- *      --> Building return. 
+ *      --> Changing versioning to 2 digits.  
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -21,60 +20,30 @@ import styled from "styled-components";
 
 const UIVisualHierarchyApp = () => {
 
-    const [ important, setImportant ] = useState(false)
-    const [ important1, setImportant1 ] = useState(false)
-    const [ important2, setImportant2 ] = useState(false)
-    const [ important3, setImportant3 ] = useState(false)
-    const [ important4, setImportant4 ] = useState(false)
-    const [ align, setAlign ] = useState(false)
-    const [ lowcontrast, setLowcontrast ] = useState(false)
-    const [ scale, setScale ] = useState(false)
-    const [ improve, setImprove ] = useState(false)
-    
-
-    const handleImportantcecircle = () => {
-        setImportant(!important)
-    }
-
-    const handleImportantcecircle1 = () => {
-        setImportant1(!important1)
-    }
-
-    const handleImportantcecircle2 = () => {
-        setImportant2(!important2)
-    }
-
-    const handleImportantcecircle3 = () => {
-        setImportant3(!important3)
-    }
-
-    const handleImportantcecircle4 = () => {
-        setImportant4(!important4)
-    }
-
-    const handleAling = () => {
-        setAlign(!align)
-        console.log(align)
-    }
-
-    const handleLowcontrast = () => {
-        setLowcontrast(!lowcontrast)
-        console.log(lowcontrast)
-    }
-
-    const handleScale = () => {
-        setScale(!scale)
-        console.log('this is the scale value ==>',scale)
-    }
-
-    const handleImprove = () => {
-        setImprove(!improve)
-        console.log('this is the scale value ==>',improve)
-    }
+    const { important,
+        important1,
+        important2,
+        important3,
+        important4,
+        align,
+        lowcontrast,
+        scale,
+        improvevisual,
+        handleImportantcecircle,
+        handleImportantcecircle1,
+        handleImportantcecircle2,
+        handleImportantcecircle3,
+        handleImportantcecircle4,
+        handleAling,
+        handleScale,
+        handleLowcontrast,
+        handleImprovevisual, } = useUIDesignContext()
 
     return(
         <UIVisualHierarchyWrapper>
-        <h2>UI Visual HierarchyApp</h2>
+        <ComplexTitle 
+        title={<h2> 
+            <span className="ui-visual-hierarchy-app">UI visual hierarchy app:</span></h2>}/>    
 
         <p>
             visual herarchy is the web fundamental design
@@ -181,9 +150,9 @@ const UIVisualHierarchyApp = () => {
             sample:
          </p>  
 
-         <button onClick={handleImprove}>Improve UI Design</button>
+         <button onClick={handleImprovevisual}>Improve UI Design</button>
 
-         <div className={improve ? 'main-example main-example-improve' : "main-example"}>
+         <div className={improvevisual ? 'main-example main-example-improve' : "main-example"}>
             <h1>Join our Newsletter</h1>
             <form>
                 <label for='email'>Email Address</label>
@@ -194,7 +163,7 @@ const UIVisualHierarchyApp = () => {
             </form>
          </div>
 
-         {improve ?
+         {improvevisual ?
          <div>
             <ul>
                 <li>'UI scaling' for the 'h1' to get focus on the title.</li>
