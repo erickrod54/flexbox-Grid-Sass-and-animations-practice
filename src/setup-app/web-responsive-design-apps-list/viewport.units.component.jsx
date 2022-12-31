@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { useAppContext } from "../../context";
+import { useWebResponsiveContext } from "../../apps-context/web.responsive.context";
 
-  /**Flexbox-grid-sass-and-animations app version 54 -
+  /**Flexbox-grid-sass-and-animations app version 60.08 -
    * ViewPortUnits - Features:
    * 
-   *      --> Migrating 'ViewPortUnits' use cases.
+   *      ---> Redirecting states and features by 
+   *          'useWebResponsiveContext()'. 
+   * 
+   *      --> Changing versioning to 2 digits.  
    *   
    * Note: in next versions 'ViewPortUnits' use cases
    * will have it's own Component.
@@ -13,7 +16,7 @@ import { useAppContext } from "../../context";
 
 const ViewPortUnits = () => {
 
-    const { viewPortData } = useAppContext()
+    const { viewPortData } = useWebResponsiveContext()
 
     const cat = viewPortData[0].image;
     const duck = viewPortData[1].image;
