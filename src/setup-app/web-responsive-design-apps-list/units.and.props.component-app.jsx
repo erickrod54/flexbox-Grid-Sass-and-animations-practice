@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import { useWebResponsiveContext } from "../../apps-context/web.responsive.context";
 import { maxwidthimage } from "../../assets/assets.index";
 
 
-/**Flexbox-grid-sass-and-animations app version 49 -
+/**Flexbox-grid-sass-and-animations app version 60.07 -
  * UnitsAndProps - Features:
  *
  *  
- *      --> Finish to explain 
- *          'max-width' and 'min-width'.
+ *     ---> Redirecting states and features by 
+ *          'useWebResponsiveContext()'. 
  * 
- *      --> importing and placing 'maxwidthimage'.
+ *      --> Changing versioning to 2 digits.  
  * 
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -18,49 +19,16 @@ import { maxwidthimage } from "../../assets/assets.index";
 
 const UnitsAndProps = () => {
     
-    const [ height, setHeight ] = useState('')
-    const [ width, setWidth ] = useState('')
-    const [ maxheight, setMaxheight ] = useState('')
-    const [ maxwidth, setMaxwidth ] = useState('') 
-    
-    
-    const handleWidth = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
         
-        console.log('width => name selected ==>', name, 'value selected ==>', value)
-        
-        setWidth({ ...width, [name]:value})
-    }
-    
-    const handleHeight = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        
-        console.log('height => name selected ==>', name, 'value selected ==>', value)
-        
-        setHeight({ ...height, [name]:value})
-    }
-    
-    const handleMaxwidth = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        
-        console.log('max width => name selected ==>', name, 'value selected ==>', value)
-        
-        setMaxwidth({ ...maxwidth, [name]:value})
-    }
-    
-    const handleMaxheight = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        
-        console.log('max height => name selected ==>', name, 'value selected ==>', value)
-        
-        setMaxheight({ ...maxheight, [name]:value})
-    }
-    
-    
+    const {   
+        height,
+        width,
+        maxheight,
+        maxwidth,
+        handleWidth,
+        handleHeight,
+        handleMaxwidth,
+        handleMaxheight } = useWebResponsiveContext()
     
     return(
         <Wrapper width={width} height={height} maxwidth={maxwidth} maxheight={maxheight}>
