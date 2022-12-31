@@ -1,17 +1,10 @@
 import React, { useContext, useState } from "react";
-import { cssGridlayoutData, gridIntroData, newGridrowSyntaxArray, newGridSyntaxArray, oldGridrowSyntaxArray, oldGridSyntaxArray } from "../data";
-
-/**Flexbox-grid-sass-and-animations app version 60.05 -
+import { cssGridlayoutData, gridIntroData, newGridrowSyntaxArray, newGridSyntaxArray, oldGridrowSyntaxArray, oldGridSyntaxArray, RepeatFColumnsD, RepeatFRowsD } from "../data";
+/**Flexbox-grid-sass-and-animations app version 60.09 -
  * 'GridContext' - Features:
  * 
- *      --> Providing states and handlers for 
- *         'grid-column-gap' and 'column-gap'.
- * 
- *      --> Providing states and handlers for 
- *          old 'grid-row-gap' and for new row-gap'.
- * 
- *      --> Providing states of shorthand Grid Gap 
- *          new and old syntax.
+ *      --> Providing 'RepeatFColumnsD', and 
+ *         'RepeatFRowsD' data.
  * 
  * Note: 'oldGridSyntaxArray' is going to be use for
  * building grid column and grid row gap old syntax 
@@ -98,13 +91,13 @@ const GridProvider = ({ children }) => {
         
         setOldrowsyntaxvalue({...oldrowsyntaxvalue, [name]:value })
     }
-
+    
     /**start of shorthand Grid Gap new and old syntax
      * 
      * this combines row and columns in a single line */
     /**this has also new 'gap' and old 'grid-gap' syntax  */
-
-     const [ newshorthandvalue, setNewshorthandvalue ] = useState({
+    
+    const [ newshorthandvalue, setNewshorthandvalue ] = useState({
         percents:'10% 15%',
         pixels:'10px 25px',
         vwunits:'15vw 15vh',
@@ -139,7 +132,7 @@ const GridProvider = ({ children }) => {
         
         setOldshorthandvalue({...oldshorthandvalue, [name]:value })
     }
-
+    
     
     return(
         <GridContext.Provider value={{ 
@@ -160,7 +153,9 @@ const GridProvider = ({ children }) => {
             newshorthandGridGapHandler,
             oldshorthandGridGapHandler,
             oldshorthandvalue,
-            newshorthandvalue
+            newshorthandvalue,
+            RepeatFColumnsD,
+            RepeatFRowsD
         }}>
             {children}
         </GridContext.Provider>
