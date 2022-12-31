@@ -1,18 +1,17 @@
 import React from "react";
+import { useWebResponsiveContext } from "../../apps-context/web.responsive.context";
 import AppElementResponsiveWebDesign from "../../components/app.element.responsive.web.fundamentals";
 //import { useLocation, useParams } from "react-router-dom";
 import ComplexTitle from "../../components/complex-title";
-import { useAppContext } from "../../context";
 import { HomeWrapper, NavbarWrapper } from "../../pages/home-page";
 
-/**Flexbox-grid-sass-and-animations app version 45 -
+/**Flexbox-grid-sass-and-animations app version 60.07 -
  * WebDesingFundamentalsApp - Features:
  * 
- *      --> Building 'WebDesingFundamentalsApp'
+ *       --> Redirecting states and features by 
+ *          'useWebResponsiveContext()'. 
  * 
- *      --> Destructuring the data from the context.
- * 
- *      --> Building the return. 
+ *      --> Changing versioning to 2 digits.  
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -20,7 +19,7 @@ import { HomeWrapper, NavbarWrapper } from "../../pages/home-page";
 
 const ResponsiveWebDesignApp = () => {
 
-    const { appWebResponsiveData } = useAppContext();
+    const { appWebResponsiveData } = useWebResponsiveContext()
 
     console.log('appWebResponsiveData ==>', appWebResponsiveData)
     //console.log('the use location ==>',useLocation())    
