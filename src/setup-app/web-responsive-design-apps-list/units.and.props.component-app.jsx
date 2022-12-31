@@ -4,7 +4,7 @@ import { useWebResponsiveContext } from "../../apps-context/web.responsive.conte
 import { maxwidthimage } from "../../assets/assets.index";
 
 
-/**Flexbox-grid-sass-and-animations app version 60.07 -
+/**Flexbox-grid-sass-and-animations app version 60.08 -
  * UnitsAndProps - Features:
  *
  *  
