@@ -1,21 +1,16 @@
 import moment from "moment";
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import { useUIDesignContext } from "../../apps-context/ui.web.design.fundamentals.contex";
 import ComplexTitle from "../../components/complex-title";
-import { useAppContext } from "../../context";
 
-
-/**Flexbox-grid-sass-and-animations app version 36 -
+/**Flexbox-grid-sass-and-animations app version 60.07 -
  * 'UIWhitespaceAndAlignmentApp' - Features:
  * 
- *      --> Combining alignment and white space 
- *          web design fundamentals to improve
- *          the styles
+ *    --> Redirecting states and features by 
+ *         'useUIDesignContext()'. 
  * 
- *      --> Building 'spaceAndAligment' state.
- * 
- *      --> Building 'section' and 'content'
- *          fixed 
+ *     --> Changing versioning to 2 digits.  
  * 
  * Note: About This 'object-fit' property tells the content 
  * to fill the container in a variety of ways; such as 
@@ -25,16 +20,7 @@ import { useAppContext } from "../../context";
 
 const UIWhitespaceAndAlignmentApp = () => {
 
-    const { UIWhitespaceAndAlignmentData } = useAppContext()
-
-    //console.log('the UIWhitespaceAndAlignmentData ==>', UIWhitespaceAndAlignmentData)
-    
-    const [ spaceAndAligment, setSpaceAndAligment ] = useState('')
-
-    const handleSpaceAndAligment = () => {
-        setSpaceAndAligment(!spaceAndAligment)   
-        console.log(spaceAndAligment)
-    }
+    const { spaceAndAligment, handleSpaceAndAligment, UIWhitespaceAndAlignmentData } = useUIDesignContext()
 
     return(
         <>
