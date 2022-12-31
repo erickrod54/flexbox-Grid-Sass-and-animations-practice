@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { useUIDesignContext } from "../../apps-context/ui.web.design.fundamentals.contex";
 import ComplexTitle from "../../components/complex-title";
-import { useAppContext } from "../../context";
 
-
-/**Flexbox-grid-sass-and-animations app version 45 -
+/**Flexbox-grid-sass-and-animations app version 60.07-
  * UIWhiteSpaceApp - Features:
  * 
- *      --> Taking off unused Components.
+ *      --> Redirecting states and features by 
+ *          'useUIDesignContext()'. 
+ * 
+ *      --> Changing versioning to 2 digits.  
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -15,8 +17,7 @@ import { useAppContext } from "../../context";
 
 const UIWhiteSpaceApp = () => {
 
-    const { uiWhiteSpaceData, basketball,handleBasketball } = useAppContext()
-    
+    const { uiWhiteSpaceData, basketball,handleBasketball } = useUIDesignContext()
     
     console.log(' data received from context ==>', uiWhiteSpaceData)
 
