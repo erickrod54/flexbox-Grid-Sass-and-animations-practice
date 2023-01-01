@@ -14,12 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 60.06 -
+/**Flexbox-grid-sass-and-animations app version 60.10 -
  * data js - Features:
  *
  *  
- *     --> Adding 'RepeatAndFrUnit' to the 
- *        'cssGridlayoutData'
+ *     --> Migrating 'RepeatAndFrUnit' data
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -876,4 +875,50 @@ export const newGridSyntaxArray = [
 
 
  
-/**and grid gap */
+/** RepeatAndFrUnit data*/
+
+export const RepeatFColumnsD = [
+    {
+      id:1,
+      value:'none'   
+    },
+    {
+      id:2,
+      value:'150px 150px 150px 150px'   
+    },
+    {
+      id:3,
+      value:'repeat(4, 150px)'   
+    },
+    {
+      id:4,
+      value:'1fr 2fr 2fr 1fr'   
+    },
+    {
+      id:5,
+      value:'repeat(3, 150px) 1fr'   
+    },
+    {
+        id:6,
+        value:'repeat(3, 150px) 0.5fr'   
+    },
+]
+
+export const RepeatFRowsD = [
+    {
+      id:1,
+      value:'none'   
+    },
+    {
+        id:2,
+        value:'150px 150px 150px'   
+      },
+      {
+        id:3,
+        value:'repeat(3, 150px)'   
+      },
+      {
+        id:3,
+        value:'repeat(2, 100px) 0.5fr'   
+      },
+]
