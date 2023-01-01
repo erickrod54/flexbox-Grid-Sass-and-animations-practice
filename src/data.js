@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 60.10 -
+/**Flexbox-grid-sass-and-animations app version 60.11 -
  * data js - Features:
  *
  *  
- *     --> Migrating 'RepeatAndFrUnit' data
+ *     --> Adding gridItemPosition to 'cssGridlayoutData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -619,13 +619,13 @@ export const cssGridlayoutData = [
        category:'container properties',
        url:'/apps/grid-layout/repeat-and-grid-units'  
      },
-      /***
-      {
-        id:3,
-        name:'deep in grid properties',
-        category:'container properties',
-        url:'/apps/web-responsive-design-fundamentals-app'  
-      },   
+     {
+        id:4,
+        name:'grid items position',
+        category:'item properties', 
+        url:'/apps/grid-layout/grid-items-position'  
+      },
+      /***   
       {
         id:3,
         name:'web responsive design fundamentals',
