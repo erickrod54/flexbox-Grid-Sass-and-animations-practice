@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { cssGridlayoutData, gridIntroData, newGridrowSyntaxArray, newGridSyntaxArray, oldGridrowSyntaxArray, oldGridSyntaxArray, RepeatFColumnsD, RepeatFRowsD } from "../data";
-/**Flexbox-grid-sass-and-animations app version 60.09 -
+
+/**Flexbox-grid-sass-and-animations app version 60.11 -
  * 'GridContext' - Features:
  * 
- *      --> Providing 'RepeatFColumnsD', and 
- *         'RepeatFRowsD' data.
+ *      --> Providing states and handlers for 
+ *          RepeatFrUnit component.
  * 
  * Note: 'oldGridSyntaxArray' is going to be use for
  * building grid column and grid row gap old syntax 
@@ -132,30 +133,69 @@ const GridProvider = ({ children }) => {
         
         setOldshorthandvalue({...oldshorthandvalue, [name]:value })
     }
+
+        /**states and handlers for repeat function */
+        const [ repeatrows, setRepeatrows ] = useState({
+            pixels:'150px 150px 150px',
+            repeatpixels:'repeat(3, 150px)',
+            repeatfraction:'repeat(2, 100px) 0.5fr',
+        })
+    
+        
+        const [ repeatcolumns, setRepeatcolumns ] = useState({
+            pixels:'150px 150px 150px 150px',
+            repeatpixels:'repeat(4, 150px)',
+            repeatfractions:'1fr 2fr 2fr 1fr',
+            pxelsandfr:'repeat(3, 150px) 1fr',
+            pxelsandhalffr:'repeat(3, 150px) 0.5fr'
+        })
+        
+        /**handler for 'oldGridrowSyntaxArray'*/
+        const RepeatFColumnsHandler = (e) => {
+            const name = e.target.name;
+            const value = e.target.value;    
+            
+            console.log('repeat funtion columns=> name selected ==>', name, ', value in it ==>', value)
+            
+            setRepeatcolumns({...repeatcolumns, [name]:value })
+        }
+    
+        const RepeatFRowsHandler = (e) => {
+            const name = e.target.name;
+            const value = e.target.value;    
+            
+            console.log('repeat funtion rows=> name selected ==>', name, ', value in it ==>', value)
+            
+            setRepeatrows({...repeatrows, [name]:value })
+        }
     
     
     return(
         <GridContext.Provider value={{ 
             oldsyntaxvalue,
             newsyntaxvalue,
-            newGridSyntaxHandler,
-            oldGridSyntaxHandler,
+            newrowsyntaxvalue,
+            oldrowsyntaxvalue,
+            oldshorthandvalue,
+            newshorthandvalue,
+            repeatrows,
+            repeatcolumns,
             gridIntroData,
             cssGridlayoutData,
             oldGridSyntaxArray,
             newGridSyntaxArray,
-            newGridrowSyntaxHandler,
-            oldGridrowSyntaxHandler,
-            newrowsyntaxvalue,
-            oldrowsyntaxvalue,
             oldGridrowSyntaxArray,
             newGridrowSyntaxArray,
+            RepeatFColumnsD,
+            RepeatFRowsD,
+            newGridSyntaxHandler,
+            oldGridSyntaxHandler,
+            newGridrowSyntaxHandler,
+            oldGridrowSyntaxHandler,
             newshorthandGridGapHandler,
             oldshorthandGridGapHandler,
-            oldshorthandvalue,
-            newshorthandvalue,
-            RepeatFColumnsD,
-            RepeatFRowsD
+            RepeatFColumnsHandler,
+            RepeatFRowsHandler
         }}>
             {children}
         </GridContext.Provider>
