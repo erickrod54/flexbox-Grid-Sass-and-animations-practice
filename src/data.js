@@ -14,11 +14,12 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 60.11 -
+/**Flexbox-grid-sass-and-animations app version 60.12 -
  * data js - Features:
  *
  *  
- *     --> Adding gridItemPosition to 'cssGridlayoutData' 
+ *     --> Adding 'grid template area property' and 
+ *        'grid items property' to 'cssGridlayoutData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -624,6 +625,18 @@ export const cssGridlayoutData = [
         name:'grid items position',
         category:'item properties', 
         url:'/apps/grid-layout/grid-items-position'  
+      },
+      {
+        id:4,
+        name:'grid template area property',
+        category:'container properties',
+        url:'/apps/grid-layout/grid-template-area-property'  
+      },
+      {
+        id:5,
+        name:'justify, align, and place items properties',
+        category:'item properties',
+        url:'/apps/grid-layout/grid-justify-align-place-items-properties' 
       },
       /***   
       {
