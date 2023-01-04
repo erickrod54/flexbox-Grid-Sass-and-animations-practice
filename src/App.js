@@ -33,18 +33,17 @@ import { UIWhiteSpaceApp,
          UIDesignChallenge} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps' 
 
 import { MediaQueriesComponent, ResponsiveWebDesignApp, UnitsAndProps, ViewPortUnits, ViewportUnitsCases, WheaterUiApp } from './setup-app/web-responsive-design-apps-list/index.responsive.web.fundamentals';
-import { GridIntro, GridItemsPosition, GridLayout, RepeatAndFrUnit } from './setup-app/grid-apps-list/index.grid.layout';
+import { GridIntro, GridItemProperties, GridItemsPosition, GridLayout, GridTemplateArea, RepeatAndFrUnit } from './setup-app/grid-apps-list/index.grid.layout';
 
-/**Flexbox-grid-sass-and-animations app version 60.11 -
+/**Flexbox-grid-sass-and-animations app version 60.12 -
  * App js file - Features:
  * 
- *       --> Adding 'GridItemsPosition' building a route 
- *          for it. 
+ *       --> Adding 'GridTemplateArea ' and 'GridItemProperties' 
+ *          building a route for it. 
  * 
  * Note: starting to build the ui color 
  * fundamental app
  */
-
 
 function App() {
   
@@ -88,6 +87,8 @@ function App() {
         <Route path='/apps/grid-layout/repeat-and-grid-units' element={<RepeatAndFrUnit />}/>
         <Route path='/apps/grid-layout/repeat-and-grid-units' element={<RepeatAndFrUnit />}/>
         <Route path='/apps/grid-layout/grid-items-position' element={<GridItemsPosition />}/>  
+        <Route path='/apps/grid-layout/grid-template-area-property' element={<GridTemplateArea />}/>
+        <Route path='/apps/grid-layout/grid-justify-align-place-items-properties' element={<GridItemProperties />}/>
         </Route>
       </Routes>
     </Router>
