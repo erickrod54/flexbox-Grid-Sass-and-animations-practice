@@ -1,11 +1,7 @@
-/**Flexbox-grid-sass-and-animations app version 13 -
+/**Flexbox-grid-sass-and-animations app version 60.12 -
  * index css - Features:
  * 
- *      --> Adding the 'Variables' with the color 
- *          pallete and more variables. 
- * 
- *      --> Adding a 'btn' class to style the link
- *         button in the shared layout. 
+ *      --> Adding the 'center-grid' style class
  * 
  * Note: So far by this version i build the data for this three last
  * apps.
@@ -70,6 +66,11 @@ Variables
   --clr-orange-8: hsl(13, 74%, 33%);
   --clr-orange-9: hsl(13, 73%, 25%);
   --clr-orange-10: hsl(13, 73%, 16%);
+}
+
+.center-grid{
+  display: grid;
+  justify-content: center;
 }
 
 body {
