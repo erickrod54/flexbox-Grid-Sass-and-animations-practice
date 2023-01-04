@@ -5,23 +5,59 @@ import { AlignContentAppWrapper, PerfectCenterWrapper } from "../flexbox.styled.
 
 import PerfectCenter from "../../components/perfect.center.component";
 import { useFlexboxContext } from "../../apps-context/flexbox.context";
+import SelectionForm from "../../components/selection.form.component";
 
 
-/**Flexbox-grid-sass-and-animations app version 60.02 -
+/**Flexbox-grid-sass-and-animations app version 60.12 -
  * 'FlexAlignContentApp' - Features:
  * 
- *      --> Redirecting states and features by 
- *          'useFlexboxContext()'.
+    --> Implementing 'SelectionForm'
  * 
- *      --> Changing versioning to 2 digits.
+ *      --> Building and testing data 
  * 
- * Note: By this version is everything done for this 
- * component.
+ * Note: Pending to migrate data, and pending to implement 
+ * 'SelectionForm' for 'direction' ( migrating data from 
+ * that component > flex.direction.property-app.jsx)  
  */
 
 const FlexAlignContentApp = () => {
 
     const { direction, handleDirection, handleAlignContent, aligncontent } = useFlexboxContext()
+
+    const FlexAlignContentData = [
+        {
+          id:1,
+          value:"none"      
+        },
+        {
+          id:2,
+          value:'stretch'      
+        },
+        {
+          id:3,
+          value:'flex-start'      
+        },
+        {
+          id:4,
+          value:'flex-end'      
+        },
+        {
+          id:5,
+          value:'center'      
+        },
+        {
+          id:6,
+          value:'space-between'      
+        },
+        {
+          id:7,
+          value:'space-around'      
+        },
+        {
+          id:8,
+          value:'space-evenly'      
+        }
+    ]
     
     return(
         <>
@@ -30,23 +66,7 @@ const FlexAlignContentApp = () => {
         ( a large collection of items inside of the container ), for all these props must be set the 'wrap' prop, to see how it 
          take effect also needs a 'height' ( this this container has 600px )</h2>
 
-        <select 
-                name="selection" 
-                id="selection" 
-                value={aligncontent} 
-                onChange={handleAlignContent}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value="">Select an align-content</option>1
-                    <option value='stretch'>stretch</option>
-                    <option value='flex-start'>flex-start</option>
-                    <option value='flex-end'>flex-end</option>
-                    <option value='center'>center</option>
-                    <option value='space-between'>space-between</option>
-                    <option value='space-around'>space-around</option>
-                    <option value='space-evenly'>space-evenly</option>
-                </select>
+         <SelectionForm aligncontent={aligncontent} handler={handleAlignContent} propertiesArray={FlexAlignContentData} propertyname={'align-content'} />
 
              <h2>And if i change the direction, i change the 'cross' and 'main' axis orientation</h2>   
                 <select 
