@@ -7,70 +7,103 @@ import { AlignItemsAppWrapper } from "../flexbox.styled.components";
 import FlexProp from "../../components/flex-prop.component";
 
 import { useFlexboxContext } from "../../apps-context/flexbox.context";
+import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.02 -
+
+/**Flexbox-grid-sass-and-animations app version 60.13 -
  * 'FlexAlignItemsApp' - Features:
  * 
- *      -->  Redirecting states and features by 
- *          'useFlexboxContext()'.
+ *      --> Implementing 'SelectionForm'
  * 
- *      --> Changing versioning to 2 digits. 
+ *      --> Building and testing data 
  * 
- * Note: By this version is everything done for this 
- * component.
+ * Note: Pending to migrate data
  */
 
 const FlexAlignItemsApp = () => {
 
     const { padding, childpadding, handlePadding, handleChildpadding, align, handleAlign } = useFlexboxContext()
 
+    const FlexAlignItemsArray = [
+        {
+          id:1,
+          value:"none"      
+        },
+        {
+          id:2,
+          value:'stretch'      
+        },
+        {
+          id:3,
+          value:'flex-start'      
+        },
+        {
+          id:4,
+          value:'flex-end'      
+        },
+        {
+          id:5,
+          value:'center'      
+        },
+        {
+          id:6,
+          value:'baseline'      
+        },
+    ]
+
+    const FlexBaselineArray = [
+      {
+        id:1,
+        value:"none"      
+      },
+      {
+        id:2,
+        value:'20px'      
+      },
+    ]
+
+    const FlexBaselinechildArray = [
+      {
+        id:1,
+        value:"none"      
+      },
+      {
+        id:2,
+        value:'5px'      
+      },
+    ]
+
     return(
         <>
         <ComplexTitle title={<h2><span className='align-items-app'>Align Items App:<p>( this props only take effect on cross-axis, must be a height defined)</p></span></h2>}/>
         <AlignItemsContent />
         
-        <select 
-                name="selection" 
-                id="selection" 
-                value={align} 
-                onChange={handleAlign}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value="">Select an align-items</option>1
-                    <option value='stretch'>stretch</option>
-                    <option value='flex-start'>flex-start</option>
-                    <option value='flex-end'>flex-end</option>
-                    <option value='center'>center</option>
-                    <option value='baseline'>baseline</option>
-                </select>
-        
+        <SelectionForm propertyvalue={align} handler={handleAlign} propertiesArray={FlexAlignItemsArray} propertyname={'align-items'} />
+        <SelectionForm propertyvalue={align} handler={handleAlign} propertiesArray={FlexAlignItemsArray} propertyname={'align-items'} /> 
                 <div style={{ padding: '2rem'}}>
                 {align.selection === 'baseline' ? 
                 <>
-                <select 
-                name="selection" 
-                id="selection" 
-                value={padding} 
-                onChange={handlePadding}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value="">Select an padding:</option>1
-                    <option value='20px'>20px - ( applied to container)</option>
-                </select>
-                
-                <select 
-                name="selection" 
-                id="selection" 
-                value={childpadding} 
-                onChange={handleChildpadding}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value="">Select an padding:</option>1
-                    <option value='5px'>5px - ( applied to child container)</option>
-                </select>
+                <SelectionForm propertyvalue={padding} handler={handlePadding} propertiesArray={FlexBaselineArray} propertyname={'align-items'} />
+                {
+                  padding.selection  ? 
+                  <p>
+                    a padding of <strong>{padding.selection}</strong> is applied equally to all the container children
+                  </p>
+                  :
+                  null
+                }
+
+                <SelectionForm propertyvalue={childpadding} handler={handleChildpadding} propertiesArray={FlexBaselinechildArray} propertyname={'align-items'} />
+
+                {
+                  childpadding.selection  ? 
+                    <p>
+                      a padding of <strong>{childpadding.selection}</strong> is applied equally to the child
+                    </p>
+                  :
+                  null
+                }  
+
                 </>
 
                 :
