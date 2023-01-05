@@ -7,17 +7,17 @@ import FlexPropWrap from "../../components/flex-prop-wrap.component";
 import { FlexPropWrapStyle } from "../flexbox.styled.components";
 import FlexWrapContent from "../../components/flexwrap-content.component";
 import { useFlexboxContext } from "../../apps-context/flexbox.context";
+import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.03 -
+
+/**Flexbox-grid-sass-and-animations app version 60.13 -
  * 'flexbox.direction.preperty-app' - Features:
  * 
- *      --> Redirecting states and features by 
- *          'useFlexboxContext()'.
+ *      --> Implementing 'SelectionForm'
  * 
- *      --> Changing versioning to 2 digits. 
+ *      --> Building and testing data 
  * 
- * Note: The relocation are made in order to have all
- * functionality concerns separated from the data.
+ * Note: Pending to migrate data
  */
 
 /**here i got already the 'props' previously drilled from
@@ -25,6 +25,48 @@ import { useFlexboxContext } from "../../apps-context/flexbox.context";
 const FlexPropApp = () => {
 
     const { direction, handleDirection, wrap, handleWrap } = useFlexboxContext()
+
+    const FlexPropData = [
+        {
+          id:1,
+          value:"none"      
+        },
+        {
+          id:2,
+          value:'row'      
+        },
+        {
+          id:3,
+          value:'column'      
+        },
+        {
+          id:4,
+          value:'row-reverse'      
+        },
+        {
+          id:5,
+          value:'column-reverse'      
+        },
+    ]
+
+    const FlexWrapData = [
+        {
+          id:1,
+          value:"none"      
+        },
+        {
+          id:2,
+          value:'nowrap'      
+        },
+        {
+          id:3,
+          value:'wrap'      
+        },
+        {
+          id:4,
+          value:'wrap-reverse'      
+        },
+    ]
 
     /**here i test that i'm getting the 'wrap' state*/
     console.log('these are wrap props drilled ==> ',wrap)
@@ -46,20 +88,7 @@ const FlexPropApp = () => {
                 properties, for reverse directions the
                 children will be reversed: </p>
     
-            <select 
-                name="selection" 
-                id="selection" 
-                value={direction} 
-                onChange={handleDirection}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value="">Select a direction</option>1
-                    <option value='row'>row</option>
-                    <option value='column'>column</option>
-                    <option value='row-reverse'>row-reverse</option>
-                    <option value='column-reverse'>column-reverse</option>
-            </select>
+                <SelectionForm direction={direction} handler={handleDirection} propertiesArray={FlexPropData} propertyname={'flex-direction'} />
 
             {/**i drilled the state to set conditions
              * for the content*/}
@@ -73,19 +102,7 @@ const FlexPropApp = () => {
            <FlexPropWrapStyle wrap={ wrap }>
                 <h2>flex wrap properties:</h2>
 
-                <select 
-                name="selection" 
-                id="selection" 
-                value={wrap} 
-                onChange={handleWrap}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value="">Select a wrap</option>1
-                    <option value='nowrap'>nowrap</option>
-                    <option value='wrap'>wrap</option>
-                    <option value='wrap-reverse'>wrap-reverse</option>
-                </select>
+                <SelectionForm wrap={ wrap } handler={handleWrap} propertiesArray={FlexWrapData} propertyname={'flex-wrap'} />
                 
                 {/**i drilled the state to set conditions
                  * for the content*/}
