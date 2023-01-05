@@ -5,17 +5,14 @@ import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import { FlexAlignSelfPropertyWrapper } from "../flexbox.styled.components";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.02 -
+/**Flexbox-grid-sass-and-animations app version 60.13 -
  * 'FlexAlignSelfPropertyApp' - Features:
  * 
- *      --> Redirecting states and features by 
- *          'useFlexboxContext()'.
+ *      --> Implementing 'SelectionForm'
  * 
- *      --> Changing versioning to 2 digits  
+ *      --> Building and testing data 
  * 
- *      --> Testing new 'SelectionForm'
- * 
- * Note: 'SelectionForm' still in test phase.
+ * Note: Pending to migrate data
  */
 
 const FlexAlignSelfPropertyApp = () => {
@@ -49,6 +46,56 @@ const FlexAlignSelfPropertyApp = () => {
         }
         ,
     ]
+
+    const baselineArray = [
+      {
+        id:1,
+        value:''  
+      },
+      {
+        id:2,
+        value:'flex-start'  
+      },
+      {
+        id:3,
+        value:'baseline'  
+      },
+  ]
+
+  const itemsArray = [
+    {
+      id:1,
+      value:1  
+    },
+    {
+      id:2,
+      value:2  
+    },
+    {
+      id:3,
+      value:3  
+    },
+    {
+      id:4,
+      value:4  
+    },
+    {
+      id:5,
+      value:5  
+    },
+    {
+      id:6,
+      value:6  
+    },
+    {
+      id:7,
+      value:7  
+    },
+    {
+      id:8,
+      value:8  
+    }
+]
     
     console.log('the aligself ==>', alignself, 'and the itemAlignself ==> ', itemAlignself)
     return(
@@ -74,42 +121,17 @@ const FlexAlignSelfPropertyApp = () => {
             <h3>to apply 'baseline' correctlly i have to change the align
                 items prop od the container from 'flex-start' to 'baseline'
             </h3>
-                <select 
-                name="selection" 
-                id="selection" 
-                value={align} 
-                onChange={handleAlign}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value="">select an align-items value</option>1
-                    <option value='flex-start'>select 'flex-start'</option>
-                    <option value='baseline'>select baseline</option>
-                </select>
+            
+            <SelectionForm propertyvalue={align} handler={handleAlign} propertiesArray={baselineArray} propertyname={'align-self'} />
+             
            </>
            :
            null 
         }
 
                 <h3>select an item to apply align-self:</h3>
-                <select 
-                name="selection" 
-                id="selection" 
-                value={itemAlignself} 
-                onChange={handleItemAlignself}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value="">Select an align-content</option>1
-                    <option value={1}>align-self item # 1</option>
-                    <option value={2}>align-self item # 2</option>
-                    <option value={3}>align-self item # 3</option>
-                    <option value={4}>align-self item # 4</option>
-                    <option value={5}>align-self item # 5</option>
-                    <option value={6}>align-self item # 6</option>
-                    <option value={7}>align-self item # 7</option>
-                    <option value={8}>align-self item # 8</option>
-                </select>
+                <SelectionForm propertyvalue={itemAlignself} handler={handleItemAlignself} propertiesArray={itemsArray} propertyname={'align-self item #'} />
+                
 
         <FlexAlignSelfPropertyWrapper alignself={alignself}  itemAlignself={itemAlignself} align={align}>
             <FlexAlignSelf />       
