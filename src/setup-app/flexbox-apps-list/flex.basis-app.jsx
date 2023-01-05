@@ -3,25 +3,69 @@ import ComplexTitle from "../../components/complex-title";
 import FlexProp from "../../components/flex-prop.component";
 import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import { FlexBasisWrapper } from "../flexbox.styled.components";
+import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.02 -
+
+/**Flexbox-grid-sass-and-animations app version 60.13 -
  * FlexBasisPropertyApp - Features:
+ *  
+ *      --> Implementing 'SelectionForm'
  * 
- *        --> Redirecting states and features by 
- *          'useFlexboxContext()'.
+ *      --> Building and testing data 
  * 
- *      --> Changing versioning to 2 digits 
- * 
- * Note:  By this version 'flex-shrink' is dynamic,
- * i can select the element and switch betwwen '1'
- * for activated flex-shrink and '0' for deactivate
- * 'flex-shrink'
+ * Note: Pending to migrate data
  */
 
 
 const FlexBasisPropertyApp = () => {
 
     const { basis, itemBasis, handleBasis, handleItemBasis } = useFlexboxContext()
+
+    const flexBasisItemArray = [
+        {
+          id:1,
+          value:1  
+        },
+        {
+          id:2,
+          value:2  
+        },
+        {
+          id:3,
+          value:3  
+        },
+        {
+          id:4,
+          value:4  
+        },
+        {
+          id:5,
+          value:5  
+        },
+    ]
+
+    const flexBasisArray = [
+        {
+          id:1,
+          value:'none'  
+        },
+        {
+          id:2,
+          value:'auto'  
+        },
+        {
+          id:3,
+          value:'300px'  
+        },
+        {
+          id:4,
+          value:'25rem'  
+        },
+        {
+          id:5,
+          value:'45%'  
+        },
+    ]
 
     console.log('props from the context ==> ', 'basis defualt ==>', basis, 'items numbers ==>',itemBasis )
 
@@ -61,38 +105,13 @@ const FlexBasisPropertyApp = () => {
             </li>
         </ul>
 
-        <h3>select the item # :</h3>            
-        <select 
-                name="selection" 
-                id="selection" 
-                value={itemBasis} 
-                onChange={handleItemBasis}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value="">Select a basis for an element</option>1
-                    <option value={1}> set basis the to item # 1</option>
-                    <option value={2}> set basis the to item # 2</option>
-                    <option value={3}> set basis the to item # 3</option>
-                    <option value={4}> set basis the to item # 4</option>
-                    <option value={5}> set basis the to item # 5</option>
-        </select>
+        <h3>select the item # :</h3>  
 
-        <h3>select the basis :</h3>              
-        <select 
-                name="selection" 
-                id="selection" 
-                value={basis} 
-                onChange={handleBasis}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value={""}>Select shrink ( Default 1 )</option>1
-                    <option value={'auto'}> flex-basis 'auto' ( Default 'auto' )</option>
-                    <option value={'300px'}> flex-basis '300px'</option>
-                    <option value={'25rem'}> flex-basis '25rem'</option>
-                    <option value={'45%'}> flex-basis '45%'</option>
-            </select>
+        <SelectionForm propertyvalue={itemBasis} handler={handleItemBasis} propertiesArray={flexBasisItemArray} propertyname={'item #'} />          
+
+        <h3>select the basis :</h3>            
+
+        <SelectionForm propertyvalue={basis} handler={handleBasis} propertiesArray={flexBasisArray} propertyname={'flex-basis'} />            
 
 
         <FlexBasisWrapper basis={basis} itemBasis={itemBasis}>
