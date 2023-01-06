@@ -3,25 +3,59 @@ import ComplexTitle from "../../components/complex-title";
 import FlexProp from "../../components/flex-prop.component";
 import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import { FlexGrowPropertyWrapper } from "../flexbox.styled.components";
+import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.03 -
+/**Flexbox-grid-sass-and-animations app version 60.14 -
  * FlexGrowPropertyApp - Features:
  * 
- *       --> Redirecting states and features by 
- *          'useFlexboxContext()'.
+ *     --> Implementing 'SelectionForm'
  * 
- *       --> Changing versioning to 2 digits 
+ *      --> Building and testing data 
  * 
- * Note:  As the previous apps i use the helper function:
- * 
- *  flex-flow: ${({flow}) => flow.selection };
- * 
- * to write dinamiclly the prop by 'flow.selection'
+ * Note: Pending to migrate data
  */
 
 const FlexGrowPropertyApp = () => {
 
     const { grow, itemGrow, handleGrow, handleItemGrow } = useFlexboxContext()
+
+    const flexGrowArray = [
+        {
+          id:1,
+          value:1  
+        },
+        {
+          id:2,
+          value:2  
+        },
+        {
+          id:3,
+          value:3  
+        },
+        {
+          id:4,
+          value:4  
+        },
+    ]
+
+    const flexItemGrowArray = [
+        {
+          id:1,
+          value:1  
+        },
+        {
+          id:2,
+          value:2  
+        },
+        {
+          id:3,
+          value:3  
+        },
+        {
+          id:4,
+          value:4  
+        },
+    ]
  
     return(
         <>
@@ -37,36 +71,11 @@ const FlexGrowPropertyApp = () => {
                 but will apply the property 'flex-grow' in 
                 positive numbers, the grow default value is '0'
             </h2>
-            <select 
-                name="selection" 
-                id="selection" 
-                value={grow} 
-                onChange={handleGrow}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value="">Select a grow for an element</option>1
-                    <option value={1}> grow in 1</option>
-                    <option value={2}> grow in 2</option>
-                    <option value={3}> grow in 3</option>
-                    <option value={4}> grow in 4</option>
-            </select>
+            
+            <SelectionForm grow={ grow } handler={handleGrow} propertiesArray={flexGrowArray} propertyname={'flex-grow'} />
 
-            <select 
-                name="selection" 
-                id="selection" 
-                value={itemGrow} 
-                onChange={handleItemGrow}>
-                    {/**the first option with empty value is to 
-                     * avoid 'row' as default option - is a select 
-                     * tag behavior*/}
-                    <option value="">Select a grow for an element</option>1
-                    <option value={1}> grow the item # 1</option>
-                    <option value={2}> grow the item # 2</option>
-                    <option value={3}> grow the item # 3</option>
-                    <option value={4}> grow the item # 4</option>
-            </select>
-
+            <SelectionForm itemGrow={ itemGrow } handler={handleItemGrow} propertiesArray={flexItemGrowArray} propertyname={'grow item #'} />
+           
         <h2>For this case the item # 1, has already set a flex-grow in '1', so whatever 
             element i select to grow will share the extra space with item # 1
         </h2>
