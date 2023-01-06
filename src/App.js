@@ -33,9 +33,9 @@ import { UIWhiteSpaceApp,
          UIDesignChallenge} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps' 
 
 import { MediaQueriesComponent, ResponsiveWebDesignApp, UnitsAndProps, ViewPortUnits, ViewportUnitsCases, WheaterUiApp } from './setup-app/web-responsive-design-apps-list/index.responsive.web.fundamentals';
-import { GridIntro, GridItemProperties, GridItemsPosition, GridLayout, GridTemplateArea, RepeatAndFrUnit } from './setup-app/grid-apps-list/index.grid.layout';
+import { GridAutoRowFlow, GridIntro, GridItemProperties, GridItemsPosition, GridLayout, GridTemplateArea, RepeatAndFrUnit } from './setup-app/grid-apps-list/index.grid.layout';
 
-/**Flexbox-grid-sass-and-animations app version 60.12 -
+/**Flexbox-grid-sass-and-animations app version 60.14 -
  * App js file - Features:
  * 
  *       --> Adding 'GridTemplateArea ' and 'GridItemProperties' 
@@ -89,6 +89,8 @@ function App() {
         <Route path='/apps/grid-layout/grid-items-position' element={<GridItemsPosition />}/>  
         <Route path='/apps/grid-layout/grid-template-area-property' element={<GridTemplateArea />}/>
         <Route path='/apps/grid-layout/grid-justify-align-place-items-properties' element={<GridItemProperties />}/>
+        <Route path='/apps/grid-layout/grid-auto-rows-flow-and-columns-values' element={<GridAutoRowFlow />}/>
+        
         </Route>
       </Routes>
     </Router>
