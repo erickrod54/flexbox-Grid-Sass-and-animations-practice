@@ -4,24 +4,61 @@ import ComplexTitle from "../../components/complex-title";
 import FlexBoxWrap from '../../components/flex-prop-wrap.component';
 import FlexFlowContent from "../../components/flexflow-content.component";
 import { useFlexboxContext } from "../../apps-context/flexbox.context";
+import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.03 -
+/**Flexbox-grid-sass-and-animations app version 60.14 -
  * 'FlexFlow' app - Features:
  * 
- *     --> Redirecting states and features by 
- *         'useFlexboxContext()'.
+ *     --> Implementing 'SelectionForm'
  * 
- *     --> Changing versioning to 2 digits 
+ *      --> Building and testing data 
  * 
- * Note: the only prop that i drill is for the Style Component
- * to give the value that needs to change dynamiclly and apply
- * the 'flow' style by the selection
+ * Note: Pending to migrate data
  */
 
 const FlexFlow = () => {
 
     /**here i destructure props */
     const { flow, handleFlow } = useFlexboxContext() 
+
+    const flexFlowArray = [
+        {
+          id:1,
+          value:'none'  
+        },
+        {
+          id:2,
+          value:'row wrap'  
+        },
+        {
+          id:3,
+          value:'column wrap'  
+        },
+        {
+          id:4,
+          value:'row-reverse wrap'  
+        },
+        {
+          id:5,
+          value:'column-reverse wrap'  
+        },
+        {
+          id:6,
+          value:'row nowrap'  
+        },
+        {
+           id:7,
+           value:'column nowrap'  
+        },
+        {
+           id:8,
+           value:'row-reverse nowrap'  
+        },
+        {
+            id:9,
+            value:'column-reverse nowrap'  
+         },
+    ]
 
     return(
         <>
@@ -35,21 +72,7 @@ const FlexFlow = () => {
             <p>flex flow is a mix flexwrap and flex prop fetaures</p>
         
         {/**here select to show the options to the user */}
-        <select
-            name='selection'
-            id='selection'
-            value={ flow }
-            onChange={handleFlow}>
-                <option value="">Select a direction</option>
-                <option value="row wrap">row wrap</option>
-                <option value="column wrap">column wrap</option>
-                <option value="row-reverse wrap">row-reverse wrap</option>
-                <option value="column-reverse wrap">column-reverse wrap</option>
-                <option value="row nowrap">row nowrap</option>
-                <option value="column nowrap">column nowrap</option>
-                <option value="row-reverse nowrap">row-reverse nowrap</option>
-                <option value="column-reverse nowrap">column-reverse nowrap</option>
-            </select>
+        <SelectionForm flow={ flow } handler={handleFlow} propertiesArray={flexFlowArray} propertyname={'flex-flow'} />
         
         <FlexFlowContent />
         
