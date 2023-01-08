@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 60.14 -
+/**Flexbox-grid-sass-and-animations app version 60.15 -
  * data js - Features:
  *
  *  
- *     --> Adding 'grid auto rows flow and columns values' 
+ *     --> Adding 'grid item properties' 
  *         to 'cssGridlayoutData' 
  *      
  * Note: this data is going to be passed to build 
@@ -643,6 +643,12 @@ export const cssGridlayoutData = [
         name:'grid auto rows flow and columns values',
         category:'container properties',
         url:'/apps/grid-layout/grid-auto-rows-flow-and-columns-values'  
+      },
+      {
+        id:7,
+        name:'grid item properties',
+        category:'item properties',
+        url:'/apps/grid-layout/gird-item-properties'  
       }
       /***   
       {
