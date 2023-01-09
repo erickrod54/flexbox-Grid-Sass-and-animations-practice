@@ -1,15 +1,25 @@
 import styled from 'styled-components'
 
-/**Flexbox-grid-sass-and-animations app version 60.04 -
+/**Flexbox-grid-sass-and-animations app version 60.15 -
  * flexbox.styled.components - Features:
  * 
- *       --> Adding style for ui titles  
+ *       --> Building 'CodeBlock'.  
  * 
  * Note:  By this version 'flex-shrink' is dynamic,
  * i can select the element and switch betwwen '1'
  * for activated flex-shrink and '0' for deactivate
  * 'flex-shrink'
  */
+
+export const CodeBlock = styled.section`
+        display: grid;
+        width: 40vw;
+        height: 50vh;
+        font-size: calc(0.66667vw + 5px);
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+    `
 
 export const FlexBoxWrapper = styled.div`
     /**Flex container => parent */
