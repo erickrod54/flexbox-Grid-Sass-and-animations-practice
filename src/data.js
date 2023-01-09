@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 60.15 -
+/**Flexbox-grid-sass-and-animations app version 60.16 -
  * data js - Features:
  *
  *  
- *     --> Adding 'grid item properties' 
+ *     --> Adding 'GridMaxMinContent' 
  *         to 'cssGridlayoutData' 
  *      
  * Note: this data is going to be passed to build 
@@ -649,6 +649,12 @@ export const cssGridlayoutData = [
         name:'grid item properties',
         category:'item properties',
         url:'/apps/grid-layout/gird-item-properties'  
+      },
+      {
+        id:8,
+        name:'grid max min content function values',
+        category:'item properties',
+        url:'/apps/grid-layout/grid-max-min-content-function-values'  
       }
       /***   
       {
