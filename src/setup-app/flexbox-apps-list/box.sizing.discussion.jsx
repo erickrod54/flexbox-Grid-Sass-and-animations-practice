@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useFlexboxContext } from '../../apps-context/flexbox.context'
 
-
-/**Flexbox-grid-sass-and-animations app version 56 -
+/**Flexbox-grid-sass-and-animations app version 60.16
  * index js file - Features:
  * 
- *      --> Building 'BoxSizing'   
+ *      --> Migrating states and handlers
+ * 
+ *      --> Destructuring from the context.
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
@@ -13,21 +15,12 @@ import styled from "styled-components";
 
 const BoxSizing = () => {
 
-    const [ padding, setPadding ] = useState(false)
-    const [ paddingbox, setPaddingbox ] = useState(false)
-    const [ paddingboxcont, setPaddingboxcont] = useState(false)
-
-    const handlePadding = () => {
-        setPadding(!padding)
-    }
-
-    const handlePaddingbox = () => {
-        setPaddingbox(!paddingbox)
-    }
-
-    const handlePaddingboxcont = () => {
-        setPaddingboxcont(!paddingboxcont)
-    }
+    const { boxpadding,
+            paddingbox,
+            paddingboxcont,
+            handlePaddingbox,
+            handleBoxpadding,
+            handlePaddingboxcont } = useFlexboxContext()
  
     return(
         <WrapperBoxsizing>
@@ -43,14 +36,14 @@ const BoxSizing = () => {
                 i'll apply a padding of '10px' to the 'div-1'  
             </p>
 
-            <button onClick={handlePadding}>
+            <button onClick={handleBoxpadding}>
                 apply a padding to 'div-1'
             </button>
 
-            <div className={ !padding ? 'div-1' : 'div-1-padding'}>div-1</div>
+            <div className={ !boxpadding ? 'div-1' : 'div-1-padding'}>div-1</div>
             <div className="div-2">div-2</div>
 
-            { padding ? 
+            { boxpadding ? 
                 <p>
                     by applying the padding i can check that i
                     have no control over the 'width' ( previously 
