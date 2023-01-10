@@ -4,11 +4,11 @@ import { alignItemsData, flexPropData, flexWrapData, flowData, JustifyFlexData }
  
 import reducer from "../reducer";
 
-/**Flexbox-grid-sass-and-animations app version 59 -
+/**Flexbox-grid-sass-and-animations app version 60.16 -
  * 'flexbox.context.js' - Features:
  * 
- *      --> Relocating all flexbox states and 
- *          features in its own context.
+ *      --> Migrating here Box-sizing features 
+ *          and handlers.
  * 
  * Note: By this version everything is done in
  * this component.
@@ -355,10 +355,36 @@ const FlexboxtProvider = ({ children }) => {
             setItemAlignself({...itemAlignself, [name]: value })
         }
 
+        /**Boxsizing states and handlers -- start*/
+
+        const [ boxpadding, setBoxpadding ] = useState(false)
+        const [ paddingbox, setPaddingbox ] = useState(false)
+        const [ paddingboxcont, setPaddingboxcont] = useState(false)
+
+        const handleBoxpadding = () => {
+            setPadding(!padding)
+        }
+
+        const handlePaddingbox = () => {
+            setPaddingbox(!paddingbox)
+        }
+
+        const handlePaddingboxcont = () => {
+            setPaddingboxcont(!paddingboxcont)
+        }
+
+        /**Boxsizing states and handlers -- end*/
+
     return(
         <FlexboxContext.Provider value={{
             ...state,
             direction,
+            boxpadding,
+           paddingbox,
+           paddingboxcont,
+           handlePaddingbox,
+           handleBoxpadding,
+           handlePaddingboxcont, 
             aligncontent,
             wrap,
             flow,
@@ -376,6 +402,7 @@ const FlexboxtProvider = ({ children }) => {
             itemBasis,
             alignself,
             itemAlignself,
+
             toggleFlex,
             toggleFlexManApp,
             handleAlignContent,
