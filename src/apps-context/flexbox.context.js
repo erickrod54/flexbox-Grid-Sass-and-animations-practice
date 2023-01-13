@@ -1,14 +1,13 @@
 import React, { useContext, useReducer, useState } from "react";
 import { TOGGLE_FLEX, TOGGLE_FLEX_MANIPULATION_APP } from '../actions'
-import { alignItemsData, flexPropData, flexWrapData, flowData, JustifyFlexData } from "../data";
+import { alignItemsData, FlexJustifyData, flexPropData, flexWrapData, flowData, JustifyFlexData } from "../data";
  
 import reducer from "../reducer";
 
-/**Flexbox-grid-sass-and-animations app version 60.16 -
+/**Flexbox-grid-sass-and-animations app version 60.18 -
  * 'flexbox.context.js' - Features:
  * 
- *      --> Migrating here Box-sizing features 
- *          and handlers.
+ *      --> Importing and Providing 'FlexJustifyData'.
  * 
  * Note: By this version everything is done in
  * this component.
@@ -428,6 +427,7 @@ const FlexboxtProvider = ({ children }) => {
             flowData,
             JustifyFlexData,
             alignItemsData,
+            FlexJustifyData
         }}>
             {children}
         </FlexboxContext.Provider>
