@@ -6,50 +6,19 @@ import JustifyContent from '../../components/justifyflex-content.component';
 import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.12 -
+/**Flexbox-grid-sass-and-animations app version 60.18 -
  * 'JustifyContentApp' - Features:
  * 
- *       --> Implementing 'SelectionForm'
- * 
- *      --> Building and testing data 
+ *       --> Destructuring FlexJustifyData
  * 
  * Note: Pending to migrate data
  */
 
 const JustifyContentApp = () => {
 
-    const { justify, handleJustify } = useFlexboxContext()
+    const { justify, handleJustify, FlexJustifyData } = useFlexboxContext()
 
-    const FlexJustifyData = [
-        {
-          id:1,
-          value:"none"      
-        },
-        {
-          id:2,
-          value:'flex-start'      
-        },
-        {
-          id:3,
-          value:'flex-end'      
-        },
-        {
-          id:4,
-          value:'center'      
-        },
-        {
-          id:5,
-          value:'space-between'      
-        },
-        {
-          id:6,
-          value:'space-around'      
-        },
-        {
-          id:7,
-          value:'space-evenly'      
-        },
-    ]
+    
 
     return(
         <>
