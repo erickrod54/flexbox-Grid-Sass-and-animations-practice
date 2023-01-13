@@ -14,12 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 60.16 -
+/**Flexbox-grid-sass-and-animations app version 60.18 -
  * data js - Features:
  *
  *  
- *     --> Adding 'GridMaxMinContent' 
- *         to 'cssGridlayoutData' 
+ *     --> Adding 'FlexJustifyData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -952,4 +951,36 @@ export const RepeatFRowsD = [
         id:3,
         value:'repeat(2, 100px) 0.5fr'   
       },
+]
+
+
+export const FlexJustifyData = [
+    {
+      id:1,
+      value:"none"      
+    },
+    {
+      id:2,
+      value:'flex-start'      
+    },
+    {
+      id:3,
+      value:'flex-end'      
+    },
+    {
+      id:4,
+      value:'center'      
+    },
+    {
+      id:5,
+      value:'space-between'      
+    },
+    {
+      id:6,
+      value:'space-around'      
+    },
+    {
+      id:7,
+      value:'space-evenly'      
+    },
 ]
