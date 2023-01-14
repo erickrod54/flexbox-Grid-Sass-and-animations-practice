@@ -10,68 +10,20 @@ import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import SelectionForm from "../../components/selection.form.component";
 
 
-/**Flexbox-grid-sass-and-animations app version 60.13 -
+/**Flexbox-grid-sass-and-animations app version 60.19 -
  * 'FlexAlignItemsApp' - Features:
  * 
- *      --> Implementing 'SelectionForm'
- * 
- *      --> Building and testing data 
+ *      --> Destrcuturing data from context
  * 
  * Note: Pending to migrate data
  */
 
 const FlexAlignItemsApp = () => {
 
-    const { padding, childpadding, handlePadding, handleChildpadding, align, handleAlign } = useFlexboxContext()
+    const { padding, childpadding, handlePadding, handleChildpadding, align, handleAlign,FlexAlignItemsArray, FlexBaselineArray,
+      FlexBaselinechildArray, } = useFlexboxContext()
 
-    const FlexAlignItemsArray = [
-        {
-          id:1,
-          value:"none"      
-        },
-        {
-          id:2,
-          value:'stretch'      
-        },
-        {
-          id:3,
-          value:'flex-start'      
-        },
-        {
-          id:4,
-          value:'flex-end'      
-        },
-        {
-          id:5,
-          value:'center'      
-        },
-        {
-          id:6,
-          value:'baseline'      
-        },
-    ]
-
-    const FlexBaselineArray = [
-      {
-        id:1,
-        value:"none"      
-      },
-      {
-        id:2,
-        value:'20px'      
-      },
-    ]
-
-    const FlexBaselinechildArray = [
-      {
-        id:1,
-        value:"none"      
-      },
-      {
-        id:2,
-        value:'5px'      
-      },
-    ]
+    
 
     return(
         <>
