@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 60.18 -
+/**Flexbox-grid-sass-and-animations app version 60.19 -
  * data js - Features:
  *
  *  
- *     --> Adding 'FlexJustifyData' 
+ *     --> Adding 'FlexAlignContentData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -983,4 +983,39 @@ export const FlexJustifyData = [
       id:7,
       value:'space-evenly'      
     },
+]
+
+export const FlexAlignContentData = [
+    {
+      id:1,
+      value:"none"      
+    },
+    {
+      id:2,
+      value:'stretch'      
+    },
+    {
+      id:3,
+      value:'flex-start'      
+    },
+    {
+      id:4,
+      value:'flex-end'      
+    },
+    {
+      id:5,
+      value:'center'      
+    },
+    {
+      id:6,
+      value:'space-between'      
+    },
+    {
+      id:7,
+      value:'space-around'      
+    },
+    {
+      id:8,
+      value:'space-evenly'      
+    }
 ]
