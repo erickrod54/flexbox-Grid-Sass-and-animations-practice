@@ -8,12 +8,10 @@ import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import SelectionForm from "../../components/selection.form.component";
 
 
-/**Flexbox-grid-sass-and-animations app version 60.12 -
+/**Flexbox-grid-sass-and-animations app version 60.19 -
  * 'FlexAlignContentApp' - Features:
  * 
-    --> Implementing 'SelectionForm'
- * 
- *      --> Building and testing data 
+    --> Destructuring 'FlexAlignContentData' from context 
  * 
  * Note: Pending to migrate data, and pending to implement 
  * 'SelectionForm' for 'direction' ( migrating data from 
@@ -22,42 +20,8 @@ import SelectionForm from "../../components/selection.form.component";
 
 const FlexAlignContentApp = () => {
 
-    const { direction, handleDirection, handleAlignContent, aligncontent } = useFlexboxContext()
+    const { direction, handleDirection, handleAlignContent, aligncontent, FlexAlignContentData } = useFlexboxContext()
 
-    const FlexAlignContentData = [
-        {
-          id:1,
-          value:"none"      
-        },
-        {
-          id:2,
-          value:'stretch'      
-        },
-        {
-          id:3,
-          value:'flex-start'      
-        },
-        {
-          id:4,
-          value:'flex-end'      
-        },
-        {
-          id:5,
-          value:'center'      
-        },
-        {
-          id:6,
-          value:'space-between'      
-        },
-        {
-          id:7,
-          value:'space-around'      
-        },
-        {
-          id:8,
-          value:'space-evenly'      
-        }
-    ]
     
     return(
         <>

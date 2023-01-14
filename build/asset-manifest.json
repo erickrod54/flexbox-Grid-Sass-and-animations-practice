@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.938beb6e.css",
+    "main.js": "/static/js/main.f52f2e30.js",
+    "static/media/duck.jpg": "/static/media/duck.84b16988b4feefc0e87e.jpg",
+    "static/media/bird.jpg": "/static/media/bird.c9a47dd0b743c2ffd715.jpg",
+    "static/media/moose.jpg": "/static/media/moose.b00753455619c807009e.jpg",
+    "static/media/tiger.jpg": "/static/media/tiger.7f11dc5ca74cf8acff4c.jpg",
+    "static/media/mr.cat.jpg": "/static/media/mr.cat.5b9f24705f35e8ed3647.jpg",
+    "static/media/dog.jpg": "/static/media/dog.776d1eeed2476a39e8ca.jpg",
+    "static/media/mr.small.wolf.jpg": "/static/media/mr.small.wolf.c19f324ab47d6bc7d312.jpg",
+    "static/media/owl.jpg": "/static/media/owl.e083661bae185f5b7e1f.jpg",
+    "static/media/sheep.jpg": "/static/media/sheep.0cf160310a46c85b8b0f.jpg",
+    "static/media/mr.giraffe.jpg": "/static/media/mr.giraffe.878a605b2a6893c4395f.jpg",
+    "static/media/max-width-aaset.png": "/static/media/max-width-aaset.c1a0c1af2befa6ce76db.png",
+    "index.html": "/index.html",
+    "main.938beb6e.css.map": "/static/css/main.938beb6e.css.map",
+    "main.f52f2e30.js.map": "/static/js/main.f52f2e30.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.938beb6e.css",
+    "static/js/main.f52f2e30.js"
+  ]
+}
