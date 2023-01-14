@@ -18,7 +18,8 @@ import {
  * data js - Features:
  *
  *  
- *     --> Adding 'FlexAlignContentData' 
+ *     --> Adding 'FlexAlignItemsArray', 'FlexBaselineArray',
+ *         'FlexBaselinechildArray' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1018,4 +1019,55 @@ export const FlexAlignContentData = [
       id:8,
       value:'space-evenly'      
     }
+]
+
+/**flex-aling items app data */
+
+export const FlexAlignItemsArray = [
+    {
+      id:1,
+      value:"none"      
+    },
+    {
+      id:2,
+      value:'stretch'      
+    },
+    {
+      id:3,
+      value:'flex-start'      
+    },
+    {
+      id:4,
+      value:'flex-end'      
+    },
+    {
+      id:5,
+      value:'center'      
+    },
+    {
+      id:6,
+      value:'baseline'      
+    },
+]
+
+export const FlexBaselineArray = [
+  {
+    id:1,
+    value:"none"      
+  },
+  {
+    id:2,
+    value:'20px'      
+  },
+]
+
+export const FlexBaselinechildArray = [
+  {
+    id:1,
+    value:"none"      
+  },
+  {
+    id:2,
+    value:'5px'      
+  },
 ]
