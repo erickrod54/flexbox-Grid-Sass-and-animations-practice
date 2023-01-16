@@ -5,7 +5,7 @@ import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import { FlexAlignSelfPropertyWrapper } from "../flexbox.styled.components";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.20 -
+/**Flexbox-grid-sass-and-animations app version 61.00 -
  * 'FlexAlignSelfPropertyApp' - Features:
  * 
  *      --> Destructuring 'alignSelfArray' from the context
@@ -15,59 +15,9 @@ import SelectionForm from "../../components/selection.form.component";
 
 const FlexAlignSelfPropertyApp = () => {
 
-    const { alignself, itemAlignself, align, handleAlignself, handleItemAlignself, handleAlign, alignSelfArray } = useFlexboxContext()
+    const { alignself, itemAlignself, align, handleAlignself, handleItemAlignself, handleAlign, alignSelfArray, itemsArray, baselineArray } = useFlexboxContext()
     
     
-
-    const baselineArray = [
-      {
-        id:1,
-        value:''  
-      },
-      {
-        id:2,
-        value:'flex-start'  
-      },
-      {
-        id:3,
-        value:'baseline'  
-      },
-  ]
-
-  const itemsArray = [
-    {
-      id:1,
-      value:1  
-    },
-    {
-      id:2,
-      value:2  
-    },
-    {
-      id:3,
-      value:3  
-    },
-    {
-      id:4,
-      value:4  
-    },
-    {
-      id:5,
-      value:5  
-    },
-    {
-      id:6,
-      value:6  
-    },
-    {
-      id:7,
-      value:7  
-    },
-    {
-      id:8,
-      value:8  
-    }
-]
     
     console.log('the aligself ==>', alignself, 'and the itemAlignself ==> ', itemAlignself)
     return(
