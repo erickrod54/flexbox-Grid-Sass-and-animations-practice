@@ -6,10 +6,10 @@ import { FlexBasisWrapper } from "../flexbox.styled.components";
 import SelectionForm from "../../components/selection.form.component";
 
 
-/**Flexbox-grid-sass-and-animations app version 61.01 -
+/**Flexbox-grid-sass-and-animations app version 61.02 -
  * FlexBasisPropertyApp - Features:
  *  
- *      --> Destructuring 'flexBasisItemArray' from 
+ *      --> Destructuring 'flexBasisArray' from 
  *          the context
  * 
  * Note: Pending to migrate data
@@ -18,30 +18,7 @@ import SelectionForm from "../../components/selection.form.component";
 
 const FlexBasisPropertyApp = () => {
 
-    const { basis, itemBasis, handleBasis, handleItemBasis, flexBasisItemArray } = useFlexboxContext()
-
-    const flexBasisArray = [
-        {
-          id:1,
-          value:'none'  
-        },
-        {
-          id:2,
-          value:'auto'  
-        },
-        {
-          id:3,
-          value:'300px'  
-        },
-        {
-          id:4,
-          value:'25rem'  
-        },
-        {
-          id:5,
-          value:'45%'  
-        },
-    ]
+    const { basis, itemBasis, handleBasis, handleItemBasis, flexBasisItemArray, flexBasisArray } = useFlexboxContext()
 
     console.log('props from the context ==> ', 'basis defualt ==>', basis, 'items numbers ==>',itemBasis )
 
