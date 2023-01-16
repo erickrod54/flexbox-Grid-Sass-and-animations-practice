@@ -5,47 +5,19 @@ import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import { FlexAlignSelfPropertyWrapper } from "../flexbox.styled.components";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.13 -
+/**Flexbox-grid-sass-and-animations app version 60.20 -
  * 'FlexAlignSelfPropertyApp' - Features:
  * 
- *      --> Implementing 'SelectionForm'
- * 
- *      --> Building and testing data 
+ *      --> Destructuring 'alignSelfArray' from the context
  * 
  * Note: Pending to migrate data
  */
 
 const FlexAlignSelfPropertyApp = () => {
 
-    const { alignself, itemAlignself, align, handleAlignself, handleItemAlignself, handleAlign } = useFlexboxContext()
+    const { alignself, itemAlignself, align, handleAlignself, handleItemAlignself, handleAlign, alignSelfArray } = useFlexboxContext()
     
-    const alignSelfArray = [
-        {
-          id:1,
-          value:''  
-        },
-        {
-          id:2,
-          value:'auto'  
-        },
-        {
-          id:3,
-          value:'flex-end'  
-        },
-        {
-          id:4,
-          value:'center'  
-        },
-        {
-          id:5,
-          value:'stretch'  
-        },
-        {
-          id:6,
-          value:'baseline'  
-        }
-        ,
-    ]
+    
 
     const baselineArray = [
       {
