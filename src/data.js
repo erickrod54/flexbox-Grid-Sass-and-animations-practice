@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 60.20 -
+/**Flexbox-grid-sass-and-animations app version 61.00 -
  * data js - Features:
  *
  *  
- *     --> Adding 'alignSelfArray' 
+ *     --> Adding 'itemsArray', and 'baselineArray' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1097,4 +1097,54 @@ export const alignSelfArray = [
     value:'baseline'  
   }
   ,
+]
+
+export const baselineArray = [
+  {
+    id:1,
+    value:''  
+  },
+  {
+    id:2,
+    value:'flex-start'  
+  },
+  {
+    id:3,
+    value:'baseline'  
+  },
+]
+
+export const itemsArray = [
+{
+  id:1,
+  value:1  
+},
+{
+  id:2,
+  value:2  
+},
+{
+  id:3,
+  value:3  
+},
+{
+  id:4,
+  value:4  
+},
+{
+  id:5,
+  value:5  
+},
+{
+  id:6,
+  value:6  
+},
+{
+  id:7,
+  value:7  
+},
+{
+  id:8,
+  value:8  
+}
 ]
