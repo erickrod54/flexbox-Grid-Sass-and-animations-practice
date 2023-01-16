@@ -14,12 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 60.19 -
+/**Flexbox-grid-sass-and-animations app version 60.20 -
  * data js - Features:
  *
  *  
- *     --> Adding 'FlexAlignItemsArray', 'FlexBaselineArray',
- *         'FlexBaselinechildArray' 
+ *     --> Adding 'alignSelfArray' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1070,4 +1069,32 @@ export const FlexBaselinechildArray = [
     id:2,
     value:'5px'      
   },
+]
+
+export const alignSelfArray = [
+  {
+    id:1,
+    value:''  
+  },
+  {
+    id:2,
+    value:'auto'  
+  },
+  {
+    id:3,
+    value:'flex-end'  
+  },
+  {
+    id:4,
+    value:'center'  
+  },
+  {
+    id:5,
+    value:'stretch'  
+  },
+  {
+    id:6,
+    value:'baseline'  
+  }
+  ,
 ]
