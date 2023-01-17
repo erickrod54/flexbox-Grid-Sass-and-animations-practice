@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.02 -
+/**Flexbox-grid-sass-and-animations app version 61.03 -
  * data js - Features:
  *
  *  
- *     --> Adding 'flexBasisArray' 
+ *     --> Adding 'FlexPropData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1192,5 +1192,28 @@ export const flexBasisArray = [
   {
     id:5,
     value:'45%'  
+  },
+]
+
+export const FlexPropData = [
+  {
+    id:1,
+    value:"none"      
+  },
+  {
+    id:2,
+    value:'row'      
+  },
+  {
+    id:3,
+    value:'column'      
+  },
+  {
+    id:4,
+    value:'row-reverse'      
+  },
+  {
+    id:5,
+    value:'column-reverse'      
   },
 ]
