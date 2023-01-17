@@ -10,12 +10,10 @@ import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import SelectionForm from "../../components/selection.form.component";
 
 
-/**Flexbox-grid-sass-and-animations app version 60.13 -
+/**Flexbox-grid-sass-and-animations app version 61.03 -
  * 'flexbox.direction.preperty-app' - Features:
  * 
- *      --> Implementing 'SelectionForm'
- * 
- *      --> Building and testing data 
+ *      --> Destrcuturing 'FlexPropData' from the context
  * 
  * Note: Pending to migrate data
  */
@@ -24,30 +22,7 @@ import SelectionForm from "../../components/selection.form.component";
  * 'App' js*/
 const FlexPropApp = () => {
 
-    const { direction, handleDirection, wrap, handleWrap } = useFlexboxContext()
-
-    const FlexPropData = [
-        {
-          id:1,
-          value:"none"      
-        },
-        {
-          id:2,
-          value:'row'      
-        },
-        {
-          id:3,
-          value:'column'      
-        },
-        {
-          id:4,
-          value:'row-reverse'      
-        },
-        {
-          id:5,
-          value:'column-reverse'      
-        },
-    ]
+    const { direction, handleDirection, wrap, handleWrap, FlexPropData } = useFlexboxContext()
 
     const FlexWrapData = [
         {
