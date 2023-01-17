@@ -1,13 +1,13 @@
 import React, { useContext, useReducer, useState } from "react";
 import { TOGGLE_FLEX, TOGGLE_FLEX_MANIPULATION_APP } from '../actions'
-import { alignItemsData, alignSelfArray, baselineArray, FlexAlignContentData, FlexAlignItemsArray, FlexBaselineArray, FlexBaselinechildArray, flexBasisArray, flexBasisItemArray, FlexJustifyData, FlexPropData, flexPropData, flexWrapData, flowData, itemsArray, JustifyFlexData } from "../data";
+import { alignItemsData, alignSelfArray, baselineArray, FlexAlignContentData, FlexAlignItemsArray, FlexBaselineArray, FlexBaselinechildArray, flexBasisArray, flexBasisItemArray, FlexJustifyData, FlexPropData, flexPropData, FlexWrapData, flexWrapData, flowData, itemsArray, JustifyFlexData } from "../data";
 
 import reducer from "../reducer";
 
-/**Flexbox-grid-sass-and-animations app version 61.03 -
+/**Flexbox-grid-sass-and-animations app version 61.04 -
  * 'flexbox.context.js' - Features:
  * 
- *      --> Importing and Providing 'FlexPropData'.
+ *      --> Importing and Providing 'FlexWrapData'.
  * 
  * Note: By this version everything is done in
  * this component.
@@ -437,7 +437,8 @@ const FlexboxtProvider = ({ children }) => {
             baselineArray,
             flexBasisItemArray,
             flexBasisArray,
-            FlexPropData
+            FlexPropData,
+            FlexWrapData
         }}>
             {children}
         </FlexboxContext.Provider>
