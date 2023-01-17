@@ -10,10 +10,10 @@ import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import SelectionForm from "../../components/selection.form.component";
 
 
-/**Flexbox-grid-sass-and-animations app version 61.03 -
+/**Flexbox-grid-sass-and-animations app version 61.04 -
  * 'flexbox.direction.preperty-app' - Features:
  * 
- *      --> Destrcuturing 'FlexPropData' from the context
+ *      --> Destrcuturing 'FlexWrapData' from the context
  * 
  * Note: Pending to migrate data
  */
@@ -22,26 +22,7 @@ import SelectionForm from "../../components/selection.form.component";
  * 'App' js*/
 const FlexPropApp = () => {
 
-    const { direction, handleDirection, wrap, handleWrap, FlexPropData } = useFlexboxContext()
-
-    const FlexWrapData = [
-        {
-          id:1,
-          value:"none"      
-        },
-        {
-          id:2,
-          value:'nowrap'      
-        },
-        {
-          id:3,
-          value:'wrap'      
-        },
-        {
-          id:4,
-          value:'wrap-reverse'      
-        },
-    ]
+    const { direction, handleDirection, wrap, handleWrap, FlexPropData, FlexWrapData } = useFlexboxContext()
 
     /**here i test that i'm getting the 'wrap' state*/
     console.log('these are wrap props drilled ==> ',wrap)
