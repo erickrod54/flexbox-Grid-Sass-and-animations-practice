@@ -5,10 +5,10 @@ import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import { FlexGrowPropertyWrapper } from "../flexbox.styled.components";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 61.05 -
+/**Flexbox-grid-sass-and-animations app version 61.06 -
  * FlexGrowPropertyApp - Features:
  * 
- *     --> Destructuring 'flexGrowArray' from the 
+ *     --> Destructuring 'flexItemGrowArray' from the 
  *        context 
  * 
  * Note: Pending to migrate data
@@ -16,26 +16,7 @@ import SelectionForm from "../../components/selection.form.component";
 
 const FlexGrowPropertyApp = () => {
 
-    const { grow, itemGrow, handleGrow, handleItemGrow, flexGrowArray } = useFlexboxContext()
-
-    const flexItemGrowArray = [
-        {
-          id:1,
-          value:1  
-        },
-        {
-          id:2,
-          value:2  
-        },
-        {
-          id:3,
-          value:3  
-        },
-        {
-          id:4,
-          value:4  
-        },
-    ]
+    const { grow, itemGrow, handleGrow, handleItemGrow, flexGrowArray, flexItemGrowArray } = useFlexboxContext()
  
     return(
         <>
