@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.04 -
+/**Flexbox-grid-sass-and-animations app version 61.05 -
  * data js - Features:
  *
  *  
- *     --> Adding 'FlexWrapData' 
+ *     --> Adding 'flexGrowArray' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1234,5 +1234,24 @@ export const FlexWrapData = [
   {
     id:4,
     value:'wrap-reverse'      
+  },
+]
+
+export const flexGrowArray = [
+  {
+    id:1,
+    value:1  
+  },
+  {
+    id:2,
+    value:2  
+  },
+  {
+    id:3,
+    value:3  
+  },
+  {
+    id:4,
+    value:4  
   },
 ]
