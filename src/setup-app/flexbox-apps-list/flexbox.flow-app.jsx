@@ -6,12 +6,10 @@ import FlexFlowContent from "../../components/flexflow-content.component";
 import { useFlexboxContext } from "../../apps-context/flexbox.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.14 -
+/**Flexbox-grid-sass-and-animations app version 61.07 -
  * 'FlexFlow' app - Features:
  * 
- *     --> Implementing 'SelectionForm'
- * 
- *      --> Building and testing data 
+ *     --> Destructuring flexFlowAray from the context
  * 
  * Note: Pending to migrate data
  */
@@ -19,46 +17,7 @@ import SelectionForm from "../../components/selection.form.component";
 const FlexFlow = () => {
 
     /**here i destructure props */
-    const { flow, handleFlow } = useFlexboxContext() 
-
-    const flexFlowArray = [
-        {
-          id:1,
-          value:'none'  
-        },
-        {
-          id:2,
-          value:'row wrap'  
-        },
-        {
-          id:3,
-          value:'column wrap'  
-        },
-        {
-          id:4,
-          value:'row-reverse wrap'  
-        },
-        {
-          id:5,
-          value:'column-reverse wrap'  
-        },
-        {
-          id:6,
-          value:'row nowrap'  
-        },
-        {
-           id:7,
-           value:'column nowrap'  
-        },
-        {
-           id:8,
-           value:'row-reverse nowrap'  
-        },
-        {
-            id:9,
-            value:'column-reverse nowrap'  
-         },
-    ]
+    const { flow, handleFlow, flexFlowArray } = useFlexboxContext() 
 
     return(
         <>
