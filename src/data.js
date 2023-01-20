@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.07 -
+/**Flexbox-grid-sass-and-animations app version 61.08 -
  * data js - Features:
  *
  *  
- *     --> Adding 'flexFlowArray' 
+ *     --> Adding 'gridAutoRowsData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1312,4 +1312,27 @@ export const flexFlowArray = [
       id:9,
       value:'column-reverse nowrap'  
    },
+]
+
+export const gridAutoRowsData = [
+  {
+      id:1,
+      value:'none'
+  },
+  {
+      id:2,
+      value:'150px'
+  },
+  {
+      id:3,
+      value:'1fr'
+  },
+  {
+      id:4,
+      value:'20vw'
+  },
+  {
+      id:5,
+      value:'40%'
+  },
 ]
