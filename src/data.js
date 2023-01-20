@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.06 -
+/**Flexbox-grid-sass-and-animations app version 61.07 -
  * data js - Features:
  *
  *  
- *     --> Adding 'flexItemGrowArray' 
+ *     --> Adding 'flexFlowArray' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1273,4 +1273,43 @@ export const flexItemGrowArray = [
     id:4,
     value:4  
   },
+]
+
+export const flexFlowArray = [
+  {
+    id:1,
+    value:'none'  
+  },
+  {
+    id:2,
+    value:'row wrap'  
+  },
+  {
+    id:3,
+    value:'column wrap'  
+  },
+  {
+    id:4,
+    value:'row-reverse wrap'  
+  },
+  {
+    id:5,
+    value:'column-reverse wrap'  
+  },
+  {
+    id:6,
+    value:'row nowrap'  
+  },
+  {
+     id:7,
+     value:'column nowrap'  
+  },
+  {
+     id:8,
+     value:'row-reverse nowrap'  
+  },
+  {
+      id:9,
+      value:'column-reverse nowrap'  
+   },
 ]
