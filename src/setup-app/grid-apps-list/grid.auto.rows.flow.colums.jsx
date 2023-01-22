@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 61.08 -
+/**Flexbox-grid-sass-and-animations app version 61.09 -
  * GridAutoRowFlow - Features:
  * 
- *      --> Destructuring 'gridAutoRowsData' data 
+ *      --> Destructuring 'gridAutoFlowData' data 
  *          from the context.
  * 
  * Note: Implementing selectionForm and validating 
@@ -16,7 +16,7 @@ import SelectionForm from "../../components/selection.form.component";
 
 const GridAutoRowFlow = () => {
 
-    const { gridAutoRowsData } = useGridContext()
+    const { gridAutoRowsData, gridAutoFlowData } = useGridContext()
     
     const items = Array.from({length:8}, (_,index) =>{
         const item = 'item';
@@ -64,21 +64,6 @@ const GridAutoRowFlow = () => {
             setGridautocolumns({...gridautocolumns, [name]:value })
         
     }
-
-    const gridAutoFlowData = [
-        {
-            id:1,
-            value:'none'
-        },
-        {
-            id:2,
-            value:'row'
-        },
-        {
-            id:3,
-            value:'column'
-        },
-    ]
 
     const gridAutoColumnsData = [
         {
