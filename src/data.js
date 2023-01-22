@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.08 -
+/**Flexbox-grid-sass-and-animations app version 61.09 -
  * data js - Features:
  *
  *  
- *     --> Adding 'gridAutoRowsData' 
+ *     --> Adding 'gridAutoFlowData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1334,5 +1334,20 @@ export const gridAutoRowsData = [
   {
       id:5,
       value:'40%'
+  },
+]
+
+export const gridAutoFlowData = [
+  {
+      id:1,
+      value:'none'
+  },
+  {
+      id:2,
+      value:'row'
+  },
+  {
+      id:3,
+      value:'column'
   },
 ]
