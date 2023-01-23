@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.09 -
+/**Flexbox-grid-sass-and-animations app version 61.10 -
  * data js - Features:
  *
  *  
- *     --> Adding 'gridAutoFlowData' 
+ *     --> Adding 'gridAutoColumnsData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1350,4 +1350,28 @@ export const gridAutoFlowData = [
       id:3,
       value:'column'
   },
+]
+
+export const gridAutoColumnsData = [
+  {
+      id:1,
+      value:'none'
+  },
+  {
+      id:2,
+      value:'300px'
+  },
+  {
+      id:3,
+      value:'1fr'
+  },
+  {
+      id:4,
+      value:'20vw'
+  },
+  {
+      id:5,
+      value:'40%'
+  },
+
 ]
