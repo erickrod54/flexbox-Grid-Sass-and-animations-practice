@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import { cssGridlayoutData, gridAutoFlowData, gridAutoRowsData, gridIntroData, newGridrowSyntaxArray, newGridSyntaxArray, oldGridrowSyntaxArray, oldGridSyntaxArray, RepeatFColumnsD, RepeatFRowsD } from "../data";
+import { cssGridlayoutData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridIntroData, newGridrowSyntaxArray, newGridSyntaxArray, oldGridrowSyntaxArray, oldGridSyntaxArray, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 61.09 -
+/**Flexbox-grid-sass-and-animations app version 61.10 -
  * 'GridContext' - Features:
  * 
- *      --> Importing and Providing 'gridAutoFlowData'.
+ *      --> Importing and Providing 'gridAutoColumnsData'.
  * 
  * Note: 'oldGridSyntaxArray' is going to be use for
  * building grid column and grid row gap old syntax 
@@ -189,6 +189,7 @@ const GridProvider = ({ children }) => {
             RepeatFRowsD,
             gridAutoRowsData,
             gridAutoFlowData,
+            gridAutoColumnsData,
             newGridSyntaxHandler,
             oldGridSyntaxHandler,
             newGridrowSyntaxHandler,
