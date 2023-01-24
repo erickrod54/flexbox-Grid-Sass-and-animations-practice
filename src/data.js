@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.12 -
+/**Flexbox-grid-sass-and-animations app version 61.13 -
  * data js - Features:
  *
  *  
- *     --> Adding 'grid auto fill and fit values' 
+ *     --> Adding 'oldshorthandGridGapData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1380,4 +1380,31 @@ export const gridAutoColumnsData = [
       value:'40%'
   },
 
+]
+
+export const oldshorthandGridGapData = [
+  {
+      id:1,
+      value:'none'
+  },
+  {
+      id:2,
+      value:'10% 15%'
+  },
+  {
+     id:3,
+     value:'10px 25px'
+  },
+  {
+     id:4,
+     value:'15vw 15vh'
+  },
+  {
+     id:5,
+     value:'25px 10rem'
+  },
+  {
+     id:6,
+     value:'50px'
+  }
 ]
