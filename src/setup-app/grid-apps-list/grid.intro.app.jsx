@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 61.13 -
+/**Flexbox-grid-sass-and-animations app version 61.14 -
  * GridIntro - Features:
  * 
- *      --> Destructuring 'oldshorthandGridGapData' from context
+ *      --> Destructuring 'newshorthandGridGapData' from context
  * 
  *  
  * Note: i build this new wrapper4 because this 'oldshorthandvalue'
@@ -35,6 +35,7 @@ const GridIntro = () => {
             oldshorthandvalue,
             newshorthandvalue,
             oldshorthandGridGapData,
+            newshorthandGridGapData,
             } = useGridContext()
     //console.log('grid context data ==>', gridIntroData)
 
@@ -55,33 +56,6 @@ const GridIntro = () => {
         
         return newDataitems;
     })
-
-    const newshorthandGridGapData = [
-        {
-            id:1,
-            value:'none'
-        },
-        {
-            id:2,
-            value:'10% 15%'
-        },
-        {
-           id:3,
-           value:'10px 25px'
-        },
-        {
-           id:4,
-           value:'15vw 15vh'
-        },
-        {
-           id:5,
-           value:'25px 10rem'
-        },
-        {
-           id:6,
-           value:'50px'
-        }
-    ]
 
     return(
         <Wrapper propertyvalue={oldsyntaxvalue}>
