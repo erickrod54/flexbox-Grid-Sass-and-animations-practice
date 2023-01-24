@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.17 -
+/**Flexbox-grid-sass-and-animations app version 61.11 -
  * GridContainerProperties - Features:
  * 
- *      --> Building 'GridMaxMinContent '.
+ *      --> Building 'Adaptive content'.
+ * 
+ *      --> Applying 'grid-template-rows' and
+ *          'grid-template-columns' mix with
+ *          minmax for content responsiveness
+ * 
+ *      --> building data, handlers and states.
  * 
  * Note: Pending to make it dynamic.
  */
@@ -12,28 +19,149 @@ import styled from "styled-components";
 
 const GridMaxMinContent = () => {
 
-    /**here i create an array with 8 items */
+    const [ data, setData ] = useState(false)
 
-    /**i modify 'item' to add an array with new content*/
-    const items = Array.from({length:8}, (_,index) =>{
-        const item = ['I', 'was', 'written or shown', 'here', 'to', 'have', 'something messed up here, something messed up here, something messed up here, something messed up here, something messed up here, something messed up here', 'fun'];
-        const itemid = index;
+    const [ minmaxRow, setMinmaxRow ] = useState('')
+    const [ minmaxColumn, setminmaxColumn ] = useState('') 
 
-        const name = item[itemid];
-
-        const newDataitems = 
-            {
-                
-                itemid,
-                name
-            }
+    const handleMinmaxRow = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
         
-        return newDataitems;
-    })
+        console.log('align content => name selected ==>', name, 'value selected ==>', value)
+        
+        setMinmaxRow({...minmaxRow, [name]:value })
+    }
+
+    const handleMinmaxColumn = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        
+        console.log('align content => name selected ==>', name, 'value selected ==>', value)
+        
+        setminmaxColumn({...minmaxColumn, [name]:value })
+    }
+
+    const itemDataMessed = [
+       {
+            id:1,
+            name:'I'       
+       },
+       {
+            id:2,
+            name:'was'       
+       },
+       {
+            id:3,
+            name:'written or shown'       
+       },
+       {
+            id:4,
+            name:'here'       
+       },
+       {
+            id:5,
+            name:'to'       
+       },
+       {
+            id:6,
+            name:'have'       
+       },
+       {
+            id:7,
+            name:'something messed up here, something messed up here, something messed up here, something messed up here, something messed up here, something messed up here'       
+       },
+       {
+            id:8,
+            name:'fun'       
+       },
+
+    ]
+
+    const itemData = [
+        {
+             id:1,
+             name:'I'       
+        },
+        {
+             id:2,
+             name:'was'       
+        },
+        {
+             id:3,
+             name:'written or shown'       
+        },
+        {
+             id:4,
+             name:'here'       
+        },
+        {
+             id:5,
+             name:'to'       
+        },
+        {
+             id:6,
+             name:'have'       
+        },
+        {
+             id:7,
+             name:'some'       
+        },
+        {
+             id:8,
+             name:'fun'       
+        },
+ 
+     ]
+
+     const handleData = () => {
+        setData(!data)
+     }
+
+     const maxMinRows = [
+        {
+            id:1,
+            value:'repeat(2, 150px)'
+        },
+        {
+            id:2,
+            value:'repeat(2, max-content)'
+        },
+        {
+            id:3,
+            value:'repeat(2, minmax(100px, min-content))'
+        },
+        {
+            id:4,
+            value:'repeat(2, minmax(100px, 200px))'
+        },
+     ]
+
+     const maxMinColumns = [
+        {
+            id:1,
+            value:'1fr 1fr 1fr 1fr'
+        },
+        {
+            id:2,
+            value:'1fr 1fr max-content 1fr'
+        },
+        {
+            id:3,
+            value:'repeat(2, minmax(100px, min-content))'
+        },
+        {
+            id:4,
+            value:'repeat(2, minmax(100px, 200px))'
+        },
+    ]
+
+    
     
     return(
         <Wrapper>
             <h2>Grid Max Min Content Function Values:</h2>
+            
 
             <p>
                 As i decrease and increase the width of the
@@ -67,16 +195,68 @@ const GridMaxMinContent = () => {
                 item container without adding a single media query line 
             </p>
 
-            <Wrapper2 >
-            {items.map((division) => {
-                    const { itemid, name } = division;
+            <button onClick={handleData}>Apply grid-max-min content</button>
+            
+            <h3>apply max min values <strong>Rows</strong>: </h3>
+    
+            <SelectionForm minmaxRow={minmaxRow} handler={handleMinmaxRow} propertiesArray={maxMinRows} propertyname={'grid-template-rows'} />
+
+            {minmaxRow.selection  === 'repeat(2, minmax(100px, min-content))' ? 
+                <p>
+                    it doesn't get smaller than 200px or bigger than 'min-content' make in it responsive
+                </p>
+            :
+            null
+            }
+
+            {minmaxRow.selection  === 'repeat(2, minmax(100px, 200px))' ? 
+                <p>
+                    it doesn't get bigger than 200px or smaller than 100px is like a limit for the content
+                </p>
+            :
+            null
+            }
+            
+    
+            <h3>apply max min values <strong>Columns</strong>: </h3>
+    
+            <SelectionForm minmaxColumn={minmaxColumn} handler={handleMinmaxColumn} propertiesArray={maxMinColumns} propertyname={'grid-template-columns'} />
+
+            {minmaxColumn.selection === '1fr 1fr min-content 1fr' ? 
+                <p>
+                    min-max function is implemented
+                </p>
+            :
+            null
+            }
+
+            <Wrapper2 minmaxRow={minmaxRow} minmaxColumn={minmaxColumn}>
+             {
+                 data ?
+                 <>
+                {itemData.map((division) => {
+                    const { id, name } = division;
                     return(
                         <div 
-                        key={itemid} 
-                        className={`item item-${itemid}`}>{name}
+                        key={id} 
+                        className={`item item-${id}`}>{name}
                         </div>
-                    )
-                })}
+                        )
+                    })}
+                </>
+                :
+                <>
+                {itemDataMessed.map((division) => {
+                    const { id, name } = division;
+                        return(
+                            <div 
+                            key={id} 
+                            className={`item item-${id}`}>{name}
+                            </div>
+                        )
+                    })}
+                </>
+             }   
 
             </Wrapper2>
 
@@ -91,25 +271,11 @@ const Wrapper = styled.div`
 const Wrapper2 = styled.div`
     background-color: #ff7052;
     display: grid;
+
+    grid-template-rows: ${({minmaxRow}) => minmaxRow.selection };
+    grid-template-columns: ${({minmaxColumn}) => minmaxColumn.selection };
     
-    /**grid-template-rows: repeat(2, 150px); */
-    /**grid-template-columns: 1fr 1fr 1fr 1fr; */
-    /**grid-template-columns: 1fr 1fr max-content 1fr; */
-    /**grid-template-columns: 1fr 1fr min-content 1fr; */
 
-    /**grid-template-columns: 1fr 1fr 1fr 1fr; */
-    /**grid-template-rows: repeat(2, max-content); */
-    
-    /**min-max function */
-    grid-template-columns: 1fr 1fr min-content 1fr;
-
-    /**it doesn't get smaller than 200px or bigger than 'min-content' 
-    * make it responsive*/
-    grid-template-rows: repeat(2, minmax(100px, min-content));
-
-    /**it doesn't get bigger than 200px or smaller than 100px 
-    * is like a limit for the content*/
-    /**grid-template-rows: repeat(2, minmax(100px, 200px)); */
 
 
 
