@@ -33,12 +33,12 @@ import { UIWhiteSpaceApp,
          UIDesignChallenge} from './setup-app/web-fundamentals-apps-list/index.web.fundamentals-apps' 
 
 import { MediaQueriesComponent, ResponsiveWebDesignApp, UnitsAndProps, ViewPortUnits, ViewportUnitsCases, WheaterUiApp } from './setup-app/web-responsive-design-apps-list/index.responsive.web.fundamentals';
-import { GridAutoRowFlow, GridContainerProperties, GridIntro, GridItemProperties, GridItemsPosition, GridLayout, GridMaxMinContent, GridTemplateArea, RepeatAndFrUnit } from './setup-app/grid-apps-list/index.grid.layout';
+import { GridAutoFillFit, GridAutoRowFlow, GridContainerProperties, GridIntro, GridItemProperties, GridItemsPosition, GridLayout, GridMaxMinContent, GridTemplateArea, RepeatAndFrUnit } from './setup-app/grid-apps-list/index.grid.layout';
 
-/**Flexbox-grid-sass-and-animations app version 60.16 -
+/**Flexbox-grid-sass-and-animations app version 61.12 -
  * App js file - Features:
  * 
- *       --> Importing 'GridMaxMinContent' and 
+ *       --> Importing 'GridAutoFillFit' and 
  *          building a route for it. 
  * 
  * Note: starting to build the ui color 
@@ -92,7 +92,8 @@ function App() {
         <Route path='/apps/grid-layout/grid-justify-align-place-items-properties' element={<GridContainerProperties />}/>
         <Route path='/apps/grid-layout/grid-auto-rows-flow-and-columns-values' element={<GridAutoRowFlow />}/>
         <Route path='/apps/grid-layout/gird-item-properties' element={<GridItemProperties />}/>
-        <Route path='/apps/grid-layout/grid-max-min-content-function-values' element={<GridMaxMinContent />}/>  
+        <Route path='/apps/grid-layout/grid-max-min-content-function-values' element={<GridMaxMinContent />}/> 
+        <Route path='/apps/grid-layout/grid-auto-fill-fit-values' element={<GridAutoFillFit />}/> 
         </Route>
       </Routes>
     </Router>
