@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.10 -
+/**Flexbox-grid-sass-and-animations app version 61.12 -
  * data js - Features:
  *
  *  
- *     --> Adding 'gridAutoColumnsData' 
+ *     --> Adding 'grid auto fill and fit values' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -654,6 +654,12 @@ export const cssGridlayoutData = [
         name:'grid max min content function values',
         category:'item properties',
         url:'/apps/grid-layout/grid-max-min-content-function-values'  
+      },
+      {
+        id:9,
+        name:'grid auto fill and fit values',
+        category:'container properties',
+        url:'/apps/grid-layout/grid-auto-fill-fit-values'  
       }
       /***   
       {
