@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
 
-/**Flexbox-grid-sass-and-animations app version 60.17 -
+/**Flexbox-grid-sass-and-animations app version 61.15 -
  * GridItemProperties - Features:
  * 
- *      --> Building 'GridItemProperties'.
+ *      --> Destructuring 'itemSelection' from the 
+ *          context.
  * 
  * Note: Implementing selectionForm and validating 
  * behavior of grid auto rows elements.
@@ -14,6 +16,8 @@ import SelectionForm from "../../components/selection.form.component";
 
 
 const GridItemProperties = () => {
+
+    const { itemSelection } = useGridContext()
     
     const items = Array.from({length:8}, (_,index) =>{
         const item = 'item';
@@ -159,40 +163,7 @@ const GridItemProperties = () => {
 
     ]
 
-    const itemSelection = [
-        {
-            id:1,
-            value:1
-        },
-        {
-            id:2,
-            value:2
-        },
-        {
-            id:3,
-            value:3
-        },
-        {
-            id:4,
-            value:4
-        },
-        {
-            id:5,
-            value:5
-        },
-        {
-            id:6,
-            value:6
-        },
-        {
-            id:7,
-            value:7
-        },
-        {
-            id:8,
-            value:8
-        },
-    ]
+    
 
 
 
