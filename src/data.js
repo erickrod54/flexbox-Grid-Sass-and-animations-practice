@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.14 -
+/**Flexbox-grid-sass-and-animations app version 61.15 -
  * data js - Features:
  *
  *  
- *     --> Adding 'newshorthandGridGapData' 
+ *     --> Adding 'itemSelection' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1434,4 +1434,39 @@ export const newshorthandGridGapData = [
      id:6,
      value:'50px'
   }
+]
+
+export const itemSelection = [
+  {
+      id:1,
+      value:1
+  },
+  {
+      id:2,
+      value:2
+  },
+  {
+      id:3,
+      value:3
+  },
+  {
+      id:4,
+      value:4
+  },
+  {
+      id:5,
+      value:5
+  },
+  {
+      id:6,
+      value:6
+  },
+  {
+      id:7,
+      value:7
+  },
+  {
+      id:8,
+      value:8
+  },
 ]
