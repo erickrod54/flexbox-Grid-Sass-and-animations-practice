@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.15 -
+/**Flexbox-grid-sass-and-animations app version 61.16 -
  * data js - Features:
  *
  *  
- *     --> Adding 'itemSelection' 
+ *     --> Adding 'gridPlaceSelfData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1469,4 +1469,44 @@ export const itemSelection = [
       id:8,
       value:8
   },
+]
+
+export const gridPlaceSelfData = [
+  {
+      id:1,
+      value:'none'
+  },
+  {
+      id:2,
+      value:'stretch'
+  },
+  {
+      id:3,
+      value:'start'
+  },
+  {
+      id:4,
+      value:'end'
+  },
+  {
+      id:5,
+      value:'start center'
+  },
+  {
+      id:6,
+      value:'center start'
+  },
+  {
+      id:7,
+      value:'center end'
+  },
+  {
+      id:8,
+      value:'end start'
+  },
+  {
+      id:9,
+      value:'end center'
+  },
+
 ]
