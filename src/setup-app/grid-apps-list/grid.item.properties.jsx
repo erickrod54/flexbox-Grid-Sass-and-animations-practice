@@ -4,7 +4,7 @@ import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
 
-/**Flexbox-grid-sass-and-animations app version 61.16 -
+/**Flexbox-grid-sass-and-animations app version 61.17 -
  * GridItemProperties - Features:
  * 
  *      --> Destructuring 'gridPlaceSelfData' from the 
@@ -17,7 +17,7 @@ import SelectionForm from "../../components/selection.form.component";
 
 const GridItemProperties = () => {
 
-    const { itemSelection, gridPlaceSelfData } = useGridContext()
+    const { itemSelection, gridPlaceSelfData, gridJustifySelfData } = useGridContext()
     
     const items = Array.from({length:8}, (_,index) =>{
         const item = 'item';
@@ -74,30 +74,6 @@ const GridItemProperties = () => {
             setGridplaceself({...gridplaceself, [name]:value })
         
     }
-
-    const gridJustifySelfData = [
-        {
-            id:1,
-            value:'none'
-        },
-        {
-            id:2,
-            value:'stretch'
-        },
-        {
-            id:3,
-            value:'start'
-        },
-        {
-            id:4,
-            value:'end'
-        },
-        {
-            id:5,
-            value:'center'
-        },
-
-    ]
 
     const gridAlignSelfData = [
         {
