@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.16 -
+/**Flexbox-grid-sass-and-animations app version 61.17 -
  * data js - Features:
  *
  *  
- *     --> Adding 'gridPlaceSelfData' 
+ *     --> Adding 'gridJustifySelfData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1507,6 +1507,30 @@ export const gridPlaceSelfData = [
   {
       id:9,
       value:'end center'
+  },
+
+]
+
+export const gridJustifySelfData = [
+  {
+      id:1,
+      value:'none'
+  },
+  {
+      id:2,
+      value:'stretch'
+  },
+  {
+      id:3,
+      value:'start'
+  },
+  {
+      id:4,
+      value:'end'
+  },
+  {
+      id:5,
+      value:'center'
   },
 
 ]
