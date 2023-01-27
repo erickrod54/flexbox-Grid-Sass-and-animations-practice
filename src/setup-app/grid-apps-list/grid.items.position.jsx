@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 import { CodeBlock } from "../flexbox.styled.components";
 
-/**Flexbox-grid-sass-and-animations app version 60.17 -
+/**Flexbox-grid-sass-and-animations app version 60.19 -
  * GridItemsPosition - Features:
  * 
- *      --> Building 'GridItemsPosition'.
+ *      --> Destructuring 'itemDatarows' from the context.
  * 
  * Note: Implementing selectionForm and validating 
  * behavior of grid auto rows elements.
  */
 
 const GridItemsPosition = () => {
+
+    const { itemDatarows } = useGridContext()
 
     /**here i create an array with 12 items */
     const items = Array.from({length:8}, (_,index) =>{
@@ -74,30 +77,6 @@ const GridItemsPosition = () => {
             setColumnenditem4({...columnenditem4, [name]:value })
         
     }
-
-    
-    const itemDatarows = [
-        {
-            id:1,
-            value:'1'
-        },
-        {
-            id:2,
-            value:'2'
-        },
-        {
-           id:3,
-           value:'3'
-        },
-        {
-            id:4,
-            value:'4'
-         },
-         {
-            id:5,
-            value:'-1'
-        },
-    ]
 
     const itemDatacolumns = [
         {
