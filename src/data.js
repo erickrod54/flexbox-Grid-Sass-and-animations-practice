@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.19 -
+/**Flexbox-grid-sass-and-animations app version 61.20 -
  * data js - Features:
  *
  *  
- *     --> Adding 'itemDatarows' 
+ *     --> Adding 'itemDatacolumns' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1578,6 +1578,34 @@ export const itemDatarows = [
    },
    {
       id:5,
+      value:'-1'
+  },
+]
+
+
+export const itemDatacolumns = [
+  {
+      id:1,
+      value:'1'
+  },
+  {
+      id:2,
+      value:'2'
+  },
+  {
+     id:3,
+     value:'3'
+  },
+  {
+     id:4,
+     value:'4'
+  },
+  {
+      id:5,
+      value:'5'
+   },
+   {
+      id:6,
       value:'-1'
   },
 ]
