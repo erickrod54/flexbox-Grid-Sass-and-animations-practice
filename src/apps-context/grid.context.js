@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import { cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridIntroData, gridJustifySelfData, gridPlaceSelfData, itemSelection, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
+import { cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridIntroData, gridJustifySelfData, gridPlaceSelfData, itemDatarows, itemSelection, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 61.18 -
+/**Flexbox-grid-sass-and-animations app version 61.19 -
  * 'GridContext' - Features:
  * 
- *      --> Importing and Providing 'gridAlignSelfData'.
+ *      --> Importing and Providing 'itemDatarows'.
  * 
  * Note: 'oldGridSyntaxArray' is going to be use for
  * building grid column and grid row gap old syntax 
@@ -196,6 +196,7 @@ const GridProvider = ({ children }) => {
             gridPlaceSelfData,
             gridJustifySelfData,
             gridAlignSelfData,
+            itemDatarows,
             newGridSyntaxHandler,
             oldGridSyntaxHandler,
             newGridrowSyntaxHandler,
