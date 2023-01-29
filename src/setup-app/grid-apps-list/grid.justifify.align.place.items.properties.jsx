@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 62.00 -
+/**Flexbox-grid-sass-and-animations app version 62.01 -
  * GridContainerProperties - Features:
  * 
- *      --> Destructuring 'gridJustifyContentData'
+ *      --> Destructuring 'gridGapData'
  *          from the context.
  * 
  * Note: Implementing selectionForm and validating 
@@ -15,7 +15,7 @@ import SelectionForm from "../../components/selection.form.component";
 
 const GridContainerProperties = () => {
 
-    const { gridJustifyContentData } = useGridContext()
+    const { gridJustifyContentData, gridGapData } = useGridContext()
 
     const items = Array.from({length:8}, (_,index) =>{
         const item = 'item';
@@ -62,17 +62,6 @@ const GridContainerProperties = () => {
             setPlacecontent({...placecontent, [name]:value })
         
     }
-
-    const gridGapData = [
-        {
-            id:1,
-            value:'none'
-        },
-        {
-            id:2,
-            value:'15px'
-        },
-    ]
 
     const gridPlaceContentData = [
         {
