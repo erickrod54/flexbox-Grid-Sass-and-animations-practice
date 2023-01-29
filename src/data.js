@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 61.20 -
+/**Flexbox-grid-sass-and-animations app version 62.00 -
  * data js - Features:
  *
  *  
- *     --> Adding 'itemDatacolumns' 
+ *     --> Adding 'gridJustifyContentData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1607,5 +1607,36 @@ export const itemDatacolumns = [
    {
       id:6,
       value:'-1'
+  },
+]
+
+export const gridJustifyContentData = [
+  {
+      id:1,
+      value:'none'
+  },
+  {
+      id:2,
+      value:'stretch'
+  },
+  {
+     id:3,
+     value:'center'
+  },
+  {
+      id:4,
+      value:'flex-end'
+   },
+   {
+      id:5,
+      value:'space-around'
+  },
+   {
+      id:6,
+      value:'space-between'
+  },
+  {
+      id:7,
+      value:'space-evenly'
   },
 ]
