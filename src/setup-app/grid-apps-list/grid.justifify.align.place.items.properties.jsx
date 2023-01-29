@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 60.17 -
+/**Flexbox-grid-sass-and-animations app version 62.00 -
  * GridContainerProperties - Features:
  * 
- *      --> Building 'GridContainerProperties'.
+ *      --> Destructuring 'gridJustifyContentData'
+ *          from the context.
  * 
  * Note: Implementing selectionForm and validating 
  * behavior of grid auto rows elements.
  */
 
 const GridContainerProperties = () => {
+
+    const { gridJustifyContentData } = useGridContext()
 
     const items = Array.from({length:8}, (_,index) =>{
         const item = 'item';
@@ -58,37 +62,6 @@ const GridContainerProperties = () => {
             setPlacecontent({...placecontent, [name]:value })
         
     }
-
-    const gridJustifyContentData = [
-        {
-            id:1,
-            value:'none'
-        },
-        {
-            id:2,
-            value:'stretch'
-        },
-        {
-           id:3,
-           value:'center'
-        },
-        {
-            id:4,
-            value:'flex-end'
-         },
-         {
-            id:5,
-            value:'space-around'
-        },
-         {
-            id:6,
-            value:'space-between'
-        },
-        {
-            id:7,
-            value:'space-evenly'
-        },
-    ]
 
     const gridGapData = [
         {
