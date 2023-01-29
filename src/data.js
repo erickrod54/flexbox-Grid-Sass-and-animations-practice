@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 62.00 -
+/**Flexbox-grid-sass-and-animations app version 62.01 -
  * data js - Features:
  *
  *  
- *     --> Adding 'gridJustifyContentData' 
+ *     --> Adding 'gridGapData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1638,5 +1638,16 @@ export const gridJustifyContentData = [
   {
       id:7,
       value:'space-evenly'
+  },
+]
+
+export const gridGapData = [
+  {
+      id:1,
+      value:'none'
+  },
+  {
+      id:2,
+      value:'15px'
   },
 ]
