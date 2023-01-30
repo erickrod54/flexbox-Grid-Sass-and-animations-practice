@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 62.01 -
+/**Flexbox-grid-sass-and-animations app version 62.02 -
  * data js - Features:
  *
  *  
- *     --> Adding 'gridGapData' 
+ *     --> Adding 'gridPlaceContentData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1649,5 +1649,64 @@ export const gridGapData = [
   {
       id:2,
       value:'15px'
+  },
+]
+
+export const gridPlaceContentData = [
+  {
+      id:1,
+      value:'none'
+  },
+  {
+      id:2,
+      value:'start end'
+  },
+  {
+     id:3,
+     value:'start center'
+  },
+  {
+      id:4,
+      value:'center'
+   },
+   {
+      id:5,
+      value:'stretch center'
+  },
+   {
+      id:6,
+      value:'space-around'
+  },
+  {
+      id:7,
+      value:'space-between'
+  },
+  {
+      id:8,
+      value:'space-evenly'
+  },
+  {
+      id:9,
+      value:'space-around space-evenly'
+  },
+  {
+      id:10,
+      value:'space-around space-between'
+  },
+  {
+      id:11,
+      value:'space-between space-around'
+  },
+  {
+      id:12,
+      value:'space-between space-evenly'
+  },
+  {
+      id:13,
+      value:'space-evenly space-around'
+  },
+  {
+      id:14,
+      value:'space-evenly space-between'
   },
 ]
