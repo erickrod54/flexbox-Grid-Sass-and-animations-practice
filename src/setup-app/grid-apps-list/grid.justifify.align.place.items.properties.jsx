@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 62.01 -
+/**Flexbox-grid-sass-and-animations app version 62.02 -
  * GridContainerProperties - Features:
  * 
- *      --> Destructuring 'gridGapData'
+ *      --> Destructuring 'gridPlaceContentData'
  *          from the context.
  * 
  * Note: Implementing selectionForm and validating 
@@ -15,7 +15,7 @@ import SelectionForm from "../../components/selection.form.component";
 
 const GridContainerProperties = () => {
 
-    const { gridJustifyContentData, gridGapData } = useGridContext()
+    const { gridJustifyContentData, gridGapData, gridPlaceContentData } = useGridContext()
 
     const items = Array.from({length:8}, (_,index) =>{
         const item = 'item';
@@ -62,65 +62,6 @@ const GridContainerProperties = () => {
             setPlacecontent({...placecontent, [name]:value })
         
     }
-
-    const gridPlaceContentData = [
-        {
-            id:1,
-            value:'none'
-        },
-        {
-            id:2,
-            value:'start end'
-        },
-        {
-           id:3,
-           value:'start center'
-        },
-        {
-            id:4,
-            value:'center'
-         },
-         {
-            id:5,
-            value:'stretch center'
-        },
-         {
-            id:6,
-            value:'space-around'
-        },
-        {
-            id:7,
-            value:'space-between'
-        },
-        {
-            id:8,
-            value:'space-evenly'
-        },
-        {
-            id:9,
-            value:'space-around space-evenly'
-        },
-        {
-            id:10,
-            value:'space-around space-between'
-        },
-        {
-            id:11,
-            value:'space-between space-around'
-        },
-        {
-            id:12,
-            value:'space-between space-evenly'
-        },
-        {
-            id:13,
-            value:'space-evenly space-around'
-        },
-        {
-            id:14,
-            value:'space-evenly space-between'
-        },
-    ]
 
 
     return(
