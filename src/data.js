@@ -14,11 +14,11 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 62.03 -
+/**Flexbox-grid-sass-and-animations app version 62.04 -
  * data js - Features:
  *
  *  
- *     --> Adding 'itemDataMessed' 
+ *     --> Adding 'itemData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1739,6 +1739,42 @@ export const itemDataMessed = [
   {
        id:7,
        name:'something messed up here, something messed up here, something messed up here, something messed up here, something messed up here, something messed up here'       
+  },
+  {
+       id:8,
+       name:'fun'       
+  },
+
+]
+
+export const itemData = [
+  {
+       id:1,
+       name:'I'       
+  },
+  {
+       id:2,
+       name:'was'       
+  },
+  {
+       id:3,
+       name:'written or shown'       
+  },
+  {
+       id:4,
+       name:'here'       
+  },
+  {
+       id:5,
+       name:'to'       
+  },
+  {
+       id:6,
+       name:'have'       
+  },
+  {
+       id:7,
+       name:'some'       
   },
   {
        id:8,
