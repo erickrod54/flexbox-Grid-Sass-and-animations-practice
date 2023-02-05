@@ -1,23 +1,20 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 61.11 -
+/**Flexbox-grid-sass-and-animations app version 62.05 -
  * GridContainerProperties - Features:
  * 
- *      --> Building 'Adaptive content'.
- * 
- *      --> Applying 'grid-template-rows' and
- *          'grid-template-columns' mix with
- *          minmax for content responsiveness
- * 
- *      --> building data, handlers and states.
+ *      --> Destrcuturing 'itemData' from the context
  * 
  * Note: Pending to make it dynamic.
  */
 
 
 const GridMaxMinContent = () => {
+
+    const { itemDataMessed, itemData, maxMinRows } = useGridContext()
 
     const [ data, setData ] = useState(false)
 
@@ -42,100 +39,9 @@ const GridMaxMinContent = () => {
         setminmaxColumn({...minmaxColumn, [name]:value })
     }
 
-    const itemDataMessed = [
-       {
-            id:1,
-            name:'I'       
-       },
-       {
-            id:2,
-            name:'was'       
-       },
-       {
-            id:3,
-            name:'written or shown'       
-       },
-       {
-            id:4,
-            name:'here'       
-       },
-       {
-            id:5,
-            name:'to'       
-       },
-       {
-            id:6,
-            name:'have'       
-       },
-       {
-            id:7,
-            name:'something messed up here, something messed up here, something messed up here, something messed up here, something messed up here, something messed up here'       
-       },
-       {
-            id:8,
-            name:'fun'       
-       },
-
-    ]
-
-    const itemData = [
-        {
-             id:1,
-             name:'I'       
-        },
-        {
-             id:2,
-             name:'was'       
-        },
-        {
-             id:3,
-             name:'written or shown'       
-        },
-        {
-             id:4,
-             name:'here'       
-        },
-        {
-             id:5,
-             name:'to'       
-        },
-        {
-             id:6,
-             name:'have'       
-        },
-        {
-             id:7,
-             name:'some'       
-        },
-        {
-             id:8,
-             name:'fun'       
-        },
- 
-     ]
-
      const handleData = () => {
         setData(!data)
      }
-
-     const maxMinRows = [
-        {
-            id:1,
-            value:'repeat(2, 150px)'
-        },
-        {
-            id:2,
-            value:'repeat(2, max-content)'
-        },
-        {
-            id:3,
-            value:'repeat(2, minmax(100px, min-content))'
-        },
-        {
-            id:4,
-            value:'repeat(2, minmax(100px, 200px))'
-        },
-     ]
 
      const maxMinColumns = [
         {
