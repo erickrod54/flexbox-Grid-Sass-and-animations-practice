@@ -14,11 +14,10 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 62.05 -
+/**Flexbox-grid-sass-and-animations app version 62.06 -
  * data js - Features:
  *
- *  
- *     --> Adding 'maxMinRows' 
+ *     --> Adding 'maxMinColumns' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1791,6 +1790,25 @@ export const maxMinRows = [
   {
       id:2,
       value:'repeat(2, max-content)'
+  },
+  {
+      id:3,
+      value:'repeat(2, minmax(100px, min-content))'
+  },
+  {
+      id:4,
+      value:'repeat(2, minmax(100px, 200px))'
+  },
+]
+
+export const maxMinColumns = [
+  {
+      id:1,
+      value:'1fr 1fr 1fr 1fr'
+  },
+  {
+      id:2,
+      value:'1fr 1fr max-content 1fr'
   },
   {
       id:3,
