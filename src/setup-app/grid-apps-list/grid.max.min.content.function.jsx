@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 62.05 -
+/**Flexbox-grid-sass-and-animations app version 62.06 -
  * GridContainerProperties - Features:
  * 
- *      --> Destrcuturing 'itemData' from the context
+ *      --> Destrcuturing 'maxMinColumns' from the context
  * 
  * Note: Pending to make it dynamic.
  */
@@ -14,7 +14,8 @@ import SelectionForm from "../../components/selection.form.component";
 
 const GridMaxMinContent = () => {
 
-    const { itemDataMessed, itemData, maxMinRows } = useGridContext()
+    const { itemDataMessed, itemData, maxMinRows, maxMinColumns
+     } = useGridContext()
 
     const [ data, setData ] = useState(false)
 
@@ -41,28 +42,7 @@ const GridMaxMinContent = () => {
 
      const handleData = () => {
         setData(!data)
-     }
-
-     const maxMinColumns = [
-        {
-            id:1,
-            value:'1fr 1fr 1fr 1fr'
-        },
-        {
-            id:2,
-            value:'1fr 1fr max-content 1fr'
-        },
-        {
-            id:3,
-            value:'repeat(2, minmax(100px, min-content))'
-        },
-        {
-            id:4,
-            value:'repeat(2, minmax(100px, 200px))'
-        },
-    ]
-
-    
+     }    
     
     return(
         <Wrapper>
