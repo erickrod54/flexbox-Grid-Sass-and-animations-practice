@@ -14,10 +14,10 @@ import {
     duck
 } from './assets/assets.index'
 
-/**Flexbox-grid-sass-and-animations app version 62.07 -
+/**Flexbox-grid-sass-and-animations app version 62.08 -
  * data js - Features:
  *
- *     --> Adding 'AutoFitColumnsData' 
+ *     --> Adding 'AutoFillColumnsData' 
  *      
  * Note: this data is going to be passed to build 
  * uiColorApp.
@@ -1828,5 +1828,25 @@ export const AutoFitColumnsData = [
   {
       id:2,
       value:'repeat(auto-fit, minmax(150px, 1fr))'
+  },
+
+]
+
+export const AutoFillColumnsData = [
+  {
+      id:1,
+      value:'repeat(4, 150px)'
+  },
+  {
+      id:2,
+      value:'repeat(auto-fill, 150px)'
+  },
+  {
+      id:3,
+      value:'repeat(auto-fill, 1fr)'
+  },
+  {
+      id:4,
+      value:'repeat(auto-fill, minmax(150px, 1fr))'
   },
 ]
