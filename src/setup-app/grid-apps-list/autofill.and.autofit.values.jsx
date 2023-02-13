@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 62.07 -
+/**Flexbox-grid-sass-and-animations app version 62.08 -
  * GridAutoFillFit - Features:
  * 
- *      --> Destructuring 'AutoFitColumnsData' from the context. 
+ *      --> Destructuring 'AutoFillColumnsData' from the context. 
  * 
  * Note: Changing 'GridItemProperties' to GridContainerProperties
  * because 'grid.justifify.align.place.items.properties' are 
@@ -19,7 +19,7 @@ import SelectionForm from "../../components/selection.form.component";
 
 const GridAutoFillFit = () => {
 
-    const { AutoFitColumnsData } = useGridContext()
+    const { AutoFitColumnsData, AutoFillColumnsData } = useGridContext()
 
     const [ autofillfitwidth, setAutofillfitwidth ] = useState('')
     const [ autofillcolumn, setAutofillcolum ] = useState('')
@@ -87,25 +87,6 @@ const GridAutoFillFit = () => {
         {
             id:5,
             value:'100%'
-        },
-    ]
-
-    const AutoFillColumnsData = [
-        {
-            id:1,
-            value:'repeat(4, 150px)'
-        },
-        {
-            id:2,
-            value:'repeat(auto-fill, 150px)'
-        },
-        {
-            id:3,
-            value:'repeat(auto-fill, 1fr)'
-        },
-        {
-            id:4,
-            value:'repeat(auto-fill, minmax(150px, 1fr))'
         },
     ]
 
