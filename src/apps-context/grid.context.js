@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 62.09 -
+/**Flexbox-grid-sass-and-animations app version 62.10 -
  * 'GridContext' - Features:
  * 
- *      --> Importing and Providing 'AutoFillFitWidthData'.
- * 
+ *      --> Placing 'GridMinMaxContent' states and 
+ *          handlers.
+ *    
  * Note: 'oldGridSyntaxArray' is going to be use for
  * building grid column and grid row gap old syntax 
  * and new syntax app.
@@ -15,6 +16,9 @@ import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridl
 const GridContext = React.createContext()
 
 const GridProvider = ({ children }) => {
+
+    /**states for GridMinMaxContent data handler*/
+    const [ data, setData ] = useState(false)
     
     /**start states and handlers for 'grid-column-gap' and 'column-gap'*/
     const [ oldsyntaxvalue, setOldsyntaxvalue ] = useState({
@@ -167,6 +171,11 @@ const GridProvider = ({ children }) => {
             
             setRepeatrows({...repeatrows, [name]:value })
         }
+
+        /**data handler for  */
+        const handleData = () => {
+            setData(!data)
+         }
     
     
     return(
@@ -208,6 +217,7 @@ const GridProvider = ({ children }) => {
             maxMinColumns,
             AutoFitColumnsData,
             AutoFillColumnsData,
+            handleData,
             newGridSyntaxHandler,
             oldGridSyntaxHandler,
             newGridrowSyntaxHandler,
