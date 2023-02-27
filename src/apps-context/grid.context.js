@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 62.11 -
+/**Flexbox-grid-sass-and-animations app version 62.12 -
  * 'GridContext' - Features:
  * 
- *      --> Placing 'gridColumnsHandler' handler and state.
+ *      --> Placing 'gridFlowHandler' handler and state.
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
  * building grid column and grid row gap old syntax 
@@ -179,6 +179,7 @@ const GridProvider = ({ children }) => {
          /**gridColumnsHandler handler and state */
 
          const [ gridautocolumns, setGridautocolumns ] = useState('')
+         const [ gridautoflow, setGridautoflow ] = useState('');
 
          const gridColumnsHandler = (e) => {
             const name = e.target.name;
@@ -186,6 +187,15 @@ const GridProvider = ({ children }) => {
     
                 console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
                 setGridautocolumns({...gridautocolumns, [name]:value })
+            
+        }
+
+        const gridFlowHandler = (e) => {
+            const name = e.target.name;
+            const value = e.target.value;    
+    
+                console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
+                setGridautoflow({...gridautoflow, [name]:value })
             
         }
     
@@ -199,6 +209,7 @@ const GridProvider = ({ children }) => {
             oldshorthandvalue,
             newshorthandvalue,
             gridautocolumns,
+            gridautoflow,
             repeatrows,
             repeatcolumns,
             gridIntroData,
@@ -239,7 +250,8 @@ const GridProvider = ({ children }) => {
             oldshorthandGridGapHandler,
             RepeatFColumnsHandler,
             RepeatFRowsHandler,
-            gridColumnsHandler
+            gridColumnsHandler,
+            gridFlowHandler
         }}>
             {children}
         </GridContext.Provider>
