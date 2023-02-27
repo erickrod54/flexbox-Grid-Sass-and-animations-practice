@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 62.12 -
+/**Flexbox-grid-sass-and-animations app version 62.13 -
  * 'GridContext' - Features:
  * 
- *      --> Placing 'gridFlowHandler' handler and state.
+ *      --> Placing 'gridRowsHandler' handler and state.
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
  * building grid column and grid row gap old syntax 
@@ -170,17 +170,18 @@ const GridProvider = ({ children }) => {
             
             setRepeatrows({...repeatrows, [name]:value })
         }
-
+        
         /**data handler for  */
         const handleData = () => {
             setData(!data)
-         }
-
-         /**gridColumnsHandler handler and state */
-
-         const [ gridautocolumns, setGridautocolumns ] = useState('')
-         const [ gridautoflow, setGridautoflow ] = useState('');
-
+        }
+        
+        /**gridColumnsHandler handler and state */
+        
+        const [ gridautocolumns, setGridautocolumns ] = useState('')
+        const [ gridautoflow, setGridautoflow ] = useState('');
+        const [ gridautorows, setGridautorows ] = useState('');
+        
          const gridColumnsHandler = (e) => {
             const name = e.target.name;
             const value = e.target.value;    
@@ -198,6 +199,15 @@ const GridProvider = ({ children }) => {
                 setGridautoflow({...gridautoflow, [name]:value })
             
         }
+
+    const gridRowsHandler = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;    
+
+            console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
+            setGridautorows({...gridautorows, [name]:value })
+        
+    }
     
     
     return(
@@ -212,6 +222,7 @@ const GridProvider = ({ children }) => {
             gridautoflow,
             repeatrows,
             repeatcolumns,
+            gridautorows,
             gridIntroData,
             cssGridlayoutData,
             oldGridSyntaxArray,
@@ -251,7 +262,8 @@ const GridProvider = ({ children }) => {
             RepeatFColumnsHandler,
             RepeatFRowsHandler,
             gridColumnsHandler,
-            gridFlowHandler
+            gridFlowHandler,
+            gridRowsHandler
         }}>
             {children}
         </GridContext.Provider>
