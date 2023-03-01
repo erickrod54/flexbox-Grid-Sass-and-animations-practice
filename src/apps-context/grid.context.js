@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 62.13 -
+/**Flexbox-grid-sass-and-animations app version 62.10 -
  * 'GridContext' - Features:
  * 
- *      --> Placing 'gridRowsHandler' handler and state.
+ *      --> Placing 'gridGapHandler' handler and state.
+ * 
+ *      --> Fixing version to 62.10
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
  * building grid column and grid row gap old syntax 
@@ -208,6 +210,19 @@ const GridProvider = ({ children }) => {
             setGridautorows({...gridautorows, [name]:value })
         
     }
+
+    /**handlers and states fro 'grid.justifify.align.place.items.properties' */
+
+    const [ gridgap, setGridgap ] = useState('')
+
+    const gridGapHandler = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;    
+
+            console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
+            setGridgap({...gridgap, [name]:value })
+        
+    }
     
     
     return(
@@ -223,6 +238,7 @@ const GridProvider = ({ children }) => {
             repeatrows,
             repeatcolumns,
             gridautorows,
+            gridgap,
             gridIntroData,
             cssGridlayoutData,
             oldGridSyntaxArray,
@@ -263,7 +279,8 @@ const GridProvider = ({ children }) => {
             RepeatFRowsHandler,
             gridColumnsHandler,
             gridFlowHandler,
-            gridRowsHandler
+            gridRowsHandler,
+            gridGapHandler
         }}>
             {children}
         </GridContext.Provider>
