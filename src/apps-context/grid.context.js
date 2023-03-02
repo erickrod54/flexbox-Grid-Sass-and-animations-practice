@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 62.11 -
+/**Flexbox-grid-sass-and-animations app version 62.12 -
  * 'GridContext' - Features:
  * 
- *      --> Placing 'gridJustifyContentHandler' handler 
+ *      --> Placing 'gridPlaceContentHandler' handler 
  *          and state.
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
@@ -232,6 +232,18 @@ const GridProvider = ({ children }) => {
             setGridjustify({...gridjustify, [name]:value })
         
     }
+
+    /**handlers and states for 'gridPlaceContentHandler' */
+    const [ placecontent, setPlacecontent ] = useState('')
+
+    const gridPlaceContentHandler = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;    
+
+            console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
+            setPlacecontent({...placecontent, [name]:value })
+        
+    }
     
     
     return(
@@ -249,6 +261,7 @@ const GridProvider = ({ children }) => {
             gridautorows,
             gridgap,
             gridjustify,
+            placecontent,
             gridIntroData,
             cssGridlayoutData,
             oldGridSyntaxArray,
@@ -291,7 +304,8 @@ const GridProvider = ({ children }) => {
             gridFlowHandler,
             gridRowsHandler,
             gridGapHandler,
-            gridJustifyContentHandler
+            gridJustifyContentHandler,
+            gridPlaceContentHandler
         }}>
             {children}
         </GridContext.Provider>
