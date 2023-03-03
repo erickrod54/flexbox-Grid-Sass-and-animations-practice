@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 62.10 -
+/**Flexbox-grid-sass-and-animations app version 62.13 -
  * GridContainerProperties - Features:
  * 
- *      --> Destrcuturing 'handleData' from the context
+ *      --> Destructuring 'handleMinmaxColumn'
+ *          and state from the context.
  * 
  * Note: Pending to make it dynamic.
  */
@@ -14,13 +15,12 @@ import SelectionForm from "../../components/selection.form.component";
 
 const GridMaxMinContent = () => {
 
-    const { itemDataMessed, itemData, maxMinRows, maxMinColumns, handleData
+    const { itemDataMessed, itemData, maxMinRows, maxMinColumns, handleData, handleMinmaxColumn ,minmaxColumn
      } = useGridContext()
 
     
 
-    const [ minmaxRow, setMinmaxRow ] = useState('')
-    const [ minmaxColumn, setminmaxColumn ] = useState('') 
+    const [ minmaxRow, setMinmaxRow ] = useState('') 
 
     const handleMinmaxRow = (e) => {
         const name = e.target.name;
@@ -29,15 +29,6 @@ const GridMaxMinContent = () => {
         console.log('align content => name selected ==>', name, 'value selected ==>', value)
         
         setMinmaxRow({...minmaxRow, [name]:value })
-    }
-
-    const handleMinmaxColumn = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        
-        console.log('align content => name selected ==>', name, 'value selected ==>', value)
-        
-        setminmaxColumn({...minmaxColumn, [name]:value })
     }    
     
     return(
