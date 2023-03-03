@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 62.12 -
+/**Flexbox-grid-sass-and-animations app version 62.13 -
  * 'GridContext' - Features:
  * 
- *      --> Placing 'gridPlaceContentHandler' handler 
+ *      --> Placing 'handleMinmaxColumn' handler 
  *          and state.
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
@@ -244,6 +244,18 @@ const GridProvider = ({ children }) => {
             setPlacecontent({...placecontent, [name]:value })
         
     }
+
+    /**handlers and states from 'grid.max.min.content.function' */
+    const [ minmaxColumn, setminmaxColumn ] = useState('')
+
+    const handleMinmaxColumn = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        
+        console.log('align content => name selected ==>', name, 'value selected ==>', value)
+        
+        setminmaxColumn({...minmaxColumn, [name]:value })
+    }
     
     
     return(
@@ -262,6 +274,7 @@ const GridProvider = ({ children }) => {
             gridgap,
             gridjustify,
             placecontent,
+            minmaxColumn,
             gridIntroData,
             cssGridlayoutData,
             oldGridSyntaxArray,
@@ -305,7 +318,8 @@ const GridProvider = ({ children }) => {
             gridRowsHandler,
             gridGapHandler,
             gridJustifyContentHandler,
-            gridPlaceContentHandler
+            gridPlaceContentHandler,
+            handleMinmaxColumn
         }}>
             {children}
         </GridContext.Provider>
