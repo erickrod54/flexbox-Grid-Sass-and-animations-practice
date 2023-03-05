@@ -4,10 +4,10 @@ import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
 
-/**Flexbox-grid-sass-and-animations app version 61.18 -
+/**Flexbox-grid-sass-and-animations app version 62.15 -
  * GridItemProperties - Features:
  * 
- *      --> Destructuring 'gridAlignSelfData' from the 
+ *      --> Destructuring 'gridPlaceselfHandler' from the 
  *          context.
  * 
  * Note: Implementing selectionForm and validating 
@@ -17,7 +17,7 @@ import SelectionForm from "../../components/selection.form.component";
 
 const GridItemProperties = () => {
 
-    const { itemSelection, gridPlaceSelfData, gridJustifySelfData, gridAlignSelfData } = useGridContext()
+    const { itemSelection, gridPlaceSelfData, gridJustifySelfData, gridAlignSelfData, gridPlaceselfHandler, gridplaceself } = useGridContext()
     
     const items = Array.from({length:8}, (_,index) =>{
         const item = 'item';
@@ -36,7 +36,6 @@ const GridItemProperties = () => {
     
     const [ gridjustifyself, setGridjustifyself ] = useState('');
     const [ gridalignself, setGridalignself ] = useState('');
-    const [ gridplaceself, setGridplaceself ] = useState('');
     const [ gridselfitem, setGridselfitem ] = useState('');
 
     const gridSelfitemHandler = (e) => {
@@ -65,17 +64,6 @@ const GridItemProperties = () => {
             setGridalignself({...gridalignself, [name]:value })
         
     }
-
-    const gridPlaceselfHandler = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;    
-
-            console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
-            setGridplaceself({...gridplaceself, [name]:value })
-        
-    }
-
-
 
     return(
         <Wrapper>
