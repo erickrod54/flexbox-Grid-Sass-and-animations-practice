@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 62.14 -
+/**Flexbox-grid-sass-and-animations app version 62.15 -
  * 'GridContext' - Features:
  * 
- *      --> Placing 'handleMinmaxRow' handler 
+ *      --> Placing 'gridPlaceselfHandler' handler 
  *          and state.
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
@@ -266,6 +266,18 @@ const GridProvider = ({ children }) => {
         
         setMinmaxRow({...minmaxRow, [name]:value })
     }
+
+    /**states and handlers for  'grid.item.properties.jsx' */
+    const [ gridplaceself, setGridplaceself ] = useState('');
+
+    const gridPlaceselfHandler = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;    
+
+            console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
+            setGridplaceself({...gridplaceself, [name]:value })
+        
+    }
     
     
     return(
@@ -286,6 +298,7 @@ const GridProvider = ({ children }) => {
             placecontent,
             minmaxColumn,
             minmaxRow,
+            gridplaceself,
             gridIntroData,
             cssGridlayoutData,
             oldGridSyntaxArray,
@@ -331,7 +344,8 @@ const GridProvider = ({ children }) => {
             gridJustifyContentHandler,
             gridPlaceContentHandler,
             handleMinmaxColumn,
-            handleMinmaxRow
+            handleMinmaxRow,
+            gridPlaceselfHandler
         }}>
             {children}
         </GridContext.Provider>
