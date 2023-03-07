@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 62.15 -
+/**Flexbox-grid-sass-and-animations app version 62.16 -
  * 'GridContext' - Features:
  * 
- *      --> Placing 'gridPlaceselfHandler' handler 
+ *      --> Placing 'gridAlignselfHandler' handler 
  *          and state.
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
@@ -278,6 +278,18 @@ const GridProvider = ({ children }) => {
             setGridplaceself({...gridplaceself, [name]:value })
         
     }
+
+    /**states and handlers for 'grid.item.properties' */
+    const [ gridalignself, setGridalignself ] = useState('');
+
+    const gridAlignselfHandler = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;    
+
+            console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
+            setGridalignself({...gridalignself, [name]:value })
+        
+    }
     
     
     return(
@@ -299,6 +311,7 @@ const GridProvider = ({ children }) => {
             minmaxColumn,
             minmaxRow,
             gridplaceself,
+            gridalignself,
             gridIntroData,
             cssGridlayoutData,
             oldGridSyntaxArray,
@@ -345,7 +358,8 @@ const GridProvider = ({ children }) => {
             gridPlaceContentHandler,
             handleMinmaxColumn,
             handleMinmaxRow,
-            gridPlaceselfHandler
+            gridPlaceselfHandler,
+            gridAlignselfHandler
         }}>
             {children}
         </GridContext.Provider>
