@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 62.17 -
+/**Flexbox-grid-sass-and-animations app version 62.18 -
  * 'GridContext' - Features:
  * 
- *      --> Placing 'gridJustifyselfHandler' handler 
+ *      --> Placing 'gridSelfitemHandler' handler 
  *          and state.
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
@@ -282,6 +282,7 @@ const GridProvider = ({ children }) => {
     /**states and handlers for 'grid.item.properties' */
     const [ gridalignself, setGridalignself ] = useState('');
     const [ gridjustifyself, setGridjustifyself ] = useState('');
+    const [ gridselfitem, setGridselfitem ] = useState('');
 
     const gridAlignselfHandler = (e) => {
         const name = e.target.name;
@@ -299,6 +300,15 @@ const GridProvider = ({ children }) => {
 
             console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
             setGridjustifyself({...gridjustifyself, [name]:value })
+        
+    }
+
+    const gridSelfitemHandler = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;    
+
+            console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
+            setGridselfitem({...gridselfitem, [name]:value })
         
     }
     
@@ -319,6 +329,7 @@ const GridProvider = ({ children }) => {
             gridgap,
             gridjustify,
             placecontent,
+            gridselfitem,
             minmaxColumn,
             minmaxRow,
             gridplaceself,
@@ -372,7 +383,8 @@ const GridProvider = ({ children }) => {
             handleMinmaxRow,
             gridPlaceselfHandler,
             gridAlignselfHandler,
-            gridJustifyselfHandler
+            gridJustifyselfHandler,
+            gridSelfitemHandler
         }}>
             {children}
         </GridContext.Provider>
