@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 62.18 -
+/**Flexbox-grid-sass-and-animations app version 62.19 -
  * 'GridContext' - Features:
  * 
- *      --> Placing 'gridSelfitemHandler' handler 
+ *      --> Placing 'itemColumnHandlerend' handler 
  *          and state.
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
@@ -311,6 +311,19 @@ const GridProvider = ({ children }) => {
             setGridselfitem({...gridselfitem, [name]:value })
         
     }
+
+    /**handlers and state for 'grid.item.position' */
+    const [ columnenditem4, setColumnenditem4 ] = useState(0)
+
+
+    const itemColumnHandlerend = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;    
+
+            console.log('row end item4 => name selected ==>', name, ', value in it ==>', value)
+            setColumnenditem4({...columnenditem4, [name]:value })
+        
+    }
     
     
     return(
@@ -335,6 +348,7 @@ const GridProvider = ({ children }) => {
             gridplaceself,
             gridalignself,
             gridjustifyself,
+            columnenditem4,
             gridIntroData,
             cssGridlayoutData,
             oldGridSyntaxArray,
@@ -384,7 +398,8 @@ const GridProvider = ({ children }) => {
             gridPlaceselfHandler,
             gridAlignselfHandler,
             gridJustifyselfHandler,
-            gridSelfitemHandler
+            gridSelfitemHandler,
+            itemColumnHandlerend
         }}>
             {children}
         </GridContext.Provider>
