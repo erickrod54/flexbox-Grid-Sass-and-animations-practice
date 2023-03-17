@@ -4,10 +4,10 @@ import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 import { CodeBlock } from "../flexbox.styled.components";
 
-/**Flexbox-grid-sass-and-animations app version 60.20 -
+/**Flexbox-grid-sass-and-animations app version 62.19 -
  * GridItemsPosition - Features:
  * 
- *      --> Destructuring 'itemDatacolumns' from the context.
+ *      --> Destructuring 'itemColumnHandlerend' from the context.
  * 
  * Note: Implementing selectionForm and validating 
  * behavior of grid auto rows elements.
@@ -15,7 +15,7 @@ import { CodeBlock } from "../flexbox.styled.components";
 
 const GridItemsPosition = () => {
 
-    const { itemDatarows, itemDatacolumns } = useGridContext()
+    const { itemDatarows, itemDatacolumns, itemColumnHandlerend, columnenditem4 } = useGridContext()
 
     /**here i create an array with 12 items */
     const items = Array.from({length:8}, (_,index) =>{
@@ -40,7 +40,6 @@ const GridItemsPosition = () => {
     const [ rowenditem4, setRowenditem4 ] = useState(0)
 
     const [ columnstartitem4, setColumnstartitem4 ] = useState(0)
-    const [ columnenditem4, setColumnenditem4 ] = useState(0)
 
     const itemRowHandlerstart = (e) => {
         const name = e.target.name;
@@ -67,15 +66,6 @@ const GridItemsPosition = () => {
             console.log('row start item4 => name selected ==>', name, ', value in it ==>', value)
             setColumnstartitem4({...columnstartitem4, [name]:value })
 
-    }
-
-    const itemColumnHandlerend = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;    
-
-            console.log('row end item4 => name selected ==>', name, ', value in it ==>', value)
-            setColumnenditem4({...columnenditem4, [name]:value })
-        
     }
 
 
