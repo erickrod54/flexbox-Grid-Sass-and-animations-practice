@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 62.19 -
+/**Flexbox-grid-sass-and-animations app version 62.20 -
  * 'GridContext' - Features:
  * 
- *      --> Placing 'itemColumnHandlerend' handler 
+ *      --> Placing 'itemColumnHandlerstart' handler 
  *          and state.
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
@@ -314,6 +314,7 @@ const GridProvider = ({ children }) => {
 
     /**handlers and state for 'grid.item.position' */
     const [ columnenditem4, setColumnenditem4 ] = useState(0)
+    const [ columnstartitem4, setColumnstartitem4 ] = useState(0)
 
 
     const itemColumnHandlerend = (e) => {
@@ -323,6 +324,15 @@ const GridProvider = ({ children }) => {
             console.log('row end item4 => name selected ==>', name, ', value in it ==>', value)
             setColumnenditem4({...columnenditem4, [name]:value })
         
+    }
+
+    const itemColumnHandlerstart = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;    
+
+            console.log('row start item4 => name selected ==>', name, ', value in it ==>', value)
+            setColumnstartitem4({...columnstartitem4, [name]:value })
+
     }
     
     
@@ -349,6 +359,7 @@ const GridProvider = ({ children }) => {
             gridalignself,
             gridjustifyself,
             columnenditem4,
+            columnstartitem4,
             gridIntroData,
             cssGridlayoutData,
             oldGridSyntaxArray,
@@ -399,7 +410,8 @@ const GridProvider = ({ children }) => {
             gridAlignselfHandler,
             gridJustifyselfHandler,
             gridSelfitemHandler,
-            itemColumnHandlerend
+            itemColumnHandlerend,
+            itemColumnHandlerstart
         }}>
             {children}
         </GridContext.Provider>
