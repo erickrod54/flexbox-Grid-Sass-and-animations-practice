@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
 
-/**Flexbox-grid-sass-and-animations app version 62.18 -
+/**Flexbox-grid-sass-and-animations app version 63.01 -
  * GridItemProperties - Features:
  * 
- *      --> Destructuring 'gridSelfitemHandler' from the 
- *          context.
+ *      --> Clearing unused 'useState'.
  * 
  * Note: Implementing selectionForm and validating 
  * behavior of grid auto rows elements.
