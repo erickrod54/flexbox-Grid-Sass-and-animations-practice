@@ -1,11 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 63.20 -
+/**Flexbox-grid-sass-and-animations app version 63.01 -
  * 'GridContext' - Features:
  * 
- *      --> Placing 'itemRowHandlerend' handler 
- *          and state.
+ *      --> Providing 'data' state for 'GridMinMaxContent'.
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
  * building grid column and grid row gap old syntax 
@@ -371,6 +370,7 @@ const GridProvider = ({ children }) => {
             columnenditem4,
             columnstartitem4,
             rowenditem4,
+            data,
             gridIntroData,
             cssGridlayoutData,
             oldGridSyntaxArray,
