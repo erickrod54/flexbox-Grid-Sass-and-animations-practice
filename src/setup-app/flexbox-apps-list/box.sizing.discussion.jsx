@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useFlexboxContext } from '../../apps-context/flexbox.context'
 
-/**Flexbox-grid-sass-and-animations app version 60.16
+/**Flexbox-grid-sass-and-animations app version 63.01
  * index js file - Features:
  * 
- *      --> Migrating states and handlers
- * 
- *      --> Destructuring from the context.
+ *      --> Clearing unused 'useState'
  * 
  * Note: By this version the apps imports are simplyfied
  * to use in App js for routing that is need it.
