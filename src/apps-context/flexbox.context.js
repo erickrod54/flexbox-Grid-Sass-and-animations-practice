@@ -4,10 +4,12 @@ import { alignItemsData, alignSelfArray, baselineArray, FlexAlignContentData, Fl
 
 import reducer from "../reducer";
 
-/**Flexbox-grid-sass-and-animations app version 61.07 -
+/**Flexbox-grid-sass-and-animations app version 63.01 -
  * 'flexbox.context.js' - Features:
  * 
- *      --> Importing and Providing 'flexFlowArray'.
+ *      --> Clearing 'setBoxsixing' from '
+ *         box.sizing.discussion.jsx' states and
+ *         handlers.
  * 
  * Note: By this version everything is done in
  * this component.
@@ -354,9 +356,9 @@ const FlexboxtProvider = ({ children }) => {
             setItemAlignself({...itemAlignself, [name]: value })
         }
 
-        /**Boxsizing states and handlers -- start*/
+        /**Boxsizing states and handlers 'box.sizing.discussion.jsx' -- start*/
 
-        const [ boxpadding, setBoxpadding ] = useState(false)
+        const [ boxpadding ] = useState(false)
         const [ paddingbox, setPaddingbox ] = useState(false)
         const [ paddingboxcont, setPaddingboxcont] = useState(false)
 
@@ -401,7 +403,6 @@ const FlexboxtProvider = ({ children }) => {
             itemBasis,
             alignself,
             itemAlignself,
-
             toggleFlex,
             toggleFlexManApp,
             handleAlignContent,
