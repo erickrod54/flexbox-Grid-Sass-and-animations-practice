@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 62.12 -
+/**Flexbox-grid-sass-and-animations app version 63.02 -
  * GridContainerProperties - Features:
  * 
- *      --> Destructuring 'gridPlaceContentHandler'
+ *      --> Destructuring 'placecontent' and 'gridjustify'
  *          and state from the context.
  * 
  * Note: Implementing selectionForm and validating 
@@ -15,7 +15,7 @@ import SelectionForm from "../../components/selection.form.component";
 
 const GridContainerProperties = () => {
 
-    const { gridJustifyContentData, gridGapData, gridPlaceContentData, gridGapHandler, gridgap, gridJustifyContentHandler, gridPlaceContentHandler, placecontent} = useGridContext()
+    const { gridJustifyContentData, gridGapData, gridPlaceContentData, gridGapHandler, gridgap, gridJustifyContentHandler, gridPlaceContentHandler, placecontent, gridjustify} = useGridContext()
 
     const items = Array.from({length:8}, (_,index) =>{
         const item = 'item';
