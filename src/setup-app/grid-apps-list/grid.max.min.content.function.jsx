@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 62.14 -
+/**Flexbox-grid-sass-and-animations app version 63.02 -
  * GridContainerProperties - Features:
  * 
- *      --> Destructuring 'handleMinmaxRow'
- *          and state from the context.
+ *      --> Destructuring 'data' state from the context.
  * 
  * Note: Pending to make it dynamic.
  */
@@ -15,7 +14,7 @@ import SelectionForm from "../../components/selection.form.component";
 
 const GridMaxMinContent = () => {
 
-    const { itemDataMessed, itemData, maxMinRows, maxMinColumns, handleData, handleMinmaxColumn ,minmaxColumn, handleMinmaxRow, minmaxRow
+    const { itemDataMessed, itemData, maxMinRows, maxMinColumns, handleData, handleMinmaxColumn ,minmaxColumn, handleMinmaxRow, minmaxRow, data
      } = useGridContext()     
     
     return(
