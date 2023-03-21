@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 63.02 -
+/**Flexbox-grid-sass-and-animations app version 63.04 -
  * 'GridContext' - Features:
  * 
- *      --> Providing 'itemRowHandlerstart' and state.
+ *      --> Providing 'gridAutofitcolum' and state.
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
  * building grid column and grid row gap old syntax 
@@ -353,6 +353,18 @@ const GridProvider = ({ children }) => {
             setRowstartitem4({...rowstartitem4, [name]:value })
 
     }
+
+    /**states and handlers for 'autofill' and 'autofit' */
+    const [ autofitcolumn, setAutofitcolumn ] = useState('')
+    
+    const gridAutofitcolum = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;    
+
+            console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
+            setAutofitcolumn({...autofitcolumn, [name]:value })
+        
+    }
     
     
     return(
@@ -382,6 +394,7 @@ const GridProvider = ({ children }) => {
             rowenditem4,
             data,
             rowstartitem4,
+            autofitcolumn,
             gridIntroData,
             cssGridlayoutData,
             oldGridSyntaxArray,
@@ -435,7 +448,8 @@ const GridProvider = ({ children }) => {
             itemColumnHandlerend,
             itemColumnHandlerstart,
             itemRowHandlerend,
-            itemRowHandlerstart
+            itemRowHandlerstart,
+            gridAutofitcolum
         }}>
             {children}
         </GridContext.Provider>
