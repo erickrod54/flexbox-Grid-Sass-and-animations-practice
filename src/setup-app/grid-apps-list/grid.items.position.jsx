@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 import { CodeBlock } from "../flexbox.styled.components";
 
-/**Flexbox-grid-sass-and-animations app version 63.02 -
+/**Flexbox-grid-sass-and-animations app version 63.03 -
  * GridItemsPosition - Features:
  * 
- *      --> Destructuring 'itemRowHandlerstart' from the
- *          context.
+ *      --> Clearing unsed 'useState'
  * 
  * Note: Implementing selectionForm and validating 
  * behavior of grid auto rows elements.
