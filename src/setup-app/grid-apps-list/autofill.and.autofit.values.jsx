@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { useGridContext } from "../../apps-context/grid.context";
 import SelectionForm from "../../components/selection.form.component";
 
-/**Flexbox-grid-sass-and-animations app version 62.09 -
+/**Flexbox-grid-sass-and-animations app version 63.04 -
  * GridAutoFillFit - Features:
  * 
- *      --> Destructuring 'AutoFillFitWidthData' from the context. 
+ *      --> Destructuring 'gridAutofitcolum' from the context. 
  * 
  * Note: Changing 'GridItemProperties' to GridContainerProperties
  * because 'grid.justifify.align.place.items.properties' are 
@@ -19,11 +19,11 @@ import SelectionForm from "../../components/selection.form.component";
 
 const GridAutoFillFit = () => {
 
-    const { AutoFitColumnsData, AutoFillColumnsData, AutoFillFitWidthData } = useGridContext()
+    const { AutoFitColumnsData, AutoFillColumnsData, AutoFillFitWidthData, gridAutofitcolum, autofitcolumn } = useGridContext()
 
-    const [ autofillfitwidth, setAutofillfitwidth ] = useState('')
-    const [ autofillcolumn, setAutofillcolum ] = useState('')
-    const [ autofitcolumn, setAutofitcolumn ] = useState('')
+    const [ autofillfitwidth, setAutofillfitwidth ] = useState('');
+    const [ autofillcolumn, setAutofillcolum ] = useState('');
+    
 
     const items = Array.from({length:6}, (_,index) =>{
         const item = 'item';
@@ -55,15 +55,6 @@ const GridAutoFillFit = () => {
 
             console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
             setAutofillcolum({...autofillcolumn, [name]:value })
-        
-    }
-
-    const gridAutofitcolum = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;    
-
-            console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
-            setAutofitcolumn({...autofitcolumn, [name]:value })
         
     }
 
