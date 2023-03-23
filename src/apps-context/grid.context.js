@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AutoFillColumnsData, AutoFillFitWidthData, AutoFitColumnsData, cssGridlayoutData, gridAlignSelfData, gridAutoColumnsData, gridAutoFlowData, gridAutoRowsData, gridGapData, gridIntroData, gridJustifyContentData, gridJustifySelfData, gridPlaceContentData, gridPlaceSelfData, itemData, itemDatacolumns, itemDataMessed, itemDatarows, itemSelection, maxMinColumns, maxMinRows, newGridrowSyntaxArray, newGridSyntaxArray, newshorthandGridGapData, oldGridrowSyntaxArray, oldGridSyntaxArray, oldshorthandGridGapData, RepeatFColumnsD, RepeatFRowsD } from "../data";
 
-/**Flexbox-grid-sass-and-animations app version 63.05 -
+/**Flexbox-grid-sass-and-animations app version 63.06 -
  * 'GridContext' - Features:
  * 
- *      --> Providing 'gridAutofillcolum' and state.
+ *      --> Providing 'gridAutofillfitwidth' and state.
  *    
  * Note: 'oldGridSyntaxArray' is going to be use for
  * building grid column and grid row gap old syntax 
@@ -357,6 +357,7 @@ const GridProvider = ({ children }) => {
     /**states and handlers for 'autofill' and 'autofit' */
     const [ autofitcolumn, setAutofitcolumn ] = useState('');
     const [ autofillcolumn, setAutofillcolum ] = useState('');
+    const [ autofillfitwidth, setAutofillfitwidth ] = useState('');
     
     const gridAutofitcolum = (e) => {
         const name = e.target.name;
@@ -373,6 +374,15 @@ const GridProvider = ({ children }) => {
 
             console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
             setAutofillcolum({...autofillcolumn, [name]:value })
+        
+    }
+
+    const gridAutofillfitwidth = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;    
+
+            console.log('justify-content for grid => name selected ==>', name, ', value in it ==>', value)
+            setAutofillfitwidth({...autofillfitwidth, [name]:value })
         
     }
     
@@ -435,6 +445,7 @@ const GridProvider = ({ children }) => {
             AutoFitColumnsData,
             AutoFillColumnsData,
             autofillcolumn,
+            autofillfitwidth,
             handleData,
             newGridSyntaxHandler,
             oldGridSyntaxHandler,
@@ -461,7 +472,8 @@ const GridProvider = ({ children }) => {
             itemRowHandlerend,
             itemRowHandlerstart,
             gridAutofitcolum,
-            gridAutofillcolum
+            gridAutofillcolum,
+            gridAutofillfitwidth
         }}>
             {children}
         </GridContext.Provider>
